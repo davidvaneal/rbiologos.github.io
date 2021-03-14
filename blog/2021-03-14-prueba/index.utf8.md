@@ -1,18 +1,10 @@
 ---
-title: ¿Cómo funciona R?
-author: David Vanegas
-date: '2021-03-13'
+title: prueba
+author: Eduardo Grajales
+date: '2021-03-14'
 slug: []
-categories:
-  - r
-tags:
-  - r
-  - rstudio
-  - packages
-  - function
-  - script
-  - directory
-image: images/blog/r3.png
+categories: []
+tags: []
 ---
 
 
@@ -37,7 +29,7 @@ getwd()
 ```
 
 ```
-## [1] "C:/Users/david/Desktop/edit/public/blog/2021-03-13"
+## [1] "C:/Users/david/Desktop/edit/public/blog/2021-03-14-prueba"
 ```
 ------------------------------------------------------------------------
 
@@ -77,8 +69,7 @@ Para poder instalar estos paquetes hay varias formas de hacerlo. La más común 
 ------------------------------------------------------------------------
 
 ```r
-install.packages("lme4") 
-# Ten en cuenta que el nombre del paquete va siempre entre comillas
+install.packages("lme4") # Ten en cuenta que el nombre del paquete va siempre entre comillas
 ```
 ------------------------------------------------------------------------
 
@@ -104,8 +95,7 @@ Lo único que nos queda por hacer es "llamar" el paquete. Esta tarea la realizam
 ------------------------------------------------------------------------
 
 ```r
-library(lme4) 
-# Observa que el nombre ya no está entre comillas
+library(lme4) # Observa que cuando llamamos al paquete, ya no necesitamos que el nombre esté entre comillas
 ```
 ------------------------------------------------------------------------
 
