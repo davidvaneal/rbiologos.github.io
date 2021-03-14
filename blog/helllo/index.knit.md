@@ -1,10 +1,11 @@
 ---
-title: prueba
-author: Eduardo Grajales
-date: '2021-03-14'
+title: Hello
+author: ''
+date: '2021-03-13'
 slug: []
 categories: []
 tags: []
+image: images/blog/blog-post-3.jpg
 ---
 
 
@@ -29,7 +30,7 @@ getwd()
 ```
 
 ```
-## [1] "C:/Users/david/Desktop/edit/public/blog/2021-03-14-prueba"
+## [1] "C:/Users/david/Desktop/edit/public/blog/helllo"
 ```
 ------------------------------------------------------------------------
 
