@@ -7,6 +7,7 @@ categories: []
 tags: []
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, fig.align="center", message = FALSE)
 ```
@@ -24,11 +25,13 @@ atención!!!***
 
 Un tip para facilitar tu entendimiento: La gran mayoría de sintaxis de los códigos en R están relacionados a la función que van a cumplir. Por ejemplo, getwd() viene siendo `*get Working Directory*`.
 
+
 ------------------------------------------------------------------------
 ```{r}
 getwd()
 ```
 ------------------------------------------------------------------------
+
 
 Así podemos ver que la ruta de mi directorio está configurado para trabajar en mi escritorio. Pero si necesito trabajar en una carpeta de un proyecto en específico, puedo cambiar esta dirección con el comando `setwd()`, especificando la dirección de la carpeta en cuestión.
 
