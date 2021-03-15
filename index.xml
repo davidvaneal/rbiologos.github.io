@@ -9,26 +9,6 @@
     <copyright>Copyright &amp;copy; 2020 Diseñado por [Themefisher](https://themefisher.com) para [HUGO](https://gethugothemes.com)</copyright>
     <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>fr</title>
-      <link>https://rbiologos.github.io/blog/2021-03-14-fr/</link>
-      <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://rbiologos.github.io/blog/2021-03-14-fr/</guid>
-      <description>Configuración del directo de trabajo
-Para trabajar tranquilamente en nuestros proyectos siempre debemos establecer un orden, esto nos dará la capacidad de poder trabajar de manera más efectiva.</description>
-    </item>
-    
-    <item>
-      <title>post</title>
-      <link>https://rbiologos.github.io/blog/2021-03-14-post/</link>
-      <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://rbiologos.github.io/blog/2021-03-14-post/</guid>
-      <description>Configuración del directo de trabajo
-Para trabajar tranquilamente en nuestros proyectos siempre debemos establecer un orden, esto nos dará la capacidad de poder trabajar de manera más efectiva.</description>
-    </item>
-    
-    <item>
       <title>prueba</title>
       <link>https://rbiologos.github.io/blog/2021-03-14-prueba/</link>
       <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
@@ -40,20 +20,10 @@ Para trabajar tranquilamente en nuestros proyectos siempre debemos establecer un
     
     <item>
       <title>Hello</title>
-      <link>https://rbiologos.github.io/blog/helllo/</link>
+      <link>https://rbiologos.github.io/blog/hello/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/blog/helllo/</guid>
-      <description>Configuración del directo de trabajo
-Para trabajar tranquilamente en nuestros proyectos siempre debemos establecer un orden, esto nos dará la capacidad de poder trabajar de manera más efectiva.</description>
-    </item>
-    
-    <item>
-      <title>¿Cómo funciona R?</title>
-      <link>https://rbiologos.github.io/blog/2021-03-13/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://rbiologos.github.io/blog/2021-03-13/</guid>
+      <guid>https://rbiologos.github.io/blog/hello/</guid>
       <description>Configuración del directo de trabajo
 Para trabajar tranquilamente en nuestros proyectos siempre debemos establecer un orden, esto nos dará la capacidad de poder trabajar de manera más efectiva.</description>
     </item>

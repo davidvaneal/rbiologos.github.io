@@ -5,6 +5,7 @@ date: '2021-03-14'
 slug: []
 categories: []
 tags: []
+image: images/blog/blog-post-3.jpg
 ---
 
 ```{r setup, include=FALSE}
