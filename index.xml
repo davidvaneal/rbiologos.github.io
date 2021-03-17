@@ -6,7 +6,27 @@
     <description>Recent content on R Biólogos</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright &amp;copy; 2020 Diseñado por [Themefisher](https://themefisher.com) para [HUGO](https://gethugothemes.com)</copyright><atom:link href="https://rbiologos.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright &amp;copy; 2020 Diseñado por [Themefisher](https://themefisher.com) para [HUGO](https://gethugothemes.com)</copyright>
+    <lastBuildDate>Tue, 16 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>... y ahora un poco de teoría!</title>
+      <link>https://rbiologos.github.io/blog/a002/</link>
+      <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/blog/a002/</guid>
+      <description>Se trata de uno de los lenguajes de programación más utilizados en investigación científica, siendo además muy popular en los campos de aprendizaje automático (machine learning), minería de datos, investigación biomédica, bioinformática y matemáticas financieras.</description>
+    </item>
+    
+    <item>
+      <title>¿Pa&#39; que creamos esta página?</title>
+      <link>https://rbiologos.github.io/blog/a001/</link>
+      <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/blog/a001/</guid>
+      <description>¿Quiénes somos?
+Somos David Vanegas y Eduardo Grajales, dos biólogos de la Universidad del Quindío interesados en la ciencia con fines para la conservación, el ecoturismo y la educación ambiental como promotoras de una sociedad en pro del desarrollo sostenible enfocado al bienestar de las comunidades en sus territorios.</description>
+    </item>
+    
     <item>
       <title>2G Shop</title>
       <link>https://rbiologos.github.io/shop/2g/</link>

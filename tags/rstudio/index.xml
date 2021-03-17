@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RStudio on R Biólogos</title>
+    <link>https://rbiologos.github.io/tags/rstudio/</link>
+    <description>Recent content in RStudio on R Biólogos</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; 2020 Diseñado por [Themefisher](https://themefisher.com) para [HUGO](https://gethugothemes.com)</copyright>
+    <lastBuildDate>Tue, 16 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/tags/rstudio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>... y ahora un poco de teoría!</title>
+      <link>https://rbiologos.github.io/blog/a002/</link>
+      <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/blog/a002/</guid>
+      <description>Se trata de uno de los lenguajes de programación más utilizados en investigación científica, siendo además muy popular en los campos de aprendizaje automático (machine learning), minería de datos, investigación biomédica, bioinformática y matemáticas financieras.</description>
+    </item>
+    
+  </channel>
+</rss>

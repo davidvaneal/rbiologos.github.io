@@ -2,20 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://rbiologos.github.io/blog/a002/</loc>
+    <lastmod>2021-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.github.io/blog/</loc>
+    <lastmod>2021-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.github.io/categories/</loc>
+    <lastmod>2021-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.github.io/tags/history/</loc>
+    <lastmod>2021-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.github.io/tags/r/</loc>
+    <lastmod>2021-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.github.io/categories/r/</loc>
+    <lastmod>2021-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.github.io/</loc>
+    <lastmod>2021-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.github.io/tags/rstudio/</loc>
+    <lastmod>2021-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.github.io/tags/</loc>
+    <lastmod>2021-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.github.io/blog/a001/</loc>
+    <lastmod>2021-03-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://rbiologos.github.io/shop/2g/</loc>
   </url><url>
     <loc>https://rbiologos.github.io/author/</loc>
-  </url><url>
-    <loc>https://rbiologos.github.io/categories/</loc>
   </url><url>
     <loc>https://rbiologos.github.io/author/david-vanegas/</loc>
   </url><url>
     <loc>https://rbiologos.github.io/author/eduardo-grajales/</loc>
   </url><url>
-    <loc>https://rbiologos.github.io/</loc>
-  </url><url>
     <loc>https://rbiologos.github.io/shop/</loc>
-  </url><url>
-    <loc>https://rbiologos.github.io/tags/</loc>
   </url>
 </urlset>
