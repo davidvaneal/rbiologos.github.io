@@ -40,7 +40,7 @@ Además, R es gratuito y tiene más de 6817 paquetes disponibles.
 En R, se utiliza una línea de comandos para interactuar con el programa, dicha interacción se realiza en un espacio conocido como <res>consola</res>
 
 <center>
-<img src="https://i.ibb.co/yyVHKhh/R.png" alt="R" border="0" width="700">
+![](https://i.ibb.co/yyVHKhh/R.png){width="500"}
 </center><br>
 
 Tenemos que tener claro que R es el lenguaje de programación, como el que hace los cálculos y tareas que le hemos asignado, pero existe un programa llamado <res>R Studio</res>, el cual es un programa IDE o entorno de desarrollo integrado. Esto significa que RStudio es un programa para manejar R y utilizarlo de manera más cómoda en algunos aspectos.
@@ -54,7 +54,7 @@ En 2009, [Joseph J. Allaire](https://en.wikipedia.org/wiki/Joseph_J._Allaire) fu
 Así la interfaz que nos encontraremos en RStudio, por defecto, tendrá cuatro paneles, los cuales serán de vital importancia conocer y entender
 
 <center>
-<img src="https://i.ibb.co/J5sRQ0h/RStudio.png" alt="RStudio" border="0"width="700">
+![](https://i.ibb.co/J5sRQ0h/RStudio.png){width="500"}
 </center><br> 
 
 1. Editor de código, en este panel se van abriendo los ficheros en pestañas.
