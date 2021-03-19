@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; 2020 Diseñado por [Themefisher](https://themefisher.com) para [HUGO](https://gethugothemes.com)</copyright>
-    <lastBuildDate>Tue, 16 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>¿Qué necesito para comenzar en R?</title>
+      <link>https://rbiologos.github.io/blog/a003/</link>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/blog/a003/</guid>
+      <description>Para comenzar en esta aventura, lo primero que necesitas es instalar R y Rstudio, sin ellos creo que sería muy difícil comenzar nuestra aventura.</description>
+    </item>
+    
     <item>
       <title>... y ahora un poco de teoría!</title>
       <link>https://rbiologos.github.io/blog/a002/</link>
