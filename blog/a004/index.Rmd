@@ -12,7 +12,7 @@ tags:
   - software
 ---
 
-> Antes de entrar profundamente sobre los datos y estructuras de Datos en R, conozcamos, configuremos y tengamos en cuenta las generalidades del entorno de RStudio
+> Antes profundizar acerca de los datos y estructuras de Datos en R, conozcamos, configuremos y tengamos en cuenta las generalidades del entorno de RStudio
 
 ***
 
@@ -50,7 +50,7 @@ Pero espera… te aconsejamos que configures permanentemente tu directorio para 
 Así veremos lo siguiente en la pantalla
 
 <center>
-![](https://i.ibb.co/VQ66vjC/Options.png){width="700"}
+<img src="https://i.ibb.co/VQ66vjC/Options.png" alt="Options" border="0" class="responsive">
 </center><br>
 
 En este panel tendremos varias opciones que podrás modificar como la apariencia de RStudio, tamaño de letra, orden de los paneles de trabajo, entre otros. En nuestro caso en la opción General, iremos hacia la etiqueta de Default working directory daremos click en Browse y abrirá una ventana en la cual elegiremos la carpeta que queremos como directorio por defecto.
@@ -61,7 +61,7 @@ En este panel tendremos varias opciones que podrás modificar como la apariencia
 
 Ya con nuestro directorio configurado lo siguiente es conocer que R está compuesto por un sistema base, esto significa que tiene funciones ya instaladas para poder realizar tareas sencillas, sin embargo, hay múltiples funciones y tareas en el mundo de R. Para poder extender esta funcionalidad, R puede instalar paquetes que poseen una colección de funciones predeterminadas por su desarrollador.
 
-Para poder instalar estos paquetes hay varias formas de hacerlo. La más común y sencilla es a través del código install.packages(), como se muestra en el siguiente código
+Para poder instalar estos paquetes hay varias formas de hacerlo. La más común y sencilla es a través del código <res>install.packages()</res>, como se muestra en el siguiente código
 
 ```{r eval=FALSE}
 install.packages("lme4")
@@ -76,7 +76,7 @@ install.packages(c("dplyr","ggplot2","lme4"))
 Una de las ventajas de RStudio es que cuando cargas un script (en este mismo post hablaremos sobre estos), el programa leerá automáticamente los paquetes que no están instalados y te preguntará si deseas instalarlos, tal y como podemos observar en esta imagen
 
 <center>
-![](https://i.ibb.co/JKSd65j/library.png){width="700"}
+<img src="https://i.ibb.co/JKSd65j/library.png" alt="library" border="0" class="responsive">
 </center><br>
 
 Esta instalación es necesaria una sola vez, esto se debe a que el paquete será incorporado a la información base en nuestra computadora.
@@ -99,17 +99,17 @@ Pero tranqui…! Nada está perdido y los desarrolladores de R, han dispuesto qu
 Y se abrirá la pestaña de ayuda que mostrara la información como en la siguiente imagen:
 
 <center>
-![](https://i.ibb.co/G5YcY59/Help.png){width="700"}
+<img src="https://i.ibb.co/G5YcY59/Help.png" alt="Help" border="0" class="responsive">
 </center><br>
 
 Pero… no siempre quedará tan claro toda la información, es una realidad. Para ello, varias personas han creado páginas o blogs dedicados a resolver cualquier tipo de dudas del entorno de R. Las más buscadas y utilizadas son estas:
 
 <center>
-<a href="https://www.r-bloggers.com/"><img src="https://i.ibb.co/28tJ17T/rbloggers.webp" alt="rbloggers" border="0" width="350"></a>
+<a href="https://www.r-bloggers.com/"><img src="https://i.ibb.co/28tJ17T/rbloggers.webp" alt="rbloggers" border="0" width="350" target="blank"></a>
 </center><br>
 
 <center>
-<a href="https://stackoverflow.com/"><img src="https://i.ibb.co/TwkTxzT/stackover.png" alt="stackover" border="0" width="350"></a>
+<a href="https://stackoverflow.com/"><img src="https://i.ibb.co/TwkTxzT/stackover.png" alt="stackover" border="0" width="350" target="blank"></a>
 </center><br>
 
 Te invitamos a explorarlas, tienen muy buena información, con foros de debate, en su mayoría en inglés, pero también buen número en español.
@@ -120,7 +120,7 @@ Te invitamos a explorarlas, tienen muy buena información, con foros de debate, 
 
 Ya con nuestros paquetes instalados podremos trabajar! Cada uno de estos paquetes tiene una serie de funciones que tienen una tarea específica que realizar.
 
-Así, una función es una serie de operaciones a las que se les ha asignado un nombre, estas funciones requieren argumentos (valores) específicos para poder realizar su tarea, si no los ingresamos adecuadamente, el comando de la función nos generará <res>error</res>, el bendito <res>error…</res>
+Así, una función es una serie de operaciones a las que se les ha asignado un nombre, estas funciones requieren <res>argumentos (valores)</res> específicos para poder realizar su tarea, si no los ingresamos adecuadamente, el comando de la función nos generará **error**, el bendito **error…**
 
 <center>
 ![](https://i.ibb.co/BnpY7SN/hate.gif){width="300"}
@@ -132,10 +132,10 @@ Así, una función es una serie de operaciones a las que se les ha asignado un n
 Es indispensable conocer los argumentos que necesitamos ingresar a cada función!
 </blockquote>
 
-Para conocer los argumentos podemos consultar la ayuda para paquetes, como lo vimos anteriomente, por ejemplo: <res> ?lm() </res>. Otra forma es digitar la función, <res>lm()</res>, y dentro de los paréntesis tecleamos <res>TAB</res>, esto desplegará los argumentos que requiere la función en cuestión y si navegamos entre ellos, cada uno nos dará una breve explicación sobre si mismo.
+Para conocer los argumentos podemos consultar la ayuda para paquetes, como lo vimos anteriomente, por ejemplo: <res>?lm()</res>. Otra forma es digitar la función, <res>lm()</res>, y dentro de los paréntesis tecleamos <res>TAB</res>, esto desplegará los argumentos que requiere la función en cuestión y si navegamos entre ellos, cada uno nos dará una breve explicación sobre si mismo.
 
 <center>
-![](https://i.ibb.co/CnMCVVG/Argumentos.png){width="700"}
+<img src="https://i.ibb.co/CnMCVVG/Argumentos.png" alt="Argumentos" border="0" class="responsive">
 <br>
 Vista de argumentos necesarios para la función lm()
 </center><br>
@@ -145,7 +145,7 @@ Vista de argumentos necesarios para la función lm()
 ## Scripts
 
 Para terminar nuestro tema del día, vamos a hablar de los Scripts, pero… ¿Qué es un script?
-
+ 
 Un script es un documento de R que tiene como finalidad guardar los códigos que creamos importantes para un proyecto, es algo así como una receta de cocina. Una vez tienes todos tus códigos guardados, solo es necesario abrir el script para tenerlos a la mano y poder utilizarlos o modificarlos.
 
 Para crear uno nuevo solo es necesario ir a <res>File -> New File -> R Script</res> o bien con el atajo de teclas <res>Ctrl + Shift + N</res>
@@ -153,7 +153,7 @@ Para crear uno nuevo solo es necesario ir a <res>File -> New File -> R Script</r
 Los scripts se reconocen porque tienen extensión de archivo .R, por ejemplo proyecto.R. Estos archivos son iguales a cualquier documentos de texto, pero R puede leerlos y ejecutar el código que contienen.
 
 <center>
-![](https://i.ibb.co/H2gZRPV/script.png){width="700"}
+<img src="https://i.ibb.co/H2gZRPV/script.png" alt="script" border="0" class="responsive">
 <br>
 Vista del editor de scripts en RStudio
 </center><br>
@@ -164,9 +164,9 @@ Para ejecutar los códigos dentro del código podrás dar click en la casilla <r
 ![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
 
 Un consejo que te damos es que trabajes con tus códigos, directamente desde el editor de scripts y NO en la consola. ¿Pero porqué sería mejor? La respuesta es sencilla, nada mejor que no perder de vista los códigos que te han funcionado, o editar el código rápidamente para corregir algún error, en la consola tendrías que estar escribiendo el código completo, y si es largo, pueeeees, se vuelve tedioso.
-
-En RStudio puedes guardar los contenidos del editor con frecuencia, y Rstudio los cargará automáticamente cuando vuelvas a abrirlo.
 </blockquote>
+
+En RStudio puedes guardar los contenidos del editor con frecuencia, y Rstudio los cargará automáticamente cuando vuelvas a abrirlos.
 
 ***
 

@@ -120,7 +120,7 @@
 
 
 <blockquote>
-<p>Antes de entrar profundamente sobre los datos y estructuras de Datos en R, conozcamos, configuremos y tengamos en cuenta las generalidades del entorno de RStudio</p>
+<p>Antes profundizar acerca de los datos y estructuras de Datos en R, conozcamos, configuremos y tengamos en cuenta las generalidades del entorno de RStudio</p>
 </blockquote>
 <hr />
 <div id="configuración-del-directo-de-trabajo" class="section level2">
@@ -144,7 +144,7 @@ Un tip para facilitar tu entendimiento: La gran mayoría de sintaxis de los cód
 <p>Pero espera… te aconsejamos que configures permanentemente tu directorio para poder agilizar y organizar tus proyectos/datos de la mejor manera (Yo lo tengo en el escritorio ya que es donde tengo todo a la mano). Para poder hacerlo, en la aplicación vamos a dirigirnos a la pestaña Tools y después vamos a Global Options….</p>
 <p>Así veremos lo siguiente en la pantalla</p>
 <center>
-<img src="https://i.ibb.co/VQ66vjC/Options.png" width="700" />
+<img src="https://i.ibb.co/VQ66vjC/Options.png" alt="Options" border="0" class="responsive">
 </center>
 <p><br></p>
 <p>En este panel tendremos varias opciones que podrás modificar como la apariencia de RStudio, tamaño de letra, orden de los paneles de trabajo, entre otros. En nuestro caso en la opción General, iremos hacia la etiqueta de Default working directory daremos click en Browse y abrirá una ventana en la cual elegiremos la carpeta que queremos como directorio por defecto.</p>
@@ -153,13 +153,13 @@ Un tip para facilitar tu entendimiento: La gran mayoría de sintaxis de los cód
 <div id="paquetes" class="section level2">
 <h2>Paquetes</h2>
 <p>Ya con nuestro directorio configurado lo siguiente es conocer que R está compuesto por un sistema base, esto significa que tiene funciones ya instaladas para poder realizar tareas sencillas, sin embargo, hay múltiples funciones y tareas en el mundo de R. Para poder extender esta funcionalidad, R puede instalar paquetes que poseen una colección de funciones predeterminadas por su desarrollador.</p>
-<p>Para poder instalar estos paquetes hay varias formas de hacerlo. La más común y sencilla es a través del código install.packages(), como se muestra en el siguiente código</p>
+<p>Para poder instalar estos paquetes hay varias formas de hacerlo. La más común y sencilla es a través del código <res>install.packages()</res>, como se muestra en el siguiente código</p>
 <pre class="r"><code>install.packages(&quot;lme4&quot;)</code></pre>
 <p>O bien, podemos instalar varios paquetes a la vez con la forma de este código:</p>
 <pre class="r"><code>install.packages(c(&quot;dplyr&quot;,&quot;ggplot2&quot;,&quot;lme4&quot;))</code></pre>
 <p>Una de las ventajas de RStudio es que cuando cargas un script (en este mismo post hablaremos sobre estos), el programa leerá automáticamente los paquetes que no están instalados y te preguntará si deseas instalarlos, tal y como podemos observar en esta imagen</p>
 <center>
-<img src="https://i.ibb.co/JKSd65j/library.png" width="700" />
+<img src="https://i.ibb.co/JKSd65j/library.png" alt="library" border="0" class="responsive">
 </center>
 <p><br></p>
 <p>Esta instalación es necesaria una sola vez, esto se debe a que el paquete será incorporado a la información base en nuestra computadora.</p>
@@ -174,16 +174,16 @@ Un tip para facilitar tu entendimiento: La gran mayoría de sintaxis de los cód
 <p>Pero tranqui…! Nada está perdido y los desarrolladores de R, han dispuesto que los paquetes tengan la información necesaria para ayudar a los usuarios en este complejo proceso. Para acceder a esta ayuda digitamos en la consola <res>?</res> seguido con el nombre del paquete (Ten en cuenta que para acceder a este información es necesario que el paquete esté cargado en R), como lo vemos en este ejemplo:</p>
 <p>Y se abrirá la pestaña de ayuda que mostrara la información como en la siguiente imagen:</p>
 <center>
-<img src="https://i.ibb.co/G5YcY59/Help.png" width="700" />
+<img src="https://i.ibb.co/G5YcY59/Help.png" alt="Help" border="0" class="responsive">
 </center>
 <p><br></p>
 <p>Pero… no siempre quedará tan claro toda la información, es una realidad. Para ello, varias personas han creado páginas o blogs dedicados a resolver cualquier tipo de dudas del entorno de R. Las más buscadas y utilizadas son estas:</p>
 <center>
-<a href="https://www.r-bloggers.com/"><img src="https://i.ibb.co/28tJ17T/rbloggers.webp" alt="rbloggers" border="0" width="350"></a>
+<a href="https://www.r-bloggers.com/"><img src="https://i.ibb.co/28tJ17T/rbloggers.webp" alt="rbloggers" border="0" width="350" target="blank"></a>
 </center>
 <p><br></p>
 <center>
-<a href="https://stackoverflow.com/"><img src="https://i.ibb.co/TwkTxzT/stackover.png" alt="stackover" border="0" width="350"></a>
+<a href="https://stackoverflow.com/"><img src="https://i.ibb.co/TwkTxzT/stackover.png" alt="stackover" border="0" width="350" target="blank"></a>
 </center>
 <p><br></p>
 <p>Te invitamos a explorarlas, tienen muy buena información, con foros de debate, en su mayoría en inglés, pero también buen número en español.</p>
@@ -192,7 +192,7 @@ Un tip para facilitar tu entendimiento: La gran mayoría de sintaxis de los cód
 <div id="funciones" class="section level2">
 <h2>Funciones</h2>
 <p>Ya con nuestros paquetes instalados podremos trabajar! Cada uno de estos paquetes tiene una serie de funciones que tienen una tarea específica que realizar.</p>
-<p>Así, una función es una serie de operaciones a las que se les ha asignado un nombre, estas funciones requieren argumentos (valores) específicos para poder realizar su tarea, si no los ingresamos adecuadamente, el comando de la función nos generará <res>error</res>, el bendito <res>error…</res></p>
+<p>Así, una función es una serie de operaciones a las que se les ha asignado un nombre, estas funciones requieren <res>argumentos (valores)</res> específicos para poder realizar su tarea, si no los ingresamos adecuadamente, el comando de la función nos generará <strong>error</strong>, el bendito <strong>error…</strong></p>
 <center>
 <img src="https://i.ibb.co/BnpY7SN/hate.gif" width="300" />
 </center>
@@ -201,9 +201,9 @@ Un tip para facilitar tu entendimiento: La gran mayoría de sintaxis de los cód
 <p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" /></p>
 Es indispensable conocer los argumentos que necesitamos ingresar a cada función!
 </blockquote>
-<p>Para conocer los argumentos podemos consultar la ayuda para paquetes, como lo vimos anteriomente, por ejemplo: <res> ?lm() </res>. Otra forma es digitar la función, <res>lm()</res>, y dentro de los paréntesis tecleamos <res>TAB</res>, esto desplegará los argumentos que requiere la función en cuestión y si navegamos entre ellos, cada uno nos dará una breve explicación sobre si mismo.</p>
+<p>Para conocer los argumentos podemos consultar la ayuda para paquetes, como lo vimos anteriomente, por ejemplo: <res>?lm()</res>. Otra forma es digitar la función, <res>lm()</res>, y dentro de los paréntesis tecleamos <res>TAB</res>, esto desplegará los argumentos que requiere la función en cuestión y si navegamos entre ellos, cada uno nos dará una breve explicación sobre si mismo.</p>
 <center>
-<img src="https://i.ibb.co/CnMCVVG/Argumentos.png" width="700" />
+<img src="https://i.ibb.co/CnMCVVG/Argumentos.png" alt="Argumentos" border="0" class="responsive">
 <br>
 Vista de argumentos necesarios para la función lm()
 </center>
@@ -217,7 +217,7 @@ Vista de argumentos necesarios para la función lm()
 <p>Para crear uno nuevo solo es necesario ir a <res>File -&gt; New File -&gt; R Script</res> o bien con el atajo de teclas <res>Ctrl + Shift + N</res></p>
 <p>Los scripts se reconocen porque tienen extensión de archivo .R, por ejemplo proyecto.R. Estos archivos son iguales a cualquier documentos de texto, pero R puede leerlos y ejecutar el código que contienen.</p>
 <center>
-<img src="https://i.ibb.co/H2gZRPV/script.png" width="700" />
+<img src="https://i.ibb.co/H2gZRPV/script.png" alt="script" border="0" class="responsive">
 <br>
 Vista del editor de scripts en RStudio
 </center>
@@ -225,9 +225,9 @@ Vista del editor de scripts en RStudio
 <p>Para ejecutar los códigos dentro del código podrás dar click en la casilla <res>Run</res> o de manera más simple <res>Ctrl + Enter</res>. Pero hay una función en especial que puede ahorrarte un poco de tiempo <res>source()</res>, con esta función se ejecutarán cada una de los códigos que contiene nuestro script. Por ejemplo, en nuestro caso el código sería <res>source(Plots.R)</res>.</p>
 <blockquote>
 <p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" /></p>
-<p>Un consejo que te damos es que trabajes con tus códigos, directamente desde el editor de scripts y NO en la consola. ¿Pero porqué sería mejor? La respuesta es sencilla, nada mejor que no perder de vista los códigos que te han funcionado, o editar el código rápidamente para corregir algún error, en la consola tendrías que estar escribiendo el código completo, y si es largo, pueeeees, se vuelve tedioso.</p>
-En RStudio puedes guardar los contenidos del editor con frecuencia, y Rstudio los cargará automáticamente cuando vuelvas a abrirlo.
+Un consejo que te damos es que trabajes con tus códigos, directamente desde el editor de scripts y NO en la consola. ¿Pero porqué sería mejor? La respuesta es sencilla, nada mejor que no perder de vista los códigos que te han funcionado, o editar el código rápidamente para corregir algún error, en la consola tendrías que estar escribiendo el código completo, y si es largo, pueeeees, se vuelve tedioso.
 </blockquote>
+<p>En RStudio puedes guardar los contenidos del editor con frecuencia, y Rstudio los cargará automáticamente cuando vuelvas a abrirlos.</p>
 <hr />
 </div>
 <div id="en-resumen" class="section level2">
