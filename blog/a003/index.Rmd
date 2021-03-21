@@ -17,10 +17,9 @@ tags:
 Recuerda que los necesitamos a ambos, además que R es un lenguaje de programación y también software; en cambio, Rstudio es su valioso entorno de desarrollo. 
 
 <center>
-|  |  |  |
-|:---:|:---:|:---:|
-| R |  | RStudio |
-| <a href="https://www.icesi.edu.co/CRAN/" target="blank"><img border="0" height="80" src="https://i.ibb.co/kMxCS7r/down.png" width="80" /></a> | DESCARGAS | <a href="https://download1.rstudio.org/desktop/windows/RStudio-1.4.1106.exe" target="blank"><img border="0" height="80" src="https://i.ibb.co/kMxCS7r/down.png" width="80" /></a> |
+<a href="https://www.icesi.edu.co/CRAN/" target="blank"><img border="0" src="https://i.ibb.co/cb4ZM78/descarga.png"/><br>R</a><br> 
+<br>
+<a href="https://download1.rstudio.org/desktop/windows/RStudio-1.4.1106.exe" target="blank"><img border="0" src="https://i.ibb.co/cb4ZM78/descarga.png" /><br>RStudio</a>
 </center><br>
 
 ¿Qué más necesitamos? Ganas de aprender, dedicación y paciencia, ¡sí, paciencia!
@@ -83,15 +82,10 @@ El tema sobre la <res>estructura de los datos y algunos ejemplos que nos ayuden 
 
 Primero, tenemos nuestro nuevo juguete instalado y ¿Cómo aprendemos a usar un juguete nuevo? la respuesta es muy, pero que muy sencilla, <res>¡JUGANDO CON ÉL!</res> abajo te dejaré un buen libro sobre R para que lo disfrutes, pero tranqui está en español; además no hay nada que preocuparse acá nosotros te explicaremos lo que necesitas saber.
 
-<center>
-R para ciencia de Datos (Versión Español)</center>
 
 <center>
-![](https://i.ibb.co/VB4587G/libro-r.png){width="300"}
-</center>
-
-<center>
-<a href="https://es.r4ds.hadley.nz" target="blank"><img border="0" height="80" src="https://i.ibb.co/kMxCS7r/down.png" width="80" /></a>
+<img src="https://i.ibb.co/VB4587G/libro-r.png" border="0" width="200"><br>
+<a href="https://es.r4ds.hadley.nz/" target="blank">R para ciencia de Datos (Versión Español)</a>
 </center><br>
 
 Como segunda conclusión, vimos que existen <res>¡7 tipos de datos en R!</res>, ¿ya lo sabías?, comenta tu respuesta y déjanos tus conclusiones. 
