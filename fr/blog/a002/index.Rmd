@@ -1,5 +1,5 @@
 ---
-title: '... y ahora un poco de teoría!'
+title: '... and now a bit of theory!'
 author: David Vanegas
 date: '2021-03-16'
 image: "images/blog/A002.webp"
