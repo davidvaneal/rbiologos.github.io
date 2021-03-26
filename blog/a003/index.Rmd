@@ -14,7 +14,7 @@ tags:
 
 > Para comenzar en esta aventura, lo primero que necesitas es instalar  <res>R</res> y <res>Rstudio</res>, sin ellos creo que sería muy difícil comenzar nuestra aventura. 
 
-Recuerda que los necesitamos a ambos, además que R es un lenguaje de programación y también software; en cambio, Rstudio es su valioso entorno de desarrollo. 
+Recuerda que los necesitamos a ambos, a R porque es un lenguaje de programación y también software; y a Rstudio por su valioso entorno de desarrollo. 
 
 <center>
 <a href="https://www.icesi.edu.co/CRAN/" target="blank"><img border="0" src="https://i.ibb.co/cb4ZM78/descarga.png"/><br>R</a><br> 
@@ -50,13 +50,13 @@ Bueno, ahora una revisión rápida por RStudio... recordemos que la interfaz de 
 <img src="https://i.ibb.co/pxWxmpN/desktops.jpg" alt="desktops" border="0" class="responsive">
 </center><br> 
 
-Las <res>ventana 1</res> será nuestra amiga fiel, ya que allí pasaremos la mayoría de tiempo organizando y editando nuestras líneas de comando escritas en lenguaje R y corriéndolas usando <res>CONTROL + ENTER</res>.  todas nuestras líneas de código se transformarán en scripts, que nos permitirán automatizar cada vez más nuestros procesos.
+La <res>ventana 1</res> será nuestra amiga fiel, ya que allí pasaremos la mayoría de tiempo organizando y editando nuestras líneas de comando escritas en lenguaje R y corriéndolas usando <res>CONTROL + ENTER</res>.  todas nuestras líneas de código se transformarán en scripts, que nos permitirán automatizar cada vez más nuestros procesos.
 
 <center>
 ![](https://i.ibb.co/4gCD6M6/1500505875-yo-soy-tu-amigo-fiel.png){Width="300"} 
 </center><br>
 
- En la ventana 3 es donde ocurre la magia, todo tipo de magia, desde instalar librerías, hasta hacer sumas, restas, divisiones, potenciaciones, un sin fin de actividades, porque ahí es donde se ejecuta el código en R; sin embargo, no todo lo que sale de ahí son maravillas, también es donde saldrán los mensajes de <res>ERROR</res> y advertencia que nos fastidian un poco la vida. 
+La <res>ventana 3</res> es donde ocurre la magia, todo tipo de magia, desde instalar librerías, hasta hacer sumas, restas, divisiones, potenciaciones, un sin fin de actividades, porque ahí es donde se ejecuta el código en R; sin embargo, no todo lo que sale de ahí son maravillas, también es donde saldrán los mensajes de <res>ERROR</res> y advertencia que nos fastidian un poco la vida. 
  
 <center>
 ![](https://i.ibb.co/QYKtKvz/e033fb79e2f46948828500bb65b2731a.gif){width="300"}
