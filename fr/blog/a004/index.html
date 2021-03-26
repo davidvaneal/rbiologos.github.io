@@ -104,7 +104,7 @@
             <a class="nav-link" href="/fr#contact">Contact</a>
 					</li>
 					
-				</ul>
+				</ul></div>
 				
 				<select id="select-language" onchange="location = this.value;">
 					
@@ -137,17 +137,17 @@
 					
 				</select>
 				
-			</div>
+			
 			<script>
-(function() {
-var id = '06c75f9c-882f-11eb-a152-0242ac130002';
-var ci_search = document.createElement('script');
-ci_search.type = 'text/javascript';
-ci_search.async = true;
-ci_search.src = 'https://cse.expertrec.com/api/js/ci_common.js?id=' + id;
-var s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(ci_search, s);
-})();
+  (function() {
+    var id = '06c75f9c-882f-11eb-a152-0242ac130002';
+    var ci_search = document.createElement('script');
+    ci_search.type = 'text/javascript';
+    ci_search.async = true;
+    ci_search.src = 'https://cse.expertrec.com/api/js/ci_common.js?id=' + id;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ci_search, s);
+  })();
 </script><ci-search></ci-search>
 		</nav>
 	</div>
@@ -182,18 +182,18 @@ s.parentNode.insertBefore(ci_search, s);
 <blockquote>
 <p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" />
 Attention attention!!!</p>
-A tip to facilitate your understanding: The vast majority of R code syntax is related to the function they are going to fulfill. For example, getwd () has been <strong>get Working Directory</strong>.
+A tip to facilitate your understanding: The vast majority of R code syntax is related to the function they are going to fulfill. For example, <res>getwd()</res> it’s <strong>get working Directory</strong>.
 </blockquote>
 <pre class="r"><code>getwd()</code></pre>
 <pre><code>## [1] &quot;C:/Users/david/Desktop/Rbiologos/content/french/blog/A004&quot;</code></pre>
-<p>So, we can see that my directory path is set to work on my desktop. But if I need to work in a folder of a specific project, I can change this address with the command <res> setwd () </res>, specifying the address of the folder in question, as in the following example</p>
+<p>So, we can see that my directory path is set to work on my desktop. But if I need to work in a folder of a specific project, I can change this address with the command <res>setwd()</res>, specifying the address of the folder in question, as in the following example</p>
 <pre class="r"><code>setwd(C:/Users/david/Desktop/Proyecto)</code></pre>
-<p>Likewise, if we want to know the files that are in our directory, we can execute the <res> list.files () </res> function. This function will help you if you don’t remember what files you have in your R project … <em>Those mental lapses in the life of every biologist!</em></p>
+<p>Likewise, if we want to know the files that are in our directory, we can execute the <res>list.files()</res> function. This function will help you if you don’t remember what files you have in your R project … <em>Those mental lapses in the life of every biologist!</em></p>
 <center>
 <img src="https://i.ibb.co/mq00bvC/download.gif" width="300" />
 </center>
 <p><br></p>
-<p>But wait … we advise you to permanently configure your directory to be able to streamline and organize your projects / data in the best way (I have it on the desktop since that is where I have everything at hand). In order to do this, in the application we are going to go to the Tools tab and then we are going to Global Options….</p>
+<p>But wait … we advise you to permanently configure your directory to be able to streamline and organize your projects/data in the best way (I have it on the desktop since that is where I have everything at hand). In order to do this, in the application we are going to go to the Tools tab and then we are going to Global Options….</p>
 <p>So we will see the following on the screen</p>
 <center>
 <img src="https://i.ibb.co/VQ66vjC/Options.png" alt="Options" border="0" class="responsive">
@@ -205,7 +205,7 @@ A tip to facilitate your understanding: The vast majority of R code syntax is re
 <div id="packages" class="section level2">
 <h2>Packages</h2>
 <p>With our directory configured, the following is to know that R is composed of a base system, this means that it has functions already installed to be able to perform simple tasks, however, there are multiple functions and tasks in the world of R. To be able to extend this functionality , R can install packages that have a collection of functions predetermined by their developer.</p>
-<p>In order to install these packages there are several ways to do it. The most common and simple is through the <res> install.packages () </res> code, as shown in the following code</p>
+<p>In order to install these packages there are several ways to do it. The most common and simple is through the <res>install.packages()</res> code, as shown in the following code</p>
 <pre class="r"><code>install.packages(&quot;lme4&quot;)</code></pre>
 <p>Or, we can install several packages at the same time with the form of this code:</p>
 <pre class="r"><code>install.packages(c(&quot;dplyr&quot;,&quot;ggplot2&quot;,&quot;lme4&quot;))</code></pre>
@@ -215,7 +215,7 @@ A tip to facilitate your understanding: The vast majority of R code syntax is re
 </center>
 <p><br></p>
 <p>This installation is necessary only once, this is because the package will be incorporated into the base information on our computer.</p>
-<p>All we have to do is “call” the package. We carry out this task when we have to use any of its functions, the code to execute this command will be <res> library () </res>, as seen in the following code</p>
+<p>All we have to do is “call” the package. We carry out this task when we have to use any of its functions, the code to execute this command will be <res>library()</res>, as seen in the following code</p>
 <pre class="r"><code>library(lme4) 
 # Note that we no longer need the name to be in quotes</code></pre>
 <p>Yes, it is very possible that you find yourself in a dilemma in not knowing how the package works, because at least they told you, to work with such a thing you need such a package, nothing more. And there the biologist begins to suffer.</p>
@@ -246,7 +246,7 @@ A tip to facilitate your understanding: The vast majority of R code syntax is re
 <div id="features" class="section level2">
 <h2>Features</h2>
 <p>With our packages installed we can work! Each of these packages has a number of functions that have a specific task to perform.</p>
-<p>Thus, a function is a series of operations to which a name has been assigned, these functions require specific <res> arguments (values) </res> to perform their task, if we do not enter them properly, the command of the function will generate ** error <strong>, the blessed </strong> error … **</p>
+<p>Thus, a function is a series of operations to which a name has been assigned, these functions require specific <res>arguments (values)</res> to perform their task, if we do not enter them properly, the command of the function will generate <strong>error</strong>, the blessed <strong>error…</strong></p>
 <center>
 <img src="https://i.ibb.co/BnpY7SN/hate.gif" width="300" />
 </center>
@@ -255,11 +255,11 @@ A tip to facilitate your understanding: The vast majority of R code syntax is re
 <p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" /></p>
 It is essential to know the arguments that we need to enter each function!
 </blockquote>
-<p>To know the arguments we can consult the help for packages, as we saw earlier, for example: <res>? Lm () </res>. Another way is to type the function, <res> lm () </res>, and inside the parentheses we type <res> TAB </res>, this will display the arguments required by the function in question and if we navigate between them, each one will give us a brief explanation about himself.</p>
+<p>To know the arguments we can consult the help for packages, as we saw earlier, for example: <res>?lm()</res>. Another way is to type the function, <res>lm()</res>, and inside the parentheses we type <res>TAB</res>, this will display the arguments required by the function in question and if we navigate between them, each one will give us a brief explanation about himself.</p>
 <center>
 <img src="https://i.ibb.co/CnMCVVG/Argumentos.png" alt="Argumentos" border="0" class="responsive">
 <br>
-View of required arguments for the lm () function
+View of required arguments for the lm() function
 </center>
 <p><br></p>
 <hr />
@@ -268,15 +268,15 @@ View of required arguments for the lm () function
 <h2>Scripts</h2>
 <p>To finish our topic for the day, we are going to talk about Scripts, but… What is a script?</p>
 <p>A script is an R document whose purpose is to save the codes that we create important for a project, it is something like a cooking recipe. Once you have all your codes saved, it is only necessary to open the script to have them at hand and to be able to use or modify them.</p>
-<p>To create a new one, you just need to go to <res> File -&gt; New File -&gt; R Script </res> or with the shortcut <res> Ctrl + Shift + N </res></p>
-<p>Scripts are recognized because they have an .R file extension, for example project.R. These files are the same as any text document, but R can read them and execute the code they contain.</p>
+<p>To create a new one, you just need to go to <res>File -&gt; New File -&gt; R Script</res> or with the shortcut <res>Ctrl + Shift + N</res></p>
+<p>Scripts are recognized because they have an <res>.R</res> file extension, for example <res>project.R</res>. These files are the same as any text document, but R can read them and execute the code they contain.</p>
 <center>
 <img src="https://i.ibb.co/H2gZRPV/script.png" alt="script" border="0" class="responsive">
 <br>
 Script editor view in RStudio
 </center>
 <p><br></p>
-<p>To run the codes within the code you can click on the <res> Run </res> box or more simply <res> Ctrl + Enter </res>. But there is a special function that can save you a little time <res> source () </res>, with this function each code that our script contains will be executed. For example, in our case the code would be <res> source (Plots.R) </res>.</p>
+<p>To run the codes within the code you can click on the <res>Run</res> box or more simply <res>Ctrl + Enter</res>. But there is a special function that can save you a little time <res> source()</res>, with this function each code that our script contains will be executed. For example, in our case the code would be <res>source(Plots.R)</res>.</p>
 <blockquote>
 <p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" /></p>
 One piece of advice we give you is to work with your codes, directly from the script editor and NOT in the console. But why would it be better? The answer is simple, nothing better than not losing sight of the codes that have worked for you, or editing the code quickly to correct an error, in the console you would have to be writing the complete code, and if it is long, well, it becomes tedious.
@@ -287,7 +287,7 @@ One piece of advice we give you is to work with your codes, directly from the sc
 <div id="in-summary" class="section level2">
 <h2>In summary</h2>
 <p>Today, we were able to learn or remember first to identify and configure our work site; We hope that with this your work in R will become much easier, we believe that doing things more easily frees us from simple tasks, to be able to concentrate more on what is really worthwhile.</p>
-<p>Likewise, we learned what the packages are used for, how to install them and how to use them. Keep in mind that there are currently 17,258 packages available for R and that number continues to grow, each with a special collection of functions and each function with its specific arguments, so don’t stress about not knowing everything about them. We are learning and we are going step by step, soft, soft, soft!</p>
+<p>Likewise, we learned what the packages are used for, how to install them and how to use them. Keep in mind that there are currently 17258 packages available for R and that number continues to grow, each with a special collection of functions and each function with its specific arguments, so don’t stress about not knowing everything about them. We are learning and we are going step by step, soft, soft, soft!</p>
 <center>
 <img src="https://i.ibb.co/SB9Syr0/realx.gif" width="300" />
 </center>
@@ -298,7 +298,7 @@ One piece of advice we give you is to work with your codes, directly from the sc
 <div id="finally" class="section level2">
 <h2>Finally</h2>
 <p>We invite you to continue investigating more on the subject, we also want to know about your experience in R and RStudio and what doubts we can help you solve. Thank you very much for your time, we hope you have learned something new, it is important for us to contribute something to the learning of humanity!</p>
-<p>** We wait for you in our next post, which is loaded with many more things.We will tell you everything! **</p>
+<p><strong>We wait for you in our next post, which is loaded with many more things. We will tell you everything!</strong></p>
 <pre><code>Information R
 
 Vicente Coll &amp; Pedro J. Pérez.Universidad de Valencia; 
