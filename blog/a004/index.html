@@ -178,11 +178,11 @@
 <div id="configuración-del-directo-de-trabajo" class="section level2">
 <h2>Configuración del directo de trabajo</h2>
 <p>Para trabajar tranquilamente en nuestros proyectos siempre debemos establecer un orden, esto nos dará la capacidad de poder trabajar de manera más efectiva.</p>
-<p>Uno de los pasos de los que poco se habla pero que nos ahorra muchas molestias para trabajar en el entorno de RStudio, es configurar nuestro directorio. El directorio de trabajo (Working directory, wd) es la carpeta (de nuestra computadora) que RStudio usa para leer o escribir ficheros. Para conocer la dirección de la carpeta (Por defecto), tenemos que digitar en la consola la siguiente función <res>getwd()</res>.</p>
+<p>Uno de los pasos más sencillos y menos nombrados, nos podría ayudar en nuestros proyectos en RStudio, es configurar nuestro directorio. El directorio de trabajo (Working directory, wd) es la carpeta (de nuestra computadora) que RStudio usa para leer o escribir ficheros. Para conocer la dirección de la carpeta (Por defecto), tenemos que digitar en la consola la siguiente función <res>getwd()</res>.</p>
 <blockquote>
 <p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" />
 Atención, atención!!!</p>
-Un tip para facilitar tu entendimiento: La gran mayoría de sintaxis de los códigos en R están relacionados a la función que van a cumplir. Por ejemplo, getwd() viene siendo <strong>get Working Directory</strong>.
+Un tip para facilitar tu aprendizaje: La gran mayoría de sintaxis de los códigos en R están relacionados a la función que van a cumplir. Por ejemplo, getwd() viene siendo <strong>get Working Directory</strong>.
 </blockquote>
 <pre class="r"><code>getwd()</code></pre>
 <pre><code>## [1] &quot;C:/Users/david/Desktop/Rbiologos/content/english/blog/A004&quot;</code></pre>
@@ -193,18 +193,18 @@ Un tip para facilitar tu entendimiento: La gran mayoría de sintaxis de los cód
 <img src="https://i.ibb.co/mq00bvC/download.gif" width="300" />
 </center>
 <p><br></p>
-<p>Pero espera… te aconsejamos que configures permanentemente tu directorio para poder agilizar y organizar tus proyectos/datos de la mejor manera (Yo lo tengo en el escritorio ya que es donde tengo todo a la mano). Para poder hacerlo, en la aplicación vamos a dirigirnos a la pestaña Tools y después vamos a Global Options….</p>
+<p>Pero espera… te aconsejamos que configures tu directorio de forma permanente, para poder agilizar y organizar tus proyectos/datos de la mejor manera (Yo lo tengo en el escritorio ya que es donde tengo todo a la mano). Para poder hacerlo, en la aplicación vamos a dirigirnos a la pestaña Tools y después vamos a Global Options….</p>
 <p>Así veremos lo siguiente en la pantalla</p>
 <center>
 <img src="https://i.ibb.co/VQ66vjC/Options.png" alt="Options" border="0" class="responsive">
 </center>
 <p><br></p>
-<p>En este panel tendremos varias opciones que podrás modificar como la apariencia de RStudio, tamaño de letra, orden de los paneles de trabajo, entre otros. En nuestro caso en la opción General, iremos hacia la etiqueta de Default working directory daremos click en Browse y abrirá una ventana en la cual elegiremos la carpeta que queremos como directorio por defecto.</p>
+<p>En este panel tendremos varias opciones que podrás modificar como la apariencia de RStudio, tamaño de letra, orden de los paneles de trabajo, entre otros. En nuestro caso en la opción General, iremos hacia la etiqueta de Default working directory daremos click en Browse y abrirá una ventana en la cual elegiremos la carpeta que queremos configurar como directorio por defecto.</p>
 <hr />
 </div>
 <div id="paquetes" class="section level2">
 <h2>Paquetes</h2>
-<p>Ya con nuestro directorio configurado lo siguiente es conocer que R está compuesto por un sistema base, esto significa que tiene funciones ya instaladas para poder realizar tareas sencillas, sin embargo, hay múltiples funciones y tareas en el mundo de R. Para poder extender esta funcionalidad, R puede instalar paquetes que poseen una colección de funciones predeterminadas por su desarrollador.</p>
+<p>Ya configurado nuestro directorio, el siguiente paso es conocer que R está compuesto por un sistema base, esto significa que tiene funciones ya instaladas para poder realizar tareas sencillas, sin embargo, hay múltiples funciones y tareas en el mundo de R. Para poder extender esta funcionalidad, R puede instalar paquetes que poseen una colección de funciones predeterminadas por su desarrollador.</p>
 <p>Para poder instalar estos paquetes hay varias formas de hacerlo. La más común y sencilla es a través del código <res>install.packages()</res>, como se muestra en el siguiente código</p>
 <pre class="r"><code>install.packages(&quot;lme4&quot;)</code></pre>
 <p>O bien, podemos instalar varios paquetes a la vez con la forma de este código:</p>
@@ -218,7 +218,7 @@ Un tip para facilitar tu entendimiento: La gran mayoría de sintaxis de los cód
 <p>Lo único que nos queda por hacer es “llamar” el paquete. Esta tarea la realizamos cuando tengamos que utilizar alguna de sus funciones, el código para ejecutar esta orden será <res>library()</res>, como se ve en el siguiente código:</p>
 <pre class="r"><code>library(lme4) 
 # Observa que ya no necesitamos que el nombre esté entre comillas</code></pre>
-<p>Si, es muy posible que te encuentres en un dilema en no saber como funciona el paquete, porque mínimo te dijeron, para trabajar con tal cosa se necesita tal paquete, nada más. Y ahí empieza el biólogo a padecer.</p>
+<p>Si, es muy posible que te encuentres en un dilema, y no sepas como funciona el paquete, porque mínimo te dijeron, para trabajar con tal cosa se necesita tal paquete, nada más. Y ahí, empieza el biólogo a padecer.</p>
 <center>
 <img src="https://i.ibb.co/xstVGxy/fran.gif" width="300" />
 </center>
@@ -276,7 +276,7 @@ Vista de argumentos necesarios para la función lm()
 Vista del editor de scripts en RStudio
 </center>
 <p><br></p>
-<p>Para ejecutar los códigos dentro del código podrás dar click en la casilla <res>Run</res> o de manera más simple <res>Ctrl + Enter</res>. Pero hay una función en especial que puede ahorrarte un poco de tiempo <res>source()</res>, con esta función se ejecutarán cada una de los códigos que contiene nuestro script. Por ejemplo, en nuestro caso el código sería <res>source(Plots.R)</res>.</p>
+<p>Para ejecutar todos los códigos del script podrás dar click en la casilla <res>Run</res> o de manera más simple <res>Ctrl + Enter</res>. Pero hay una función en especial que puede ahorrarte un poco de tiempo <res>source()</res>, con esta función se ejecutarán cada una de los códigos que contiene nuestro script. Por ejemplo, en nuestro caso el código sería <res>source(Plots.R)</res>.</p>
 <blockquote>
 <p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" /></p>
 Un consejo que te damos es que trabajes con tus códigos, directamente desde el editor de scripts y NO en la consola. ¿Pero porqué sería mejor? La respuesta es sencilla, nada mejor que no perder de vista los códigos que te han funcionado, o editar el código rápidamente para corregir algún error, en la consola tendrías que estar escribiendo el código completo, y si es largo, pueeeees, se vuelve tedioso.

@@ -20,13 +20,13 @@ tags:
 
 Para trabajar tranquilamente en nuestros proyectos siempre debemos establecer un orden, esto nos dará la capacidad de poder trabajar de manera más efectiva.
 
-Uno de los pasos de los que poco se habla pero que nos ahorra muchas molestias para trabajar en el entorno de RStudio, es configurar nuestro directorio. El directorio de trabajo (Working directory, wd) es la carpeta (de nuestra computadora) que RStudio usa para leer o escribir ficheros. Para conocer la dirección de la carpeta (Por defecto), tenemos que digitar en la consola la siguiente función <res>getwd()</res>.
+Uno de los pasos más sencillos y menos nombrados, nos podría ayudar en nuestros proyectos en RStudio, es configurar nuestro directorio. El directorio de trabajo (Working directory, wd) es la carpeta (de nuestra computadora) que RStudio usa para leer o escribir ficheros. Para conocer la dirección de la carpeta (Por defecto), tenemos que digitar en la consola la siguiente función <res>getwd()</res>.
 
 <blockquote>
 ![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
 Atención, atención!!!
 
-Un tip para facilitar tu entendimiento: La gran mayoría de sintaxis de los códigos en R están relacionados a la función que van a cumplir. Por ejemplo, getwd() viene siendo **get Working Directory**.
+Un tip para facilitar tu aprendizaje: La gran mayoría de sintaxis de los códigos en R están relacionados a la función que van a cumplir. Por ejemplo, getwd() viene siendo **get Working Directory**.
 </blockquote>
 
 ```{r}
@@ -45,7 +45,7 @@ Al igual, si queremos conocer los archivos que están en nuestro directorio pode
 ![](https://i.ibb.co/mq00bvC/download.gif){width="300"}
 </center><br>
 
-Pero espera… te aconsejamos que configures permanentemente tu directorio para poder agilizar y organizar tus proyectos/datos de la mejor manera (Yo lo tengo en el escritorio ya que es donde tengo todo a la mano). Para poder hacerlo, en la aplicación vamos a dirigirnos a la pestaña Tools y después vamos a Global Options....
+Pero espera… te aconsejamos que configures tu directorio de forma permanente, para poder agilizar y organizar tus proyectos/datos de la mejor manera (Yo lo tengo en el escritorio ya que es donde tengo todo a la mano). Para poder hacerlo, en la aplicación vamos a dirigirnos a la pestaña Tools y después vamos a Global Options....
 
 Así veremos lo siguiente en la pantalla
 
@@ -53,13 +53,13 @@ Así veremos lo siguiente en la pantalla
 <img src="https://i.ibb.co/VQ66vjC/Options.png" alt="Options" border="0" class="responsive">
 </center><br>
 
-En este panel tendremos varias opciones que podrás modificar como la apariencia de RStudio, tamaño de letra, orden de los paneles de trabajo, entre otros. En nuestro caso en la opción General, iremos hacia la etiqueta de Default working directory daremos click en Browse y abrirá una ventana en la cual elegiremos la carpeta que queremos como directorio por defecto.
+En este panel tendremos varias opciones que podrás modificar como la apariencia de RStudio, tamaño de letra, orden de los paneles de trabajo, entre otros. En nuestro caso en la opción General, iremos hacia la etiqueta de Default working directory daremos click en Browse y abrirá una ventana en la cual elegiremos la carpeta que queremos configurar como directorio por defecto.
 
 ***
 
 ## Paquetes
 
-Ya con nuestro directorio configurado lo siguiente es conocer que R está compuesto por un sistema base, esto significa que tiene funciones ya instaladas para poder realizar tareas sencillas, sin embargo, hay múltiples funciones y tareas en el mundo de R. Para poder extender esta funcionalidad, R puede instalar paquetes que poseen una colección de funciones predeterminadas por su desarrollador.
+Ya configurado nuestro directorio, el siguiente paso es conocer que R está compuesto por un sistema base, esto significa que tiene funciones ya instaladas para poder realizar tareas sencillas, sin embargo, hay múltiples funciones y tareas en el mundo de R. Para poder extender esta funcionalidad, R puede instalar paquetes que poseen una colección de funciones predeterminadas por su desarrollador.
 
 Para poder instalar estos paquetes hay varias formas de hacerlo. La más común y sencilla es a través del código <res>install.packages()</res>, como se muestra en el siguiente código
 
@@ -88,7 +88,7 @@ library(lme4)
 # Observa que ya no necesitamos que el nombre esté entre comillas
 ```
 
-Si, es muy posible que te encuentres en un dilema en no saber como funciona el paquete, porque mínimo te dijeron, para trabajar con tal cosa se necesita tal paquete, nada más. Y ahí empieza el biólogo a padecer.
+Si, es muy posible que te encuentres en un dilema, y no sepas como funciona el paquete, porque mínimo te dijeron, para trabajar con tal cosa se necesita tal paquete, nada más. Y ahí, empieza el biólogo a padecer.
 
 <center>
 ![](https://i.ibb.co/xstVGxy/fran.gif){width="300"}
@@ -160,7 +160,7 @@ Los scripts se reconocen porque tienen extensión de archivo .R, por ejemplo pro
 Vista del editor de scripts en RStudio
 </center><br>
 
-Para ejecutar los códigos dentro del código podrás dar click en la casilla <res>Run</res> o de manera más simple <res>Ctrl + Enter</res>. Pero hay una función en especial que puede ahorrarte un poco de tiempo <res>source()</res>, con esta función se ejecutarán cada una de los códigos que contiene nuestro script. Por ejemplo, en nuestro caso el código sería <res>source(Plots.R)</res>.
+Para ejecutar todos los códigos del script podrás dar click en la casilla <res>Run</res> o de manera más simple <res>Ctrl + Enter</res>. Pero hay una función en especial que puede ahorrarte un poco de tiempo <res>source()</res>, con esta función se ejecutarán cada una de los códigos que contiene nuestro script. Por ejemplo, en nuestro caso el código sería <res>source(Plots.R)</res>.
 
 <blockquote>
 ![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
