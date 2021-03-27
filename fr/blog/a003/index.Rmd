@@ -14,7 +14,7 @@ tags:
 
 > To start this adventure, the first thing you need is to install <res>R</res> and <res>Rstudio</res>, without them I think it would be very difficult to start our adventure. 
 
-Remember that we need both of them, R because it is a programming language and also software; and Rstudio for their valuable development environment.
+Remember that we need them both, R because it's a programming language and also software; and Rstudio for their valuable development environment.
 
 <center>
 <a href="https://www.icesi.edu.co/CRAN/" target="blank"><img border="0" width="250" src="https://i.ibb.co/8Dky4XB/download.png"/><br>R</a><br> 
@@ -38,25 +38,25 @@ Ready! We assume that everything is already installed and we feel like children 
 <img src="https://i.ibb.co/3k3Nf9D/desktop.jpg" alt="desktop" border="0" class="responsive">
 </center><br>
 
-In case you have any problems or did not get a result similar to this, you can watch the following video tutorial on YouTube. From my point of view it is a very interesting channel 
+In case you have any problems or did not get a result similar to this, you can watch next video tutorial on YouTube. From my point of view it is a very interesting channel 
 
 <center>
 <iframe class="responsive" height="450" src="https://www.youtube.com/embed/orjLGFmx6l4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center><br>
 
-Well, now a quick review by RStudio ... let's remember that the RStudio interface is made up of 4 areas or panels that fulfill a certain function and that we can rearrange from the appearance options
+Well, now a quick review by RStudio ... let's remember that RStudio interface is made up 4 areas or panels that fulfill a certain function and that we can rearrange from appearance options
 
 <center>
 <img src="https://i.ibb.co/pxWxmpN/desktops.jpg" alt="desktops" border="0" class="responsive">
 </center><br> 
 
-The <res>window 1</res> will be our faithful friend, since there we will spend most of our time organizing and editing our command lines written in R language and running them using <res>CONTROL + ENTER</res>. all our lines of code will be transformed into scripts, which will allow us to automate our processes more and more.
+The <res>Window 1</res> will be our faithful friend, since this place we will spend most our time organizing and editing our command lines written in R language and running them using <res>CONTROL + ENTER</res>. All our code lines will be transformed into scripts, which will allow us to automate our processes more and more.
 
 <center>
 ![](https://memegenerator.net/img/instances/59700966.jpg){Width="300"} 
 </center><br>
 
-The <res>Window 3</res> is where the magic happens, all kinds of magic, from installing libraries, to adding, subtracting, dividing, empowering, endless activities, because that's where the R code is executed; However, not everything that comes out of there is wonders, it is also where the <res>ERROR</res> and warning messages will come out that annoy our lives a bit
+The <res>Window 3</res> is where magic happens, all magic kinds, from installing libraries, to adding, subtracting, dividing, empowering, endless activities, because that's where R code is executed; However, not everything that comes out of there is wonders, it's also where the <res>ERROR</res> and warning messages will come out that annoy our lives a bit
  
 <center>
 ![](https://i.ibb.co/QYKtKvz/e033fb79e2f46948828500bb65b2731a.gif){width="300"}
@@ -66,11 +66,11 @@ With our program installed, we can start to see what its characteristics are, fr
  
 ## Most common data types and data structure in R
 
-From my point of view, understanding or keeping in mind that there are different types of data and that the structure of the data in R also varies, will allow you to save yourself a lot of problems, it is serious, if you want you can write down in your notebook, because as long as you understand this , things that will come from now on will be much easier for you.
+From my point of view, understanding or keeping in mind that there are different data types and that data structure in R also varies, will allow you to save yourself a lot of problems, it is serious, if you want you can write down in your notebook, because as long as you understand this, things that will come from now on will be much easier for you.
 
-### Type of data
+### Data types
 
-I will try to summarize everything for you in a table, initially we can think of seven (7) types of data which are:
+I will try to summarize everything for you in a table, initially we can think in seven (7) data types, which are:
 
 <center>
 <img src="https://i.ibb.co/0jFNzPf/tabla1.png" alt="tabla1" border="0" class="responsive">
@@ -80,7 +80,7 @@ The topic about <res>data structure and some examples that help us understand th
 
 ## In conclusion
 
-First, we have our new toy installed and how do we learn to use a new toy? The answer is very, very simple, <res>PLAYING WITH HIM!</res> I'll leave you a good book on R below for you to enjoy, but don't worry, it's in Spanish; Besides, there is nothing to worry about, here we will explain what you need to know.
+First, we have our new toy installed and how do we learn to use a new toy? The answer is very, very simple, <res>PLAYING WITH HIM!</res> I'll leave you a good book on R below for you to enjoy. Besides, there is nothing to worry about, here we will explain what you need to know.
 
 
 <center>
@@ -88,9 +88,9 @@ First, we have our new toy installed and how do we learn to use a new toy? The a
 <a href="https://r4ds.hadley.nz" target="blank">R for Data Science (English Version)</a>
 </center><br>
 
-As a second conclusion, we saw that there are <res>7 types of data in R!</res>, did you know? Comment your answer and leave us your conclusions
+As a second conclusion, we saw that there are <res>7 data types in R!</res>, did you know? Comment your answer and leave us your conclusions
 
-Finally, how could you see, the data types in R are very simple, they are nothing strange, or anything that we cannot understand, but then we ask ourselves ... How am I going to know what types of data I have? ... and well we tell you:
+Finally, how could you see, data types in R are very simple, they are nothing strange, or anything that we cannot understand, but then we ask ourselves ... How am I going to know what data types I have? ... and well we tell you:
 
 <br>
 <br>
