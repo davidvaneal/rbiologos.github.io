@@ -236,23 +236,6 @@
                 href="https://rbiologos.github.io/en/blog/a001/"
                 />
   </url><url>
-    <loc>https://rbiologos.github.io/en/shop/2g/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://rbiologos.github.io/shop/2g/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://rbiologos.github.io/pt/shop/2g/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rbiologos.github.io/en/shop/2g/"
-                />
-  </url><url>
     <loc>https://rbiologos.github.io/en/author/</loc>
     <xhtml:link
                 rel="alternate"
@@ -302,23 +285,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://rbiologos.github.io/en/author/eduardo-grajales/"
-                />
-  </url><url>
-    <loc>https://rbiologos.github.io/en/shop/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://rbiologos.github.io/shop/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://rbiologos.github.io/pt/shop/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rbiologos.github.io/en/shop/"
                 />
   </url>
 </urlset>

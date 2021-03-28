@@ -12,7 +12,7 @@ tags:
   - software
 ---
 
-> Antes profundizar acerca de los datos y estructuras de Datos en R, conozcamos, configuremos y tengamos en cuenta las generalidades del entorno de RStudio
+> Antes de profundizar acerca de los datos y estructuras de Datos en R, conozcamos, configuremos y tengamos en cuenta las generalidades del entorno de RStudio
 
 ***
 

@@ -237,21 +237,6 @@
                 />
   </url><url>
     <loc>https://rbiologos.github.io/shop/2g/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rbiologos.github.io/en/shop/2g/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://rbiologos.github.io/pt/shop/2g/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://rbiologos.github.io/shop/2g/"
-                />
   </url><url>
     <loc>https://rbiologos.github.io/author/</loc>
     <xhtml:link
@@ -305,20 +290,5 @@
                 />
   </url><url>
     <loc>https://rbiologos.github.io/shop/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rbiologos.github.io/en/shop/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://rbiologos.github.io/pt/shop/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://rbiologos.github.io/shop/"
-                />
   </url>
 </urlset>

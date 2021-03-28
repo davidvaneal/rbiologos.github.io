@@ -1,5 +1,5 @@
 ---
-title: '... y ahora un poco de teoría!'
+title: '... e agora um pouco de teoria!'
 author: David Vanegas
 date: '2021-03-16'
 image: "images/blog/A002.webp"
@@ -12,72 +12,72 @@ tags:
   - history
 ---
 
->Empezaremos por contarles que <res>R</res> se trata de uno de los lenguajes de programación más utilizados en investigación científica
+> Começaremos dizendo que <res> R </res> é uma das linguagens de programação mais amplamente utilizadas na pesquisa científica
 
-Además es un programa muy popular en los campos de aprendizaje automático (machine learning), minería de datos, investigación biomédica, bioinformática y matemáticas financieras. A esto contribuye la posibilidad de cargar diferentes bibliotecas o paquetes con funcionalidades de cálculo y graficación.
+É também um programa muito popular nas áreas de aprendizado de máquina, mineração de dados, pesquisa biomédica, bioinformática e matemática financeira. A possibilidade de carregar diferentes bibliotecas ou pacotes com funcionalidades de cálculo e gráficos contribui para isso.
 
 
-R es un entorno de programación libre que se utiliza para el procesamiento y análisis estadístico de datos implementado en el lenguaje S de GNU. Inicialmente, fue desarrollado por [Robert Gentleman](https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)) y [Ross Ihaka](https://en.wikipedia.org/wiki/Ross_Ihaka) del Departamento de Estadística de la Universidad de Auckland, en 1993, pero actualmente R es responsabilidad del R Development Core Team.
+R é um ambiente de programação livre usado para processamento e análise de dados estatísticos implementado na linguagem GNU S. Inicialmente, foi desenvolvido por [Robert Gentleman](https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)) y [Ross Ihaka](https://en.wikipedia.org/wiki/Ross_Ihaka) do Departamento de Estatística da University of Auckland, em 1993, mas atualmente R é responsabilidade da R Development Core Team.
 
 <center>
 ![](https://i.ibb.co/k59kMjm/image.png){width="300"}
 </center><br>
 
-R es parte del sistema GNU y se distribuye bajo la licencia GNU GPL ([General Public License](https://es.wikipedia.org/wiki/GNU_General_Public_License)). Está disponible para los sistemas operativos Windows, Macintosh, Unix y GNU/Linux desde su [SITIO OFICIAL](https://www.r-project.org/)
+R é parte do sistema GNU e é distribuído sob a GNU GPL ([General Public License](https://es.wikipedia.org/wiki/GNU_General_Public_License)). Ele está disponível para os sistemas operacionais Windows, Macintosh, Unix e GNU/Linux em seu [SITE OFICIAL](https://www.r-project.org/)
 
-A continuación, te presentamos algunas razones por las cuales R es una excelente opción para procesar datos: 
+Aqui estão alguns motivos pelos quais R é uma excelente opção para processamento de dados:
 
-- Es un programa avalado por la comunidad científica que provee excelente documentación.
-- Es el software estadístico más utilizado en las universidades del mundo.
-- Proporciona un amplio abanico de herramientas estadísticas (modelos lineales y no lineales, tests estadísticos, análisis de series temporales, algoritmos de clasificación y agrupamiento, etc.) y gráficas.
-- Puede integrarse con distintas bases de datos y existen bibliotecas que facilitan su utilización desde lenguajes de programación interpretados como Perl y Python
-- Otra de las características de R es su capacidad gráfica, que permite generar gráficos con alta calidad. 
-- R posee su propio formato para la documentación basado en LaTeX.
-Además, R es gratuito y tiene más de 6817 paquetes disponibles.
+- É um programa aprovado pela comunidade científica que oferece excelente documentação.
+- É o software estatístico mais utilizado nas universidades do mundo.
+- Oferece uma ampla gama de ferramentas estatísticas (modelos lineares e não lineares, testes estatísticos, análise de séries temporais, algoritmos de classificação e agrupamento, etc.) e gráficos.
+- Pode ser integrado com diferentes bancos de dados e existem bibliotecas que facilitam seu uso a partir de linguagens de programação interpretadas como Perl e Python
+- Outra característica do R é a capacidade gráfica, que permite gerar gráficos de alta qualidade.
+- R tem seu próprio formato para documentação baseado em LaTeX.
+Além disso, o R é gratuito e tem mais de 6817 pacotes disponíveis.
 
 <center>
 ![](https://i.ibb.co/0Jfwk2G/image-1.png)
 </center><br>
 
-En R, se utiliza una línea de comandos para interactuar con el programa, dicha interacción se realiza en un espacio conocido como <res>consola</res>
+Em R, uma linha de comando é usada para interagir com o programa, essa interação é realizada em um espaço conhecido como <res>console</res>
 
 <center>
 <img src="https://i.ibb.co/yyVHKhh/R.png" alt="R" border="0" class="responsive">
 </center><br>
 
-Tenemos que tener claro que R es el lenguaje de programación, como el que hace los cálculos y tareas que le hemos asignado, pero existe un programa llamado <res>R Studio</res>, el cual es un programa IDE o entorno de desarrollo integrado. Esto significa que RStudio es un programa para manejar R y utilizarlo de manera más cómoda en algunos aspectos.
+Temos que deixar claro que R é a linguagem de programação, portanto, ela faz os cálculos e tarefas que atribuímos a ela, mas existe um programa chamado <res> R Studio </res>, que é um programa IDE ou de desenvolvimento ambiente integrado. Isso significa que o RStudio é um programa para lidar com R e usá-lo mais confortavelmente em alguns aspectos.
 
-En 2009, [Joseph J. Allaire](https://en.wikipedia.org/wiki/Joseph_J._Allaire) fundó [RStudio](https://rstudio.com/products/rstudio/download/), una empresa que crea herramientas para el entorno informático estadístico R. Allaire creó el producto insignia de la compañía, RStudio, ganador del premio InfoWorld Technology of the Year 2015.
+Em 2009, [Joseph J. Allaire](https://en.wikipedia.org/wiki/Joseph_J._Allaire) fundou [RStudio](https://rstudio.com/products/rstudio/download/), uma empresa que Cria ferramentas para o ambiente de computação estatística R. Allaire criou o principal produto da empresa, o RStudio, vencedor do prêmio InfoWorld Technology of the Year 2015.
 
 <center>
 ![](https://i.ibb.co/xfvHVbN/chvmdsmomg96uoz8g3ad.jpg)
 </center><br>
 
-Así la interfaz que nos encontraremos en RStudio, por defecto, tendrá cuatro paneles, los cuales serán de vital importancia conocer y entender
+Assim, a interface que encontraremos no RStudio, por padrão, terá quatro painéis, que serão de vital importância para conhecer e compreender
 
 <center>
 <img src="https://i.ibb.co/J5sRQ0h/RStudio.png" alt="RStudio" border="0" class="responsive">
 </center><br> 
 
-1. Editor de código, en este panel se van abriendo los ficheros en pestañas.
-2. Consola de R en la que se puede escribir, ejecutar código, así como mostrar resultados del código que se va ejecutando.
-3. Contiene varias pestañas, entre ellas destacan files (muestra el árbol de ficheros), un histórico de comandos ejecutados 
-4. Listado de las variables en el entorno y plots (muestra las gráficas según se van ejecutando)
+1. Editor de código, neste painel os arquivos são abertos em abas.
+2. Console R no qual você pode escrever, executar código, bem como mostrar os resultados do código que está sendo executado.
+3. Contém várias guias, incluindo arquivos (mostra a árvore de arquivos), um histórico de comandos executados
+4. Lista de variáveis no ambiente e gráficos (mostra os gráficos à medida que são executados)
 
 
-Además cuenta con ventajas como:
+Também tem vantagens como:
 
-1. Permite abrir varios scripts a la vez
-2. Permite ejecutar partes de código con sólo marcarlo en los scripts
-3. Muestra el workspace
-4. Muestra el historial
-5. Muestra los objetos del workspace
-6. Integra la ayuda
-7. Integra la gestión de librerías y help (muestra la página de ayuda de las funciones cuando se soliciten).
+1. Permite abrir vários scripts ao mesmo tempo
+2. Permite que você execute partes do código apenas marcando-o nos scripts
+3. Mostre a área de trabalho
+4. Mostrar histórico
+5. Mostrar objetos do espaço de trabalho
+6. Integre a ajuda
+7. Integra a gestão de bibliotecas e ajuda (mostra a página de ajuda das funções quando solicitado).
 
-## **Resumen**
+##  **Resumo**
 
-En este post pudimos aprender un poco de historia y como varias personas han desarrollado este potente programa, con grandes facilidades como las encontramos en RStudio. En los siguientes posts podremos ir profundizando más sobre esta herramienta. **TE ESPERAMOS!!!**
+Neste post pudemos aprender um pouco da história e de como várias pessoas desenvolveram este poderoso programa, com ótimas facilidades como as encontramos no RStudio. Nos próximos posts podemos nos aprofundar nessa ferramenta. **NÓS VAMOS ESPERAR POR VOCÊ!!!**
 
 <center>
 <img src="https://i.ibb.co/Lpb8FRY/Picture12.png" alt="Picture12" border="0" width="200">

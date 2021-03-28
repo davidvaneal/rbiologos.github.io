@@ -94,7 +94,7 @@ Yes, it's very possible that you find yourself in a dilemma, and you don't know 
 ![](https://i.ibb.co/xstVGxy/fran.gif){width="300"}
 </center><br>
 
-But don't worry ...! Nothing is lost and R developers have arranged that packages have necessary information to help users in this complex process. To access this help we type in console <res>?</res> with the package name (Note: that to access this information it's necessary that package be loaded in R), as we see in this example :
+But don't worry ...! Nothing is lost and R developers have arranged that packages have necessary information to help users in this complex process. To access this help we type in console <res>?</res> with the package name, for example <res>?lme4<res> (Note: that to access this information it's necessary that package be loaded in R), as we see in this example :
 
 And help tab will open and will show information as in next image:
 
@@ -118,7 +118,7 @@ We invite you to explore them, they have very good information, with discussion 
 
 ***
 
-## Features
+## Functions
 
 With our packages installed we can work! Each packages has a number of functions that have a specific task to perform.
 
@@ -160,7 +160,7 @@ Scripts are recognized because they have an <res>.R</res> file extension, for ex
 Script editor view in RStudio
 </center><br>
 
-To run all codes within script you can click on <res>Run</res> box or more simply <res>Ctrl + Enter</res>. But, there is too a special function that can save you a little time <res> source()</res>, with this function each code that our script contains will be executed. For example, in our case the code would be <res>source(Plots.R)</res>.
+To run all codes within script you can click on <res>Run</res> box or more simply <res>Ctrl + Enter</res> for every code. But, there is too a special function that can save you a little time <res>source()</res>, with this function each code that our script contains will be executed. For example, in our case the code would be <res>source(Plots.R)</res>.
 
 <blockquote>
 ![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}

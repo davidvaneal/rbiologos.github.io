@@ -9,30 +9,30 @@
     <copyright>Copyright &amp;copy; 2020 Desenhado por [David Vanegas](https://github.com/davidvaneal) sob o modelo [Themefisher](https://themefisher.com) por [HUGO](https://gethugothemes.com)</copyright>
     <lastBuildDate>Thu, 18 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/pt/tags/rstudio/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>¿Cómo funciona R?</title>
+      <title>Como funciona o R?</title>
       <link>https://rbiologos.github.io/pt/blog/a004/</link>
       <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://rbiologos.github.io/pt/blog/a004/</guid>
-      <description>Antes profundizar acerca de los datos y estructuras de Datos en R, conozcamos, configuremos y tengamos en cuenta las generalidades del entorno de RStudio</description>
+      <description>Antes de nos aprofundarmos nos dados e estruturas de dados em R, vamos conhecer, configurar e levar em consideração as generalidades do ambiente RStudio</description>
     </item>
     
     <item>
-      <title>¿Qué necesito para comenzar en R?</title>
+      <title>O que eu preciso para começar no R?</title>
       <link>https://rbiologos.github.io/pt/blog/a003/</link>
       <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://rbiologos.github.io/pt/blog/a003/</guid>
-      <description>Para comenzar en esta aventura, lo primero que necesitas es instalar R y Rstudio, sin ellos creo que sería muy difícil comenzar nuestra aventura.</description>
+      <description>Para começar esta aventura, a primeira coisa que você precisa é instalar o R e o Rstudio, sem eles eu acho que seria muito difícil começar nossa aventura.</description>
     </item>
     
     <item>
-      <title>... y ahora un poco de teoría!</title>
+      <title>... e agora um pouco de teoria!</title>
       <link>https://rbiologos.github.io/pt/blog/a002/</link>
       <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://rbiologos.github.io/pt/blog/a002/</guid>
-      <description>Empezaremos por contarles que R se trata de uno de los lenguajes de programación más utilizados en investigación científica</description>
+      <description>Começaremos dizendo que  R  é uma das linguagens de programação mais amplamente utilizadas na pesquisa científica</description>
     </item>
     
   </channel>
