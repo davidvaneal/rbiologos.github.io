@@ -136,6 +136,16 @@
   </url><url>
     <loc>https://rbiologos.github.io/blog/a005/</loc>
     <lastmod>2021-04-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rbiologos.github.io/en/blog/a005/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://rbiologos.github.io/blog/a005/"
+                />
   </url><url>
     <loc>https://rbiologos.github.io/tags/software/</loc>
     <lastmod>2021-03-18T00:00:00+00:00</lastmod>
