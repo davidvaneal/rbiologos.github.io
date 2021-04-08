@@ -14,7 +14,7 @@ tags:
 
 You've already seen how to work in R and Rstudio, you've learned to configure your working directory, install libraries and call them, about scripts and how useful they're to work in R.
 
-That is, you already have your first steps of knowledge about R, you have already increased 1% of your fitness, you have 1% more probability in your favor, and if you have not read it, here I leave it [*... and now a bit of theory *](https://rbiologos.github.io/en/blog/a002/).
+That is, you already have your first steps of knowledge about R, you have already increased 1% of your fitness, you have 1% more probability in your favor, and if you have not read it, here I leave it [*... and now a bit of theory*](https://rbiologos.github.io/en/blog/a002/).
 
 <center>
 ![](https://i.ibb.co/DtSmB7p/bean.gif){width="200"}
@@ -76,7 +76,7 @@ There we can see that two things happened; first, we have different types of dat
 
 **Why is this happening?**
 
-This occurs implicitly in **R** by something called _coercion_ ; that is to say, data is forced to transform to another type of data, or as old saying goes: "Whoever walks among honey, something sticks" 
+This occurs implicitly in **R** by something called _coercion_ ; that is to say, data is forced to transform to another type of data, or as old saying goes: "Whoever walks among honey, something sticks"
 
 <center>
 ![](https://i.ibb.co/NW1rg3F/honey.gif){width="290"}
@@ -200,11 +200,10 @@ num <- c(1233,555,88,99,17)
 class(num)
 is.vector(num)
 
-nomb <- c("Emma.", "Charlotte", "Sophia", 
+nam <- c("Emma", "Charlotte", "Sophia", 
           "Aaron", "Caleb", "Wallace")
-class(nomb)
-is.vector(nomb)
-
+class(nam)
+is.vector(nam)
 ```
 Now it's your turn to practice, create different vectors, with different types of data, explore everything you can do, for example try adding numerical vectors and see what happens, as in next example:
 

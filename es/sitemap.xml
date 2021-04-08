@@ -143,6 +143,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="https://rbiologos.github.io/pt/blog/a005/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="es"
                 href="https://rbiologos.github.io/blog/a005/"
                 />

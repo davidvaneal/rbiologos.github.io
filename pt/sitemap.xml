@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://rbiologos.github.io/pt/blog/</loc>
-    <lastmod>2021-03-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
@@ -21,7 +21,7 @@
                 />
   </url><url>
     <loc>https://rbiologos.github.io/pt/categories/</loc>
-    <lastmod>2021-03-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
@@ -36,6 +36,102 @@
                 rel="alternate"
                 hreflang="pt"
                 href="https://rbiologos.github.io/pt/categories/"
+                />
+  </url><url>
+    <loc>https://rbiologos.github.io/pt/tags/dados/</loc>
+    <lastmod>2021-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.github.io/pt/tags/estrutura/</loc>
+    <lastmod>2021-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.github.io/pt/categories/r/</loc>
+    <lastmod>2021-04-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://rbiologos.github.io/categories/r/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rbiologos.github.io/en/categories/r/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://rbiologos.github.io/pt/categories/r/"
+                />
+  </url><url>
+    <loc>https://rbiologos.github.io/pt/</loc>
+    <lastmod>2021-04-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://rbiologos.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rbiologos.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://rbiologos.github.io/pt/"
+                />
+  </url><url>
+    <loc>https://rbiologos.github.io/pt/tags/rstudio/</loc>
+    <lastmod>2021-04-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://rbiologos.github.io/tags/rstudio/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rbiologos.github.io/en/tags/rstudio/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://rbiologos.github.io/pt/tags/rstudio/"
+                />
+  </url><url>
+    <loc>https://rbiologos.github.io/pt/tags/</loc>
+    <lastmod>2021-04-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://rbiologos.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rbiologos.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://rbiologos.github.io/pt/tags/"
+                />
+  </url><url>
+    <loc>https://rbiologos.github.io/pt/blog/a005/</loc>
+    <lastmod>2021-04-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://rbiologos.github.io/blog/a005/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rbiologos.github.io/en/blog/a005/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://rbiologos.github.io/pt/blog/a005/"
                 />
   </url><url>
     <loc>https://rbiologos.github.io/pt/blog/a004/</loc>
@@ -92,60 +188,6 @@
                 href="https://rbiologos.github.io/pt/tags/r/"
                 />
   </url><url>
-    <loc>https://rbiologos.github.io/pt/categories/r/</loc>
-    <lastmod>2021-03-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://rbiologos.github.io/categories/r/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rbiologos.github.io/en/categories/r/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://rbiologos.github.io/pt/categories/r/"
-                />
-  </url><url>
-    <loc>https://rbiologos.github.io/pt/</loc>
-    <lastmod>2021-03-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://rbiologos.github.io/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rbiologos.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://rbiologos.github.io/pt/"
-                />
-  </url><url>
-    <loc>https://rbiologos.github.io/pt/tags/rstudio/</loc>
-    <lastmod>2021-03-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://rbiologos.github.io/tags/rstudio/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rbiologos.github.io/en/tags/rstudio/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://rbiologos.github.io/pt/tags/rstudio/"
-                />
-  </url><url>
     <loc>https://rbiologos.github.io/pt/tags/software/</loc>
     <lastmod>2021-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -162,24 +204,6 @@
                 rel="alternate"
                 hreflang="pt"
                 href="https://rbiologos.github.io/pt/tags/software/"
-                />
-  </url><url>
-    <loc>https://rbiologos.github.io/pt/tags/</loc>
-    <lastmod>2021-03-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://rbiologos.github.io/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rbiologos.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://rbiologos.github.io/pt/tags/"
                 />
   </url><url>
     <loc>https://rbiologos.github.io/pt/blog/a002/</loc>
