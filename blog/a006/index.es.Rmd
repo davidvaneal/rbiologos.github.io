@@ -116,7 +116,7 @@ read.table(choose.files(), # Esto abrirá una ventana para buscar nuestro archiv
            dec = ",")
 ```
 
-Y nuestro resultado ni siquiera se muestra, nos genera un error inmediato, R nos avisará que las nuestros datos están mal, y puede que no sean nuestros datos como en este ejemplo, si no que no especificamos bien nuestra función de lectura.
+Y nuestro resultado ni siquiera se muestra, nos genera un error inmediato, R nos avisará que nuestros datos están erróneos, y puede que no sean nuestros datos como en este ejemplo, si no que no especificamos bien nuestra función de lectura.
 
 <center>
 ![](https://i.ibb.co/SVY9tZT/help.gif){width="300"}
