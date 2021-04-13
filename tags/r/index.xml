@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>es-CO</language>
     <copyright>Copyright &amp;copy; 2020 Diseñado por [David Vanegas](https://github.com/davidvaneal) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright>
-    <lastBuildDate>Tue, 06 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Entonces... ¿cómo cargo mis datos a R?</title>
+      <link>https://rbiologos.github.io/blog/a006/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/blog/a006/</guid>
+      <description>Una de las etapas más sencillas pero que suele ser la más problemática en nuestros proyectos y tareas en R, es la carga de datos.</description>
+    </item>
+    
     <item>
       <title>Tipo y estructura de Datos</title>
       <link>https://rbiologos.github.io/blog/a005/</link>
