@@ -184,7 +184,7 @@ read.table(url, # Especificamos nuestra variable "url"
 ```
 
 <center>
-<img src="https://i.ibb.co/h7x8p9f/voil.gif" alt="voil" border="0" width="300"><br>Y voilà!!!
+<img src="https://i.ibb.co/h7x8p9f/voil.gif" alt="voil" border="0" width="300"><br>Y... voilà!!!
 </center><br>
 
 ## Lectura Archivos ***.xlsx***
