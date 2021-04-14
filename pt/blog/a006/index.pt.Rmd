@@ -68,10 +68,11 @@ Você pode baixar este arquivo <res>.txt</res> para ver a forma dos dados e faze
 </center><br>
 
 ```{r eval=FALSE}
-a <- read.table (file = "txt_exemplo.txt", # Nome do arquivo, você também pode especificar o endereço do arquivo
-                 cabeçalho = FALSO, # se o cabeçalho for mostrado (VERDADEIRO) ou não (FALSO)
-                 sep = "", # Aqui especificamos o tipo de separador de colunas 
-                 dec = ".") # Tipo de sinal para especificar decimais, ponto e vírgula ou vírgulas
+a<-read.table(file = "txt_exemplo.txt", # Nome do arquivo, 
+        # Você também pode especificar o endereço do arquivo
+        cabeçalho = FALSE, # se o cabeçalho for mostrado (VERDADEIRO) ou não (FALSO)
+        sep = "", # Aqui especificamos o tipo de separador de colunas 
+        dec = ".") # Tipo de sinal para especificar decimais, ponto e vírgula ou vírgulas
 ```
 
 > Lembre-se de que ler dados com este tipo de sintaxe é se e somente se nosso arquivo estiver hospedado no mesmo endereço do diretório R, como vimos em nosso [POST](https://rbiologos.github.io/pt/blog/a004/), caso contrário gerará ERROR.
@@ -127,13 +128,13 @@ O formato CSV (*Comma Separated Values*) é um dos mais comuns ao trocar dados e
 Podemos criar facilmente este tipo de arquivo no Excel como se vê nas imagens a seguir, só temos que ter em mente que não devem ser deixadas linhas vazias, não devem ser coloridas, bordas ou nada deve ser colocado.
 
 <center>
-<img src="https://i.ibb.co/VwZDWND/final-606273fa32e29f0085e699da-364467.gif" alt="final-606273fa32e29f0085e699da-364467" border="0"><br>
+<img src="https://i.ibb.co/VwZDWND/final-606273fa32e29f0085e699da-364467.gif" alt="final-606273fa32e29f0085e699da-364467" border="0" class="responsive"><br>
 Salvar arquivos .csv do Excel
 </center>
 <br>
 
 <center>
-<img src="https://i.ibb.co/Pggh11f/Drive-csv.gif" alt="Drive-csv" border="0"><br>
+<img src="https://i.ibb.co/Pggh11f/Drive-csv.gif" alt="Drive-csv" border="0" class="responsive"><br>
 Salvar arquivos .csv do Googlesheets
 </center><br>
 

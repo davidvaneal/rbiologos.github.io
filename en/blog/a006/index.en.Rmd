@@ -67,11 +67,11 @@ You can download this file <res>.txt</res> so that you can see the data shape an
 </center><br>
 
 ```{r eval=FALSE}
-a <- read.table(file = "txt_example.txt", # File name
-                # You can also specify address file
-                header = FALSE, # if header is shown (TRUE) or not (FALSE) 
-                sep = "", # Here we specify columns separator type                
-                dec = ".") # Sign type to specify decimals, semicolons, or commas
+a<-read.table(file = "txt_example.txt", # File name
+        # You can also specify address file
+        header = FALSE, # if header is shown (TRUE) or not (FALSE) 
+        sep = "", # Here we specify columns separator type                
+        dec = ".") # Sign type to specify decimals, semicolons, or commas
 ```
 
 > Keep in mind that reading data with this type of syntax is if and only if our file is hosted at the same address as the R directory, as we saw in our [POST](https://rbiologos.github.io/en/blog/a004/), otherwise it will generate ERROR.
@@ -127,13 +127,13 @@ The CSV (*Comma Separated Values*) format is one of the most common when exchang
 We can easily create this type of file in Excel as seen in the following images, we just have to bear in mind that empty rows should not be left, it should not be colored, borders or anything should not be placed.
 
 <center>
-<img src="https://i.ibb.co/VwZDWND/final-606273fa32e29f0085e699da-364467.gif" alt="final-606273fa32e29f0085e699da-364467" border="0"><br>
+<img src="https://i.ibb.co/VwZDWND/final-606273fa32e29f0085e699da-364467.gif" alt="final-606273fa32e29f0085e699da-364467" border="0" class="responsive"><br>
 Save .csv files from Excel
 </center>
 <br>
 
 <center>
-<img src="https://i.ibb.co/Pggh11f/Drive-csv.gif" alt="Drive-csv" border="0"><br>
+<img src="https://i.ibb.co/Pggh11f/Drive-csv.gif" alt="Drive-csv" border="0" class="responsive"><br>
 Save .csv files from Googlesheets
 </center><br>
 

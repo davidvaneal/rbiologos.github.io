@@ -129,13 +129,13 @@ El formato CSV (*Comma Separated Values*) es uno de los más comunes a la hora d
 Este tipo de archivos lo podemos crear fácilmente en Excel como se ve en las siguientes imágenes, solo debemos tener en cuenta que no se deben dejar filas vacías, no se debe colorear, no se deben colocar bordes ni nada.
 
 <center>
-<img src="https://i.ibb.co/VwZDWND/final-606273fa32e29f0085e699da-364467.gif" alt="final-606273fa32e29f0085e699da-364467" border="0" width="500"><br>
+<img src="https://i.ibb.co/VwZDWND/final-606273fa32e29f0085e699da-364467.gif" alt="final-606273fa32e29f0085e699da-364467" border="0" class="responsive"><br>
 Guardar archivos .csv desde Excel
 </center>
 <br>
 
 <center>
-<img src="https://i.ibb.co/Pggh11f/Drive-csv.gif" alt="Drive-csv" border="0" width="500"><br>
+<img src="https://i.ibb.co/Pggh11f/Drive-csv.gif" alt="Drive-csv" border="0" class="responsive"><br>
 Guardar archivos .csv desde Googlesheets
 </center><br>
 

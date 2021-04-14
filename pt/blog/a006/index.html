@@ -231,10 +231,11 @@ Você pode baixar este arquivo <res>.txt</res> para ver a forma dos dados e faze
 <a href="https://drive.google.com/uc?id=14drpgXNmwwy-vqjGTUvyhx2c8oBZ9Wqr&export=download"><img src="https://i.ibb.co/dfgPD3F/txt-icon.png" alt="descarga" border="0" width="150"></a>
 </center>
 <p><br></p>
-<pre class="r"><code>a &lt;- read.table (file = &quot;txt_exemplo.txt&quot;, # Nome do arquivo, você também pode especificar o endereço do arquivo
-                 cabeçalho = FALSO, # se o cabeçalho for mostrado (VERDADEIRO) ou não (FALSO)
-                 sep = &quot;&quot;, # Aqui especificamos o tipo de separador de colunas 
-                 dec = &quot;.&quot;) # Tipo de sinal para especificar decimais, ponto e vírgula ou vírgulas</code></pre>
+<pre class="r"><code>a&lt;-read.table(file = &quot;txt_exemplo.txt&quot;, # Nome do arquivo, 
+        # Você também pode especificar o endereço do arquivo
+        cabeçalho = FALSE, # se o cabeçalho for mostrado (VERDADEIRO) ou não (FALSO)
+        sep = &quot;&quot;, # Aqui especificamos o tipo de separador de colunas 
+        dec = &quot;.&quot;) # Tipo de sinal para especificar decimais, ponto e vírgula ou vírgulas</code></pre>
 <blockquote>
 <p>Lembre-se de que ler dados com este tipo de sintaxe é se e somente se nosso arquivo estiver hospedado no mesmo endereço do diretório R, como vimos em nosso <a href="https://rbiologos.github.io/pt/blog/a004/">POST</a>, caso contrário gerará ERROR.</p>
 </blockquote>
@@ -288,12 +289,12 @@ Você pode baixar este arquivo <res>.txt</res> para ver a forma dos dados e faze
 <p>O formato CSV (<em>Comma Separated Values</em>) é um dos mais comuns ao trocar dados entre aplicativos. Um arquivo neste formato é um arquivo de texto, no qual cada linha é uma amostra ou ocorrência e cada coluna uma variável. Os dados em cada linha são separados uns dos outros por vírgulas, daí o nome do formato. Este tipo de dados será um pouco mais recorrente em nossa área específica.</p>
 <p>Podemos criar facilmente este tipo de arquivo no Excel como se vê nas imagens a seguir, só temos que ter em mente que não devem ser deixadas linhas vazias, não devem ser coloridas, bordas ou nada deve ser colocado.</p>
 <center>
-<img src="https://i.ibb.co/VwZDWND/final-606273fa32e29f0085e699da-364467.gif" alt="final-606273fa32e29f0085e699da-364467" border="0"><br>
+<img src="https://i.ibb.co/VwZDWND/final-606273fa32e29f0085e699da-364467.gif" alt="final-606273fa32e29f0085e699da-364467" border="0" class="responsive"><br>
 Salvar arquivos .csv do Excel
 </center>
 <p><br></p>
 <center>
-<img src="https://i.ibb.co/Pggh11f/Drive-csv.gif" alt="Drive-csv" border="0"><br>
+<img src="https://i.ibb.co/Pggh11f/Drive-csv.gif" alt="Drive-csv" border="0" class="responsive"><br>
 Salvar arquivos .csv do Googlesheets
 </center>
 <p><br></p>
