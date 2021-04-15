@@ -99,7 +99,7 @@ Como você pode ver, com este par de funções trabalhando em conjunto, podemos 
 
 ### Transformação de dados ou coerção de força.
 
-Agora se, com tudo o que você já sabe, vai entender melhor a transformação de dados por meio de exemplos, então, vamos torná-lo pequeno:
+Agora se, com tudo o que você já sabe, vai entender melhor a transformação de dados por meio de exemplos, então, vamos torná-lo amiguinho:
 
 <blockquote>
 ![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
@@ -108,7 +108,7 @@ Atenção Atenção!!!
 O símbolo <res>$</res> que usamos em R para "chamar" uma coluna em nosso banco de dados
 </blockquote>
 
-Neste exemplo, ficará um pouco mais claro. Temos uma base de dados <res>Projeto</res> e os locais que foram trabalhados foram numerados, ao invés de ter dado um nome, que problema! Assim, vamos olhar nossos primeiros dados e depois ver o tipo de classe da coluna <res>Lugar</res>, como vemos neste código:
+Neste exemplo, ficará um pouco mais claro. Temos uma base de dados chamada <res>Projeto</res> e os locais que foram trabalhados foram numerados, ao invés de ter dado um nome, que problema! Assim, vamos olhar nossos primeiros dados e depois ver o tipo de classe da coluna <res>Lugar</res>, como vemos neste código:
 
 ```{r echo=FALSE}
 Projeto <- iris

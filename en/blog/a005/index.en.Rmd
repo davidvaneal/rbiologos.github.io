@@ -98,7 +98,7 @@ How can you see, with this couple of functions working hand in hand, we can know
 
 ### Data transformation or force coercion.
 
-Now if, with everything you already know, you will better understand data transformation through examples, then, let's make it little:
+Now if, with everything you already know, you will better understand data transformation through examples, then, let's make it little friend:
 
 <blockquote>
 ![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
@@ -107,7 +107,7 @@ Attention attention!!!
 The <res>$</res> symbol we use it in R to "call" a column in our database
 </blockquote>
 
-In this example it will be a little clearer. We have a database <res>Project</res> and places that were worked were numbered, instead of having given them a name, what a problem! Thus, we will look at our first data and then we will see class type of the column <res>Place</res>, as we see in this code:
+In this example it will be a little clearer. We have a database called <res>Project</res> and places that were worked were numbered, instead of having given them a name, what a problem! Thus, we will look at our first data and then we will see class type of the column <res>Place</res>, as we see in this code:
 
 ```{r echo=FALSE}
 Project <- iris

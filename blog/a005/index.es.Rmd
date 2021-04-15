@@ -15,7 +15,7 @@ tags:
 
 Ya viste cómo trabajar en R y Rstudio, aprendiste a configurar tu directorio de trabajo, sabes instalar librerias y cómo llamarlas, aprendiste qué son los scripts y lo útiles para trabajar en R.
 
-Es decir, ya tienes tus primeros pinitos de conocimiento sobre R, ya aumentaste un 1% de tu fitnes, tienes 1% de probabilidad más a tu favor, y si no lo haz leído, acá te lo dejo [*...y ahora un poco de teoría*](https://rbiologos.github.io/blog/a002/).
+Es decir, ya tienes tus primeros pinitos de conocimiento sobre R, ya aumentaste un 1% de tu fitnes, tienes 1% de probabilidad más a tu favor, y si no lo has leído, acá te lo dejo [*...y ahora un poco de teoría*](https://rbiologos.github.io/blog/a002/).
 
 <center>
 ![](https://i.ibb.co/DtSmB7p/bean.gif){width="200"}
@@ -99,7 +99,7 @@ Cómo puedes observar, con este par de funciones trabajando de la mano, podemos 
 
 ### Transformación de datos o forzar coerción. 
 
-Ahora si, con todo lo que ya sabes, comprenderás mejor a través de ejemplos la transformación de datos, entonces, hágamolo pequeñin:
+Ahora si, con todo lo que ya sabes, comprenderás mejor a través de ejemplos la transformación de datos, entonces, hágamoslo pequeñín:
 
 <blockquote>
 ![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
@@ -108,7 +108,7 @@ Atención, atención!!!
 El símbolo <res>$</res> lo usamos en R para "llamar" a una columna de nuestra base datos
 </blockquote>
 
-En este ejemplo quedará un poco más claro. Tenemos una base de datos <res>Proyecto</res> y los lugares que se trabajaron los numeraron, en vez de haberles colocado un nombre, vaya problema!. Así, observaremos nuestros primeros datos y luego veremos el tipo de clase de la columna <res>Lugar</res>, tal y como lo vemos en este código:
+En este ejemplo quedará un poco más claro. Tenemos una base de datos llamada <res>Proyecto</res> y los lugares que se trabajaron los numeraron, en vez de haberles colocado un nombre, vaya problema!. Así, observaremos nuestros primeros datos y luego veremos el tipo de clase de la columna <res>Lugar</res>, tal y como lo vemos en este código:
 
 ```{r echo=FALSE}
 Proyecto <- iris
