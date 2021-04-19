@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>es-CO</language>
     <copyright>Copyright &amp;copy; 2020 Diseñado por [David Vanegas](https://github.com/davidvaneal) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright>
-    <lastBuildDate>Mon, 12 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Información de utilidad - Lectura de datos</title>
+      <link>https://rbiologos.github.io/blog/a007/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/blog/a007/</guid>
+      <description>¡Hey Rblogger! Abrimos esta pequeña nota para contarte que existe otra forma de cargar tus datos a R y Rstudio, y es muy diferente a las que ya viste en el anterior POST.</description>
+    </item>
+    
     <item>
       <title>Entonces... ¿cómo cargo mis datos a R?</title>
       <link>https://rbiologos.github.io/blog/a006/</link>
