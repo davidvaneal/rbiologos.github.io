@@ -331,5 +331,22 @@
                 hreflang="en"
                 href="https://rbiologos.github.io/en/author/eduardo-grajales/"
                 />
+  </url><url>
+    <loc>https://rbiologos.github.io/en/author/eliana-tabares/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://rbiologos.github.io/author/eliana-tabares/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://rbiologos.github.io/pt/author/eliana-tabares/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rbiologos.github.io/en/author/eliana-tabares/"
+                />
   </url>
 </urlset>
