@@ -7,13 +7,49 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>es-CO</language>
     <copyright>Copyright &amp;copy; 2020 Diseñado por [David Vanegas](https://github.com/davidvaneal) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright>
-    <lastBuildDate>Mon, 19 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Análisis</title>
+      <link>https://rbiologos.github.io/tags/an%C3%A1lisis/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/tags/an%C3%A1lisis/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Datos</title>
       <link>https://rbiologos.github.io/tags/datos/</link>
-      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://rbiologos.github.io/tags/datos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Explorar</title>
+      <link>https://rbiologos.github.io/tags/explorar/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/tags/explorar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://rbiologos.github.io/tags/r/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RStudio</title>
+      <link>https://rbiologos.github.io/tags/rstudio/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/tags/rstudio/</guid>
       <description></description>
     </item>
     
@@ -23,24 +59,6 @@
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://rbiologos.github.io/tags/lectura/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>https://rbiologos.github.io/tags/r/</link>
-      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://rbiologos.github.io/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>RStudio</title>
-      <link>https://rbiologos.github.io/tags/rstudio/</link>
-      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://rbiologos.github.io/tags/rstudio/</guid>
       <description></description>
     </item>
     

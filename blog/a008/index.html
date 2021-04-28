@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+	<meta charset="utf-8">
+	<title>Análisis exploratorio de Datos - Parte I</title>
+
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="El espacio perfecto para Biólogos y R">
+	
+	<meta name="author" content="R Biólogos">
+	<meta name="generator" content="Hugo 0.81.0" />
+
+	<!-- plugins -->
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/plugins/bootstrap/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/plugins/themify-icons/themify-icons.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/plugins/magnific-popup/magnific-popup.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/plugins/slick/slick.css">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim%7cQuattrocento&#43;Sans:400,700&amp;display=swap">
+	
+
+	<!-- Main Stylesheet -->
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/css/style.min.css" media="screen">
+
+	<!-- Custom stylesheet - for your changes -->
+	
+  <link rel="stylesheet" href="https://rbiologos.github.io/css/custom.min.css" media="screen">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="https://i.ibb.co/4mJ1WdK/unnamed.png" type="image/x-icon">
+	<link rel="icon" href="https://i.ibb.co/4mJ1WdK/unnamed.png" type="image/x-icon">
+
+	
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-N49JEEK9KF"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-N49JEEK9KF');
+	</script>
+	
+
+</head>
+
+
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="55">
+  <div id="content">
+    
+<!-- preloader start -->
+<div class="preloader">
+  
+  <img src="https://i.ibb.co/FxCR4MP/loader.gif" alt="preloader" width="150">
+  
+</div>
+<!-- preloader end -->
+
+
+
+<section class="sticky-top navigation">
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<a class="navbar-brand p-0" href="/">
+				
+				<img class="lozad" data-src="https://i.ibb.co/4mJ1WdK/unnamed.png" alt="R Biólogos" height="42">
+				
+			</a>
+
+			<button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navigation">
+				<ul class="navbar-nav ml-auto">
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#blog">Blog</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#team">Equipo</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#about">¿Qué somos?</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#feature">¿Qué hacemos?</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#contact">Contacto</a>
+					</li>
+					
+				</ul></div>
+				
+				<select id="select-language" onchange="location = this.value;">
+					
+					
+					
+					
+					
+					
+					
+					
+					<option id="es" value="https://rbiologos.github.io/blog/a008/" selected>ES
+					</option>
+					
+					
+					
+					
+					
+					
+					
+					
+				</select>
+				
+			
+			<script>
+  (function() {
+    var id = '06c75f9c-882f-11eb-a152-0242ac130002';
+    var ci_search = document.createElement('script');
+    ci_search.type = 'text/javascript';
+    ci_search.async = true;
+    ci_search.src = 'https://cse.expertrec.com/api/js/ci_common.js?id=' + id;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ci_search, s);
+  })();
+</script><ci-search></ci-search>
+		</nav>
+	</div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1>Análisis exploratorio de Datos - Parte I</h1>
+        <ul class="list-inline mb-50">
+          <li class="list-inline-item"><a href="/author/david-vanegas/">David Vanegas</a></li>
+          <li class="list-inline-item">Wednesday, Apr 28, 2021</li>
+        </ul>
+        <img class="img-fluid mb-50 lozad" data-src="https://i.ibb.co/CPfzngW/1.png" alt="blog-image">
+      </div>
+      <div class="col-lg-8 offset-lg-2">
+        <div class="post-single-content">
+          
+<script src="https://rbiologos.github.io/blog/a008/index.es_files/header-attrs/header-attrs.js"></script>
+
+
+<blockquote>
+<p>Cada base de datos es un problema diferente, con diversas variables y objetivos, por eso debe ser abordada de manera distinta</p>
+</blockquote>
+<p>Sin embargo, cuando se va a trabajar con cualquier base de datos es obligatorio realizar un análisis de la base, tanto analítica como gráficamente; incluso si son entregados en “bandeja de plata”, siempre debemos corroborar su estructura e investigar su calidad. Realizando este análisis previo podremos:</p>
+<ul>
+<li>Encontrar patrones.</li>
+<li>Identificar errores.</li>
+<li>Plantear nuevas hipótesis o preguntas.</li>
+<li>Identificar relaciones entre variables.</li>
+<li>Empezar a encontrar respuestas a nuestras preguntas de investigación.</li>
+</ul>
+<p>En este análisis también podemos realizar procedimientos de creación o transformación de nuestras variables como la selección o filtrado de nuestras observaciones.</p>
+<blockquote>
+<p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" />
+¡¡¡Atención, atención!!!</p>
+Debemos tener en cuenta que este análisis <strong>NO</strong> es un proceso formal con un conjunto estricto de reglas. Debes sentirte libre de investigar cada idea que se te ocurra. Algunas de estas ideas se desarrollarán y otras serán callejones sin salida.
+</blockquote>
+<p>En este post intentaremos darte herramientas que te permitirán analizar de una buena manera tus datos. Es importante considerar que este es un primer paso y no corresponde a un análisis estadístico riguroso, pero puede permitirte encontrar respuestas o guiarte en el tipo de análisis que quieres realizar.</p>
+<p><strong><em>Bien, entonces… ¡¡¡Empecemos a trabajar!!!</em></strong></p>
+<center>
+<img src="https://i.ibb.co/48KSFj8/9445.gif" width="350" />
+</center>
+<p><br></p>
+<p>Primero, vamos a importar una base de datos llamada <res>Datos</res>. De este modo, lo primero que nos interesa saber es qué atributos contiene, cuántas observaciones hay, etc.</p>
+<center>
+<a href="https://min.gitcdn.link/repo/RBiologos/Pagina-RBio/main/content/spanish/blog/A008/DungBeetles.csv"><img src="https://i.ibb.co/6gx1V1Y/csv-icon.png" alt="descarga" border="0" width="150"></a>
+</center>
+<p><br></p>
+<pre class="r"><code>disper &lt;- read.csv(choose.files())
+head(disper)</code></pre>
+<pre><code>##   sitio   disp_1   disp_2   disp_3
+## 1     P 32.00000 26.66667 10.00000
+## 2     P 11.33333 16.66667 10.00000
+## 3     P 40.66667 40.00000 33.33333
+## 4     P 26.00000 15.00000 13.33333
+## 5     P 29.33333 18.33333  0.00000
+## 6     P 34.00000 30.00000  6.66667</code></pre>
+<div id="información-general" class="section level3">
+<h3>Información general</h3>
+<p>Lo primero que haremos es digitar funciones que anteriormente habíamos utilizado en nuestros otros <strong>POSTS</strong>, tales como class() y str().</p>
+<pre class="r"><code># Muestra la clase de nuestra base
+class(disper) </code></pre>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
+<pre class="r"><code># Y de cada una de nuestras variables con la función lapply()
+lapply(disper, class)</code></pre>
+<pre><code>## $sitio
+## [1] &quot;character&quot;
+## 
+## $disp_1
+## [1] &quot;numeric&quot;
+## 
+## $disp_2
+## [1] &quot;numeric&quot;
+## 
+## $disp_3
+## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code># Muestra la estructura de la base
+str(disper)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    81 obs. of  4 variables:
+##  $ sitio : chr  &quot;P&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot; ...
+##  $ disp_1: num  32 11.3 40.7 26 29.3 ...
+##  $ disp_2: num  26.7 16.7 40 15 18.3 ...
+##  $ disp_3: num  10 10 33.3 13.3 0 ...</code></pre>
+<p>Podemos observar que tenemos una base tipo <res>data.frame</res>, con 81 observaciones para cada una de las 4 variables en nuestra base de datos. Así, este conjunto de datos proporciona datos del sitio (character), dispersión salida 1 (integer), dispersión salida 2 (integer) y dispersión salida 3 (integer), datos tomados en un estudio sobre dispersion de semillas por escarabajos coprófagos.</p>
+<center>
+<img src="https://i.ibb.co/gjRzRnf/study.gif" width="350" />
+</center>
+<p><br></p>
+</div>
+<div id="exploración-del-contenido" class="section level3">
+<h3>Exploración del contenido</h3>
+<p>Ahora vamos a conocer más acerca de nuestros datos, para ello utilizaremos una serie de funciones que nos permiten hacer un análisis previo.</p>
+<pre class="r"><code># Este comando nos permite conocer las dimensiones de la base de datos
+# Como recordarás son 81 observaciones para 4 variables
+dim(disper)</code></pre>
+<pre><code>## [1] 81  4</code></pre>
+<pre class="r"><code># head() por defecto mostrará los 6 primeros datos
+# Ahora queremos que muestre los 10 primeros datos
+head(disper,10)</code></pre>
+<pre><code>##    sitio   disp_1   disp_2   disp_3
+## 1      P 32.00000 26.66667 10.00000
+## 2      P 11.33333 16.66667 10.00000
+## 3      P 40.66667 40.00000 33.33333
+## 4      P 26.00000 15.00000 13.33333
+## 5      P 29.33333 18.33333  0.00000
+## 6      P 34.00000 30.00000  6.66667
+## 7      P 11.33333 10.00000 13.33333
+## 8      P 20.00000 30.00000 23.33333
+## 9      P 49.33333 45.00000 43.33333
+## 10    BM 78.00000 58.33333 83.33333</code></pre>
+<pre class="r"><code># tail() por defecto mostrará los 6 últimos datos
+# Ahora queremos que muestre los 10 últimos datos
+tail(disper,10)</code></pre>
+<pre><code>##    sitio    disp_1    disp_2    disp_3
+## 72   BM3  32.66667  21.66667  23.33333
+## 73   BS3 100.00000 100.00000 100.00000
+## 74   BS3  93.33333  68.33333  83.33333
+## 75   BS3 100.00000 100.00000 100.00000
+## 76   BS3 100.00000 100.00000 100.00000
+## 77   BS3  87.33333  68.33333  86.66667
+## 78   BS3  78.66667  60.00000  63.33333
+## 79   BS3  92.66667  76.66667  73.33333
+## 80   BS3  83.33333  71.66667  50.00000
+## 81   BS3  78.66667  80.00000  70.00000</code></pre>
+<p>Al igual podemos utilizar la función <res>unique()</res> en la variable <res>sitios</res> para conocer los datos únicos que presenta dicha variable.</p>
+<pre class="r"><code>unique(disper$sitio)</code></pre>
+<pre><code>## [1] &quot;P&quot;   &quot;BM&quot;  &quot;BS&quot;  &quot;P2&quot;  &quot;BM2&quot; &quot;BS2&quot; &quot;P3&quot;  &quot;BM3&quot; &quot;BS3&quot;</code></pre>
+<p>Como podemos observar el resultado generado son los valores únicos (“P”, “BM”, “BS”, “P2”, “BM2”, “BS2”, “P3”, “BM3”, “BS3”) para la variable “sitio”, los cuales fueron los sitios donde se tomaron los datos de dispersión.</p>
+<p>Ten en cuenta que puedes ejecutar algunas de estas funciones en cualquier variable que desees, pero no siempre será necesario. Así que siempre pregúntate (en caso de que las utilices): ¿En que te va a ayudar en tu ejercicio? Así, no se volverá algo más que sabrás, y no será un tiro al aire que no te aportará nada.</p>
+<center>
+<img src="https://i.ibb.co/X3Y7Mdq/unnamed.gif" width="350" />
+</center>
+<p><br></p>
+<p>Luego de obtener una información general de nuestro contenido, podemos realizar varias operaciones con nuestras variables, según las necesidades de nuestros proyectos; como te mencioné anteriormente, todo se puede realizar, pero no todo será necesario desarrollarlo, así que vamos a explorar un poco sobre ellas.</p>
+</div>
+<div id="operaciones-con-nuestras-variables" class="section level2">
+<h2>Operaciones con nuestras variables</h2>
+<p>A veces, la toma de datos no es suficiente para poder responder nuestras preguntas de investigación, por lo que las operaciones matemáticas suele ser un paso que muchos investigadores realizan. Por tanto, nosotros podemos realizar operaciones de suma, resta, potenciación, radicación, etc, etc, etc… ¡Veamos un ejemplo!</p>
+<pre class="r"><code># Primero copiamos nuestra base a una nueva variable
+oper &lt;- disper
+
+# En este ejemplo vamos a sobreescribir nuestros datos
+# Sin embargo, NO te recomiendo que realices esto
+oper$disp_1 &lt;- oper$disp_1
+
+# Mejor, te recomiendo crear una nueva variable y escribir los nuevos datos
+oper$disp_4 &lt;- oper$disp_2*2
+head(oper)</code></pre>
+<pre><code>##   sitio   disp_1   disp_2   disp_3   disp_4
+## 1     P 32.00000 26.66667 10.00000 53.33334
+## 2     P 11.33333 16.66667 10.00000 33.33334
+## 3     P 40.66667 40.00000 33.33333 80.00000
+## 4     P 26.00000 15.00000 13.33333 30.00000
+## 5     P 29.33333 18.33333  0.00000 36.66666
+## 6     P 34.00000 30.00000  6.66667 60.00000</code></pre>
+<center>
+<img src="https://i.ibb.co/pd1FLr8/ice-king.gif" width="350" />
+</center>
+<p><br></p>
+<p>Observa que hemos creado una nueva variable <res>disp_4</res> a partir de nuestros datos, multiplicamos nuestra variable <res>disp_2</res> por 2. Con esta orden la función va a tomar cada dato de la variable y aplicará la operación matemática establecida.</p>
+</div>
+<div id="rondeo-de-números" class="section level2">
+<h2>Rondeo de números</h2>
+<p>Otra operación importante es el redondeo de números. Lo primero que tenemos que saber es que existen distintas maneras (matemáticamente hablando), de redondear o truncar un valor. Esto con el fin de tener los datos según necesitemos, en pocas palabras… “Depende de…” Típica frase de bióloga/o!</p>
+<center>
+<img src="https://i.ibb.co/3FywnFS/science.gif" width="350" />
+</center>
+<p><br></p>
+<div id="round" class="section level3">
+<h3><strong><em>Round</em></strong></h3>
+<p>Nos devuelve un valor numérico decimal redondeado a los dígitos que le digamos. Es lo que podríamos llamar el redondeo clásico.</p>
+<pre class="r"><code>disperound &lt;- disper
+
+# Redondearemos a 2 cifras decimales nuestra variable disper_1
+disperound$disp_1 &lt;- round(disperound$disp_1, 2)
+# Redondearemos a 1 cifra decimal nuestra variable disper_2
+disperound$disp_2 &lt;- round(disperound$disp_2, 1)
+# Redondearemos a 0 cifras decimales nuestra variable disper_3
+disperound$disp_3 &lt;- round(disperound$disp_3, 0)
+
+head(disperound)</code></pre>
+<pre><code>##   sitio disp_1 disp_2 disp_3
+## 1     P  32.00   26.7     10
+## 2     P  11.33   16.7     10
+## 3     P  40.67   40.0     33
+## 4     P  26.00   15.0     13
+## 5     P  29.33   18.3      0
+## 6     P  34.00   30.0      7</code></pre>
+</div>
+<div id="ceiling" class="section level3">
+<h3><strong><em>Ceiling</em></strong></h3>
+<p>Nos devuelve el próximo valor entero del número elegido. Siempre devuelve el entero posterior, excepto cuando sea exacto (es decir, salta al próximo número entero desde el primer decimal).</p>
+<pre class="r"><code>dispercei &lt;- disper
+
+dispercei$disp_1 &lt;- ceiling(dispercei$disp_1)
+
+head(dispercei)</code></pre>
+<pre><code>##   sitio disp_1   disp_2   disp_3
+## 1     P     32 26.66667 10.00000
+## 2     P     12 16.66667 10.00000
+## 3     P     41 40.00000 33.33333
+## 4     P     26 15.00000 13.33333
+## 5     P     30 18.33333  0.00000
+## 6     P     34 30.00000  6.66667</code></pre>
+</div>
+<div id="trunc-floor" class="section level3">
+<h3><strong><em>Trunc / Floor</em></strong></h3>
+<p>Esto es básicamente lo que conocemos matemáticamente como truncar un valor. Es decir, deja literalmente el número entero.</p>
+<pre class="r"><code>dispertrunc &lt;- disper
+disperfloor &lt;- disper
+
+dispertrunc$disp_1 &lt;- trunc(dispertrunc$disp_1)
+head(dispertrunc)</code></pre>
+<pre><code>##   sitio disp_1   disp_2   disp_3
+## 1     P     32 26.66667 10.00000
+## 2     P     11 16.66667 10.00000
+## 3     P     40 40.00000 33.33333
+## 4     P     26 15.00000 13.33333
+## 5     P     29 18.33333  0.00000
+## 6     P     34 30.00000  6.66667</code></pre>
+<pre class="r"><code>disperfloor$disp_1 &lt;- floor(disperfloor$disp_1)
+head(disperfloor)</code></pre>
+<pre><code>##   sitio disp_1   disp_2   disp_3
+## 1     P     32 26.66667 10.00000
+## 2     P     11 16.66667 10.00000
+## 3     P     40 40.00000 33.33333
+## 4     P     26 15.00000 13.33333
+## 5     P     29 18.33333  0.00000
+## 6     P     34 30.00000  6.66667</code></pre>
+</div>
+</div>
+<div id="otras-modificaciones" class="section level2">
+<h2>Otras modificaciones</h2>
+<p>Luego de modificar nuestros datos podemos realizar unas pequeñas modificaciones para no perdernos en nuestros propios pensamientos y datos, primero los nombres, este cambio lo podemos realizar con la función <res>rename()</res>!</p>
+<center>
+<img src="https://i.ibb.co/Lv33dMx/mind.gif" width="350" />
+</center>
+<p><br></p>
+<pre class="r"><code>dispername &lt;- disper
+
+# Con esta función sabremos los nombres de nuestra variables
+names(dispername)</code></pre>
+<pre><code>## [1] &quot;sitio&quot;  &quot;disp_1&quot; &quot;disp_2&quot; &quot;disp_3&quot;</code></pre>
+<pre class="r"><code># Y podemos modificarlos según lo que necesitemos
+dispername &lt;- rename(dispername, Lugares = sitio, Salida1 = disp_1,
+                 Salida2 = disp_2, Salida3 = disp_3)
+names(dispername)</code></pre>
+<pre><code>## [1] &quot;Lugares&quot; &quot;Salida1&quot; &quot;Salida2&quot; &quot;Salida3&quot;</code></pre>
+<p>Finalizado el análisis y modificación de nuestros datos, según nuestras necesidades, vamos a proceder a realizar una breve descripción estadística de estos datos, con el fin de describir los datos de una manera cuantitativa y tener una idea de lo que podemos o no podemos hacer con ellos.</p>
+<center>
+<img src="https://i.ibb.co/86czzfZ/coffee.gif" width="350" />
+</center>
+<p><br></p>
+</div>
+<div id="estadística-descriptiva" class="section level2">
+<h2>Estadística descriptiva</h2>
+<p>Para realizar un análisis de estadística descriptiva hay múltiples funciones, en este post abarcaremos las principales.</p>
+<blockquote>
+<p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" />
+¡¡¡Atención, atención!!!</p>
+Si no tienes claros conceptos básicos de la estadística te invitamos a que leas un poco sobre ellos, ¡la idea es que no te enloquezcas leyendo este post!
+</blockquote>
+<pre class="r"><code># Muestra el valor mínimo existente en el vector
+# na.rm = TRUE - Si hay presentes NAs mostrará el valor mínimo numérico
+# na.rm = FALSE - Si hay presentes NAs mostrará NA
+min(disper$disp_1, na.rm = TRUE)</code></pre>
+<pre><code>## [1] 11.33333</code></pre>
+<pre class="r"><code># Valor máximo
+max(disper$disp_1, na.rm = TRUE)</code></pre>
+<pre><code>## [1] 100</code></pre>
+<pre class="r"><code># Valor mínimo y máximo
+range(disper$disp_1, na.rm = TRUE)</code></pre>
+<pre><code>## [1]  11.33333 100.00000</code></pre>
+<pre class="r"><code># Valor de la media
+mean(disper$disp_1, na.rm = TRUE)</code></pre>
+<pre><code>## [1] 61.1358</code></pre>
+<pre class="r"><code># Valor de la varianza
+var(disper$disp_1, na.rm = TRUE)</code></pre>
+<pre><code>## [1] 817.0605</code></pre>
+<pre class="r"><code># Valor de la desviación estándar
+sd(disper$disp_1, na.rm = TRUE)</code></pre>
+<pre><code>## [1] 28.58427</code></pre>
+<pre class="r"><code># Valor de la mediana
+median(disper$disp_1, na.rm = TRUE)</code></pre>
+<pre><code>## [1] 71.33333</code></pre>
+<pre class="r"><code># Valores de quantiles
+quantile(disper$disp_1, na.rm = TRUE)</code></pre>
+<pre><code>##        0%       25%       50%       75%      100% 
+##  11.33333  32.66667  71.33333  83.33333 100.00000</code></pre>
+<p>Ahora utilizaremos la función <res>summary()</res> la cual genera un resumen de nuestros datos de las funciones anteriormente mencionadas. Para variables numéricas se generan estadísticos básicos, como la media, mediana y cuartiles. Para variables cualitativas se generará un conteo de apariciones para cada posible valor.</p>
+<pre class="r"><code>summary(disper)</code></pre>
+<pre><code>##     sitio               disp_1           disp_2           disp_3      
+##  Length:81          Min.   : 11.33   Min.   : 10.00   Min.   :  0.00  
+##  Class :character   1st Qu.: 32.67   1st Qu.: 30.00   1st Qu.: 23.33  
+##  Mode  :character   Median : 71.33   Median : 58.33   Median : 50.00  
+##                     Mean   : 61.14   Mean   : 54.75   Mean   : 52.96  
+##                     3rd Qu.: 83.33   3rd Qu.: 76.67   3rd Qu.: 83.33  
+##                     Max.   :100.00   Max.   :100.00   Max.   :100.00</code></pre>
+<p>Aunque usando todas las funciones antes descritas, podemos explorar el contenido de cualquier base de datos y obtener una visión general sobre su estructura, esta es una tarea que puede simplificarse enormemente gracias a funciones como <res>describe()</res>, que se encuentra en el paquete Hmisc.</p>
+<center>
+<img src="https://i.ibb.co/VSwcJ1z/dance.gif" width="350" />
+</center>
+<p><br></p>
+<p>Esta función nos mostrará un resumen de cada una de las variables de nuestra base de datos, en la cual podemos ver valores de máximos, mínimos, medias, valores únicos, proporciones de estos valores, entre otros, tal y como observamos en el siguiente ejemplo:</p>
+<pre class="r"><code>library(Hmisc)
+describe(disper)</code></pre>
+<pre><code>## disper 
+## 
+##  4  Variables      81  Observations
+## --------------------------------------------------------------------------------
+## sitio 
+##        n  missing distinct 
+##       81        0        9 
+## 
+## lowest : BM  BM2 BM3 BS  BS2, highest: BS2 BS3 P   P2  P3 
+##                                                                 
+## Value         BM   BM2   BM3    BS   BS2   BS3     P    P2    P3
+## Frequency      9     9     9     9     9     9     9     9     9
+## Proportion 0.111 0.111 0.111 0.111 0.111 0.111 0.111 0.111 0.111
+## --------------------------------------------------------------------------------
+## disp_1 
+##        n  missing distinct     Info     Mean      Gmd      .05      .10 
+##       81        0       22    0.997    61.14    32.75    11.33    20.00 
+##      .25      .50      .75      .90      .95 
+##    32.67    71.33    83.33   100.00   100.00 
+## 
+## lowest :  11.33333  20.00000  26.00000  29.33333  32.00000
+## highest:  83.33333  87.33333  92.66667  93.33333 100.00000
+## --------------------------------------------------------------------------------
+## disp_2 
+##        n  missing distinct     Info     Mean      Gmd      .05      .10 
+##       81        0       21    0.996    54.75    31.84    15.00    16.67 
+##      .25      .50      .75      .90      .95 
+##    30.00    58.33    76.67   100.00   100.00 
+## 
+## lowest :  10.00000  15.00000  16.66667  18.33333  21.66667
+## highest:  76.66667  80.00000  83.33333  86.66667 100.00000
+## --------------------------------------------------------------------------------
+## disp_3 
+##        n  missing distinct     Info     Mean      Gmd      .05      .10 
+##       81        0       16    0.993    52.96    36.74    6.667   10.000 
+##      .25      .50      .75      .90      .95 
+##   23.333   50.000   83.333  100.000  100.000 
+## 
+## lowest :   0.00000   6.66667  10.00000  13.33333  23.33333
+## highest:  73.33333  76.66667  83.33333  86.66667 100.00000
+## 
+## 0 (3, 0.037), 6.66667 (3, 0.037), 10 (6, 0.074), 13.33333 (6, 0.074), 23.33333
+## (6, 0.074), 33.33333 (3, 0.037), 43.33333 (6, 0.074), 46.66667 (6, 0.074), 50
+## (3, 0.037), 63.33333 (6, 0.074), 70 (3, 0.037), 73.33333 (3, 0.037), 76.66667
+## (3, 0.037), 83.33333 (12, 0.148), 86.66667 (3, 0.037), 100 (9, 0.111)
+## --------------------------------------------------------------------------------</code></pre>
+<p>Bien, ya conociendo un poco de un análisis estadístico previo de nuestras variables y conociendo como se comportan y que naturaleza tienen, vamos a conocer otras funciones muy especiales que serán fundamentales para tratar nuestros datos; funciones que nos permitirán realizar modificaciones pertinentes y dejar nuestros datos listos.</p>
+</div>
+<div id="verbos-dplyr" class="section level2">
+<h2>Verbos dplyr</h2>
+<center>
+<img src="https://i.ibb.co/N2rb9P4/dplyr.png" width="250" />
+</center>
+<p><br></p>
+<p>El paquete <res>dplyr</res> posee un conjunto de funciones de manipulación de datos que proporciona un conjunto consistente de verbos que te ayudan a resolver los desafíos más comunes de manipulación de datos.</p>
+<pre class="r"><code># Recuerda siempre cargar tus paquetes para trabajar con ellos
+library(dplyr)</code></pre>
+<p>Entre ellas encontramos las siguientes:</p>
+<ol style="list-style-type: decimal">
+<li><res>select()</res> elige variables basadas en sus nombres.</li>
+<li><res>filter()</res> elige los casos en función de sus valores.</li>
+<li><res>arrange()</res> cambia el orden de las filas.</li>
+<li><res>mutate</res> agrega nuevas variables que son funciones de variables existentes.</li>
+<li><res>group_by()</res> agrupa un conjunto de filas seleccionado en un conjunto de filas de resumen.</li>
+</ol>
+<center>
+<img src="https://i.ibb.co/h8Cm4Bt/dplyr-f.png" width="350" />
+</center>
+<p><br></p>
+<p>Todos los verbos funcionan de manera similar:</p>
+<ul>
+<li>El primer argumento es un marco de datos.</li>
+<li>Los siguientes argumentos describen qué hacer con el marco de datos, utilizando los nombres de las variables (sin comillas).</li>
+<li>El resultado es un nuevo marco de datos.</li>
+</ul>
+<p>Estas funciones juntas, facilitan la encadenación de varios pasos sencillos para lograr un resultado complejo. Profundicemos y veamos cómo funcionan estos verbos.</p>
+<center>
+<img src="https://i.ibb.co/4KMM27C/interesting.gif" width="350" />
+</center>
+<p><br></p>
+<div id="select" class="section level3">
+<h3>select()</h3>
+<p>Cuando tenemos muchas variables en nuestra base de datos, pero solo necesitamos trabajar con un subconjunto de ellas, podemos seleccionar un subconjunto de variables de nuestra base de datos a través del uso de la función <res>select()</res> del paquete <res>dplyr</res></p>
+<pre class="r"><code>## Tenemos dos formas
+
+# La primera es elegir las variables que necesitamos 
+selec &lt;- select(disper, sitio, disp_3)
+head(selec)</code></pre>
+<pre><code>##   sitio   disp_3
+## 1     P 10.00000
+## 2     P 10.00000
+## 3     P 33.33333
+## 4     P 13.33333
+## 5     P  0.00000
+## 6     P  6.66667</code></pre>
+<pre class="r"><code># La segunda es especificar las variables que NO necesitamos
+selec2 &lt;- select(disper, -(disp_1))
+head(selec2)</code></pre>
+<pre><code>##   sitio   disp_2   disp_3
+## 1     P 26.66667 10.00000
+## 2     P 16.66667 10.00000
+## 3     P 40.00000 33.33333
+## 4     P 15.00000 13.33333
+## 5     P 18.33333  0.00000
+## 6     P 30.00000  6.66667</code></pre>
+<p>Como ves, ahora sólo tendremos las variables con la cual podremos trabajar de manera más sencilla, sin todos esos demás datos.</p>
+</div>
+<div id="filter" class="section level3">
+<h3>filter()</h3>
+<p>El filtrado se utiliza con el fin de seleccionar un subconjunto del data.frame que contiene nuestros datos. El uso básico del filtro se hace mediante la función <res>filter()</res></p>
+<p>Para usar el filtrado de manera efectiva, se debe saber cómo seleccionar las observaciones que se desean, utilizando los operadores de comparación. R proporciona el paquete estándar:</p>
+<center>
+<img src="https://i.ibb.co/q5c2PLB/operador.png" width="350" />
+</center>
+<p><br></p>
+<p>Acá te presentamos un pequeño gráfico del funcionamiento de los operadores <res>&amp;</res> y <res>|</res></p>
+<center>
+<img src="https://i.ibb.co/jrt1981/logical.png" width="350" />
+</center>
+<p><br></p>
+<p>Ahora, veamos un ejemplo de filtrado con nuestra base.</p>
+<pre class="r"><code># Filtramos para tener únicamente los valores del sitio &quot;P&quot;
+filt1 &lt;- filter(disper, sitio == &quot;P&quot;)
+unique(filt1$sitio)</code></pre>
+<pre><code>## [1] &quot;P&quot;</code></pre>
+<pre class="r"><code># Filtramos los datos menores a 50 en &quot;disp_1&quot;
+filt2 &lt;- filter(disper, disp_1 &lt; 50)
+summary(filt2$disp_1)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   11.33   20.00   32.00   30.55   40.67   49.33</code></pre>
+<pre class="r"><code># Al igual podemos guardar el filtrado en una nueva variable
+# Con dos términos de filtrado
+filt3 &lt;- filter(disper, disp_3 &lt; 75, sitio != &quot;P&quot;)
+summary(filt3$disp_1)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   11.33   32.00   49.33   51.42   78.67   92.67</code></pre>
+<pre class="r"><code>unique(filt3$sitio)</code></pre>
+<pre><code>## [1] &quot;BM&quot;  &quot;BS&quot;  &quot;P2&quot;  &quot;BM2&quot; &quot;BS2&quot; &quot;P3&quot;  &quot;BM3&quot; &quot;BS3&quot;</code></pre>
+<p>Así, podemos ver que se realizó nuestro filtrado correctamente y nuestra nueva variable tiene 24 observaciones para 4 variables.</p>
+</div>
+<div id="arrange" class="section level3">
+<h3>arrange()</h3>
+<p>Otro proceso muy habitual es reordenar las filas de nuestros datos. Esto se usa cuando queremos inspeccionar un conjunto de datos para buscar asociaciones entre las diferentes variables, lo que resulta difícil de hacer si no están ordenados. Para realizar la ordenación se utiliza la función <res>arrange()</res>, como vemos a continuación:</p>
+<pre class="r"><code># Ordenaremos de mayor a menor cada una de las variables
+ord &lt;- arrange(disper, sitio, disp_1, disp_2, disp_3)
+
+# Ordenaremos de menor a mayor únicamente la variable disp_2 
+ord2 &lt;- arrange(disper, desc(disp_2))</code></pre>
+</div>
+<div id="mutate" class="section level3">
+<h3>mutate()</h3>
+<p>En la creación de variables a partir de las originales de nuestros datos tenemos dos opciones:</p>
+<ol style="list-style-type: decimal">
+<li>Crear una nueva variable sin eliminar las variables originales</li>
+<li>Crear una nueva variable eliminando las variables originales.</li>
+</ol>
+<p>Así para nuestra primera opción (NO eliminar nuestras variables originales), usamos la función <res>mutate()</res>, como vemos a continuación:</p>
+<pre class="r"><code># Primero seleccionamos las variables que queremos trabajar
+sel &lt;- select(disper, disp_1, disp_2, disp_3)
+mut &lt;- mutate(sel, prom = ((disp_1 + disp_2 + disp_3)/3))
+head(mut)</code></pre>
+<pre><code>##     disp_1   disp_2   disp_3     prom
+## 1 32.00000 26.66667 10.00000 22.88889
+## 2 11.33333 16.66667 10.00000 12.66667
+## 3 40.66667 40.00000 33.33333 38.00000
+## 4 26.00000 15.00000 13.33333 18.11111
+## 5 29.33333 18.33333  0.00000 15.88889
+## 6 34.00000 30.00000  6.66667 23.55556</code></pre>
+<p>Y listo, tenemos nuestra nueva variable (prom), la cual es un promedio de las tres variables de dispersión.</p>
+<p>Sin embargo, para nuestra segunda opción (eliminar nuestras variables originales), usamos la función <res>transmute()</res>, en la cual solo veremos la variable resultante como vemos a continuación (caso que NO te recomendamos, ¡después se arma tremendo lío!)</p>
+<pre class="r"><code>sel &lt;- select(disper, disp_1, disp_2, disp_3)
+tmut &lt;- transmute(sel, prom = ((disp_1 + disp_2 + disp_3)/3))
+head(tmut)</code></pre>
+<pre><code>##       prom
+## 1 22.88889
+## 2 12.66667
+## 3 38.00000
+## 4 18.11111
+## 5 15.88889
+## 6 23.55556</code></pre>
+</div>
+<div id="group_by" class="section level3">
+<h3>group_by()</h3>
+<p>La función <res>group_by</res> es usada para agrupar datos según una variable, como vemos en este código:</p>
+<pre class="r"><code>ejemgroup &lt;- group_by(disper, sitio)
+ejemgroup</code></pre>
+<pre><code>## # A tibble: 81 x 4
+## # Groups:   sitio [9]
+##    sitio disp_1 disp_2 disp_3
+##    &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+##  1 P       32     26.7  10   
+##  2 P       11.3   16.7  10   
+##  3 P       40.7   40    33.3 
+##  4 P       26     15    13.3 
+##  5 P       29.3   18.3   0   
+##  6 P       34     30     6.67
+##  7 P       11.3   10    13.3 
+##  8 P       20     30    23.3 
+##  9 P       49.3   45    43.3 
+## 10 BM      78     58.3  83.3 
+## # ... with 71 more rows</code></pre>
+<p>Pero, la función <res>group_by()</res> es extremadamente útil trabajando en conjunto con la función <res>summarise()</res>, por lo que recomendamos que siempre se tengan en cuenta ambas funciones, eso sí, utilizando funciones estadísticas como veremos a continuación:</p>
+<pre class="r"><code>summarise(ejemgroup, mean(disp_1), min(disp_2), min(disp_3))</code></pre>
+<pre><code>## # A tibble: 9 x 4
+##   sitio `mean(disp_1)` `min(disp_2)` `min(disp_3)`
+## * &lt;chr&gt;          &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt;
+## 1 BM              64.7          21.7          23.3
+## 2 BM2             64.7          21.7          23.3
+## 3 BM3             64.7          21.7          23.3
+## 4 BS              90.4          60            50  
+## 5 BS2             90.4          60            50  
+## 6 BS3             90.4          60            50  
+## 7 P               28.2          10             0  
+## 8 P2              28.2          10             0  
+## 9 P3              28.2          10             0</code></pre>
+<p>Como vemos, en las variables utilizamos funciones estadísticas como la media, mínimo y máximo. Siéntete libre de elegir las que creas pertinentes y respondan a tus preguntas. Ten presente que esto solo es un acercamiento a todo lo que podemos llegar a realizar, hay muuuuuuchas funciones y operaciones por hacer. Por ejemplo, una de ellas es la utilización de los pipeline, ¿Qué es? ¡Veamoslo a continuación!</p>
+</div>
+</div>
+<div id="combinando-operaciones-con-pipeline" class="section level2">
+<h2>Combinando operaciones con pipeline (%&gt;%)</h2>
+<p>El operador pipeline %&gt;% es útil para concatenar/unir múltiples operaciones <res>dplyr</res>.</p>
+<center>
+<img src="https://i.ibb.co/yX6PTy4/ok.gif" width="350" />
+</center>
+<p><br></p>
+<p>Este operador nos permite escribir una secuencia de operaciones de izquierda a derecha, como vemos a continuación:</p>
+<blockquote>
+<p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" />
+¡¡¡Atención, atención!!!</p>
+El atajo de teclado para el operador %&gt;% es <img src="https://i.ibb.co/RbBhJnT/pipeline.png" width="350" />
+</blockquote>
+<pre class="r"><code># Se puede realizar esta operación de la manera tradicional
+ejem1 &lt;- select(disper, disp_1, disp_2)
+head(ejem1)</code></pre>
+<pre><code>##     disp_1   disp_2
+## 1 32.00000 26.66667
+## 2 11.33333 16.66667
+## 3 40.66667 40.00000
+## 4 26.00000 15.00000
+## 5 29.33333 18.33333
+## 6 34.00000 30.00000</code></pre>
+<pre class="r"><code># Utilizando pipeline obtenemos el mismo resultado
+ejempipe &lt;- disper %&gt;% select(disp_1, disp_2)
+head(ejempipe)</code></pre>
+<pre><code>##     disp_1   disp_2
+## 1 32.00000 26.66667
+## 2 11.33333 16.66667
+## 3 40.66667 40.00000
+## 4 26.00000 15.00000
+## 5 29.33333 18.33333
+## 6 34.00000 30.00000</code></pre>
+<p>Esto quiere decir que el primer paso es llamar a la base de datos que consideremos y luego agregamos las funciones que necesitemos mediante el pipeline! Si, todas las que nos imaginemos, mira como queda este código:</p>
+<pre class="r"><code>ejempipe2 &lt;- disper %&gt;% 
+            select(disp_1, disp_2)%&gt;%
+            filter(disp_1&lt;20)%&gt;% 
+            arrange(disp_2)%&gt;%
+            mutate(promedio = ((disp_1 + disp_2)/2))
+ejempipe2</code></pre>
+<pre><code>##     disp_1   disp_2 promedio
+## 1 11.33333 10.00000 10.66667
+## 2 11.33333 10.00000 10.66667
+## 3 11.33333 10.00000 10.66667
+## 4 11.33333 16.66667 14.00000
+## 5 11.33333 16.66667 14.00000
+## 6 11.33333 16.66667 14.00000</code></pre>
+<p>Así, obtenemos un conjunto de datos completo con los elementos que ingresamos con alguno de los verbos <res>dplyr</res> en un sólo código con la ayuda del pipeline.</p>
+<p><strong><em>¡¡¡Pa’ finalizar!!!</em></strong></p>
+<center>
+<img src="https://i.ibb.co/tBNYNFx/mNEh5Q.gif" width="350" />
+</center>
+<p><br></p>
+<p>Como ves, no es una receta, hay múltiples caminos y cada uno de puede acercar o alejar de tu objetivo. En este punto, es útil considerar algunas preguntas para que comprendas que andas haciendo.</p>
+<p><em>¿Tienes los datos correctos?, ¿Tienes la pregunta correcta?, ¿Necesitas otros datos?</em></p>
+<p>¡Siempre pregúntate que andas haciendo y si ese camino te lleva hacía donde quieres ir! (Aplica para la vida con condiciones y restricciones, lee la letra pequeña).</p>
+<center>
+<img src="https://i.ibb.co/TKLCy1r/dance2.gif" width="350" />
+</center>
+<p><br></p>
+<p>Es importante ya que puedes simplemente estar haciendo cosas que no tendrán ningún sentido y únicamente perderás tiempo y neuronas. Agárrala suave, respira y revisa en donde estás parado y si eso responde tu pregunta; sino, agarra tu maleta, devúelvete y empieza de nuevo. ¡La vida misma se trata de ello!</p>
+<center>
+<img src="https://i.ibb.co/cyLRjLb/feel.gif" width="350" />
+</center>
+<p><br></p>
+<p><strong><em>¡NUNCA ES TARDE PARA EMPEZAR!</em></strong></p>
+<p>Muchas gracias por leernos y esperamos que hayas aprendido o recordado algo más sobre el mundo de R. Nos vemos en la segunda parte de este post, en la cual ya empezaremos a ver algunos gráficos básicos!!</p>
+<center>
+<img src="https://i.ibb.co/WKK5GzY/bye.gif" width="350" />
+</center>
+<p><br>
+<br></p>
+<p>Bibliografía</p>
+<ul>
+<li><p><a href="https://bookdown.org/steve_midway/DAR/exploratory-data-analysis.html">Data Analysis in R</a></p></li>
+<li><p><a href="https://bookdown.org/rdpeng/exdata/">Exploratory Data Analysis with R</a></p></li>
+<li><p><a href="https://r4ds.had.co.nz/transform.html">R for Data Science</a></p></li>
+<li><p><a href="https://rsanchezs.gitbooks.io/rprogramming/content/chapter9/pipeline.html">Programación en R</a></p></li>
+<li><p><a href="https://rstudio-pubs-static.s3.amazonaws.com/324370_3452e507387846c984f2d72dfca4007e.html#introducci%C3%B3n">Primeros pasos en el análisis exploratorio de datos</a></p></li>
+<li><p><a href="http://www.fcharte.com/libros/ExploraVisualizaConR-Fcharte.pdf">Análisis exploratorio y visualización de datos con R</a></p></li>
+<li><p><a href="https://estadisticamente.com/redondear-y-truncar-en-r/">Cómo Redondear y Truncar en R</a></p></li>
+</ul>
+<div id="revisión" class="section level3">
+<h3>Revisión</h3>
+<p><a href="https://rbiologos.github.io/author/eliana-tabares/">Eliana Tabares Lara</a></p>
+<p>Recuerda que todos nuestros códigos están almacenados en <a href="https://github.com/RBiologos/Posts">GitHub</a></p>
+<center>
+<img src="https://i.ibb.co/DpKmR1k/github.png" width="350" />
+</center>
+</div>
+</div>
+
+        </div>
+        
+        
+
+<div class="social-share pt-4">
+	<h4>Comparte:</h4>
+	
+	<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2frbiologos.github.io%2fblog%2fa008%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=An%c3%a1lisis%20exploratorio%20de%20Datos%20-%20Parte%20I&amp;url=https%3a%2f%2frbiologos.github.io%2fblog%2fa008%2f"
+		target="_blank" rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="https://plus.google.com/share?url=https%3a%2f%2frbiologos.github.io%2fblog%2fa008%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--google resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M11.37 12.93c-.73-.52-1.4-1.27-1.4-1.5 0-.43.03-.63.98-1.37 1.23-.97 1.9-2.23 1.9-3.57 0-1.22-.36-2.3-1-3.05h.5c.1 0 .2-.04.28-.1l1.36-.98c.16-.12.23-.34.17-.54-.07-.2-.25-.33-.46-.33H7.6c-.66 0-1.34.12-2 .35-2.23.76-3.78 2.66-3.78 4.6 0 2.76 2.13 4.85 5 4.9-.07.23-.1.45-.1.66 0 .43.1.83.33 1.22h-.08c-2.72 0-5.17 1.34-6.1 3.32-.25.52-.37 1.04-.37 1.56 0 .5.13.98.38 1.44.6 1.04 1.84 1.86 3.55 2.28.87.23 1.82.34 2.8.34.88 0 1.7-.1 2.5-.34 2.4-.7 3.97-2.48 3.97-4.54 0-1.97-.63-3.15-2.33-4.35zm-7.7 4.5c0-1.42 1.8-2.68 3.9-2.68h.05c.45 0 .9.07 1.3.2l.42.28c.96.66 1.6 1.1 1.77 1.8.05.16.07.33.07.5 0 1.8-1.33 2.7-3.96 2.7-1.98 0-3.54-1.23-3.54-2.8zM5.54 3.9c.33-.38.75-.58 1.23-.58h.05c1.35.05 2.64 1.55 2.88 3.35.14 1.02-.08 1.97-.6 2.55-.32.37-.74.56-1.23.56h-.03c-1.32-.04-2.63-1.6-2.87-3.4-.13-1 .08-1.92.58-2.5zM23.5 9.5h-3v-3h-2v3h-3v2h3v3h2v-3h3" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="mailto:?subject=An%c3%a1lisis%20exploratorio%20de%20Datos%20-%20Parte%20I&amp;body=https%3a%2f%2frbiologos.github.io%2fblog%2fa008%2f" target="_self"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link"
+		href="https://reddit.com/submit/?url=https%3a%2f%2frbiologos.github.io%2fblog%2fa008%2f&amp;resubmit=true&amp;title=An%c3%a1lisis%20exploratorio%20de%20Datos%20-%20Parte%20I" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="whatsapp://send?text=An%c3%a1lisis%20exploratorio%20de%20Datos%20-%20Parte%20I%20https%3a%2f%2frbiologos.github.io%2fblog%2fa008%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1 0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+	
+	<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=An%c3%a1lisis%20exploratorio%20de%20Datos%20-%20Parte%20I&amp;url=https%3a%2f%2frbiologos.github.io%2fblog%2fa008%2f"
+		target="_blank" rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M.707 8.475C.275 8.64 0 9.508 0 9.508s.284.867.718 1.03l5.09 1.897 1.986 6.38a1.102 1.102 0 0 0 1.75.527l2.96-2.41a.405.405 0 0 1 .494-.013l5.34 3.87a1.1 1.1 0 0 0 1.046.135 1.1 1.1 0 0 0 .682-.803l3.91-18.795A1.102 1.102 0 0 0 22.5.075L.706 8.475z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+</div>
+        
+        
+        <div class="mt-5">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </div><!-- end Contact Area -->
+<footer id="footer" class="section-bg">
+	<div class="container">
+		<div class="row wow fadeInUp" data-wow-duration="500ms">
+			<div class="col-lg-12">
+
+			
+
+                        <!-- Footer Social Links -->
+				<div class="social-icon"><h1><center                                                    >Social</center></h1>
+					<ul class="list-inline">
+						
+						<li class="list-inline-item"><a href="https://www.instagram.com/rbiologiacol/" target="blank"><i class="ti-instagram" target="blank"></i></a></li>
+						
+						<li class="list-inline-item"><a href="https://github.com/RBiologos/Posts" target="blank"><i class="ti-github" target="blank"></i></a></li>
+						
+					</ul>
+				</div>
+				
+				<center><img src="https://i.ibb.co/Lpb8FRY/Picture12.png" alt="R Biólogos" height="100" /></center>
+	
+				<!-- copyright -->
+				<div class="copyright text-center">
+				        
+					<a href="https://rbiologos.github.io/">
+					</a>
+					<br>
+					<p>Copyright © 2020 Diseñado por <a href="https://github.com/davidvaneal">David Vanegas</a> bajo la plantilla <a href="https://themefisher.com">Themefisher</a> de <a href="https://gethugothemes.com">HUGO</a></p>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- /footer -->
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="https://rbiologos.github.io/plugins/jquery/jquery.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/shuffle/shuffle.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/lazy-load/lozad.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/google-map/map.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://rbiologos.github.io/js/script.min.b98b8dcfa3dc53b74ecf3cf8724a1f75b4d217da25463ff3d6a28fc4a09e965bf9818dfce85452f5fb478bce779ee8cc.js" integrity="sha384-uYuNz6PcU7dOzzz4ckofdbTSF9olRj/z1qKPxKCellv5gY386FRS9ftHi853nujM"></script>
+
+
+</body>
+
+</html>
