@@ -159,7 +159,7 @@
 
 <p>Uno de los mecanismos de exploración de datos más usados y efectivos son las representaciones gráficas de los elementos a partir de una base de datos.</p>
 <center>
-<p><img src="https://i.ibb.co/JmkNYcZ/laptop.gif" width="350" /></p>
+<img src="https://i.ibb.co/JmkNYcZ/laptop.gif" width="350" />
 </center>
 <p><br></p>
 <p>Esta transformación de una base de datos a un formato visual nos permite identificar características y relaciones entre los elementos de los datos. Por defecto, R cuenta en su estructura base con múltiples funciones para la generación de gráficos, como nubes de puntos, líneas, barras, gráficos circulares, etc.</p>
@@ -287,8 +287,9 @@ legend(&quot;bottomright&quot;, ## Posición de la leyenda
        col = unique(iris$Species), ## Adjuntamos los colores
        pch = 19, ## Forma de los puntos
        bty = &quot;n&quot;) ## Elimina la línea de la caja de la leyenda</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-6-1.png" width="672" />
-Así, podremos ir modificando algunas cosas para que nuestro gráfico sea mucho más presentable, en este paso ya es cuestión de estilos y gustos, practica, ensaya y modifica según tu preferencia, ¡Siéntete libre!</p>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><br></p>
+<p>Así, podremos ir modificando algunas cosas para que nuestro gráfico sea mucho más presentable, en este paso ya es cuestión de estilos y gustos, practica, ensaya y modifica según tu preferencia, ¡Siéntete libre!</p>
 <center>
 <p><img src="https://i.ibb.co/yqfbVR0/style.gif" width="350" /></p>
 </center>
@@ -315,8 +316,9 @@ plot(r$Dispersion, r$Longitud, main=&quot;Gráfica sin línea&quot;)
 plot(r$Dispersion, r$Longitud, 
      type = &quot;l&quot;, # Código para trazar la línea entre puntos
      main=&quot;Gráfica con línea&quot;)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-7-1.png" width="672" />
-Como podemos observar para representar adecuadamente una gráfica de línea es indispensable agregar el argumento <res>type</res>, el cual conectará los puntos ordenados con líneas rectas. Igualmente podemos agregar otros argumentos como <res>lwd</res> el cual nos ayuda a modificar el ancho de la línea y <res>lyd</res> el cual nos modifica el estilo de la línea como vemos en esta figura:</p>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><br></p>
+<p>Como podemos observar para representar adecuadamente una gráfica de línea es indispensable agregar el argumento <res>type</res>, el cual conectará los puntos ordenados con líneas rectas. Igualmente podemos agregar otros argumentos como <res>lwd</res> el cual nos ayuda a modificar el ancho de la línea y <res>lyd</res> el cual nos modifica el estilo de la línea como vemos en esta figura:</p>
 <center>
 <img src="https://i.ibb.co/3pmKSJv/line.png" width="350" />
 </center>
@@ -362,8 +364,9 @@ Recuerda que el valor de x debe ser una variable del tipo <strong>factor</strong
      xlab=&quot;Suplementos alimenticios&quot;,
      ylab=&quot;Total de experimentos&quot;,
      main=&quot;Suplementos alimenticios en pollos&quot;)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-10-1.png" width="672" />
-Por supuesto, este tipo de gráficos también permite personalizarlo para cambiar su aspecto visual. Por ejemplo, podemos mostrar las barras en sentido horizontal.</p>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><br></p>
+<p>Por supuesto, este tipo de gráficos también permite personalizarlo para cambiar su aspecto visual. Por ejemplo, podemos mostrar las barras en sentido horizontal.</p>
 <pre class="r"><code>plot(x = chickwts$feed,
      border = &#39;red&#39;, ## Color borde de las barras
      col = &#39;green&#39;, ## Color barras
@@ -374,8 +377,9 @@ Por supuesto, este tipo de gráficos también permite personalizarlo para cambia
      ## siempre horizontal (1), siempre perpendicular al eje (2) y siempre vertical (3)
      space = 0, ## Espacio entre barras
      width = c(3,1,3,2,4,3)) ## Ancho de las barras</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-11-1.png" width="672" />
-Y así obtenemos nuestro gráfico y quedó según nuestras especificaciones, con lo cuál ya podemos dar un análisis previo de sus datos. Por ejemplo, acá podemos observar que la cantidad del suplemento alimenticio <res>soybean</res> (14) es mayor con respecto a los otros tipos.</p>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><br></p>
+<p>Y así obtenemos nuestro gráfico y quedó según nuestras especificaciones, con lo cuál ya podemos dar un análisis previo de sus datos. Por ejemplo, acá podemos observar que la cantidad del suplemento alimenticio <res>soybean</res> (14) es mayor con respecto a los otros tipos.</p>
 <center>
 <img src="https://i.ibb.co/MMF2ygZ/bird.gif" width="350" />
 </center>
@@ -400,8 +404,9 @@ Y así obtenemos nuestro gráfico y quedó según nuestras especificaciones, con
      ylab = &quot;Frecuencia&quot;,
      xlab = &quot;Yardas de vuelo&quot;,
      col = &quot;cyan3&quot;)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-13-1.png" width="672" />
-Así podemos observar que en general el total de yardas más frecuente en el estudio fue entre 260 y 270 yardas, caso contrario, los valores menos frecuentes se presentan entre 220 y 230 yardas.</p>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><br></p>
+<p>Así podemos observar que en general el total de yardas más frecuente en el estudio fue entre 260 y 270 yardas, caso contrario, los valores menos frecuentes se presentan entre 220 y 230 yardas.</p>
 <p>Cabe aclarar que los histogramas son muy útiles para representar la distribución de los datos si el número de barras o clases se selecciona correctamente. Sin embargo, la selección del número de barras (o el ancho de las barras) puede ser complicada, debido a dos factores:</p>
 <ol style="list-style-type: decimal">
 <li>Pocas clases agruparán demasiado las observaciones.</li>
@@ -430,12 +435,13 @@ hist(distancia, main = &quot;Método de Sturges&quot;, ylab = &quot;Frecuencia&q
 <p>Un gráfico de densidad visualiza la distribución de datos en un intervalo o período de tiempo continuo. Este gráfico es una variación de un Histograma que usa el suavizado de <em>cerner</em> para trazar valores, permitiendo distribuciones más suaves al suavizar el ruido. Los picos de un gráfico de densidad ayudan a mostrar dónde los valores se concentran en el intervalo.</p>
 <pre class="r"><code>plot(density(distancia),
      main=&quot;Gráfico de Densidad&quot;)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-15-1.png" width="672" />
-Igualmente podemos representar la densidad de los datos a partir de barras, para ello utilizaremos nuevamente la función <res>hist()</res> y agregaremos el argumento <res>prob</res> el cual tiene valores <strong>TRUE</strong> y <strong>FALSE</strong>.</p>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>Igualmente podemos representar la densidad de los datos a partir de barras, para ello utilizaremos nuevamente la función <res>hist()</res> y agregaremos el argumento <res>prob</res> el cual tiene valores <strong>TRUE</strong> y <strong>FALSE</strong>.</p>
 <pre class="r"><code>hist(distancia, prob = TRUE, main = &quot;Histograma de densidad&quot;,
      ylab = &quot;Densidad&quot;)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-16-1.png" width="672" />
-Como podemos observar nuestro eje “Y” ha cambiado su escala, ya que se trata de una representación de densidad más no de frecuencia.</p>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><br></p>
+<p>Como podemos observar nuestro eje “Y” ha cambiado su escala, ya que se trata de una representación de densidad más no de frecuencia.</p>
 <center>
 <img src="https://i.ibb.co/c2gvXNb/scary.gif" width="350" />
 </center>
