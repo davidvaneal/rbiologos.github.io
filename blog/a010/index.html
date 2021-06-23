@@ -227,6 +227,9 @@ Una particularidad de <strong>ggplot2</strong> es que solo acepta un tipo de dat
 <center>
 <a href="https://min.gitcdn.link/repo/RBiologos/rbiologos.github.io/main/blog/a009/Datos%20gr%C3%A1ficas.csv"><img src="https://i.ibb.co/6gx1V1Y/csv-icon.png" alt="descarga" border="0" width="150"></a>
 </center>
+<center>
+Descarga aquí
+</center>
 <p><br></p>
 <pre class="r"><code>estudio &lt;- read.csv(choose.files())
 head(estudio)</code></pre>
@@ -361,6 +364,7 @@ Realizar estas modificaciones a veces puede ser un poco agobiante, requiere efue
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <p>De forma predeterminada, <strong>ggplot2</strong> usa un fondo blanco que asegura que la trama se pueda usar donde sea que pueda terminar (por ejemplo, incluso si lo guardas como <em>png</em> y lo colocas en una diapositiva con un fondo negro). Al exportar gráficos para usar en otros sistemas, es posible que desees hacer que el fondo sea transparente con fill = NA. En relación a las márgenes tenemos los siguientes valores por defecto (margin(top = 0, right = 0, below = 0, left = 0). A continuación veamos un ejemplo de este caso</p>
 <pre class="r"><code>p + theme(
     # Cambiamos el color de la línea de fondo por &quot;red&quot; y su ancho
@@ -440,6 +444,7 @@ Realizar estas modificaciones a veces puede ser un poco agobiante, requiere efue
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <p>Si deseas modificar las propiedades de ambos ejes a la vez, utiliza <res>axis.text</res>, si no, puedes modificarlos independientemente con los otros códigos <res>axis.text.x</res> y <res>axis.text.x</res>. Veamos un ejemplo de estas modificaciones</p>
 <pre class="r"><code>  # Cambiamos el estilo de los ejes
   # Modificamos el ancho de los ejes y su color
@@ -527,6 +532,7 @@ p + theme(axis.text.x = element_text(angle = -45, vjust = 0.5, hjust = 0.5))</co
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <p>Veamos un ejemplo de estos elementos, para ello utilicemos la base de datos <res>iris</res></p>
 <pre class="r"><code>i &lt;- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, 
                       colour = Species))+
@@ -620,6 +626,7 @@ i + theme(
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <p>La principal diferencia entre <res>panel.background</res> y <res>panel.border</res> es que el fondo se dibuja debajo de los datos y el borde se dibuja encima</p>
 <p>Ahora veamos unos buenos ejemplos</p>
 <pre class="r"><code>  # Modifiquemos el color del fondo
@@ -686,6 +693,7 @@ p + theme(
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <p>Hagámos unos bueno gráficos para entender algunas de estas modificaciones</p>
 <pre class="r"><code>f &lt;- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width))+
   geom_point()+
