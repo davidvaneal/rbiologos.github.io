@@ -278,7 +278,7 @@ Como hemos visto hasta el momento, hemos superpuesto los diferentes argumentos q
 </blockquote>
 <pre class="r"><code>ggplot(estudio, aes(x = Longitud, y = Dispersion)) + 
   geom_point()</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-8-1.png" width="100%" /></p>
 <p>Existen muchos tipos de capas en el mundo de <strong>ggplot2</strong>, aquí te dejamos esta <a href="https://ggplot2.tidyverse.org/reference/index.html#section-layer-geoms">PÁGINA</a>, en la cual encontrarás todos los tipos de capas disponibles para elaborar gráficos. La elección de cada capa dependerá estrictamente del tipo, cantidad de variables, y sobre todo, de la pregunta de investigación que estés intentando responder.</p>
 <p>Entre las capas más comunes y más utilizadas están:</p>
 <ul>
@@ -306,17 +306,17 @@ Como hemos visto hasta el momento, hemos superpuesto los diferentes argumentos q
 <li><p><res>theme_minimal()</res>: un tema minimalista sin anotaciones de fondo.</p></li>
 </ul>
 <pre class="r"><code>p + theme_grey() + ggtitle(&quot;theme_grey()&quot;)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-1.png" width="100%" /></p>
 <pre class="r"><code>p + theme_bw() + ggtitle(&quot;theme_bw()&quot;)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-2.png" width="100%" /></p>
 <pre class="r"><code>p + theme_linedraw() + ggtitle(&quot;theme_linedraw()&quot;)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-3.png" width="100%" /></p>
 <pre class="r"><code>p + theme_light() + ggtitle(&quot;theme_light()&quot;)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-4.png" width="100%" /></p>
 <pre class="r"><code>p + theme_dark() + ggtitle(&quot;theme_dark()&quot;)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-5.png" width="100%" /></p>
 <pre class="r"><code>p + theme_minimal() + ggtitle(&quot;theme_minimal()&quot;)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-6.png" width="100%" /></p>
 <p>Como vemos, hay varios tipos de <em>temas</em>, eso varía según tu gusto y lo que te pidan. Siempre ten en cuenta que un gráfico es la carta de presentación de un proyecto, así que si inviertes en una buena gráfica, posiblemente el lector esté más a gusto con lo que ve, recuerda que todo entra por lo ojos…</p>
 <center>
 <img src="https://i.ibb.co/YT3Qqmr/theme.gif" width="350" />
@@ -370,7 +370,7 @@ Realizar estas modificaciones a veces puede ser un poco agobiante, requiere efue
     # Cambiamos el color de la línea de fondo por &quot;red&quot; y su ancho
   plot.background = element_rect(colour = &quot;red&quot;, size = 6)
 )</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-10-1.png" width="100%" /></p>
 <pre class="r"><code>p + theme(
     # Cambiamos el color de fondo por &quot;blue&quot; 
   plot.background = element_rect(fill = &quot;blue&quot;),
@@ -380,7 +380,7 @@ Realizar estas modificaciones a veces puede ser un poco agobiante, requiere efue
   plot.title = element_text(face = &quot;bold&quot;, colour = &quot;yellow&quot;)
   )+
   ggtitle(&quot;Título de la gráfica&quot;)</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-10-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-10-2.png" width="100%" /></p>
 <p><br></p>
 <p><strong>ELEMENTOS DE LOS EJES</strong></p>
 <table>
@@ -449,16 +449,16 @@ Realizar estas modificaciones a veces puede ser un poco agobiante, requiere efue
 <pre class="r"><code>  # Cambiamos el estilo de los ejes
   # Modificamos el ancho de los ejes y su color
 p + theme(axis.line = element_line(colour = &quot;grey50&quot;, size = 1.5))</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-11-1.png" width="100%" /></p>
 <pre class="r"><code>  # Cambiamos el estilo de ambos ejes
   # Modificamos color y tamaño
 p + theme(axis.text = element_text(color = &quot;blue&quot;, size = 12))</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-11-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-11-2.png" width="100%" /></p>
 <pre class="r"><code>  # O Cambiar el estilo de las etiquetas de un sólo eje
   # Modificamos el ángulo de la etiqueta &quot;x&quot; y su posición (vjust y hjust)
   # Esto nos sirve si tenemos etiquetas muy grandes
 p + theme(axis.text.x = element_text(angle = -45, vjust = 0.5, hjust = 0.5))</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-11-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-11-3.png" width="100%" /></p>
 <p><br></p>
 <p><strong>ELEMENTOS DE LA LEYENDA</strong></p>
 <table>
@@ -547,14 +547,14 @@ i + theme(
     size = 1
   )
 )</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-12-1.png" width="100%" /></p>
 <pre class="r"><code>  # Modifiquemos el color y medidas de cada caja de la leyenda
 i + theme(
   legend.key = element_rect(color = &quot;blue&quot;),
   legend.key.width = unit(0.9, &quot;cm&quot;),
   legend.key.height = unit(0.75, &quot;cm&quot;)
 )</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-12-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-12-2.png" width="100%" /></p>
 <pre class="r"><code>  # Modifiquemos la posición de la leyenda
   # Además modifiquemos el tamaño y estilo de la letra
 i + theme(
@@ -562,7 +562,7 @@ i + theme(
   legend.title = element_text(size = 15, face = &quot;bold&quot;),
   legend.position = &quot;bottom&quot;
 )</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-12-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-12-3.png" width="100%" /></p>
 <p><br></p>
 <p><strong>ELEMENTOS DEL PANEL</strong></p>
 <table>
@@ -631,19 +631,19 @@ i + theme(
 <p>Ahora veamos unos buenos ejemplos</p>
 <pre class="r"><code>  # Modifiquemos el color del fondo
 p + theme(panel.background = element_rect(fill = &quot;lightblue&quot;))</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-13-1.png" width="100%" /></p>
 <pre class="r"><code># Modifiquemos el color y ancho de las líneas principales de la cuadrícula en ambos ejes
 p + theme(
   panel.grid.major = element_line(color = &quot;gray60&quot;, size = 0.8)
 )</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-13-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-13-2.png" width="100%" /></p>
 <pre class="r"><code># Modifiquemos el color y ancho de las líneas principales de la cuadrícula en el eje &quot;x&quot;
 # Además modifiquemos el radio a 9:16
 p + theme(
   panel.grid.major.x = element_line(color = &quot;gray60&quot;, size = 0.8),
   aspect.ratio = 9 / 16
 )</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-13-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-13-3.png" width="100%" /></p>
 <p><br></p>
 <p><strong>ELEMENTOS DE LA FACETA</strong></p>
 <p>Laas facetas nos permiten dividir nuestros datos en lienzos diferentes, sobre alguna variable que consideremos esencial para tal. Una característica de estos gráficos, es que es adecuada para poder hacer comparaciones en variables que comparten ejes. A continuación veamos más información para modificar este aspecto de la gráfica</p>
@@ -700,10 +700,10 @@ p + theme(
   # Divimos la gráfica por la variable &quot;Species&quot;
   facet_wrap(~Species)
 f</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-14-1.png" width="100%" /></p>
 <pre class="r"><code>  # Modificamos el ancho entre las facetas
 f + theme(panel.margin = unit(0.5, &quot;in&quot;))</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-14-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-14-2.png" width="100%" /></p>
 <pre class="r"><code>  # Modificamos el color del fondo de la faceta
   # Además, modificamos el color y ancho de la línea
   # Así como el color y tamaño de la letra
@@ -711,7 +711,7 @@ f + theme(
   strip.background = element_rect(fill = &quot;green&quot;, color = &quot;red&quot;, size = 2),
   strip.text = element_text(colour = &quot;black&quot;, size = 14)
 )</code></pre>
-<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-14-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-14-3.png" width="100%" /></p>
 </div>
 <div id="resumen" class="section level2">
 <h2>Resumen</h2>
@@ -742,6 +742,10 @@ f + theme(
 <li><p><a href="https://www.datanalytics.com/libro_r/introduccion-a-ggplot2.html">Introducción a ggplot2</a></p></li>
 <li><p><a href="https://ggplot2-book.org/polishing.html">ggplot2: Elegant Graphics for Data Analysis</a></p></li>
 </ul>
+<p>Recuerda que todos nuestros códigos están almacenados en <a href="https://github.com/RBiologos/Posts">GitHub</a></p>
+<center>
+<img src="https://i.ibb.co/DpKmR1k/github.png" width="350" />
+</center>
 </div>
 
         </div>

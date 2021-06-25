@@ -201,4 +201,10 @@ Andina M. (2018); Ahumada, J. A. (2003);
 R para Principiantes. University of Hawaii; Mendoza Vega (2014).
 ```
 
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>
+
 

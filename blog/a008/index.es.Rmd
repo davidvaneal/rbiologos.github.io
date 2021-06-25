@@ -510,7 +510,6 @@ Bibliografía
 
 Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
 
-
 <center>
 ![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
 </center>

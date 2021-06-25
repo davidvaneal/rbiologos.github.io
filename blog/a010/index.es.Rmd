@@ -152,7 +152,7 @@ El objeto <res>p</res> resultante aún no es un gráfico ni se puede representar
 
 Las capas (o geoms para **ggplot2**) son los verbos del lenguaje de los gráficos. Indican qué hacer con los datos y las estéticas elegidas, cómo representarlos en un lienzo. Una vez añadida una capa al gráfico, este puede "graficarse", tal y como vemos en el siguiente código:
 
-```{r fig.align='center'}
+```{r}
 p <- p + geom_point()
 ```
 
@@ -163,7 +163,7 @@ p <- p + geom_point()
 Como hemos visto hasta el momento, hemos superpuesto los diferentes argumentos que necesita ggplot para elaborar un gráfico, sin embargo, nosotros podemos sacar un gráfico en una sola línea como vemos a continuación
 </blockquote>
 
-```{r fig.align='center'}
+```{r out.width = '100%'}
 ggplot(estudio, aes(x = Longitud, y = Dispersion)) + 
   geom_point()
 ```
@@ -200,7 +200,7 @@ Entre los temas más comunes tenemos:
 
 - <res>theme_minimal()</res>: un tema minimalista sin anotaciones de fondo.
 
-```{r fig.align='center'}
+```{r out.width = '100%'}
 p + theme_grey() + ggtitle("theme_grey()")
 p + theme_bw() + ggtitle("theme_bw()")
 p + theme_linedraw() + ggtitle("theme_linedraw()")
@@ -247,7 +247,7 @@ Hay alrededor de **40** elementos únicos que controlan la apariencia del lienzo
 
 De forma predeterminada, **ggplot2** usa un fondo blanco que asegura que la trama se pueda usar donde sea que pueda terminar (por ejemplo, incluso si lo guardas como _png_ y lo colocas en una diapositiva con un fondo negro). Al exportar gráficos para usar en otros sistemas, es posible que desees hacer que el fondo sea transparente con fill = NA. En relación a las márgenes tenemos los siguientes valores por defecto (margin(top = 0, right = 0, below = 0, left = 0). A continuación veamos un ejemplo de este caso
 
-```{r fig.align='center'}
+```{r out.width = '100%'}
 p + theme(
     # Cambiamos el color de la línea de fondo por "red" y su ancho
   plot.background = element_rect(colour = "red", size = 6)
@@ -283,7 +283,7 @@ p + theme(
 
 Si deseas modificar las propiedades de ambos ejes a la vez, utiliza <res>axis.text</res>, si no, puedes modificarlos independientemente con los otros códigos <res>axis.text.x</res> y <res>axis.text.x</res>. Veamos un ejemplo de estas modificaciones
 
-```{r fig.align='center'}
+```{r out.width = '100%'}
   # Cambiamos el estilo de los ejes
   # Modificamos el ancho de los ejes y su color
 p + theme(axis.line = element_line(colour = "grey50", size = 1.5))
@@ -318,7 +318,7 @@ p + theme(axis.text.x = element_text(angle = -45, vjust = 0.5, hjust = 0.5))
 
 Veamos un ejemplo de estos elementos, para ello utilicemos la base de datos <res>iris</res>
 
-```{r fig.align='center'}
+```{r out.width = '100%'}
 i <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, 
                       colour = Species))+
   geom_point()
@@ -371,7 +371,7 @@ La principal diferencia entre <res>panel.background</res> y <res>panel.border</r
 
 Ahora veamos unos buenos ejemplos
 
-```{r fig.align='center'}
+```{r out.width = '100%'}
   # Modifiquemos el color del fondo
 p + theme(panel.background = element_rect(fill = "lightblue"))
 
@@ -407,7 +407,7 @@ Laas facetas nos permiten dividir nuestros datos en lienzos diferentes, sobre al
 
 Hagámos unos bueno gráficos para entender algunas de estas modificaciones
 
-```{r message=FALSE, fig.align='center',warning=FALSE} 
+```{r message=FALSE, warning=FALSE, out.width = '100%'}
 f <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width))+
   geom_point()+
   # Divimos la gráfica por la variable "Species"
@@ -461,3 +461,9 @@ Muchas gracias por tu lectura, esperamos que te lleves algo más que sólo cansa
 - [Introducción a ggplot2](https://www.datanalytics.com/libro_r/introduccion-a-ggplot2.html)
 
 - [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/polishing.html)
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>

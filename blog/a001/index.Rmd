@@ -35,15 +35,17 @@ Ya teniendo estás preguntas en la cabeza, hay que decir que de manera independi
 Así, buscando deliberadamente, googleando, nos dábamos cuenta de que hay mucha información (Que esperamos poder ir organizando en este blog), no sabe uno ni por donde empezar, información que en su gran mayoría estaba en Inglés así que AGÁRRATE! Si **NO** tienes algún dominio del Inglés, pues te vamos a dar una pequeña recomendación: Dirígete al rincón más solo de tu casa o bloque de la universidad y sigue las instrucciones de la siguiente imagen 
 
 <center>
-![](https://i.ibb.co/jT7JkQS/download.jpg){width="400"}
+![](https://i.ibb.co/jT7JkQS/download.jpg){width="350"}
 </center><br>
 
 Pero uno piensa: “nah no puede ser tan malo...” y pues en realidad podría volverse peor, si uno necesita aprender de afán porque hay que entregar el informe de diversidad y curvas de acumulación para mañana o mejor dicho para hoy por que ya es la una de la mañana (eso nos contaban, a nosotros nunca nos pasó), y si no queda bien ese informe pierde uno laboratorio y si pierde laboratorio, pierde uno la materia y así se empieza a desencadenar una serie de pensamientos terroríficos que no queremos ni recordar. 
 
 Pero bueno, tranquis que ya llegamos nosotros a fomentar tu perecita de leer en inglés y trataremos de que la relación que vas a tener con R no sea tan tóxica como lo es un vasito con agua saborizado con mercurio. 
 
-Agradecimientos a Eliana Tabares por su revisión.
+[Eliana Tabares Lara](https://rbiologos.github.io/author/eliana-tabares/)
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
 
 <center>
-<img src="https://i.ibb.co/Lpb8FRY/Picture12.png" alt="Picture12" border="0" width="200">
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
 </center>

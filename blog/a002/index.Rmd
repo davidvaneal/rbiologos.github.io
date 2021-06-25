@@ -79,6 +79,8 @@ Además cuenta con ventajas como:
 
 En este post pudimos aprender un poco de historia y como varias personas han desarrollado este potente programa, con grandes facilidades como las encontramos en RStudio. En los siguientes posts podremos ir profundizando más sobre esta herramienta. **TE ESPERAMOS!!!**
 
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
 <center>
-<img src="https://i.ibb.co/Lpb8FRY/Picture12.png" alt="Picture12" border="0" width="200">
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
 </center>

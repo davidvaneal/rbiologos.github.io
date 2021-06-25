@@ -70,3 +70,9 @@ Esto es todo, espero te sea de mucha utilidad, nos vemos en un próximo post...
 <center>
 ![](https://i.ibb.co/Z1DwJPQ/bye.gif){width="250"}
 </center>
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>

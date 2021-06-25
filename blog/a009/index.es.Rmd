@@ -72,7 +72,7 @@ Los datos se representarán de izquierda a derecha en el eje X según el orden q
 
 En el siguiente ejemplo vamos a representar graficamente la longitud de sépalo para las muestras de iris. 
 
-```{r}
+```{r out.width = '100%'}
 plot(iris$Sepal.Length)
 ```
 
@@ -86,7 +86,7 @@ Como observamos, en el eje X aparecen las 150 observaciones, mientras que en el 
 
 Este tipo de represetación se realiza para poder inferir una posible relación entre las variables, como vemos a continuación:
 
-```{r}
+```{r out.width = '100%'}
 # Simplemente las separamos con una coma (,)
 plot(iris$Sepal.Length, iris$Sepal.Width)
 ```
@@ -104,7 +104,7 @@ representarse los valores correspondientes a dos variables, es posible aprovecha
 
 En el siguiente ejercicio se usa el color de los puntos para representar la especie de cada observación, añadiendo el parámetro <res>col</res> (color).
 
-```{r}
+```{r out.width = '100%'}
 plot(iris$Sepal.Length, iris$Sepal.Width,
      col = iris$Species)
 ```
@@ -123,7 +123,7 @@ Ahora demósle un poco de detalle a nuestra gráfica, para ello vamos a tener en
 - cex: valores numéricos que indican el tamaño en puntos.
 - col: nombre del color para los puntos.
 
-```{r message=FALSE}
+```{r message=FALSE, out.width = '100%'}
 # Ahora veamos las formas disponibles para pch:
 library(ggpubr)
 ggpubr::show_point_shapes()
@@ -131,7 +131,7 @@ ggpubr::show_point_shapes()
 
 Además de otras que daremos a conocer en este código:
 
-```{r}
+```{r out.width = '100%'}
 plot(iris$Petal.Length, iris$Petal.Width, 
      col = iris$Species, 
       pch = 19, ## Forma de los puntos
@@ -177,7 +177,7 @@ Para este ejercicio vamos a utilizar la siguiente base de datos, que es un estud
 La función par(mfrow = c(f, c)) que utilizaremos a continuación tiene como fin agrupar varios gráficos en un solo lienzo, para ello debemos especificar el número de filas y columnas que necesitaremos.
 </blockquote>
 
-```{r }
+```{r out.width = '100%'}
 par(mfrow = c(1, 2)) # Necesitamos una fila y dos columnas
 r<-read.csv(choose.files())
 # Gráfica sin línea
@@ -198,7 +198,7 @@ Como podemos observar para representar adecuadamente una gráfica de línea es i
 
 Y lo trabajamos en el siguiente código:
 
-```{r}
+```{r out.width = '100%'}
 plot(r$Dispersion, r$Longitud, 
      type = "l", 
      lwd = 4, 
@@ -222,7 +222,7 @@ Una gráfica de este tipo dibuja un rectángulo cruzado por una línea recta hor
 Recuerda que el valor de x debe ser una variable del tipo **factor**
 </blockquote>
 
-```{r}
+```{r out.width = '100%'}
 plot(iris$Species, iris$Petal.Length,
      main = "Longitud de pétalos de 3 especies del género Iris", 
      xlab = "Especies", 
@@ -243,7 +243,7 @@ Este es quizás el tipo de gráfico mejor conocido por todos. Una gráfica de es
 
 La función <res>plot()</res> puede generar gráficos de barra si damos como argumento (x) un vector de factor o cadena de texto, sin dar un argumento (y). Para este gráfico utilizaremos la base de datos <res>chickwts</res> que es una base de datos propia de R, de un estudio que realizó un experimento para medir y comparar la efectividad de varios suplementos alimenticios en la tasa de crecimiento de los pollos.
 
-```{r}
+```{r out.width = '100%'}
 plot(x = chickwts$feed,
      col=c('red','black','green','blue', 'orange', 'grey'),
      xlab="Suplementos alimenticios",
@@ -255,7 +255,7 @@ plot(x = chickwts$feed,
 
 Por supuesto, este tipo de gráficos también permite personalizarlo para cambiar su aspecto visual. Por ejemplo, podemos mostrar las barras en sentido horizontal.
 
-```{r}
+```{r out.width = '100%'}
 plot(x = chickwts$feed,
      border = 'red', ## Color borde de las barras
      col = 'green', ## Color barras
@@ -285,7 +285,7 @@ Los histogramas ayudan a dar una estimación de dónde se concentran los valores
 
 Para crear un histograma, vamos a utilizar los siguientes datos, que representan las distancias (en yardas) que recorre un ave cada hora en un estudio de monitoreo de la especie.
 
-```{r}
+```{r out.width = '100%'}
 distancia <- c(241.1, 284.4, 220.2, 272.4, 271.1, 268.3,
                291.6, 241.6, 286.1, 285.9, 259.6, 299.6,
                253.1, 239.6, 277.8, 263.8, 267.2, 272.6,
@@ -299,7 +299,7 @@ Este tipo de gráfico es de los pocos que no utilizamos con la función <res>plo
 ![](https://i.ibb.co/2c99by5/ohhhhhhh.gif){width=350}
 </center><br>
 
-```{r}
+```{r out.width = '100%'}
 hist(distancia, main = "Histograma de frecuencias",
      ylab = "Frecuencia",
      xlab = "Yardas de vuelo",
@@ -326,7 +326,7 @@ n = Datos totales
 ```
 </center>
 
-```{r}
+```{r out.width = '100%'}
 par(mfrow = c(1, 3)) # Necesitamos una fila y tres columnas
 hist(distancia, breaks = 2, main = "Pocas clases", ylab = "Frecuencia")
 hist(distancia, breaks = 50, main = "Demasiadas clases", ylab = "Frecuencia")
@@ -346,14 +346,14 @@ Como puedes observar, entre estos gráficos difiere mucho su análisis, por tant
 
 Un gráfico de densidad visualiza la distribución de datos en un intervalo o período de tiempo continuo. Este gráfico es una variación de un Histograma que usa el suavizado de _cerner_ para trazar valores, permitiendo distribuciones más suaves al suavizar el ruido. Los picos de un gráfico de densidad ayudan a mostrar dónde los valores se concentran en el intervalo.
 
-```{r}
+```{r out.width = '100%'}
 plot(density(distancia),
      main="Gráfico de Densidad")
 ```
 
 Igualmente podemos representar la densidad de los datos a partir de barras, para ello utilizaremos nuevamente la función <res>hist()</res> y agregaremos el argumento <res>prob</res> el cual tiene valores **TRUE** y **FALSE**.
 
-```{r}
+```{r out.width = '100%'}
 hist(distancia, prob = TRUE, main = "Histograma de densidad",
      ylab = "Densidad")
 ```
@@ -403,3 +403,9 @@ Bibliografía
 ***Revisión***
 
 [Eliana Tabares Lara](https://rbiologos.github.io/author/eliana-tabares/) 
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>

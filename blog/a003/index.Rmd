@@ -96,3 +96,9 @@ Por último, cómo pudiste ver, los tipos de datos en R  son muy sencillos, no s
 <br>
 
 **En el nuevo post, ¡TE LO CONTAREMOS TODO!**
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>

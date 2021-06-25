@@ -351,12 +351,18 @@ Con esta información esperamos que vayas conociendo de mejor manera tus datos y
 
 Bibliografía:
 
-[R para principiantes](https://bookdown.org/jboscomendoza/r-principiantes4/data-frames.html)
+- [R para principiantes](https://bookdown.org/jboscomendoza/r-principiantes4/data-frames.html)
 
-[Guía completa de Markdown y su integración con R](https://rstudio-pubs-static.s3.amazonaws.com/330387_5a40ca72c3b14824acedceb7d34618d1.html)
+- [Guía completa de Markdown y su integración con R](https://rstudio-pubs-static.s3.amazonaws.com/330387_5a40ca72c3b14824acedceb7d34618d1.html)
 
-[RStudio para Estadística Descriptiva en Ciencias Sociales](https://bookdown.org/gboccardo/manual-ED-UCH/)
+- [RStudio para Estadística Descriptiva en Ciencias Sociales](https://bookdown.org/gboccardo/manual-ED-UCH/)
 
-[Manipulación de datos e investigación reproducible en R](https://derek-corcoran-barrios.github.io/Libro/_book/index.html)
+- [Manipulación de datos e investigación reproducible en R](https://derek-corcoran-barrios.github.io/Libro/_book/index.html)
 
-[Ciencia de datos con R](https://rsanchezs.gitbooks.io/ciencia-de-datos-con-r/content/)
+- [Ciencia de datos con R](https://rsanchezs.gitbooks.io/ciencia-de-datos-con-r/content/)
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>

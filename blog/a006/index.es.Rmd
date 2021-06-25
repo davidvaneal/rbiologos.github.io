@@ -269,7 +269,7 @@ Luego de aprender a importar datos en R, es necesario analizar nuestros datos, s
 </center>
 <br>
 
----
+```
 Información consultada
 
 - Jakob Jenkov (2020) R - Load Data
@@ -279,3 +279,10 @@ Información consultada
 - Freddy Hernández (2012) Manual de R
 - RCoder
 - Mauricio Anderson (2016) Curso de R
+```
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>
