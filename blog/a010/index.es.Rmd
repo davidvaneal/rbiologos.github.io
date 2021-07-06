@@ -440,7 +440,7 @@ Aprendimos los requerimientos para que el paquete funcione adecuadamente y no no
 ![](https://i.ibb.co/WfF2N99/cool.gif){width=350}
 </center><br>
 
-Si quieres más información puedes leer esto [Extensiones ggplot2](https://exts.ggplot2.tidyverse.org/gallery/)
+Si necesitas más información acerca de este tema, puedes pasarte por esta página y leer su contenido - [Extensiones ggplot2](https://exts.ggplot2.tidyverse.org/gallery/)
 
 Muchas gracias por tu lectura, esperamos que te lleves algo más que sólo cansancio por ver tanto código; sabemos que R es un mundo a veces despiadado, pero que deja sensaciones únicas en la mente, prácticamente R juega contigo, como **tu ex**...
 
@@ -461,6 +461,10 @@ Muchas gracias por tu lectura, esperamos que te lleves algo más que sólo cansa
 - [Introducción a ggplot2](https://www.datanalytics.com/libro_r/introduccion-a-ggplot2.html)
 
 - [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/polishing.html)
+
+## Más información 
+
+Estos análisis se han realizado utilizando el software R (v.4.1.0) y Rstudio (v. 1.4.1717)
 
 Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
 

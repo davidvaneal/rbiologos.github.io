@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+	<meta charset="utf-8">
+	<title>Diseño de gráficos ggplot2 - Parte II</title>
+
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="El espacio perfecto para Biólogos y R">
+	
+	<meta name="author" content="&lt;/R Biólogos&gt;">
+	<meta name="generator" content="Hugo 0.83.1" />
+
+	<!-- plugins -->
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/plugins/bootstrap/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/plugins/themify-icons/themify-icons.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/plugins/magnific-popup/magnific-popup.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/plugins/slick/slick.css">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim%7cQuattrocento&#43;Sans:400,700&amp;display=swap">
+	
+
+	<!-- Main Stylesheet -->
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/css/style.min.css" media="screen">
+
+	<!-- Custom stylesheet - for your changes -->
+	
+  <link rel="stylesheet" href="https://rbiologos.github.io/css/custom.min.css" media="screen">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="https://i.ibb.co/93QhLPT/Fav.png" type="image/x-icon">
+	<link rel="icon" href="https://i.ibb.co/93QhLPT/Fav.png" type="image/x-icon">
+
+	
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-N49JEEK9KF"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-N49JEEK9KF');
+	</script>
+	
+
+</head>
+
+
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="55">
+  <div id="content">
+    
+<!-- preloader start -->
+<div class="preloader">
+  
+  <img src="https://i.ibb.co/BjJWHb3/preloader.gif" alt="preloader" width="250">
+  
+</div>
+<!-- preloader end -->
+
+
+
+<section class="sticky-top navigation">
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<a class="navbar-brand p-0" href="/">
+				
+				<img class="lozad" data-src="https://i.ibb.co/93QhLPT/Fav.png" alt="R Biólogos" height="42">
+				
+			</a>
+
+			<button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navigation">
+				<ul class="navbar-nav ml-auto">
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#https://rbiologos.github.io/">Inicio</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#blog">Blog</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#team">Equipo</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#about">¿Qué somos?</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#feature">¿Qué hacemos?</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#contact">Contacto</a>
+					</li>
+					
+				</ul></div>
+				
+				<select id="select-language" onchange="location = this.value;">
+					
+					
+					
+					
+					
+					
+					
+					
+					<option id="es" value="https://rbiologos.github.io/blog/a011/" selected>ES
+					</option>
+					
+					
+					
+					
+					
+					
+					
+					
+				</select>
+				
+			
+			<script>
+  (function() {
+    var id = '06c75f9c-882f-11eb-a152-0242ac130002';
+    var ci_search = document.createElement('script');
+    ci_search.type = 'text/javascript';
+    ci_search.async = true;
+    ci_search.src = 'https://cse.expertrec.com/api/js/ci_common.js?id=' + id;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ci_search, s);
+  })();
+</script><ci-search></ci-search>
+		</nav>
+	</div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1>Diseño de gráficos ggplot2 - Parte II</h1>
+        <ul class="list-inline mb-50">
+          <li class="list-inline-item"><a href="/author/david-vanegas/">David Vanegas</a></li>
+          <li class="list-inline-item">Monday, Jul 5, 2021</li>
+        </ul>
+        <img class="img-fluid mb-50 lozad" data-src="https://i.ibb.co/WpxYxdq/ES.png" alt="blog-image">
+      </div>
+      <div class="col-lg-8 offset-lg-2">
+        <div class="post-single-content">
+          
+<script src="https://rbiologos.github.io/blog/a011/index.es_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Continuando nuestro aprendizaje de la visualización de datos con el paquete <em><em>ggplot2</em></em>, en este post veremos que tipos de gráficos podemos elaborar y cuales son las herramientas para poder modificarlos</p>
+<center>
+<img src="https://i.ibb.co/nnrR9yy/200.gif" width="350" />
+</center>
+<p><br></p>
+<p>Como habíamos visto en el POST <a href="https://rbiologos.github.io/blog/a009/">Análisis exploratorio de Datos - Parte II</a>, la transformación de una base de datos a un formato visual nos permite identificar características y relaciones entre los elementos de los datos. En ese mismo <em>Post</em> vimos además, los distintos tipos de gráficos que podemos utilizar, y esto varía según el tipo de datos que tenemos. Así que te recomendamos darle una leída si aún no comprendes que tipo de datos tienes en tu poder.</p>
+<p>Además en este el POST <a href="https://rbiologos.github.io/blog/a010/">Diseño de gráficos ggplot2 - Parte I</a>, hablamos sobre el paquete <em>ggplot2</em> y el mecanismo de generación de gráficos que es a partir de <em><em>capas</em></em> o <em><em>layers</em></em>. Estas capas se pueden ir adjuntando e ir modificando nuestro gráfico final, según nuestros gustos</p>
+<center>
+<img src="https://i.ibb.co/xKkkZP9/join.gif" width="350" />
+</center>
+<p><br></p>
+<p>Con el paquete <em>ggplot2</em> también podemos crear los gráficos base de R (como <em>dispersión de puntos</em>, <em>barras</em>) y otros tipos más, ya que este paquete está especialmente diseñado para crear una buena cantidad de gráficos. Veamos algunos de estos</p>
+<ul>
+<li>Para una variable continua:
+<ul>
+<li><em><em>geom_point()</em></em> para diagrama de dispersión</li>
+<li><em><em>geom_histogram()</em></em> para diagrama de histograma</li>
+<li><em><em>geom_freqpoly()</em></em> para diagrama de frecuencia de polígono</li>
+<li><em><em>geom_area()</em></em> para diagrama de área</li>
+<li><em><em>geom_density()</em></em> para la diagrama de densidad</li>
+<li><em><em>geom_line()</em></em> para diagrama lineal</li>
+</ul></li>
+<li>Para una variable discreta:
+<ul>
+<li><em><em>geom_box()</em></em> para diagrama de caja</li>
+<li><em><em>geom_bar()</em></em> para diagrama de barras</li>
+<li><em><em>geom_errorbar()</em></em> para diagrama de error</li>
+</ul></li>
+</ul>
+<center>
+<img src="https://i.ibb.co/mR6FNGV/Gr-ficos.jpg" width="350" />
+</center>
+<p><br></p>
+<p>Además nuevamente dejamos un par de imagenes que tienen como finalidad ilustar las múltiples tareas que podemos adherir a <strong>ggplot2</strong> y cuál es su código respectivo</p>
+<center>
+<img src="https://i.ibb.co/yqjG242/ggplot2-page-0001.jpg" style="width:100.0%" />.
+</center>
+<p><br></p>
+<center>
+<img src="https://i.ibb.co/JkzzmGs/ggplot2-page-0002.jpg" style="width:100.0%" />
+</center>
+<p><br></p>
+<p>Siguiendo con nuestro aprendizaje, veremos algunos ejemplos y cómo utilizarlos, para ello, usaremos la base de datos confiable <strong>iris</strong>, así que veamos un resumen sobre ella, ¡Vamos por ello!</p>
+<pre class="r"><code>library(ggplot2)
+summary(iris)</code></pre>
+<pre><code>##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##        Species  
+##  setosa    :50  
+##  versicolor:50  
+##  virginica :50  
+##                 
+##                 
+## </code></pre>
+<pre class="r"><code># Vemos el tipo de clase de nuestras variables
+lapply(iris, class)</code></pre>
+<pre><code>## $Sepal.Length
+## [1] &quot;numeric&quot;
+## 
+## $Sepal.Width
+## [1] &quot;numeric&quot;
+## 
+## $Petal.Length
+## [1] &quot;numeric&quot;
+## 
+## $Petal.Width
+## [1] &quot;numeric&quot;
+## 
+## $Species
+## [1] &quot;factor&quot;</code></pre>
+<p>Como podemos observar, tenemos 5 variables, 4 de ellas son del tipo numeric (<em>longitud</em> y <em>ancho</em> del <em>sépalo</em> y <em>pétalo</em>) y un factor (tres <em>especies</em> de flores).</p>
+<p>Ahora si, a aprender sobre los tipos de gráficos</p>
+<center>
+<img src="https://i.ibb.co/K2vzpqQ/brain.gif" width="350" />
+</center>
+<p><br></p>
+<div id="diagrama-de-dispersión" class="section level2">
+<h2>Diagrama de dispersión</h2>
+<p>Cuando estamos interesados en la interacción de dos variables cuantitativas, como en el siguiente ejemplo, podemos hacer uso de este tipo de gráficas. El comando necesario para graficarlo con <em>ggplot2</em> es <res>geom_point()</res></p>
+<blockquote>
+<p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" />
+¡¡¡Atención, atención!!!</p>
+Una particularidad de <strong>ggplot2</strong> es que los códigos de las capas para generar algún gráfico empiezan de forma similar <res>geom_</res>. Si digitas <em>geom_</em>, RStudio va a abrir una lista con los diferentes tipos de gráficos que <em>ggplot2</em> maneja
+</blockquote>
+<pre class="r"><code>## Llamamos la base de datos y que variables a utilizar
+ggplot(iris, aes(x = Sepal.Length, y = Petal.Length))+
+  ## Y agregamos la capa para que nos dibuje una dispersión de puntos
+geom_point()</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a011/index.es_files/figure-html/unnamed-chunk-2-1.png" width="100%" /></p>
+<p>Recuerda que podemos agregar más capas y mejorar el estilo de nuestra gráfica. A continuación veremos un ejemplo de como puede ir una gráfica de alta calidad, agregaremos algunas etiquetas para que vayas aprendiendo y familiarizando con las utilidades de los códigos utilizados.</p>
+<pre class="r"><code>ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, 
+                 col = Species, 
+                 shape = Species))+
+      geom_point(size = 3)+
+      
+      scale_y_continuous(&quot;Longitud del pétalo&quot;, ## Cambia el título del eje &quot;y&quot;
+                ## Cambia los límites del eje &quot;y&quot;
+                limits = c(0, 8),  
+                ## Establecemos las líneas de referencia del eje &quot;y&quot;
+                breaks = seq(0, 8, by = 2))+ 
+      scale_x_continuous(&quot;Longitud del sépalo&quot;,
+                 limits = c(4, 8),
+                 breaks = seq(3, 8, by = 1))+
+  
+      ## Cambiamos el tamaño de los títulos de los ejes
+      theme(axis.title.y = element_text(size = 18),
+            axis.title.x = element_text(size = 18))+
+      
+      ## Cambiamos el tamaño de las leyendas de los ejes
+      theme(axis.text.y = element_text(size = 16),
+            axis.text.x = element_text(size = 16))+
+  
+      ## Cambiamos la configuración del lienzo
+      theme(panel.background = element_blank(), ## Sin fondo
+            panel.border = element_blank(), ## Sin borde
+            panel.grid.major = element_blank(), ## Sin panel mayor
+            panel.grid.minor = element_blank(), ## Sin panel menor
+            axis.line = element_line(colour = &quot;black&quot;, ## Estilo de los ejes
+                                     size = 1))+
+  
+      ## Cambiamos la configuración de la leyenda
+      theme(legend.key = element_blank(), ## Sin fondo
+            legend.text = element_text(size = 12, 
+                                       face = &quot;italic&quot;), # Estilo del texto
+            legend.title = element_text(size = 14, 
+                                        face = &quot;italic&quot;), # Estilo del título
+            legend.position = c(0.9, 0.2))+ # Posición de la leyenda
+      scale_color_grey(start = 0.8, end = 0.2)+ # Colores de la leyenda
+      labs(colour = &quot;Iris&quot;, shape = &quot;Iris&quot;) # Título de la leyenda</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a011/index.es_files/figure-html/unnamed-chunk-3-1.png" width="100%" /></p>
+<p>Como ves, el estilo de la gráfica cambia drásticamente, y te preguntarás <em>¿con qué fin?</em> Y te respondemos: la presentación de nuestros resultados es parte <em>fundamental</em> en el reconocimiento de nosotros como investigadores ante el lector; no es lo mismo presentar una gráfica simple a una bien elaborada, todo entra y se vende por la vista</p>
+<center>
+<img src="https://i.ibb.co/dP8Q8YV/sky.gif" width="350" />
+</center>
+<p><br></p>
+</div>
+<div id="diagrama-de-histograma" class="section level2">
+<h2>Diagrama de histograma</h2>
+<p>Un histograma visualiza la distribución de los datos a lo largo de un intervalo continuo o un período de tiempo determinado. Cada barra en un histograma representa la frecuencia tabulada en cada intervalo/barra. El área total del histograma es igual al número de datos. El comando necesario para graficarlo con <em>ggplot2</em> es <res>geom_histogram()</res></p>
+<p>Para ver este tipo de gráfico de mejor manera, vamos a utilizar la base de datos <res>Aves</res>, que guardaremos en una variable que llamaremos <res>tangara</res>. La cual son los datos de un estudio del peso de Tángaras, hembras y machos, en una zona del Quindío.</p>
+<center>
+<a href="https://min.gitcdn.link/repo/davidvaneal/Documentos-RBiologos/main/T%C3%A1ngaras.csv"><img src="https://i.ibb.co/6gx1V1Y/csv-icon.png" alt="descarga" border="0" width="150"></a>
+</center>
+<center>
+Descarga aquí
+</center>
+<p><br></p>
+<pre class="r"><code>tangara &lt;- read.csv(choose.files())
+
+ggplot(tangara, aes(x=weight, fill=sex, col=sex)) +
+  geom_histogram(binwidth = 1)+
+  
+  xlab(&quot;Peso&quot;) + 
+  ylab(&quot;Cantidad&quot;)+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 16),
+        axis.text.x = element_text(size = 14))+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = &quot;black&quot;, size = 1),
+        panel.background = element_blank())+
+  theme(legend.key = element_blank())+
+  labs(colour = &quot;Sexo&quot;, fill = &quot;Sexo&quot;)+
+  scale_fill_grey(start = 0.6, end = 0.5)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a011/index.es_files/figure-html/unnamed-chunk-4-1.png" width="100%" /></p>
+</div>
+<div id="diagrama-de-frecuencia-de-polígono" class="section level2">
+<h2>Diagrama de frecuencia de polígono</h2>
+<p>Un polígono de frecuencias es una herramienta gráfica que se emplea a partir de un histograma. Para ello, se unen con una línea los distintos puntos medios de las columnas del histograma, sin dejar espacio entre una y otra, logrando así una forma geométrica o polígono.</p>
+<p>Se emplean los polígonos de frecuencias cuando es necesario graficar o resaltar distintas distribuciones conjuntas o bien una clasificación cruzada de una variable cuantitativa continua, junto con otra variable cualitativa o cuantitativa discreta, todo dentro de un mismo gráfico. El comando necesario para graficarlo con <em>ggplot2</em> es <res>geom_freqpoly()</res>. Para ver este tipo de gráfico de mejor manera, vamos a utilizar nuestra base <res>Aves (tangara)</res>.</p>
+<pre class="r"><code>ggplot(tangara, aes(x=weight, col=sex)) +
+  geom_freqpoly(binwidth = 1, size= 1.5)+
+  
+  xlab(&quot;Peso&quot;) + 
+  ylab(&quot;Cantidad&quot;)+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 16),
+        axis.text.x = element_text(size = 14))+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = &quot;black&quot;, size = 1),
+        panel.background = element_blank())+
+  theme(legend.key = element_blank())+
+  labs(colour = &quot;Sexo&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a011/index.es_files/figure-html/unnamed-chunk-5-1.png" width="100%" /></p>
+</div>
+<div id="diagrama-de-área" class="section level2">
+<h2>Diagrama de área</h2>
+<p>Los gráficos de áreas comparan los cambios o las tendencias históricas mostrando la proporción del total que cada categoría representa en cualquier punto dado en el tiempo. Comunican tendencias generales más que valores individuales al comparar varias series de datos. El comando necesario para graficarlo con <em>ggplot2</em> es <res>geom_area()</res>. Para ver este tipo de gráfico de mejor manera, vamos a utilizar nuestra base de datos <res>Aves (tangara)</res>.</p>
+<pre class="r"><code>ggplot(tangara, aes(x=weight, col=sex)) +
+geom_area(aes(fill = sex), 
+          stat =&quot;bin&quot;, 
+          alpha=0.6)+
+  
+      xlab(&quot;Peso&quot;) + 
+      ylab(&quot;Cantidad&quot;)+
+      theme(axis.title.y = element_text(size = 18),
+            axis.title.x = element_text(size = 18),
+            axis.text.y = element_text(size = 16),
+            axis.text.x = element_text(size = 14))+
+      theme(panel.border = element_blank(), 
+            panel.grid.major = element_blank(),
+            panel.grid.minor = element_blank(), 
+            axis.line = element_line(colour = &quot;black&quot;, size = 1),
+            panel.background = element_blank())+
+      theme(legend.key = element_blank())+
+      labs(colour = &quot;Sexo&quot;, fill = &quot;Sexo&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a011/index.es_files/figure-html/unnamed-chunk-6-1.png" width="100%" /></p>
+</div>
+<div id="diagrama-de-densidad" class="section level2">
+<h2>Diagrama de densidad</h2>
+<p>Un gráfico de densidad visualiza la distribución de datos en un intervalo o período de tiempo continuo. Este gráfico es una variación de un Histograma que usa el suavizado de cerner para trazar valores, permitiendo distribuciones más suaves al suavizar el ruido. Los picos de un gráfico de densidad ayudan a mostrar dónde los valores se concentran en el intervalo. El comando necesario para graficarlo con <em>ggplot2</em> es <res>geom_density()</res>. Para ver este tipo de gráfico de mejor manera, vamos a utilizar nuestra base de datos <res>Aves (tangara)</res>.</p>
+<pre class="r"><code>ggplot(tangara, aes(x=weight, col=sex)) +
+  geom_density(aes(color = sex, fill = sex),
+               alpha=0.4)+
+  
+  xlab(&quot;Peso&quot;) + 
+  ylab(&quot;Cantidad&quot;)+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 16),
+        axis.text.x = element_text(size = 14))+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = &quot;black&quot;, size = 1),
+        panel.background = element_blank())+
+  theme(legend.key = element_blank())+
+  labs(colour = &quot;Sexo&quot;, fill = &quot;Sexo&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a011/index.es_files/figure-html/unnamed-chunk-7-1.png" width="100%" /></p>
+</div>
+<div id="diagrama-lineal" class="section level2">
+<h2>Diagrama lineal</h2>
+<p>El gráfico lineal (gráfico de líneas o diagrama lineal) se compone de una serie de datos representados por puntos, unidos por segmentos lineales. Mediante este gráfico se puede comprobar rápidamente el cambio de tendencia de los datos. El comando necesario para graficarlo con <em>ggplot2</em> es <res>geom_line()</res>. Para ver este tipo de gráfico de mejor manera, vamos a utilizar nuestra base de datos <res>Aves (tangara)</res>.</p>
+<pre class="r"><code>ggplot(iris, aes(x=Sepal.Length, y=Petal.Length, group=Species)) +
+  geom_line(aes(color = Species))+
+  geom_point(aes(color = Species))+
+  
+  scale_y_continuous(&quot;Longitud del pétalo&quot;, 
+                           limits = c(0, 8),
+                           breaks = seq(0, 8, by = 2))+
+  scale_x_continuous(&quot;Longitud del sépalo&quot;, 
+                           limits = c(4, 8),
+                           breaks = seq(3, 8, by = 1))+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 16),
+        axis.text.x = element_text(size = 16))+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = &quot;black&quot;, size = 1),
+        panel.background = element_blank())+
+  theme(legend.key = element_blank(),
+        legend.text = element_text(size = 12, face = &quot;italic&quot;),
+        legend.title = element_text(size = 14, face = &quot;italic&quot;),
+        legend.position = c(0.9, 0.2))+
+  scale_color_grey(start = 0.8, end = 0.2)+
+  labs(colour = &quot;Iris&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a011/index.es_files/figure-html/unnamed-chunk-8-1.png" width="100%" /></p>
+</div>
+<div id="diagrama-de-caja" class="section level2">
+<h2>Diagrama de caja</h2>
+<p>Este tipo de diagrama, conocido como gráfica de cajas y bigotes, nos permite apreciar de un vistazo el cómo se distribuyen los valores de una variable, si están más o menos concentrados o dispersos respecto a los cuartiles centrales, y si existen valores anómalos. El comando necesario para graficarlo con <em>ggplot2</em> es <res>geom_boxplot()</res>. Para ver este tipo de gráfico de mejor manera, vamos a utilizar la base de datos <res>iris</res>.</p>
+<pre class="r"><code>## Creamos el gráfico básico
+ggplot(iris, aes(x = Species, y = Petal.Length)) + 
+  geom_boxplot(color = &quot;black&quot;, fill = &quot;steelblue&quot;)+
+  geom_jitter(alpha = 0.5)+
+  
+  ## Y agregamos las capas 
+  scale_y_continuous(&quot;Longitud del pétalo&quot;, 
+                           limits = c(0, 8),
+                           breaks = seq(0, 8, by = 2))+
+  scale_x_discrete(&quot;Iris&quot;)+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18, face = &quot;italic&quot;),
+        axis.text.y = element_text(size = 16),
+        axis.text.x = element_text(size = 16, face = &quot;italic&quot;))+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = &quot;black&quot;, size = 1),
+        panel.background = element_blank())</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a011/index.es_files/figure-html/unnamed-chunk-9-1.png" width="100%" /></p>
+<p>¿Interesante no? Si observaste bien, utilizamos casi el mismo código que habíamos utilizado en la gráfica de dispersión. Esto se debe porque las capas de estilo pueden utilizarse paralelamente sin importar el tipo de gráfico que utilicemos, cabe aclarar que no todas van a funcionar y que debemos hacer pequeñas modificaciones, ten cuidado y no te vayas a confundir</p>
+<center>
+<img src="https://i.ibb.co/PrVXCTH/confused.gif" width="350" />
+</center>
+<p><br></p>
+<blockquote>
+<p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" />
+¡¡¡Atención, atención!!!</p>
+La función <res>geom_jitter()</res> agrega una pequeña cantidad de variación aleatoria a la ubicación de cada punto y es una forma útil de manejar el sobretrazado causado por la discreción en conjuntos de datos más pequeños.
+</blockquote>
+</div>
+<div id="diagrama-de-barra" class="section level2">
+<h2>Diagrama de barra</h2>
+<p>Este es quizás el tipo de gráfico mejor conocido por todos. Una gráfica de este tipo nos muestra la frecuencia con la que se han observado los datos de variables cualitativas o cuantitativas discretas con un rango limitado de valores (número de cilindros de un vehículo, número de hijos de una persona, etc.), con una barra para cada categoría de esta variable. El comando necesario para graficarlo con <em>ggplot2</em> es <res>geom_bar()</res></p>
+<p>Para este gráfico utilizaremos la base de datos <res>chickwts</res> que es una base de datos propia de R, de un estudio que realizó un experimento para medir y comparar la efectividad de varios suplementos alimenticios en la tasa de crecimiento de los pollos. Recuerda que estas bases están incluidas por defecto en R, solo es llamarlas apropiadamente.</p>
+<pre class="r"><code>## Creamos el gráfico básico y lo guardamos en una variable
+p &lt;- ggplot(chickwts, aes(x = feed, fill = feed)) + 
+  geom_bar(width = 1)
+
+## Retomamos la variable creada y agregamos las capas 
+p + xlab(&quot;Suplemento&quot;) + 
+  ylab(&quot;Cantidad&quot;)+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_blank())+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = &quot;black&quot;, size = 1),
+        panel.background = element_blank())+
+  theme(legend.position = &quot;none&quot;)+
+  
+  ## Agregamos etiquetas a cada barra 
+  geom_text(stat=&#39;count&#39;, aes(label=..count..), 
+            color=&quot;black&quot;, 
+            hjust = 1.5,
+            size=5.5)+
+
+  
+  ## Código para girar las barras horizontalmente
+  coord_flip()</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a011/index.es_files/figure-html/unnamed-chunk-10-1.png" width="100%" /></p>
+<p>O bien podemos darle un poco de estilo y presentarla de una manera diferente, pero que proporciona la misma información</p>
+<pre class="r"><code>p + xlab(&quot;Suplemento&quot;) + 
+  ylab(&quot;Cantidad&quot;)+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_blank())+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = &quot;black&quot;, size = 1),
+        panel.background = element_blank())+
+  theme(legend.key = element_blank())+
+  scale_color_grey(start = 0.8, end = 0.2)+
+  labs(fill = &quot;Suplementos&quot;)+
+  
+  ## Agregamos etiquetas a cada barra
+  geom_text(stat=&#39;count&#39;, aes(label=..count..), 
+            color=&quot;black&quot;, 
+            size=5.5)+
+
+  
+  ## Código para girar las barras horizontalmente
+  coord_polar()</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a011/index.es_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+<div id="diagrama-de-error" class="section level2">
+<h2>Diagrama de error</h2>
+<p>Para poder graficar este tipo de diagrama, primero debemos crear las variables necesarias tales como la media y la desviación estandar. En el siguiente código haremos tal ejercicio a partir de la base de datos <res>ToothGrowth</res> obsérvalo, entiéndelo y replícalo con tus datos.</p>
+<pre class="r"><code>df &lt;- ToothGrowth
+df$dose &lt;- as.factor(df$dose)
+head(df)</code></pre>
+<pre><code>##    len supp dose
+## 1  4.2   VC  0.5
+## 2 11.5   VC  0.5
+## 3  7.3   VC  0.5
+## 4  5.8   VC  0.5
+## 5  6.4   VC  0.5
+## 6 10.0   VC  0.5</code></pre>
+<pre class="r"><code>library(&quot;dplyr&quot;)
+df2 &lt;- df %&gt;%
+    group_by(dose,supp) %&gt;%
+    summarise(
+        sd = sd(len),
+        len = mean(len)
+    )
+df2</code></pre>
+<pre><code>## # A tibble: 6 x 4
+## # Groups:   dose [3]
+##   dose  supp     sd   len
+##   &lt;fct&gt; &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 0.5   OJ     4.46 13.2 
+## 2 0.5   VC     2.75  7.98
+## 3 1     OJ     3.91 22.7 
+## 4 1     VC     2.52 16.8 
+## 5 2     OJ     2.66 26.1 
+## 6 2     VC     4.80 26.1</code></pre>
+<p>Ya con nuestros datos listos, ahora si podemos graficar este diagrama. Les contamos que este tipo de gráfico también se puede realizar de varias maneras, según lo requieran o según les parezca más informativo. Pon atención al código que compone la primera forma. El comando necesario para graficarlo con <em>ggplot2</em> es <res>geom_errorbar()</res></p>
+<pre class="r"><code>ggplot(df2, aes(x = dose, y = len, ymin = len-sd, ymax = len+sd))+
+  geom_bar(aes(fill = supp), stat = &quot;identity&quot;, position = &quot;dodge&quot;) +
+  geom_errorbar(aes(color = supp), position = &quot;dodge&quot;)+
+
+  xlab(&quot;Dosis&quot;) + 
+  ylab(&quot;Altura&quot;)+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_text(size = 14))+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = &quot;black&quot;, size = 1),
+        panel.background = element_blank())+
+  labs(colour = &quot;Suplemento&quot;, fill = &quot;Suplemento&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a011/index.es_files/figure-html/unnamed-chunk-13-1.png" width="100%" /></p>
+<p>Como ves, este diagrama se compone de dos <res>geom_</res>, son ambos necesarios para poder crearlo, uno dibuja los bloques (<em>geom_bar()</em>) y el otro dibuja las líneas de error (<em>geom_errorbar()</em>).</p>
+<p>Sin embargo, podemos ver este otro tipo de gráfico, puede ser mucho más informativo, pero esa decisión va a depender de lo que estén haciendo.</p>
+<pre class="r"><code>ggplot(df2, aes(x = dose, y = len, ymin = len-sd, ymax = len+sd))+
+  geom_line(aes(group = supp, color = supp), size = 1)+
+  geom_point(aes(color = supp))+
+  geom_errorbar(aes(color = supp), width = 0.5, size = 1)+
+
+  xlab(&quot;Dosis&quot;) + 
+  ylab(&quot;Altura&quot;)+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_text(size = 14))+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = &quot;black&quot;, size = 1),
+        panel.background = element_blank())+
+  theme(legend.key = element_blank(),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14),
+        legend.position = c(0.9, 0.2))+
+  labs(colour = &quot;Suplemento&quot;, fill = &quot;Suplemento&quot;)+
+  scale_color_grey(start = 0.8, end = 0.2)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a011/index.es_files/figure-html/unnamed-chunk-14-1.png" width="100%" /></p>
+<p>En este diagrama podemos observar que se compone de tres <res>geom_</res>, todos necesarios para poder crearlo, uno dibuja los puntos de los datos (<em>geom_point()</em>), otro dibuja las líneas de error (<em>geom_errorbar()</em>) y otro dibuja las líneas de relación de los datos (<em>geom_line()</em>).</p>
+<center>
+<img src="https://i.ibb.co/wBF8LY9/graphic.gif" width="350" />
+</center>
+<p><br></p>
+</div>
+<div id="resumen" class="section level2">
+<h2>Resumen</h2>
+<p>Como pudimos observar <em>ggplot</em> se puede volver una gran herramienta en nuestros proyectos. No sólo es generar un gráfico, es la forma de transformarlo en algo que nos identifica, a partir de códigos que le darán un estilo propio.</p>
+<center>
+<img src="https://i.ibb.co/BChStyd/mm.jpg" width="350" />
+</center>
+<p><br></p>
+<p>Así en este POST aprendimos a realizar diagramas de dispersión, cajas, histogramas, entre muchísimos más, además como vimos, podemos ir mezclándolos en un mismo lienzo, eso ya va a depender de que datos tengas. Como siempre te recomendamos hacer un análisis previo de tus datos, conócelos, entiéndelos y luego si trata con ellos.</p>
+<p>Igualmente te contamos que esto es sólo un abre bocas, para poder manejar todo en forma práctica debes leer y practicar mucho más, más y más; es un largo trayecto en el que ya has avanzado bastante ¡ánimo!</p>
+</div>
+<div id="homenaje" class="section level2">
+<h2>Homenaje</h2>
+<p>No podíamos dejar pasar inadvertido algo que conmueve al ciento por ciento nuestras mentes. Teníamos que terminar este post brindándole un pequeño homenaje a esa gran persona que afortunadamente la vida cruzó por nuestros caminos. Somos afortunados todos los que le conocimos poco o mucho, porque de ella aprendimos grandes cosas, aprendimos a soñar en grande, a dar pasos gigantes en busca de los que nos apasiona y sobre todo aprendimos a reír aún cuando los momentos no fueran los indicados.</p>
+<p>Por ello y por muchas otras cosas más, nuestros escritos son un homenaje a lo que ella era, es y será ¡¡<strong><em>Vanessa Cruz Estrada</em></strong> una científica apasionada por la vida!!</p>
+<p><img src="https://i.ibb.co/HKCW3dn/VCE.jpg" style="width:100.0%" />
+<br></p>
+</div>
+<div id="bibliografía" class="section level2">
+<h2>Bibliografía</h2>
+<ul>
+<li><p><a href="http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization">ggplot2 barplots : Quick start guide - R software and data visualization</a></p></li>
+<li><p><a href="https://rpubs.com/dsulmont/37913">Gráficos con el paquete ggplot2</a></p></li>
+<li><p><a href="https://rstudio-pubs-static.s3.amazonaws.com/228019_f0c39e05758a4a51b435b19dbd321c23.html#15_dot_plots_for_one_variable">Beautiful graphics ggplot2</a></p></li>
+<li><p><a href="https://www.datanalytics.com/libro_r/ejemplos.html">R para profesionales de los datos: una introducción</a></p></li>
+<li><p><a href="https://es.r4ds.hadley.nz/visualizaci%C3%B3n-de-datos.html">R for Data Science</a></p></li>
+<li><p><a href="https://rua.ua.es/dspace/bitstream/10045/69767/1/Modulo_4_-_Graficos_avanzados_con_ggplot2.pdf">Gráficos avanzados con ggplot</a></p></li>
+<li><p><a href="http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization">Be Awesome in ggplot2: A Practical Guide to be Highly Effective - R software and data visualization</a></p></li>
+<li><p><a href="http://www.sthda.com/english/wiki/ggplot2-histogram-plot-quick-start-guide-r-software-and-data-visualization">ggplot2 histogram plot : Quick start guide - R software and data visualization</a></p></li>
+<li><p><a href="https://concepto.de/poligono-de-frecuencias/">Polígono de frecuencias</a></p></li>
+<li><p><a href="https://help.highbond.com/helpdocs/riskbond/es/Content/visualizations/interpretations/charts/stacked_area_chart.html">Gráfico de áreas</a></p></li>
+<li><p><a href="https://datavizcatalogue.com/ES/metodos/grafico_de_densidad.html">Gráfico de Densidad</a></p></li>
+<li><p><a href="https://www.uaeh.edu.mx/docencia/P_Presentaciones/prepa_ixtlahuaco/2018/Estadistica.pdf">Tipos de gráficas utilizadas en estadísticas</a></p></li>
+<li><p><a href="https://gauss.inf.um.es/tabular/modulo2.html">Galería de gráficos ggplot2</a></p></li>
+<li><p><a href="https://luisxsuper.github.io/m_ggplot2.html">Gráficos elegantes con ggplot2</a></p></li>
+<li><p><a href="https://www.r-graph-gallery.com/index.html">The R Graph Gallery</a></p></li>
+</ul>
+</div>
+<div id="más-información" class="section level2">
+<h2>Más información</h2>
+<p>Estos análisis se han realizado utilizando el software R (v.4.1.0) y Rstudio (v. 1.4.1717)</p>
+<p>Recuerda que todos nuestros códigos están almacenados en <a href="https://github.com/RBiologos/Posts">GitHub</a></p>
+<center>
+<img src="https://i.ibb.co/DpKmR1k/github.png" width="350" />
+</center>
+</div>
+
+        </div>
+        
+        
+
+<div class="social-share pt-4">
+	<h4>Comparte:</h4>
+	
+	<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2frbiologos.github.io%2fblog%2fa011%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Dise%c3%b1o%20de%20gr%c3%a1ficos%20ggplot2%20-%20Parte%20II&amp;url=https%3a%2f%2frbiologos.github.io%2fblog%2fa011%2f"
+		target="_blank" rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="https://plus.google.com/share?url=https%3a%2f%2frbiologos.github.io%2fblog%2fa011%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--google resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M11.37 12.93c-.73-.52-1.4-1.27-1.4-1.5 0-.43.03-.63.98-1.37 1.23-.97 1.9-2.23 1.9-3.57 0-1.22-.36-2.3-1-3.05h.5c.1 0 .2-.04.28-.1l1.36-.98c.16-.12.23-.34.17-.54-.07-.2-.25-.33-.46-.33H7.6c-.66 0-1.34.12-2 .35-2.23.76-3.78 2.66-3.78 4.6 0 2.76 2.13 4.85 5 4.9-.07.23-.1.45-.1.66 0 .43.1.83.33 1.22h-.08c-2.72 0-5.17 1.34-6.1 3.32-.25.52-.37 1.04-.37 1.56 0 .5.13.98.38 1.44.6 1.04 1.84 1.86 3.55 2.28.87.23 1.82.34 2.8.34.88 0 1.7-.1 2.5-.34 2.4-.7 3.97-2.48 3.97-4.54 0-1.97-.63-3.15-2.33-4.35zm-7.7 4.5c0-1.42 1.8-2.68 3.9-2.68h.05c.45 0 .9.07 1.3.2l.42.28c.96.66 1.6 1.1 1.77 1.8.05.16.07.33.07.5 0 1.8-1.33 2.7-3.96 2.7-1.98 0-3.54-1.23-3.54-2.8zM5.54 3.9c.33-.38.75-.58 1.23-.58h.05c1.35.05 2.64 1.55 2.88 3.35.14 1.02-.08 1.97-.6 2.55-.32.37-.74.56-1.23.56h-.03c-1.32-.04-2.63-1.6-2.87-3.4-.13-1 .08-1.92.58-2.5zM23.5 9.5h-3v-3h-2v3h-3v2h3v3h2v-3h3" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="mailto:?subject=Dise%c3%b1o%20de%20gr%c3%a1ficos%20ggplot2%20-%20Parte%20II&amp;body=https%3a%2f%2frbiologos.github.io%2fblog%2fa011%2f" target="_self"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link"
+		href="https://reddit.com/submit/?url=https%3a%2f%2frbiologos.github.io%2fblog%2fa011%2f&amp;resubmit=true&amp;title=Dise%c3%b1o%20de%20gr%c3%a1ficos%20ggplot2%20-%20Parte%20II" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="whatsapp://send?text=Dise%c3%b1o%20de%20gr%c3%a1ficos%20ggplot2%20-%20Parte%20II%20https%3a%2f%2frbiologos.github.io%2fblog%2fa011%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1 0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+	
+	<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Dise%c3%b1o%20de%20gr%c3%a1ficos%20ggplot2%20-%20Parte%20II&amp;url=https%3a%2f%2frbiologos.github.io%2fblog%2fa011%2f"
+		target="_blank" rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M.707 8.475C.275 8.64 0 9.508 0 9.508s.284.867.718 1.03l5.09 1.897 1.986 6.38a1.102 1.102 0 0 0 1.75.527l2.96-2.41a.405.405 0 0 1 .494-.013l5.34 3.87a1.1 1.1 0 0 0 1.046.135 1.1 1.1 0 0 0 .682-.803l3.91-18.795A1.102 1.102 0 0 0 22.5.075L.706 8.475z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+</div>
+        
+        
+        <div class="mt-5">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </div><!-- end Contact Area -->
+<footer id="footer" class="section-bg">
+	<div class="container">
+		<div class="row wow fadeInUp" data-wow-duration="500ms">
+			<div class="col-lg-12">
+
+			
+
+                        <!-- Footer Social Links -->
+				<div class="social-icon"><h1><center                                                    >Social</center></h1>
+					<ul class="list-inline">
+						
+						<li class="list-inline-item"><a href="https://www.instagram.com/rbiologiacol/" target="blank"><i class="ti-instagram" target="blank"></i></a></li>
+						
+						<li class="list-inline-item"><a href="https://www.facebook.com/rbiologos" target="blank"><i class="ti-facebook" target="blank"></i></a></li>
+						
+						<li class="list-inline-item"><a href="https://github.com/RBiologos/Posts" target="blank"><i class="ti-github" target="blank"></i></a></li>
+						
+					</ul>
+				</div>
+				
+				<center><img src="https://i.ibb.co/QXqp3ym/Logo.png" alt="R Biólogos" height="150" /></center>
+	
+				<!-- copyright -->
+				<div class="copyright text-center">
+				        
+					<a href="https://rbiologos.github.io/">
+					</a>
+					<br>
+					<p1>Copyright © 2020 Diseñado por <a href="https://github.com/davidvaneal">David Vanegas</a> bajo la plantilla <a href="https://themefisher.com">Themefisher</a> de <a href="https://gethugothemes.com">HUGO</a></p1>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- /footer -->
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="https://rbiologos.github.io/plugins/jquery/jquery.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/shuffle/shuffle.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/lazy-load/lozad.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/google-map/map.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://rbiologos.github.io/js/script.min.b98b8dcfa3dc53b74ecf3cf8724a1f75b4d217da25463ff3d6a28fc4a09e965bf9818dfce85452f5fb478bce779ee8cc.js" integrity="sha384-uYuNz6PcU7dOzzz4ckofdbTSF9olRj/z1qKPxKCellv5gY386FRS9ftHi853nujM"></script>
+
+
+</body>
+
+</html>
