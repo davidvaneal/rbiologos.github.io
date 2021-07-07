@@ -357,7 +357,7 @@ p + xlab("Suplemento") +
 
 O bien podemos darle un poco de estilo y presentarla de una manera diferente, pero que proporciona la misma información
 
-```{r}
+```{r out.width="100%"}
 p + xlab("Suplemento") + 
   ylab("Cantidad")+
   theme(axis.title.y = element_text(size = 18),
