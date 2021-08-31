@@ -7,7 +7,52 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>es-CO</language>
     <copyright>Copyright &amp;copy; 2020 Diseñado por [David Vanegas](https://github.com/davidvaneal) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright>
-    <lastBuildDate>Mon, 05 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Binomial</title>
+      <link>https://rbiologos.github.io/tags/binomial/</link>
+      <pubDate>Tue, 31 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/tags/binomial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Datos</title>
+      <link>https://rbiologos.github.io/tags/datos/</link>
+      <pubDate>Tue, 31 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/tags/datos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distribución</title>
+      <link>https://rbiologos.github.io/tags/distribuci%C3%B3n/</link>
+      <pubDate>Tue, 31 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/tags/distribuci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Estadística</title>
+      <link>https://rbiologos.github.io/tags/estad%C3%ADstica/</link>
+      <pubDate>Tue, 31 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/tags/estad%C3%ADstica/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Normal</title>
+      <link>https://rbiologos.github.io/tags/normal/</link>
+      <pubDate>Tue, 31 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/tags/normal/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>ggplot2</title>
       <link>https://rbiologos.github.io/tags/ggplot2/</link>
@@ -59,15 +104,6 @@
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://rbiologos.github.io/tags/an%C3%A1lisis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Datos</title>
-      <link>https://rbiologos.github.io/tags/datos/</link>
-      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://rbiologos.github.io/tags/datos/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,325 @@
+---
+title: Distribuciones
+author: David Vanegas
+date: '2021-08-31'
+image: https://i.ibb.co/7SRZMtV/Posts-1.png
+slug: []
+categories:
+  - R
+  - RStudio
+tags:
+  - Estadística
+  - Datos
+  - Distribución
+  - Normal
+  - Binomial
+---
+
+Antes de entrar en el mundo de la Estadística inferencial, vamos a aprender brevemente, acerca de las distribuciones de probabilidades, que podemos ver en nuestros futuros posts o en nuestros proyectos.
+
+Y si, después de varios días de ausencia, no crean que vamos a dejar este barco a medio viaje, nononono, antes llegamos más motivados y con ganas de aprender más cosas entre todos.
+
+Bueno, hoy vamos a empezar a aprender algo no tan "_divertido_", para algunas personas resultará fuertemente agotador los temas *estadísticos*, pero que te decimos, "Para cualquier biólogo, sea cual sea la rama, la estadística es una herramienta fundamental, imprescindible en la mayoría de casos y enormemente útil en el resto. Ya sea haciendo una memoria técnica, un informe, un artículo científico o como herramienta de evaluación, siempre podrás (y a menudo deberás) aplicar técnicas estadísticas, algunas enormemente sencillas y otras que entenderás a duras penas" - Nos dice nuestro buen amigo en su blog [El Bichólogo](https://www.elbichologo.com/errores-biologia-estadistica/). 
+
+Así que vamos, aprende un poco más con nosotros, quizá no sea tan dificil como pensamos y resulte algo hasta divertido para algunos.
+
+<center>
+![](https://i.ibb.co/4mY2WS9/family.gif){width="350"}
+</center><br>
+
+En el mundo actual, al momento de tomar una decisión, muy rara vez contamos con la información completa para hacerlo, es por eso que la inferencia estadística juega un papel fundamental, ya que a partir de una muestra significativa de una población (información limitada), inferimos propiedades de esta población y utilizando la teoría de probabilidades podemos analizar riesgos y reducirlos al mínimo.
+
+Los modelos de probabilidad, que son representaciones de la realidad, pueden ayudarnos en la toma de decisiones, los cuales deben basarse en datos relevantes y actualizados. Para ello, es necesario contruir un modelo particular del objeto de estudio, partiendo de la premisa de que lo real es siempre más complejo y multiforme que cualquier modelo que se pueda construir.
+
+Así, podemos definir una distribución de probabilidad como una lista que nos proporciona todos los resultados de los valores que pueden presentarse en un acontecimiento, junto con la probabilidad de ocurrencia asociada a cada uno de estos valores.
+
+Todos los acontecimientos tienen variables aleatorias (características medibles), éstas pueden ser de tipo continua o discreta.
+
+## Variables Discretas
+
+Son aquellas cuyos resultados se pueden contar o son separables (por ejemplo, la cantidad de caras en el lanzamiento de 3 monedas, el número de faltas de un partido de fútbol, libros vendidos en un mes, etc). Entre ellas encontramos distribuciones como:
+
+- Uniforme discreta
+- Binomial
+- Poisson
+- Geométrica
+- Binomial negativa
+- Hipergeométrica
+
+A continuación veremos algunas generalidades de las distribuciones más utilizadas, si requieres más información te invitamos a leer esta información [Distribuciones de probabilidad](https://www.sergas.es/Saude-publica/Documents/1899/Ayuda_Epidat_4_Distribuciones_de_probabilidad_Octubre2014.pdf)
+
+#### Distribución de probabilidad Uniforme discreta
+
+Decimos que una variable aleatoria discreta (X) tiene distribución uniforme cuando la probabilidad en todos los puntos de masa probabilística es la misma; es decir, cuando  todos los posibles valores que puede adoptar la variable (x1, x2,...,xk) tienen la misma probabilidad.
+
+<center>
+![](https://i.ibb.co/WnGn91Q/clone.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad Binomial
+
+Es una probabilidad discreta y se presenta con mucha frecuencia en nuestra vida cotidiana. Es utilizada con acontecimientos que tengan respuesta binaria, generalmente clasificada como “éxito” o “fracaso”. Algunos ejemplos donde se aplica esta distribución son:
+
+- Si una persona presenta o no una enfermedad.
+- Si una mujer se encuentra en estado de embarazo.
+- Que un producto sea exitoso o no.
+- Que un vuelo se retrase o no.
+- Si el lanzamiento de una moneda sale cara en vez de sello
+
+<center>
+![](https://i.ibb.co/0CntbFk/nono.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad Poisson
+
+Describe el número de veces que se presenta un acontecimiento durante un intervalo específico, este intervalo puede ser de tiempo, distancia, área o volumen. La probabilidad de ocurrencia es proporcional a la longitud del intervalo. Algunos ejemplos donde se aplica esta distribución son:
+
+- El número de vehículos que vende por día un concesionario.
+- Cantidad de llamadas por hora que recibe una compañía.
+- Cuando se requiere conocer el número de defectos en un lote de tela.
+- Número de accidentes automovilísticos en el año.
+- Número de donas comidas por día.
+
+<center>
+![](https://i.ibb.co/RPMXxhn/eat.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad Geométrica
+
+Cuando usted realiza un experimento que solo tiene dos resultados posibles, la distribución geométrica es una distribución discreta que puede modelar el número de ensayos consecutivos necesarios para observar el resultado de interés por primera vez
+
+<center>
+![](https://i.ibb.co/yFscww9/7ZUV.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad Binomial negativa
+
+Esta distribución puede considerarse como una extensión o ampliación de la distribución geométrica. La distribución binomial negativa es un modelo adecuado para tratar aquellos procesos en los que se repite un determinado ensayo o prueba hasta conseguir un número determinado de resultados favorables (por vez primera). Es por tanto de gran utilidad para aquellos muestreos que procedan de esta manera. Si el número de resultados favorables buscados fuera *1* estaríamos en el caso de la distribución geométrica.
+
+<center>
+![](https://i.ibb.co/WfWRxJw/first.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad Hipergeométrica
+
+La distribución hipergeométrica es una distribución discreta que modela el número de eventos en una muestra de tamaño fijo cuando usted conoce el número total de elementos en la población de la cual proviene la muestra. Cada elemento de la muestra tiene dos resultados posibles (es un evento o un no evento). Las muestras no tienen reemplazo, por lo que cada elemento de la muestra es diferente. Cuando se elige un elemento de la población, no se puede volver a elegir. Por lo tanto, la probabilidad de que un elemento sea seleccionado aumenta con cada ensayo, presuponiendo que aún no haya sido seleccionado.
+
+Utilizamos la distribución hipergeométrica para muestras obtenidas de poblaciones relativamente pequeñas, sin reemplazo.
+
+<center>
+![](https://i.ibb.co/WvSsG3H/rm.gif){width="350"}
+</center><br>
+
+
+# ¡¡¡¡STOOOOOOOOP!!!!
+
+Bueno bueno, descansemos un poco, bien es cierto que parecemos locos hablando. Ve, toma agua, estira tu cuerpo y sigue leyendo que ya vamos por la mitad
+
+<center>
+![](https://i.ibb.co/3h5vMsM/crazy.gif){witdh="350"}
+</center><br>
+
+## Variables continuas
+
+Son aquellas que tienen un número incontable de valores pero limitado (por ejemplo, los tiempos de vuelos entre una ciudad y otra, la presión de los neumáticos de un carro, etc). Entre ellas encontramos distribuciones como:
+
+- Uniforme o regular
+- Normal
+- Lognormal
+- Logística
+- Beta
+- Gamma
+- Exponencial
+- Chi - cuadrado
+- T de Student
+- F de Snedecor
+- Cauchy
+- Weibull
+- Laplace
+- Triangular
+
+A continuación veremos algunas generalidades de las distribuciones más utilizadas, si requieres más información te invitamos a leer esta información [Distribuciones de probabilidad](https://www.sergas.es/Saude-publica/Documents/1899/Ayuda_Epidat_4_Distribuciones_de_probabilidad_Octubre2014.pdf)
+
+#### Distribución de probabilidad Uniforme
+
+Utilizamos la distribución uniforme para describir variables continuas que tienen una probabilidad constante. Por ejemplo, una población de partes varía de 0.5 a 0.6 cm de largo. Si cada valor entre 0.5 y 0.6 cm tiene la misma probabilidad de ocurrir, estos datos siguen una distribución uniforme.
+
+La distribución uniforme es una distribución continua que modela un rango de valores con igual probabilidad. La distribución uniforme se especifica mediante cotas inferior y superior
+
+<center>
+![](https://i.ibb.co/djgG1pb/run.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad normal
+
+Es una de las más importantes en estadística y en el cálculo de probabilidades, es también conocida como distribución Gaussiana. Esta distribución se especifica por la media (μ) y la desviación estándar (σ). La media es el pico o centro de la curva en forma de campana. La desviación estándar determina la dispersión de la distribución.
+
+Es importante debido a que el teorema central del límite implica que esta distribución es casi universal, por lo que es la distribución estadística más común debido a que la normalidad aproximada ocurre naturalmente en muchas situaciones de mediciones físicas, biológicas y sociales. Muchos análisis estadísticos presuponen que los datos provienen de poblaciones distribuidas normalmente.
+
+<center>
+![](https://i.ibb.co/R7g878Q/move.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad Lognormal
+
+Utilizamos la distribución lognormal si el logaritmo de la variable aleatoria está distribuida normalmente. Utilícese cuando las variables aleatorias sean mayores que 0. Por ejemplo, la distribución lognormal se usa para el análisis de fiabilidad y en aplicaciones financieras, como modelar el comportamiento de las acciones. 
+
+<center>
+![](https://i.ibb.co/T1nfm0V/money.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad Logística
+
+Utilizamos la distribución logística para modelar distribuciones de datos que tengan colas más grandes y curtosis más alta que la distribución normal.
+
+La distribución logística es una distribución continua que se define por sus parámetros de escala y ubicación. La distribución logística no tiene parámetro de forma, lo que significa que la función de densidad de probabilidad solo tiene una forma. La forma de la distribución logística es similar a la forma de la distribución normal. Sin embargo, la distribución logística tiene colas más grandes.
+
+<center>
+![](https://i.ibb.co/SNXb14y/Pne.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad Beta
+
+Utilizamos la distribución beta para variables aleatorias entre 0 y 1. La distribución beta suele utilizarse para modelar la distribución de estadísticos de orden (por ejemplo, el estadístico de orden k-ésimo de una muestra de variables n uniformes (0, 1) tiene una distribución beta (k, n + 1 – k)) y para modelar eventos que se definen por valos mínimos y máximos. La escala de la distribución beta suele modificarse para modelar el tiempo hasta la culminación de una tarea. La distribución beta también se usa en estadísticas bayesianas, por ejemplo, como la distribución de valores previos de una probabilidad binomial.
+
+<center>
+![](https://i.ibb.co/yqQHSLp/mindness.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad Gamma
+
+Utilizamos la distribución gamma para modelar valores de datos positivos que sean asimétricos a la derecha y mayores que 0. La distribución gamma se utiliza comúnmente en estudios de supervivencia de fiabilidad. Por ejemplo, la distribución gamma puede describir el tiempo que transcurre para que falle un componente eléctrico.
+
+<center>
+![](https://i.ibb.co/Rv1kF84/light.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad Exponencial
+
+Utilizamos la distribución exponencial para modelar el tiempo entre eventos en un proceso continuo de Poisson. Se presupone que eventos independientes ocurren a una tasa constante.
+
+Esta distribución tiene una amplia gama de aplicaciones, que incluyen el análisis de fiabilidad de productos y sistemas, teorías de colas y cadenas de Markov.
+
+Por ejemplo, la distribución exponencial se puede utilizar para modelar:
+- Cuánto tiempo tarda en fallar un componente electrónico
+- El intervalo de tiempo entre las llegadas de clientes a una terminal
+- El tiempo que esperan los clientes en fila hasta recibir servicio
+- El tiempo hasta que se declara el incumplimiento de un pago (modelos de riesgo de crédito).
+- El tiempo para desintegración de un núcleo radiactivo
+
+<center>
+![](https://i.ibb.co/0M2hZWw/nuclear.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad Chi - cuadrado
+
+La distribución de chi-cuadrada es una distribución continua que se especifica por los grados de libertad y el parámetro de no centralidad. La distribución es positivamente asimétrica, pero la asimetría disminuye al aumentar los grados de libertad.
+
+Se utiliza la distribución de chi-cuadrada (χ2) en pruebas de significancia estadística para:
+- Comprobar qué tan bien se ajusta una muestra a una distribución teórica. Por ejemplo, puede utilizar una prueba de bondad de ajuste de chi-cuadrada para determinar si los datos de la muestra se ajustan a una distribución de Poisson.
+- Comprobar la independencia de las variables categóricas. Por ejemplo, un fabricante desea saber si la ocurrencia de cuatro tipos de defectos (espárrago faltante, abrazadera rota, sujetador flojo y sello con fugas) está relacionada con los turnos (diurno, vespertino, nocturno).
+
+<center>
+![](https://i.ibb.co/5WsV2F2/crash.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad T de Student
+
+Utilizamos la distribución t para analizar la media de una población aproximadamente normal cuando se desconoce la desviación estándar de la población. Por ejemplo, uno de los usos de la distribución t es para probar si una media de población y una medida hipotética son diferentes. Las pruebas de significancia para los coeficientes de regresión también utilizan la distribución t.
+
+<center>
+![](https://i.ibb.co/hXPtTgt/3a841b663d7feebb7c5fea92b90b7460.gif){width="350"}
+<center><br>
+
+#### Distribución de probabilidad F de Snedecor
+
+La distribución F es una distribución continua de muestreo de la relación de dos variables aleatorias independientes con distribuciones de chi-cuadrada, cada una dividida entre sus grados de libertad. La distribución F es asimétrica hacia la derecha y es descrita por los grados de libertad de su numerador (ν1) y denominador (ν2). 
+
+Utilizamos la distribución F cuando un estadístico de prueba sea la relación de dos variables que tienen una distribución de chi-cuadrada cada una. Por ejemplo, Utilizamos la distribución F en el análisis de varianza y en pruebas de hipótesis para determinar si dos varianzas de población son iguales.
+
+<center>
+![](https://i.ibb.co/X7tn4VK/twin.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad Cauchy
+
+La distribución de Cauchy es una distribución continua que se define por sus parámetros de ubicación y escala.
+
+Utilizamos la distribución de Cauchy para probar qué tan bien funcionan las técnicas robustas bajo diversos supuestos de distribución. La distribución de Cauchy se utiliza frecuentemente en física.
+
+La distribución de Cauchy se representa con una curva en forma de campana, similar a una distribución normal. Sin embargo, en la distribución de Cauchy, las colas se aproximan a cero con mayor lentitud que las colas de la distribución normal.
+
+<center>
+![](https://i.ibb.co/D9mqW2F/end.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad Weibull
+
+Considerando que la distribución exponencial está limitada, debido a que hace la suposición de una tasa de falla o función de riesgo constante, la distribución de Weibull puede ser definida para incluir una tasa de falla o tasa de riesgo creciente o decreciente. Ya que la mayor cantidad de fallas en campo, especialmente las partes mecánicas, muestran un aumento en la tasa de falla (debido a desgaste o deterioro del material), la distribución de Weibull es muy útil en describir patrones de falla de este tipo
+
+<center>
+![](https://i.ibb.co/8XfK1DV/fail.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad Laplace
+
+Utilizamos la distribución de Laplace cuando la distribución de los datos tenga un pico más alto que una distribución normal. Su función de densidad es simétrica y el parámetro de situación determina su eje de simetría, además de ser el punto donde la función alcanza su valor máximo en forma de pico afilado. Independientemente de los valores que tomen sus parámetros, es una distribución leptocúrtica, lo que quiere decir que su función de densidad es más apuntada que la función de densidad de la normal con la misma media y desviación estándar.
+
+<center>
+![](https://i.ibb.co/jTCtr8K/mountain.gif){width="350"}
+</center><br>
+
+#### Distribución de probabilidad Triangular
+
+El nombre de esta distribución viene dado por la forma de su función de densidad. Este modelo proporciona una primera aproximación cuando hay poca información disponible, de forma que sólo se necesita conocer el mínimo (valor pesimista), el máximo (valor optimista) y la moda (valor más probable). Estos tres valores son los parámetros que caracterizan a la distribución triangular y se denotan por a, b y c, respectivamente.
+
+<center>
+![](https://i.ibb.co/bLrd4gN/triangle.gif){width="350"}
+</center><br>
+
+Y hemooooos terminado... bueno, ya casi
+
+## Resumen
+
+Como pudimos ver, hay distintos tipos de distribuciones que dependerán de la naturaleza de los datos y el tipo de estudio que tengamos en mente, Así que nuestra recomendación, es leer muy bien cada uno de estos datos e ir acercándote más a lo que posiblemente tienes en tu proyecto
+
+Sabemos que a veces se nos dificulta un poco la parte estadística, pero es de suma importancia poder incorporala. Es a partir de los estadísticos que podemos tomar deciciones en nuestros estudios y en la vida real. Así que ánimo, lee, pregunta, vuelve y lee, y vuelve y pregunta, es bueno reconocer que no sabemos algo.
+
+> "Pregunta lo que no sepas y pasarás por tonto unos minutos. No lo preguntes u serás tonto toda la vida entera"
+
+Esperamos realmente que te quedes con algo de todo lo que escribimos, es un gusto contribuir con quien puede ser una mente brillante... 
+
+¡¡Hasta la próxima!!
+
+<center>
+![](https://i.ibb.co/hgC7C11/goodbye.gif){width="350"}
+</center><br>
+
+## Bibliografía
+
+- [Estadística inferencial](https://concepto.de/estadistica-inferencial/)
+
+
+- [¿Qué es la distribución de probabilidad?](https://www.pragma.com.co/blog/que-es-la-distribucion-de-probabilidad)
+
+- [Distribuciones de probabilidad](https://www.sergas.es/Saude-publica/Documents/1899/Ayuda_Epidat_4_Distribuciones_de_probabilidad_Octubre2014.pdf)
+
+- [Distribuciones de probabilidad](http://www.scian.cl/mmb/probabilidades.pdf)
+
+- [Parte primera: Distribuciones de probabilidad](https://www2.ulpgc.es/hege/almacen/download/5/5509/Tema_1.pdf)
+
+- [Distribuciones](https://support.minitab.com/es-mx/minitab/18/nav_d1e7313/)
+
+- [Distribución Binomial negativa](https://www.uv.es/ceaces/base/modelos%20de%20probabilidad/binegativa.htm)
+
+- [Distribución Weibull](https://reliabilityweb.com/sp/articles/entry/distribucion-weibull/)
+
+## Más información 
+
+Estos análisis se han realizado utilizando el software R (v.4.1.0) y Rstudio (v. 1.4.1717)
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>
