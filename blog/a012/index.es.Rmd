@@ -1,5 +1,5 @@
 ---
-title: Distribuciones
+title: Distribuciones estadísticas
 author: David Vanegas
 date: '2021-08-31'
 image: https://i.ibb.co/7SRZMtV/Posts-1.png
