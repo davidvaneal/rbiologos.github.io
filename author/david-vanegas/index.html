@@ -194,6 +194,8 @@
 					</figure> 
 					<hr>
 					<p>Soy un biólogo, amante de los insectos. Me considero una persona apasionada por la vida, por ello, disfruto todas las actividades relacionadas con esta como la investigación y el turismo, lo cual nos permite entender los diferentes procesos naturales y establecer contacto con la realidad. Me encanta realizar actividades en espacios naturales, en especial la alta montaña, ya que es un espacio donde las personas se pueden reencontrar con sí mismas y comprenden el verdadero valor de eso que llamamos vida. &ldquo;Compartir&rdquo; es una de las palabras que creo que son claves para el desarollo humano y por eso, trabajo diariamente para poder mejorar en este sentido y poder aportar positivamente a nuestro entorno natural.</p>
+<p>Puedes encontrar más información de David en su página web <a href="https://davidvaneal.github.io/">https://davidvaneal.github.io/</a></p>
+<p><img src="https://i.ibb.co/s1sQTbB/logo.png" alt=""></p>
 
 					<hr>
 					<ul class="list-inline">
@@ -379,7 +381,7 @@
 				<div class="social-icon"><h1><center                                                    >Social</center></h1>
 					<ul class="list-inline">
 						
-						<li class="list-inline-item"><a href="https://www.instagram.com/rbiologiacol/" target="blank"><i class="ti-instagram" target="blank"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.instagram.com/rbiologos/" target="blank"><i class="ti-instagram" target="blank"></i></a></li>
 						
 						<li class="list-inline-item"><a href="https://www.facebook.com/rbiologos" target="blank"><i class="ti-facebook" target="blank"></i></a></li>
 						
@@ -430,6 +432,26 @@
 <script src="https://rbiologos.github.io/js/script.min.b98b8dcfa3dc53b74ecf3cf8724a1f75b4d217da25463ff3d6a28fc4a09e965bf9818dfce85452f5fb478bce779ee8cc.js" integrity="sha384-uYuNz6PcU7dOzzz4ckofdbTSF9olRj/z1qKPxKCellv5gY386FRS9ftHi853nujM"></script>
 
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-transparent">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
 </body>
 
 </html>
