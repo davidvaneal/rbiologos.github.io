@@ -1,0 +1,523 @@
+---
+title: Diseño de gráficos ggplot2 - Parte II
+author: David Vanegas
+date: '2021-07-05'
+image: https://i.ibb.co/WpxYxdq/ES.png
+slug: []
+categories:
+  - R
+  - RStudio
+tags:
+  - gráficos
+  - ggplot2
+  - visualización
+---
+
+Continuando nuestro aprendizaje de la visualización de datos con el paquete _*ggplot2*_, en este post veremos que tipos de gráficos podemos elaborar y cuales son las herramientas para poder modificarlos
+
+<center>
+![](https://i.ibb.co/nnrR9yy/200.gif){width=350}
+</center><br>
+
+Como habíamos visto en el POST [Análisis exploratorio de Datos - Parte II](https://rbiologos.github.io/blog/a009/), la transformación de una base de datos a un formato visual nos permite identificar características y relaciones entre los elementos de los datos. En ese mismo *Post* vimos además, los distintos tipos de gráficos que podemos utilizar, y esto varía según el tipo de datos que tenemos. Así que te recomendamos darle una leída si aún no comprendes que tipo de datos tienes en tu poder.
+
+Además en este el POST [Diseño de gráficos ggplot2 - Parte I](https://rbiologos.github.io/blog/a010/), hablamos sobre el paquete *ggplot2* y el mecanismo de generación de gráficos que es a partir de *_capas_* o *_layers_*. Estas capas se pueden ir adjuntando e ir modificando nuestro gráfico final, según nuestros gustos
+
+<center>
+![](https://i.ibb.co/xKkkZP9/join.gif){width=350}
+</center><br>
+
+Con el paquete *ggplot2* también podemos crear los gráficos base de R (como _dispersión de puntos_, _barras_) y otros tipos más, ya que este paquete está especialmente diseñado para crear una buena cantidad de gráficos. Veamos algunos de estos
+
+- Para una variable continua:
+  - _*geom_point()*_ para diagrama de dispersión
+  - _*geom_histogram()*_ para diagrama de histograma
+  - _*geom_freqpoly()*_ para diagrama de frecuencia de polígono
+  - _*geom_area()*_ para diagrama de área
+  - _*geom_density()*_ para la diagrama de densidad
+  - _*geom_line()*_ para diagrama lineal
+  
+- Para una variable discreta:
+  - _*geom_box()*_ para diagrama de caja
+  - _*geom_bar()*_ para diagrama de barras
+  - _*geom_errorbar()*_ para diagrama de error
+  
+<center>
+![](https://i.ibb.co/mR6FNGV/Gr-ficos.jpg){width="350"}
+</center><br>
+
+Además nuevamente dejamos un par de imagenes que tienen como finalidad ilustar las múltiples tareas que podemos adherir a **ggplot2** y cuál es su código respectivo
+
+<center>
+![](https://i.ibb.co/yqjG242/ggplot2-page-0001.jpg){width=100%}.
+</center><br>
+
+<center>
+![](https://i.ibb.co/JkzzmGs/ggplot2-page-0002.jpg){width=100%}
+</center><br>
+
+Siguiendo con nuestro aprendizaje, veremos algunos ejemplos y cómo utilizarlos, para ello, usaremos la base de datos confiable **iris**, así que veamos un resumen sobre ella, ¡Vamos por ello!
+
+```{r message=FALSE}
+library(ggplot2)
+summary(iris)
+# Vemos el tipo de clase de nuestras variables
+lapply(iris, class)
+```
+Como podemos observar, tenemos 5 variables, 4 de ellas son del tipo numeric (_longitud_ y _ancho_ del _sépalo_ y _pétalo_) y un factor (tres _especies_ de flores).
+
+Ahora si, a aprender sobre los tipos de gráficos
+
+<center>
+![](https://i.ibb.co/K2vzpqQ/brain.gif){width=350}
+</center><br>
+
+## Diagrama de dispersión
+
+Cuando estamos interesados en la interacción de dos variables cuantitativas, como en el siguiente ejemplo, podemos hacer uso de este tipo de gráficas. El comando necesario para graficarlo con *ggplot2* es <res>geom_point()</res>
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+¡¡¡Atención, atención!!!
+
+Una particularidad de **ggplot2** es que los códigos de las capas para generar algún gráfico empiezan de forma similar <res>geom_</res>. Si digitas *geom_*, RStudio va a abrir una lista con los diferentes tipos de gráficos que *ggplot2* maneja
+</blockquote>
+
+```{r out.width="100%"}
+## Llamamos la base de datos y que variables a utilizar
+ggplot(iris, aes(x = Sepal.Length, y = Petal.Length))+
+  ## Y agregamos la capa para que nos dibuje una dispersión de puntos
+geom_point()
+```
+
+Recuerda que podemos agregar más capas y mejorar el estilo de nuestra gráfica. A continuación veremos un ejemplo de como puede ir una gráfica de alta calidad, agregaremos algunas etiquetas para que vayas aprendiendo y familiarizando con las utilidades de los códigos utilizados.
+
+
+```{r out.width="100%"}
+ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, 
+                 col = Species, 
+                 shape = Species))+
+      geom_point(size = 3)+
+      
+      scale_y_continuous("Longitud del pétalo", ## Cambia el título del eje "y"
+                ## Cambia los límites del eje "y"
+                limits = c(0, 8),  
+                ## Establecemos las líneas de referencia del eje "y"
+                breaks = seq(0, 8, by = 2))+ 
+      scale_x_continuous("Longitud del sépalo",
+                 limits = c(4, 8),
+                 breaks = seq(3, 8, by = 1))+
+  
+      ## Cambiamos el tamaño de los títulos de los ejes
+      theme(axis.title.y = element_text(size = 18),
+            axis.title.x = element_text(size = 18))+
+      
+      ## Cambiamos el tamaño de las leyendas de los ejes
+      theme(axis.text.y = element_text(size = 16),
+            axis.text.x = element_text(size = 16))+
+  
+      ## Cambiamos la configuración del lienzo
+      theme(panel.background = element_blank(), ## Sin fondo
+            panel.border = element_blank(), ## Sin borde
+            panel.grid.major = element_blank(), ## Sin panel mayor
+            panel.grid.minor = element_blank(), ## Sin panel menor
+            axis.line = element_line(colour = "black", ## Estilo de los ejes
+                                     size = 1))+
+  
+      ## Cambiamos la configuración de la leyenda
+      theme(legend.key = element_blank(), ## Sin fondo
+            legend.text = element_text(size = 12, 
+                                       face = "italic"), # Estilo del texto
+            legend.title = element_text(size = 14, 
+                                        face = "italic"), # Estilo del título
+            legend.position = c(0.9, 0.2))+ # Posición de la leyenda
+      scale_color_grey(start = 0.8, end = 0.2)+ # Colores de la leyenda
+      labs(colour = "Iris", shape = "Iris") # Título de la leyenda
+```
+
+Como ves, el estilo de la gráfica cambia drásticamente, y te preguntarás *¿con qué fin?* Y te respondemos: la presentación de nuestros resultados es parte *fundamental* en el reconocimiento de nosotros como investigadores ante el lector; no es lo mismo presentar una gráfica simple a una bien elaborada, todo entra y se vende por la vista
+
+<center>
+![](https://i.ibb.co/dP8Q8YV/sky.gif){width=350}
+</center><br>
+
+## Diagrama de histograma
+
+Un histograma visualiza la distribución de los datos a lo largo de un intervalo continuo o un período de tiempo determinado. Cada barra en un histograma representa la frecuencia tabulada en cada intervalo/barra. El área total del histograma es igual al número de datos. El comando necesario para graficarlo con *ggplot2* es <res>geom_histogram()</res>
+
+Para ver este tipo de gráfico de mejor manera, vamos a utilizar la base de datos <res>Aves</res>, que guardaremos en una variable que llamaremos <res>tangara</res>. La cual son los datos de un estudio del peso de Tángaras, hembras y machos, en una zona del Quindío.
+
+<center>
+<a href="https://min.gitcdn.link/repo/davidvaneal/Documentos-RBiologos/main/T%C3%A1ngaras.csv"><img src="https://i.ibb.co/6gx1V1Y/csv-icon.png" alt="descarga" border="0" width="150"></a>
+</center>
+<center>Descarga aquí</center><br>
+
+```{r out.width="100%", message=FALSE}
+tangara <- read.csv(choose.files())
+
+ggplot(tangara, aes(x=weight, fill=sex, col=sex)) +
+  geom_histogram(binwidth = 1)+
+  
+  xlab("Peso") + 
+  ylab("Cantidad")+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 16),
+        axis.text.x = element_text(size = 14))+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = "black", size = 1),
+        panel.background = element_blank())+
+  theme(legend.key = element_blank())+
+  labs(colour = "Sexo", fill = "Sexo")+
+  scale_fill_grey(start = 0.6, end = 0.5)
+```
+
+## Diagrama de frecuencia de polígono
+
+Un polígono de frecuencias es una herramienta gráfica que se emplea a partir de un histograma. Para ello, se unen con una línea los distintos puntos medios de las columnas del histograma, sin dejar espacio entre una y otra, logrando así una forma geométrica o polígono.
+
+Se emplean los polígonos de frecuencias cuando es necesario graficar o resaltar distintas distribuciones conjuntas o bien una clasificación cruzada de una variable cuantitativa continua, junto con otra variable cualitativa o cuantitativa discreta, todo dentro de un mismo gráfico. El comando necesario para graficarlo con *ggplot2* es <res>geom_freqpoly()</res>. Para ver este tipo de gráfico de mejor manera, vamos a utilizar nuestra base <res>Aves (tangara)</res>.
+
+```{r out.width="100%"}
+ggplot(tangara, aes(x=weight, col=sex)) +
+  geom_freqpoly(binwidth = 1, size= 1.5)+
+  
+  xlab("Peso") + 
+  ylab("Cantidad")+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 16),
+        axis.text.x = element_text(size = 14))+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = "black", size = 1),
+        panel.background = element_blank())+
+  theme(legend.key = element_blank())+
+  labs(colour = "Sexo")
+```
+
+## Diagrama de área
+
+Los gráficos de áreas comparan los cambios o las tendencias históricas mostrando la proporción del total que cada categoría representa en cualquier punto dado en el tiempo. Comunican tendencias generales más que valores individuales al comparar varias series de datos. El comando necesario para graficarlo con *ggplot2* es <res>geom_area()</res>. Para ver este tipo de gráfico de mejor manera, vamos a utilizar nuestra base de datos <res>Aves (tangara)</res>.
+
+```{r out.width="100%", message=FALSE}
+ggplot(tangara, aes(x=weight, col=sex)) +
+geom_area(aes(fill = sex), 
+          stat ="bin", 
+          alpha=0.6)+
+  
+      xlab("Peso") + 
+      ylab("Cantidad")+
+      theme(axis.title.y = element_text(size = 18),
+            axis.title.x = element_text(size = 18),
+            axis.text.y = element_text(size = 16),
+            axis.text.x = element_text(size = 14))+
+      theme(panel.border = element_blank(), 
+            panel.grid.major = element_blank(),
+            panel.grid.minor = element_blank(), 
+            axis.line = element_line(colour = "black", size = 1),
+            panel.background = element_blank())+
+      theme(legend.key = element_blank())+
+      labs(colour = "Sexo", fill = "Sexo")
+```
+
+## Diagrama de densidad
+
+Un gráfico de densidad visualiza la distribución de datos en un intervalo o período de tiempo continuo. Este gráfico es una variación de un Histograma que usa el suavizado de cerner para trazar valores, permitiendo distribuciones más suaves al suavizar el ruido. Los picos de un gráfico de densidad ayudan a mostrar dónde los valores se concentran en el intervalo. El comando necesario para graficarlo con *ggplot2* es <res>geom_density()</res>. Para ver este tipo de gráfico de mejor manera, vamos a utilizar nuestra base de datos <res>Aves (tangara)</res>.
+
+```{r out.width="100%"}
+ggplot(tangara, aes(x=weight, col=sex)) +
+  geom_density(aes(color = sex, fill = sex),
+               alpha=0.4)+
+  
+  xlab("Peso") + 
+  ylab("Cantidad")+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 16),
+        axis.text.x = element_text(size = 14))+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = "black", size = 1),
+        panel.background = element_blank())+
+  theme(legend.key = element_blank())+
+  labs(colour = "Sexo", fill = "Sexo")
+```
+
+## Diagrama lineal
+
+El gráfico lineal (gráfico de líneas o diagrama lineal) se compone de una serie de datos representados por puntos, unidos por segmentos lineales. Mediante este gráfico se puede comprobar rápidamente el cambio de tendencia de los datos. El comando necesario para graficarlo con *ggplot2* es <res>geom_line()</res>. Para ver este tipo de gráfico de mejor manera, vamos a utilizar nuestra base de datos <res>Aves (tangara)</res>.
+
+```{r out.width="100%"}
+ggplot(iris, aes(x=Sepal.Length, y=Petal.Length, group=Species)) +
+  geom_line(aes(color = Species))+
+  geom_point(aes(color = Species))+
+  
+  scale_y_continuous("Longitud del pétalo", 
+                           limits = c(0, 8),
+                           breaks = seq(0, 8, by = 2))+
+  scale_x_continuous("Longitud del sépalo", 
+                           limits = c(4, 8),
+                           breaks = seq(3, 8, by = 1))+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 16),
+        axis.text.x = element_text(size = 16))+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = "black", size = 1),
+        panel.background = element_blank())+
+  theme(legend.key = element_blank(),
+        legend.text = element_text(size = 12, face = "italic"),
+        legend.title = element_text(size = 14, face = "italic"),
+        legend.position = c(0.9, 0.2))+
+  scale_color_grey(start = 0.8, end = 0.2)+
+  labs(colour = "Iris")
+```
+
+## Diagrama de caja
+
+Este tipo de diagrama, conocido como gráfica de cajas y bigotes, nos permite apreciar de un vistazo el cómo se distribuyen los valores de una variable, si están más o menos concentrados o dispersos respecto a los cuartiles centrales, y si existen valores anómalos. El comando necesario para graficarlo con *ggplot2* es <res>geom_boxplot()</res>. Para ver este tipo de gráfico de mejor manera, vamos a utilizar la base de datos <res>iris</res>.
+
+```{r out.width="100%"}
+## Creamos el gráfico básico
+ggplot(iris, aes(x = Species, y = Petal.Length)) + 
+  geom_boxplot(color = "black", fill = "steelblue")+
+  geom_jitter(alpha = 0.5)+
+  
+  ## Y agregamos las capas 
+  scale_y_continuous("Longitud del pétalo", 
+                           limits = c(0, 8),
+                           breaks = seq(0, 8, by = 2))+
+  scale_x_discrete("Iris")+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18, face = "italic"),
+        axis.text.y = element_text(size = 16),
+        axis.text.x = element_text(size = 16, face = "italic"))+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = "black", size = 1),
+        panel.background = element_blank())
+```
+
+¿Interesante no? Si observaste bien, utilizamos casi el mismo código que habíamos utilizado en la gráfica de dispersión. Esto se debe porque las capas de estilo pueden utilizarse paralelamente sin importar el tipo de gráfico que utilicemos, cabe aclarar que no todas van a funcionar y que debemos hacer pequeñas modificaciones, ten cuidado y no te vayas a confundir
+
+<center>
+![](https://i.ibb.co/PrVXCTH/confused.gif){width=350}
+</center><br>
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+¡¡¡Atención, atención!!!
+
+La función <res>geom_jitter()</res> agrega una pequeña cantidad de variación aleatoria a la ubicación de cada punto y es una forma útil de manejar el sobretrazado causado por la discreción en conjuntos de datos más pequeños.
+</blockquote>
+
+## Diagrama de barra
+
+Este es quizás el tipo de gráfico mejor conocido por todos. Una gráfica de este tipo nos muestra la frecuencia con la que se han observado los datos de variables cualitativas o cuantitativas discretas con un rango limitado de valores (número de cilindros de un vehículo, número de hijos de una persona, etc.), con una barra para cada categoría de esta variable. El comando necesario para graficarlo con *ggplot2* es <res>geom_bar()</res>
+
+Para este gráfico utilizaremos la base de datos <res>chickwts</res> que es una base de datos propia de R, de un estudio que realizó un experimento para medir y comparar la efectividad de varios suplementos alimenticios en la tasa de crecimiento de los pollos. Recuerda que estas bases están incluidas por defecto en R, solo es llamarlas apropiadamente.
+
+```{r out.width="100%"}
+## Creamos el gráfico básico y lo guardamos en una variable
+p <- ggplot(chickwts, aes(x = feed, fill = feed)) + 
+  geom_bar(width = 1)
+
+## Retomamos la variable creada y agregamos las capas 
+p + xlab("Suplemento") + 
+  ylab("Cantidad")+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_blank())+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = "black", size = 1),
+        panel.background = element_blank())+
+  theme(legend.position = "none")+
+  
+  ## Agregamos etiquetas a cada barra 
+  geom_text(stat='count', aes(label=..count..), 
+            color="black", 
+            hjust = 1.5,
+            size=5.5)+
+
+  
+  ## Código para girar las barras horizontalmente
+  coord_flip()
+```
+
+O bien podemos darle un poco de estilo y presentarla de una manera diferente, pero que proporciona la misma información
+
+```{r out.width="100%"}
+p + xlab("Suplemento") + 
+  ylab("Cantidad")+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_blank())+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = "black", size = 1),
+        panel.background = element_blank())+
+  theme(legend.key = element_blank())+
+  scale_color_grey(start = 0.8, end = 0.2)+
+  labs(fill = "Suplementos")+
+  
+  ## Agregamos etiquetas a cada barra
+  geom_text(stat='count', aes(label=..count..), 
+            color="black", 
+            size=5.5)+
+
+  
+  ## Código para girar las barras horizontalmente
+  coord_polar()
+```
+
+
+## Diagrama de error
+
+Para poder graficar este tipo de diagrama, primero debemos crear las variables necesarias tales como la media y la desviación estandar. En el siguiente código haremos tal ejercicio a partir de la base de datos <res>ToothGrowth</res> obsérvalo, entiéndelo y replícalo con tus datos. 
+
+```{r message=FALSE}
+df <- ToothGrowth
+df$dose <- as.factor(df$dose)
+head(df)
+
+library("dplyr")
+df2 <- df %>%
+    group_by(dose,supp) %>%
+    summarise(
+        sd = sd(len),
+        len = mean(len)
+    )
+df2
+```
+
+Ya con nuestros datos listos, ahora si podemos graficar este diagrama. Les contamos que este tipo de gráfico también se puede realizar de varias maneras, según lo requieran o según les parezca más informativo. Pon atención al código que compone la primera forma. El comando necesario para graficarlo con *ggplot2* es <res>geom_errorbar()</res>
+
+```{r out.width="100%"}
+ggplot(df2, aes(x = dose, y = len, ymin = len-sd, ymax = len+sd))+
+  geom_bar(aes(fill = supp), stat = "identity", position = "dodge") +
+  geom_errorbar(aes(color = supp), position = "dodge")+
+
+  xlab("Dosis") + 
+  ylab("Altura")+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_text(size = 14))+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = "black", size = 1),
+        panel.background = element_blank())+
+  labs(colour = "Suplemento", fill = "Suplemento")
+```
+
+Como ves, este diagrama se compone de dos <res>geom_</res>, son ambos necesarios para poder crearlo, uno dibuja los bloques (*geom_bar()*) y el otro dibuja las líneas de error (*geom_errorbar()*).
+
+Sin embargo, podemos ver este otro tipo de gráfico, puede ser mucho más informativo, pero esa decisión va a depender de lo que estén haciendo.
+
+```{r out.width="100%"}
+ggplot(df2, aes(x = dose, y = len, ymin = len-sd, ymax = len+sd))+
+  geom_line(aes(group = supp, color = supp), size = 1)+
+  geom_point(aes(color = supp))+
+  geom_errorbar(aes(color = supp), width = 0.5, size = 1)+
+
+  xlab("Dosis") + 
+  ylab("Altura")+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_text(size = 14))+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = "black", size = 1),
+        panel.background = element_blank())+
+  theme(legend.key = element_blank(),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14),
+        legend.position = c(0.9, 0.2))+
+  labs(colour = "Suplemento", fill = "Suplemento")+
+  scale_color_grey(start = 0.8, end = 0.2)
+```
+
+En este diagrama podemos observar que se compone de tres <res>geom_</res>, todos necesarios para poder crearlo, uno dibuja los puntos de los datos (*geom_point()*), otro dibuja las líneas de error (*geom_errorbar()*) y otro dibuja las líneas de relación de los datos (*geom_line()*).
+
+<center>
+![](https://i.ibb.co/wBF8LY9/graphic.gif){width=350}
+</center><br>
+
+## Resumen
+
+Como pudimos observar *ggplot* se puede volver una gran herramienta en nuestros proyectos. No sólo es generar un gráfico, es la forma de transformarlo en algo que nos identifica, a partir de códigos que le darán un estilo propio. 
+
+<center>
+![](https://i.ibb.co/BChStyd/mm.jpg){width=350}
+</center><br>
+
+Así en este POST aprendimos a realizar diagramas de dispersión, cajas, histogramas, entre muchísimos más, además como vimos, podemos ir mezclándolos en un mismo lienzo, eso ya va a depender de que datos tengas. Como siempre te recomendamos hacer un análisis previo de tus datos, conócelos, entiéndelos y luego si trata con ellos.
+
+Igualmente te contamos que esto es sólo un abre bocas, para poder manejar todo en forma práctica debes leer y practicar mucho más, más y más; es un largo trayecto en el que ya has avanzado bastante ¡ánimo!
+
+## Homenaje
+
+No podíamos dejar pasar inadvertido algo que conmueve al ciento por ciento nuestras mentes. Teníamos que terminar este post brindándole un pequeño homenaje a esa gran persona que afortunadamente la vida cruzó por nuestros caminos. Somos afortunados todos los que le conocimos poco o mucho, porque de ella aprendimos grandes cosas, aprendimos a soñar en grande, a dar pasos gigantes en busca de los que nos apasiona y sobre todo aprendimos a reír aún cuando los momentos no fueran los indicados.
+
+Por ello y por muchas otras cosas más, nuestros escritos son un homenaje a lo que ella era, es y será ¡¡***Vanessa Cruz Estrada***, una científica apasionada por la vida!!
+
+![](https://i.ibb.co/HKCW3dn/VCE.jpg){width="100%"}
+<br>
+
+## Bibliografía
+
+- [ggplot2 barplots : Quick start guide - R software and data visualization](http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization)
+
+- [Gráficos con el paquete ggplot2](https://rpubs.com/dsulmont/37913)
+
+- [Beautiful graphics ggplot2](https://rstudio-pubs-static.s3.amazonaws.com/228019_f0c39e05758a4a51b435b19dbd321c23.html#15_dot_plots_for_one_variable)
+
+- [R para profesionales de los datos: una introducción](https://www.datanalytics.com/libro_r/ejemplos.html)
+
+- [R for Data Science](https://es.r4ds.hadley.nz/visualizaci%C3%B3n-de-datos.html)
+
+- [Gráficos avanzados con ggplot](https://rua.ua.es/dspace/bitstream/10045/69767/1/Modulo_4_-_Graficos_avanzados_con_ggplot2.pdf)
+
+- [Be Awesome in ggplot2: A Practical Guide to be Highly Effective - R software and data visualization](http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization)
+
+- [ggplot2 histogram plot : Quick start guide - R software and data visualization](http://www.sthda.com/english/wiki/ggplot2-histogram-plot-quick-start-guide-r-software-and-data-visualization)
+
+- [Polígono de frecuencias](https://concepto.de/poligono-de-frecuencias/)
+
+- [Gráfico de áreas](https://help.highbond.com/helpdocs/riskbond/es/Content/visualizations/interpretations/charts/stacked_area_chart.html)
+
+- [Gráfico de Densidad](https://datavizcatalogue.com/ES/metodos/grafico_de_densidad.html)
+
+- [Tipos de gráficas utilizadas en estadísticas](https://www.uaeh.edu.mx/docencia/P_Presentaciones/prepa_ixtlahuaco/2018/Estadistica.pdf)
+
+- [Galería de gráficos ggplot2](https://gauss.inf.um.es/tabular/modulo2.html)
+
+- [Gráficos elegantes con ggplot2](https://luisxsuper.github.io/m_ggplot2.html)
+
+- [The R Graph Gallery](https://www.r-graph-gallery.com/index.html)
+
+## Más información 
+
+Estos análisis se han realizado utilizando el software R (v.4.1.0) y Rstudio (v. 1.4.1717)
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>

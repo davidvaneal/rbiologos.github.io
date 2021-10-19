@@ -1,0 +1,210 @@
+---
+title: ¿Cómo funciona R?
+author: David Vanegas
+date: '2021-03-18'
+image: "https://i.ibb.co/CnFPGXz/r3.png"
+slug: []
+categories:
+  - R
+tags:
+  - R
+  - RStudio
+  - software
+---
+
+> Antes de profundizar acerca de los datos y estructuras de Datos en R, conozcamos, configuremos y tengamos en cuenta las generalidades del entorno de RStudio
+
+***
+
+## Configuración del directo de trabajo
+
+Para trabajar tranquilamente en nuestros proyectos siempre debemos establecer un orden, esto nos dará la capacidad de poder trabajar de manera más efectiva.
+
+Uno de los pasos más sencillos y menos nombrados, nos podría ayudar en nuestros proyectos en RStudio, es configurar nuestro directorio. El directorio de trabajo (Working directory, wd) es la carpeta (de nuestra computadora) que RStudio usa para leer o escribir ficheros. Para conocer la dirección de la carpeta (Por defecto), tenemos que digitar en la consola la siguiente función <res>getwd()</res>.
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+Atención, atención!!!
+
+Un tip para facilitar tu aprendizaje: La gran mayoría de sintaxis de los códigos en R están relacionados a la función que van a cumplir. Por ejemplo, getwd() viene siendo **get Working Directory**.
+</blockquote>
+
+```{r}
+getwd()
+```
+
+Así, podemos ver que la ruta de mi directorio está configurado para trabajar en mi escritorio. Pero si necesito trabajar en una carpeta de un proyecto en específico, puedo cambiar esta dirección con el comando <res>setwd()</res>, especificando la dirección de la carpeta en cuestión, como en el siguiente ejemplo
+
+```{r eval=FALSE}
+setwd(C:/Users/david/Desktop/Proyecto)
+```
+
+Al igual, si queremos conocer los archivos que están en nuestro directorio podemos ejecutar la función <res>list.files()</res>. Esta función te ayudará si no recuerdas que archivos tienes en tu proyecto de R… *esos lapsus mentales en la vida de todo biólogo!*
+
+<center>
+![](https://i.ibb.co/mq00bvC/download.gif){width="300"}
+</center><br>
+
+Pero espera… te aconsejamos que configures tu directorio de forma permanente, para poder agilizar y organizar tus proyectos/datos de la mejor manera (Yo lo tengo en el escritorio ya que es donde tengo todo a la mano). Para poder hacerlo, en la aplicación vamos a dirigirnos a la pestaña Tools y después vamos a Global Options....
+
+Así veremos lo siguiente en la pantalla
+
+<center>
+<img src="https://i.ibb.co/VQ66vjC/Options.png" alt="Options" border="0" class="responsive">
+</center><br>
+
+En este panel tendremos varias opciones que podrás modificar como la apariencia de RStudio, tamaño de letra, orden de los paneles de trabajo, entre otros. En nuestro caso en la opción General, iremos hacia la etiqueta de Default working directory daremos click en Browse y abrirá una ventana en la cual elegiremos la carpeta que queremos configurar como directorio por defecto.
+
+***
+
+## Paquetes
+
+Ya configurado nuestro directorio, el siguiente paso es conocer que R está compuesto por un sistema base, esto significa que tiene funciones ya instaladas para poder realizar tareas sencillas, sin embargo, hay múltiples funciones y tareas en el mundo de R. Para poder extender esta funcionalidad, R puede instalar paquetes que poseen una colección de funciones predeterminadas por su desarrollador.
+
+Para poder instalar estos paquetes hay varias formas de hacerlo. La más común y sencilla es a través del código <res>install.packages()</res>, como se muestra en el siguiente código
+
+```{r eval=FALSE}
+install.packages("lme4")
+```
+
+O bien, podemos instalar varios paquetes a la vez con la forma de este código:
+
+```{r eval=FALSE}
+install.packages(c("dplyr","ggplot2","lme4"))
+```
+
+Una de las ventajas de RStudio es que cuando cargas un script (en este mismo post hablaremos sobre estos), el programa leerá automáticamente los paquetes que no están instalados y te preguntará si deseas instalarlos, tal y como podemos observar en esta imagen
+
+<center>
+<img src="https://i.ibb.co/JKSd65j/library.png" alt="library" border="0" class="responsive">
+</center><br>
+
+Esta instalación es necesaria una sola vez, esto se debe a que el paquete será incorporado a la información base en nuestra computadora.
+
+Lo único que nos queda por hacer es “llamar” el paquete. Esta tarea la realizamos cuando tengamos que utilizar alguna de sus funciones, el código para ejecutar esta orden será <res>library()</res>, como se ve en el siguiente código:
+
+```{r eval=FALSE}
+library(lme4) 
+# Observa que ya no necesitamos que el nombre esté entre comillas
+```
+
+Si, es muy posible que te encuentres en un dilema, y no sepas como funciona el paquete, porque mínimo te dijeron, para trabajar con tal cosa se necesita tal paquete, nada más. Y ahí, empieza el biólogo a padecer.
+
+<center>
+![](https://i.ibb.co/xstVGxy/fran.gif){width="300"}
+</center><br>
+
+Pero tranqui…! Nada está perdido y los desarrolladores de R, han dispuesto que los paquetes tengan la información necesaria para ayudar a los usuarios en este complejo proceso. Para acceder a esta ayuda digitamos en la consola <res>?</res> seguido con el nombre del paquete (Ten en cuenta que para acceder a este información es necesario que el paquete esté cargado en R), como lo vemos en este ejemplo:
+
+Y se abrirá la pestaña de ayuda que mostrara la información como en la siguiente imagen:
+
+<center>
+<img src="https://i.ibb.co/G5YcY59/Help.png" alt="Help" border="0" class="responsive">
+</center><br>
+
+Pero… no siempre quedará tan claro toda la información, es una realidad. Para ello, varias personas han creado páginas o blogs dedicados a resolver cualquier tipo de dudas del entorno de R. Las más buscadas y utilizadas son estas:
+
+<center>
+<img src="https://i.ibb.co/28tJ17T/rbloggers.webp" alt="rbloggers" border="0" width="350"><br>
+<a href="https://www.r-bloggers.com" target="blank">R-bloggers</a>
+</center><br>
+
+<center>
+<img src="https://i.ibb.co/0ncXRPX/stackover.png" alt="stackover" border="0" width="350"><br>
+<a href="https://stackoverflow.com/" target="blank">Stackoverflow</a>
+</center><br>
+
+Te invitamos a explorarlas, tienen muy buena información, con foros de debate, en su mayoría en inglés, pero también buen número en español. 
+
+***
+
+## Funciones
+
+Ya con nuestros paquetes instalados podremos trabajar! Cada uno de estos paquetes tiene una serie de funciones que tienen una tarea específica que realizar.
+
+Así, una función es una serie de operaciones a las que se les ha asignado un nombre, estas funciones requieren <res>argumentos (valores)</res> específicos para poder realizar su tarea, si no los ingresamos adecuadamente, el comando de la función nos generará **error**, el bendito **error…**
+
+<center>
+![](https://i.ibb.co/BnpY7SN/hate.gif){width="300"}
+</center><br>
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+
+Es indispensable conocer los argumentos que necesitamos ingresar a cada función!
+</blockquote>
+
+Para conocer los argumentos podemos consultar la ayuda para paquetes, como lo vimos anteriomente, por ejemplo: <res>?lm()</res>. Otra forma es digitar la función, <res>lm()</res>, y dentro de los paréntesis tecleamos <res>TAB</res>, esto desplegará los argumentos que requiere la función en cuestión y si navegamos entre ellos, cada uno nos dará una breve explicación sobre si mismo.
+
+<center>
+<img src="https://i.ibb.co/CnMCVVG/Argumentos.png" alt="Argumentos" border="0" class="responsive">
+<br>
+Vista de argumentos necesarios para la función lm()
+</center><br>
+
+***
+
+## Scripts
+
+Para terminar nuestro tema del día, vamos a hablar de los Scripts, pero… ¿Qué es un script?
+ 
+Un script es un documento de R que tiene como finalidad guardar los códigos que creamos importantes para un proyecto, es algo así como una receta de cocina. Una vez tienes todos tus códigos guardados, solo es necesario abrir el script para tenerlos a la mano y poder utilizarlos o modificarlos.
+
+Para crear uno nuevo solo es necesario ir a <res>File -> New File -> R Script</res> o bien con el atajo de teclas <res>Ctrl + Shift + N</res>
+
+Los scripts se reconocen porque tienen extensión de archivo .R, por ejemplo proyecto.R. Estos archivos son iguales a cualquier documentos de texto, pero R puede leerlos y ejecutar el código que contienen.
+
+<center>
+<img src="https://i.ibb.co/H2gZRPV/script.png" alt="script" border="0" class="responsive">
+<br>
+Vista del editor de scripts en RStudio
+</center><br>
+
+Para ejecutar todos los códigos del script podrás dar click en la casilla <res>Run</res> o de manera más simple <res>Ctrl + Enter</res>. Pero hay una función en especial que puede ahorrarte un poco de tiempo <res>source()</res>, con esta función se ejecutarán cada una de los códigos que contiene nuestro script. Por ejemplo, en nuestro caso el código sería <res>source(Plots.R)</res>.
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+
+Un consejo que te damos es que trabajes con tus códigos, directamente desde el editor de scripts y NO en la consola. ¿Pero porqué sería mejor? La respuesta es sencilla, nada mejor que no perder de vista los códigos que te han funcionado, o editar el código rápidamente para corregir algún error, en la consola tendrías que estar escribiendo el código completo, y si es largo, pueeeees, se vuelve tedioso.
+</blockquote>
+
+En RStudio puedes guardar los contenidos del editor con frecuencia, y Rstudio los cargará automáticamente cuando vuelvas a abrirlos.
+
+***
+
+## En resumen
+Hoy, pudimos aprender o recordar en primera medida a identificar y configurar nuestro sitio de trabajo; esperamos que con esto tu trabajo en R se vuelva mucho más sencillo, creemos que hacer las cosas más fácilmente nos libera de tareas simples, para poder concentrarnos más en lo que realmente vale la pena.
+
+Igualmente, aprendimos para que se utilizan los paquetes, como instalarlos y como hacer uso de ellos. Ten en cuenta que actualmente hay 17258 paquetes disponibles para R y sigue creciendo ese número, cada uno con una colección de funciones en especial y cada función con sus argumentos específicos, así que no te estreses en no conocer todo acerca de ellas. Estamos aprendiendo y vamos paso a pasito, suave, suave, suavecito!
+
+<center>
+![](https://i.ibb.co/SB9Syr0/realx.gif){width="300"}
+</center><br>
+
+Y por último, hablamos sobre los scripts. Archivos importantes para poder guardar nuestros códigos y tenerlos siempre a la mano.
+
+***
+
+## Finalmente
+
+Te invitamos a que sigas investigando más sobre el tema, queremos igual saber acerca de tu experiencia en R y RStudio y que dudas podemos ayudarte a resolver. Muchas gracias por tu tiempo, esperamos hayas aprendido algo nuevo, es importante para nosotros contribuir en algo al aprendizaje de la humanidad!
+
+
+**Te esperamos en nuestro siguiente post, que viene cargado de muchas más cosas ¡Te lo contaremos todo!**
+
+
+```
+Información R
+
+Vicente Coll & Pedro J. Pérez.Universidad de Valencia; 
+Andina M. (2018); Ahumada, J. A. (2003); 
+R para Principiantes. University of Hawaii; Mendoza Vega (2014).
+```
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>
+
+

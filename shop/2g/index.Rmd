@@ -1,0 +1,15 @@
+---
+title: 2G
+image: "images/Shop/Profile.png"
+social:
+  - icon : "ti-instagram" # themify icon pack : https://themify.me/themify-icons
+    link : "https://www.instagram.com/2gshop19/"
+---
+
+
+<center>
+<img src="https://i.ibb.co/dkcHCvM/Sitio-en-construcci-n.jpg" alt="Sitio-en-construcci-n" border="0" width="350">
+</center>
+
+ 
+# Pronto conocerás nuestros productos!!!

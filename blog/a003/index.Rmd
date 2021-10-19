@@ -1,0 +1,104 @@
+---
+title: ¿Qué necesito para comenzar en R?
+author: Eduardo Grajales
+date: '2021-03-18'
+image: "https://i.ibb.co/rxRdRHX/Nom-Nom-Borders.jpg"
+slug: []
+categories:
+  - R
+tags:
+  - R
+  - RStudio
+  - software
+---
+
+> Para comenzar en esta aventura, lo primero que necesitas es instalar  <res>R</res> y <res>Rstudio</res>, sin ellos creo que sería muy difícil comenzar nuestra aventura. 
+
+Recuerda que los necesitamos a ambos, a R porque es un lenguaje de programación y también software; y a Rstudio por su valioso entorno de desarrollo. 
+
+<center>
+<a href="https://www.icesi.edu.co/CRAN/" target="blank"><img border="0" src="https://i.ibb.co/cb4ZM78/descarga.png"/><br>R</a><br> 
+<br>
+<a href="https://download1.rstudio.org/desktop/windows/RStudio-1.4.1106.exe" target="blank"><img border="0" src="https://i.ibb.co/cb4ZM78/descarga.png" /><br>RStudio</a>
+</center><br>
+
+¿Qué más necesitamos? Ganas de aprender, dedicación y paciencia, ¡sí, paciencia!
+
+Ahora puedes seguir tranquilamente a instalar estas maravillas, ¡no te vas a arrepentir!, no es nada que no sepamos hacer ya... Siguiente, siguiente, siguiente... aquí nosotros te estaremos esperando impacientemente.
+
+<center>
+![](https://i.ibb.co/kQhGvc9/impaciente.gif){width="300"} 
+</center><br>
+
+Listo! Suponemos que ya todo está instalado y nos sentimos como niños con juguetes nuevos. Nosotros pretendemos que te familiarices más con Rstudio, ya que es más amigable con el usuario; además, tiene una interfaz mucho mas linda que la de R, también posee muchos atajos, teclas rápidas y asistencia en la web. 
+
+<blockquote>Después de instalar Rstudio y abrirlo debes estar viendo algo así:</blockquote>
+
+<center>
+<img src="https://i.ibb.co/3k3Nf9D/desktop.jpg" alt="desktop" border="0" class="responsive">
+</center><br>
+
+En caso de que tengas algún inconveniente o no obtuviste un resultado similar a este, puedes ver el siguiente vídeo tutorial en YouTube. Desde mi punto de vista es un canal muy interesante. 
+
+<center>
+<iframe  src="https://www.youtube.com/embed/Nmu4WPdJBRo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="responsive" height="450"></iframe>
+</center><br>
+
+Bueno, ahora una revisión rápida por RStudio... recordemos que la interfaz de RStudio se compone de 4 áreas o paneles que cumplen una función determinada y que podemos reorganizar desde las opciones de apariencia
+
+<center>
+<img src="https://i.ibb.co/pxWxmpN/desktops.jpg" alt="desktops" border="0" class="responsive">
+</center><br> 
+
+La <res>ventana 1</res> será nuestra amiga fiel, ya que allí pasaremos la mayoría de tiempo organizando y editando nuestras líneas de comando escritas en lenguaje R y corriéndolas usando <res>CONTROL + ENTER</res>.  todas nuestras líneas de código se transformarán en scripts, que nos permitirán automatizar cada vez más nuestros procesos.
+
+<center>
+![](https://i.ibb.co/4gCD6M6/1500505875-yo-soy-tu-amigo-fiel.png){Width="300"} 
+</center><br>
+
+La <res>ventana 3</res> es donde ocurre la magia, todo tipo de magia, desde instalar librerías, hasta hacer sumas, restas, divisiones, potenciaciones, un sin fin de actividades, porque ahí es donde se ejecuta el código en R; sin embargo, no todo lo que sale de ahí son maravillas, también es donde saldrán los mensajes de <res>ERROR</res> y advertencia que nos fastidian un poco la vida. 
+ 
+<center>
+![](https://i.ibb.co/QYKtKvz/e033fb79e2f46948828500bb65b2731a.gif){width="300"}
+</center><br>
+
+Ya con nuestro programa instalado, podemos empezar a ver cuáles son sus características, desde las opciones hasta temas visuales. Ahora te contaremos sobre un tema importante que debes de tener muy en cuenta en el manejo de R.
+ 
+## Tipos de datos mas comunes y estructura de datos en  R
+
+Desde mi punto de vista, comprender o tener presente que existen diferentes  tipos de datos y que también varía la estructura de los datos en R, te permitirá ahorrarte muchos problemas, es enserio, si quieres puedes anotar en tu cuaderno, porque desde que entiendas esto, se te hará mucho más fácil las cosas que vendrán de aquí en adelante. 
+
+### Tipos de datos
+
+Intentaré resumirlo todo para ti en una tabla, inicialmente podemos pensar en siete (7) tipos de datos los cuales son:
+
+<center>
+<img src="https://i.ibb.co/0jFNzPf/tabla1.png" alt="tabla1" border="0" class="responsive">
+</center><br>
+
+El tema sobre la <res>estructura de los datos y algunos ejemplos que nos ayuden a comprender estos dos temas</res> con los que usualmente trabajamos en R lo dejaremos para otro post
+
+## Para concluir  
+
+Primero, tenemos nuestro nuevo juguete instalado y ¿Cómo aprendemos a usar un juguete nuevo? la respuesta es muy, pero que muy sencilla, <res>¡JUGANDO CON ÉL!</res> abajo te dejaré un buen libro sobre R para que lo disfrutes, pero tranqui está en español; además no hay nada que preocuparse acá nosotros te explicaremos lo que necesitas saber.
+
+
+<center>
+<img src="https://i.ibb.co/VB4587G/libro-r.png" border="0" width="200"><br>
+<a href="https://es.r4ds.hadley.nz/" target="blank">R para ciencia de Datos (Versión Español)</a>
+</center><br>
+
+Como segunda conclusión, vimos que existen <res>¡7 tipos de datos en R!</res>, ¿ya lo sabías?, comenta tu respuesta y déjanos tus conclusiones. 
+
+Por último, cómo pudiste ver, los tipos de datos en R  son muy sencillos, no son nada raro, ni nada que no podamos comprender, pero luego nos preguntamos.. ¿Cómo voy yo a saber qué tipos de datos tengo?... y pues nosotros te decimos: 
+
+<br>
+<br>
+
+**En el nuevo post, ¡TE LO CONTAREMOS TODO!**
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>

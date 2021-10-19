@@ -1,0 +1,49 @@
+---
+title: Por que criamos esta página?
+author: ''
+date: '2021-03-16'
+image: "images/blog/A1.webp"
+slug: []
+categories: []
+tags: []
+---
+
+## **Sobre nós?**
+<br>
+
+> Somos David Vanegas e Eduardo Grajales, dois ** biólogos ** da Universidade de Quindío apaixonados pelo mundo da programação e R
+
+Da mesma forma, nos interessamos pelas ciências voltadas para a conservação, o ecoturismo e a educação ambiental, como promotores de uma sociedade em prol do desenvolvimento sustentável com foco no bem-estar das comunidades de seus territórios. Estamos comprometidos com uma sociedade que gera ideias e projetos que se baseiam em informações obtidas na ciência básica, para que nos permitam tomar boas decisões sobre nossos recursos naturais e seus serviços ecossistêmicos, especialmente em um país tão rico em biodiversidade como a Colômbia 
+
+<center>
+<img src="https://i.ibb.co/7N5FQ7L/DSC00016.jpg" alt="DSC00016" border="0" class="responsive">
+</center>
+
+Fotografia do PNNN da Colômbia, Frailejón (*Espeletia hartwegiana*) na neve Santa Isabel, Santa Rosa de Cabal-Risaralda
+
+____________________________________________________________________________
+
+#### **Por que criamos R Biólogos?**
+<br>
+
+Esse espaço é criado inicialmente pela necessidade que a gente observa no desenvolvimento da nossa graduação (ou a graduação estava nos desenvolvendo? É uma pergunta que a gente não sabe se tem resposta, tá claro?). Muitas vezes depois de uma ou outra noite ou de manhã cedo, nos perguntamos: Por que todo mundo fala sobre Software R? Por que algumas pessoas falam tão mal disso? e por que outras pessoas falam maravilhas? É mesmo necessário ser profissional?
+
+> Curiosidade: eles falavam mais mal do que bem. Os palavrões e gemidos de dor emocional sempre foram ouvidos, alguns dizem que sonharam com ele e que ele fez laços de vida com tal condição.
+
+Já pensando nessas questões, é preciso dizer que independentemente estávamos muito viciados no assunto programação e no uso do R, porém, havia um desafio a ser enfrentado e era: ver do que se trata esse cara do R! Você tinha que olhar diretamente para os pixels e dizer: Não tenho medo de você! Porque a fofoca dizia que aquela "coisa" significava necessidade e medo, porque quando você mais precisava, mais problemas tinha, lembra uma impressora.
+
+Assim, deliberadamente pesquisando, googando, percebemos que há muita informação (que esperamos poder organizar neste blog), não se sabe por onde começar, informação que estava maioritariamente em inglês, então SEGURE! Se você ** NÃO ** tem nenhum domínio de inglês, então vamos te dar uma pequena recomendação: Vá para o canto mais solitário de sua casa ou quarteirão da universidade e siga as instruções da próxima imagem
+
+<center>
+![](https://i.pinimg.com/originals/62/bd/2a/62bd2a585d851bef41c560918f62fd1f.jpg){width="400"}
+</center><br>
+
+Mas se pensa: "não pode ser tão ruim ..." e bem, pode até piorar, se for preciso aprender muito porque o relatório de diversidade e as curvas de acumulação têm que ser entregues para amanhã ou melhor, para hoje porque é já uma da manhã (foi o que nos disseram, nunca nos aconteceu), e se esse laudo não parece bom, perde-se um laboratório e se perde um laboratório, perde-se matéria e começa-se a desencadear uma série de pensamentos terríveis que nem queremos lembrar.
+
+Mas ei, calma que já encorajamos a sua pequena ideia de ler em inglês e vamos tentar garantir que a relação que você vai ter com o R não seja tão tóxica quanto um copo de água com mercúrio.
+
+Agradeço a Eliana Tabares pela avaliação
+
+<center>
+<img src="https://i.ibb.co/Lpb8FRY/Picture12.png" alt="Picture12" border="0" width="200">
+</center>

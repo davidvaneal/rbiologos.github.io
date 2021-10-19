@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lectura on R Biólogos</title>
+    <link>https://rbiologos.github.io/tags/lectura/</link>
+    <description>Recent content in Lectura on R Biólogos</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-CO</language>
+    <copyright>Copyright &amp;copy; 2020 Diseñado por [David Vanegas](https://github.com/davidvaneal) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright>
+    <lastBuildDate>Mon, 19 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/tags/lectura/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Información de utilidad - Lectura de datos</title>
+      <link>https://rbiologos.github.io/blog/a007/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/blog/a007/</guid>
+      <description>¡Hey Rblogger! Abrimos esta pequeña nota para contarte que existe otra forma de cargar tus datos a R y Rstudio, y es muy diferente a las que ya viste en el anterior POST.</description>
+    </item>
+    
+    <item>
+      <title>Entonces... ¿cómo cargo mis datos a R?</title>
+      <link>https://rbiologos.github.io/blog/a006/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/blog/a006/</guid>
+      <description>Una de las etapas más sencillas pero que suele ser la más problemática en nuestros proyectos y tareas en R, es la carga de datos.</description>
+    </item>
+    
+  </channel>
+</rss>

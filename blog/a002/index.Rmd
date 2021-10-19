@@ -1,0 +1,86 @@
+---
+title: '... y ahora un poco de teoría!'
+author: David Vanegas
+date: '2021-03-16'
+image: "images/blog/A002.webp"
+slug: []
+categories:
+  - R
+tags:
+  - R
+  - RStudio
+  - history
+---
+
+>Empezaremos por contarles que <res>R</res> se trata de uno de los lenguajes de programación más utilizados en investigación científica
+
+Además es un programa muy popular en los campos de aprendizaje automático (machine learning), minería de datos, investigación biomédica, bioinformática y matemáticas financieras. A esto contribuye la posibilidad de cargar diferentes bibliotecas o paquetes con funcionalidades de cálculo y graficación.
+
+
+R es un entorno de programación libre que se utiliza para el procesamiento y análisis estadístico de datos implementado en el lenguaje S de GNU. Inicialmente, fue desarrollado por [Robert Gentleman](https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)) y [Ross Ihaka](https://en.wikipedia.org/wiki/Ross_Ihaka) del Departamento de Estadística de la Universidad de Auckland, en 1993, pero actualmente R es responsabilidad del R Development Core Team.
+
+<center>
+![](https://i.ibb.co/k59kMjm/image.png){width="300"}
+</center><br>
+
+R es parte del sistema GNU y se distribuye bajo la licencia GNU GPL ([General Public License](https://es.wikipedia.org/wiki/GNU_General_Public_License)). Está disponible para los sistemas operativos Windows, Macintosh, Unix y GNU/Linux desde su [SITIO OFICIAL](https://www.r-project.org/)
+
+A continuación, te presentamos algunas razones por las cuales R es una excelente opción para procesar datos: 
+
+- Es un programa avalado por la comunidad científica que provee excelente documentación.
+- Es el software estadístico más utilizado en las universidades del mundo.
+- Proporciona un amplio abanico de herramientas estadísticas (modelos lineales y no lineales, tests estadísticos, análisis de series temporales, algoritmos de clasificación y agrupamiento, etc.) y gráficas.
+- Puede integrarse con distintas bases de datos y existen bibliotecas que facilitan su utilización desde lenguajes de programación interpretados como Perl y Python
+- Otra de las características de R es su capacidad gráfica, que permite generar gráficos con alta calidad. 
+- R posee su propio formato para la documentación basado en LaTeX.
+Además, R es gratuito y tiene más de 6817 paquetes disponibles.
+
+<center>
+![](https://i.ibb.co/0Jfwk2G/image-1.png)
+</center><br>
+
+En R, se utiliza una línea de comandos para interactuar con el programa, dicha interacción se realiza en un espacio conocido como <res>consola</res>
+
+<center>
+<img src="https://i.ibb.co/yyVHKhh/R.png" alt="R" border="0" class="responsive">
+</center><br>
+
+Tenemos que tener claro que R es el lenguaje de programación, como el que hace los cálculos y tareas que le hemos asignado, pero existe un programa llamado <res>R Studio</res>, el cual es un programa IDE o entorno de desarrollo integrado. Esto significa que RStudio es un programa para manejar R y utilizarlo de manera más cómoda en algunos aspectos.
+
+En 2009, [Joseph J. Allaire](https://en.wikipedia.org/wiki/Joseph_J._Allaire) fundó [RStudio](https://rstudio.com/products/rstudio/download/), una empresa que crea herramientas para el entorno informático estadístico R. Allaire creó el producto insignia de la compañía, RStudio, ganador del premio InfoWorld Technology of the Year 2015.
+
+<center>
+![](https://i.ibb.co/xfvHVbN/chvmdsmomg96uoz8g3ad.jpg)
+</center><br>
+
+Así la interfaz que nos encontraremos en RStudio, por defecto, tendrá cuatro paneles, los cuales serán de vital importancia conocer y entender
+
+<center>
+<img src="https://i.ibb.co/J5sRQ0h/RStudio.png" alt="RStudio" border="0" class="responsive">
+</center><br> 
+
+1. Editor de código, en este panel se van abriendo los ficheros en pestañas.
+2. Consola de R en la que se puede escribir, ejecutar código, así como mostrar resultados del código que se va ejecutando.
+3. Contiene varias pestañas, entre ellas destacan files (muestra el árbol de ficheros), un histórico de comandos ejecutados 
+4. Listado de las variables en el entorno y plots (muestra las gráficas según se van ejecutando)
+
+
+Además cuenta con ventajas como:
+
+1. Permite abrir varios scripts a la vez
+2. Permite ejecutar partes de código con sólo marcarlo en los scripts
+3. Muestra el workspace
+4. Muestra el historial
+5. Muestra los objetos del workspace
+6. Integra la ayuda
+7. Integra la gestión de librerías y help (muestra la página de ayuda de las funciones cuando se soliciten).
+
+## **Resumen**
+
+En este post pudimos aprender un poco de historia y como varias personas han desarrollado este potente programa, con grandes facilidades como las encontramos en RStudio. En los siguientes posts podremos ir profundizando más sobre esta herramienta. **TE ESPERAMOS!!!**
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>

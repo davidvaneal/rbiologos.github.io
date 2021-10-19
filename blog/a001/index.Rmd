@@ -1,0 +1,51 @@
+---
+title: ¿Pa' que creamos esta página?
+author: ''
+date: '2021-03-16'
+image: "images/blog/A1.webp"
+slug: []
+categories: []
+tags: []
+---
+
+## **¿Quiénes somos?**
+<br>
+
+> Somos David Vanegas y Eduardo Grajales, dos **biólogos** de la Universidad del Quindío apasionados por el mundo de la programación y R
+
+Al igual estamos interesados la ciencia dirigida hacía la conservación, el ecoturismo y la educación ambiental, como promotoras de una sociedad en pro del desarrollo sostenible enfocado al bienestar de las comunidades en sus territorios. Apostamos por una sociedad generadora de ideas y proyectos que estén fundamentados en información obtenida a partir de la ciencia básica, para que nos permita tomar buenas decisiones sobre nuestros recursos naturales y sus servicios ecosistémicos, especialmente en un país tan rico en biodiversidad como Colombia 
+
+<center>
+<img src="https://i.ibb.co/7N5FQ7L/DSC00016.jpg" alt="DSC00016" border="0" class="responsive">
+</center>
+
+Fotografía tomada en el PNNN de Colombia, Frailejón (*Espeletia hartwegiana*) en el nevado Santa Isabel, Santa Rosa de Cabal-Risaralda
+
+____________________________________________________________________________
+
+#### **¿Pa´que creamos R Biólogos?**
+<br>
+
+Este espacio es creado inicialmente por la necesidad que observamos mientras desarrollábamos nuestro pregrado (o ¿el pregrado nos desarrollaba a nosotros?, es una pregunta que no sabemos si tiene respuesta, ¿Está claro?). Muchas veces después de una u otra trasnochada o madrugada, nos preguntábamos: ¿Por qué todos hablan del Software R?, ¿Por qué algunas personas hablan tan mal? y ¿Por qué otras personas hablan maravillas?, ¿Realmente es tan necesario para ser profesional? 
+
+Dato curioso: hablaban más mal, que bien. Siempre se escuchaban los madrazos y gemidos de dolor emocional, algunos dicen que soñaban con él y que les hacia loops la vida con tanta condición.
+
+Ya teniendo estás preguntas en la cabeza, hay que decir que de manera independiente quedamos muy enganchados con el tema de la programación y el uso de R, sin embargo, había un reto que asumir y ese era: ¡Ver de qué trata ese tal R!, había que mirarlo directo a los pixeles y decirle, ¡No te tengo miedo!, porque las malas lenguas decían que esa "cosa" leía la necesidad y el miedo, porque cuando más lo necesitabas, más problemas ponía, se parece a la impresora.
+
+Así, buscando deliberadamente, googleando, nos dábamos cuenta de que hay mucha información (Que esperamos poder ir organizando en este blog), no sabe uno ni por donde empezar, información que en su gran mayoría estaba en Inglés así que AGÁRRATE! Si **NO** tienes algún dominio del Inglés, pues te vamos a dar una pequeña recomendación: Dirígete al rincón más solo de tu casa o bloque de la universidad y sigue las instrucciones de la siguiente imagen 
+
+<center>
+![](https://i.ibb.co/jT7JkQS/download.jpg){width="350"}
+</center><br>
+
+Pero uno piensa: “nah no puede ser tan malo...” y pues en realidad podría volverse peor, si uno necesita aprender de afán porque hay que entregar el informe de diversidad y curvas de acumulación para mañana o mejor dicho para hoy por que ya es la una de la mañana (eso nos contaban, a nosotros nunca nos pasó), y si no queda bien ese informe pierde uno laboratorio y si pierde laboratorio, pierde uno la materia y así se empieza a desencadenar una serie de pensamientos terroríficos que no queremos ni recordar. 
+
+Pero bueno, tranquis que ya llegamos nosotros a fomentar tu perecita de leer en inglés y trataremos de que la relación que vas a tener con R no sea tan tóxica como lo es un vasito con agua saborizado con mercurio. 
+
+[Eliana Tabares Lara](https://rbiologos.github.io/author/eliana-tabares/)
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>

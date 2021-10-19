@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gráficos on R Biólogos</title>
+    <link>https://rbiologos.github.io/tags/gr%C3%A1ficos/</link>
+    <description>Recent content in gráficos on R Biólogos</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-CO</language>
+    <copyright>Copyright &amp;copy; 2020 Diseñado por [David Vanegas](https://github.com/davidvaneal) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright>
+    <lastBuildDate>Mon, 05 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/tags/gr%C3%A1ficos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Diseño de gráficos ggplot2 - Parte II</title>
+      <link>https://rbiologos.github.io/blog/a011/</link>
+      <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/blog/a011/</guid>
+      <description>Continuando nuestro aprendizaje de la visualización de datos con el paquete ggplot2, en este post veremos que tipos de gráficos podemos elaborar y cuales son las herramientas para poder modificarlos</description>
+    </item>
+    
+    <item>
+      <title>Diseño de gráficos ggplot2 - Parte I</title>
+      <link>https://rbiologos.github.io/blog/a010/</link>
+      <pubDate>Tue, 22 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/blog/a010/</guid>
+      <description>Visualizar nuestros datos es una de las mejores formas para explorar y analizar las posibles relaciones que existen entre nuestras variables, tal y como lo habíamos visto en nuestro anterior POST</description>
+    </item>
+    
+  </channel>
+</rss>

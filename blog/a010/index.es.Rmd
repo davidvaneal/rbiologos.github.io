@@ -1,0 +1,473 @@
+---
+title: Diseño de gráficos ggplot2 - Parte I
+author: David Vanegas
+date: '2021-06-22'
+image: "https://i.ibb.co/ZcSxz7X/Es.png"
+slug: []
+categories:
+  - R
+  - RStudio
+tags:
+  - R
+  - RStudio
+  - ggplot2
+  - gráficos
+  - visualización
+---
+
+Visualizar nuestros datos es una de las mejores formas para explorar y analizar las posibles relaciones que existen entre nuestras variables, tal y como lo habíamos visto en nuestro anterior [POST](https://rbiologos.github.io/blog/a009/)
+
+<center>
+![](https://i.ibb.co/K65S1J8/eye.gif){width=350}
+</center><br>
+
+El día de hoy aprenderemos acerca de un paquete muy especial y utilizado en nuestro medio para precisamente visualizar nuestros datos de manera estática. Dicho paquete es <res>**ggplot2**</res>. Así, **ggplot2** forma parte del conjunto de librerías llamado [tidyverse](https://www.tidyverse.org/) y se resume como un sistema para crear gráficos de forma declarativa, basado en [The Grammar of Graphics](https://amzn.to/2ef1eWp). 
+
+En este paquete nosotros podemos proporcionar los datos y asignar variables a la estética. De esta manera debemos saber que **ggplot2** usa las gráficas bases de R y luego se encarga de los detalles estéticos. Para graficar con esta función debemos tener en cuenta los siguientes elementos, los cuales son estrictamente para representar un gráfico con ggplot2, ten en cuenta que son muchos más
+
+- Un <res>data frame</res> que contiene los datos que se quieren visualizar.
+- Los <res>aesthetics</res>, es decir, una lista de relaciones entre las variables del fichero de datos y determinados aspectos del gráfico (como por ejemplo coordenadas, formas o colores).
+- Los <res>geoms</res>, que especifican los elementos geométricos (puntos, líneas, círculos, etc) que se van a representar.
+
+Así, en lo que aprenderemos el día de hoy, será aprender acerca de como se puede generar un gráfico y las modificaciones que podemos realizar; y te adelantamos que en nuestro próximo **POST** aprenderemos sobre los diferentes gráficos que se pueden generar con este paquete, entonces sin más, ¡empezemos!
+
+La estructura general del código para obtener un gráfico es la siguiente:
+
+```{r eval=FALSE}
+## Tenemos los datos a visualizar
+ggplot(data = 'nombre del fichero de datos') +
+        ## Adherimos las variables que queremos graficar
+  geom_nombre1(aes(aesthetics1 = var1, aesthetics2 = var2, ...)) +
+        ## Finalmente adherimos las distintas capas tales como
+        ## Tipo de gráfico
+        ## Y modificaciones
+  geom_nombre2(...) 
+```
+
+<blockquote>
+Normalmente estos elementos se van añadiendo de forma consecutiva en distintas **capas** (layers). Para añadir una nueva capa se usa el signo <res>+</res>.
+</blockquote>
+
+Tranqui, si no entendiste, más adelante tendremos ejemplos mucho más prácticos y podrás desenrendar esta maraña
+
+<center>
+![](https://i.ibb.co/2YF4G4v/LCEq.gif){width=350}
+</center><br>
+
+## Instalación y uso
+
+Para instalar **ggplot2** hay varias maneras, sin embargo, te aconsejamos que instales todo el paquete <res>tidyverse</res>, ya que en un futuro puedes necesitar de otras funciones que vienen incluidas en dicho paquete
+
+```{r eval=FALSE}
+# La forma más fácil de obtener ggplot2 es instalar todo el tidyverse:
+install.packages("tidyverse")
+
+# Alternativamente, simplemente instalamos ggplot2:
+install.packages("ggplot2")
+
+# O la versión de desarrollo de GitHub:
+# install.packages("devtools")
+devtools::install_github("tidyverse/ggplot2")
+```
+
+Es difícil describir explícitamente cómo funciona **ggplot2** porque encarna una profunda filosofía de visualización. Sin embargo, en la mayoría de los casos, comienza digitando <res>ggplot()</res>, luego se proporciona un conjunto de datos y un mapeo estético (con <res>aes()</res>). Luego agregamos las capas (como <res>geom_point()</res> o <res>geom_histogram()</res> (_las cuales veremos con más detalle en un próximo post_)), escalas (como <res>scale_colour_brewer()</res>), especificaciones de facetas (como <res>facet_wrap()</res>) y sistemas de coordenadas (como <res>coord_flip()</res>). A continuación dejamos un par de imagenes que tienen como finalidad ilustar las múltiples tareas que podemos adherir a **ggplot2** y cuál es su código respectivo
+
+<center>
+![](https://i.ibb.co/yqjG242/ggplot2-page-0001.jpg){width=100%}.
+</center><br>
+
+<center>
+![](https://i.ibb.co/JkzzmGs/ggplot2-page-0002.jpg){width=100%}
+</center><br>
+
+Bien por el momento... Ahora, veremos los distintos argumentos que debemos ingresar a **ggplot2** para poder empezar a generar nuestros gráficos. Recuerda siempre cargar el paquete para poder hacer uso de el.
+
+```{r}
+library(ggplot2)
+```
+
+<center>
+![](https://i.ibb.co/cbwRZKX/dance.gif){width=350}
+</center><br>
+
+## Datos
+
+Al igual que en los gráficos bases vistos anteriormente, ingresamos la dirección del archivo en la que está alojados nuestros datos y lo guardamos en una variable. 
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+¡¡¡Atención, atención!!!
+
+Una particularidad de **ggplot2** es que solo acepta un tipo de datos: <res>data.frames</res>. Otras funciones gráficas (p.e., hist) admiten vectores, listas u otro tipo de estructuras. ggplot2 *NO*.
+</blockquote>
+
+Para este ejercicio vamos a utilizar nuevamente la siguiente base de datos, la cual es los resultados de un estudio sobre escarabajos coprófagos. Las variables estudiadas fueron <res>Longitud de los escarabajos</res> y <res>Tasa de dispersión de semillas por parte de los escarabajos</res>.
+
+<center>
+<a href="https://min.gitcdn.link/repo/RBiologos/rbiologos.github.io/main/blog/a009/Datos%20gr%C3%A1ficas.csv"><img src="https://i.ibb.co/6gx1V1Y/csv-icon.png" alt="descarga" border="0" width="150"></a>
+</center>
+<center>Descarga aquí</center><br>
+
+```{r}
+estudio <- read.csv(choose.files())
+head(estudio)
+dim(estudio)
+```
+
+Ahora lo cargamos a **ggplot2** mediante el siguiente código. Debemos tener en cuenta que mediante este paquete, podemos guardar nuestros datos como una variable, sin graficar directamente. A continuación veremos un ejemplo
+
+```{r}
+## Creamos un objeto "p", el cual contiene los datos que vamos a utilizar
+p <- ggplot(estudio)
+```
+
+Así, hemos guardado nuestro posible gráfico en la variable <res>p</res>. en con el código anterior es insuficiente para crear un gráfico: aún no hemos indicado qué tipo de gráfico y capas queremos adherir, hasta el momento solo tiene guardardo los datos que utilizaría.
+
+<center>
+![](https://i.ibb.co/pzBNBY1/giphy.gif){width=350}
+</center><br>
+
+## Aesthetics
+
+En la terminología de **ggplot2** las aesthetics hacen referencia a los conjuntos de datos que hay en las columnas (variables), tales como edad, altura, ingresos, temperatura, etc.
+
+Al igual, dentro del lenguaje de los gráficos que implementa, es muy importante esa asociación explícita de significados a significantes, es decir, de columnas de datos a aesthetics. Siguiendo nuestro ejemplo 
+
+```{r}
+p <- ggplot(estudio, aes(x = Longitud, y = Dispersion))
+```
+
+El objeto <res>p</res> resultante aún no es un gráfico ni se puede representar. Le faltan **capas**. Por el momento, solo están indicados los datos que va a utilizar y la relación (o mapeo) entre aesthetics y columnas de los datos.
+
+¿Cuántas aesthetics existen? Alrededor de una docena, sin embargo es posible que en nuestros gráficos utilicemos una o dos formas. Estos son los más utilizados:
+
+- <res>x</res> e <res>y</res>, distancias horizontal y vertical.
+- <res>colour</res>, para el color.
+- <res>size</res>, para el tamaño.
+- <res>shape</res>, que indica la forma de los puntos (cuadrados, triángulos, etc.) de los puntos o del trazo (continuo, punteado) de las líneas.
+- <res>alpha</res> para la transparencia: los valores más altos tendrían formas opacas y los más bajos, casi transparentes. De ahí la utilizad del canal alfa: da peso e importancia a las observaciones que la merecen.
+- <res>fill</res>, para el color de relleno de las formas sólidas (barras, etc.).
+
+## Capas
+
+Las capas (o geoms para **ggplot2**) son los verbos del lenguaje de los gráficos. Indican qué hacer con los datos y las estéticas elegidas, cómo representarlos en un lienzo. Una vez añadida una capa al gráfico, este puede "graficarse", tal y como vemos en el siguiente código:
+
+```{r}
+p <- p + geom_point()
+```
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+¡¡¡Atención, atención!!!
+
+Como hemos visto hasta el momento, hemos superpuesto los diferentes argumentos que necesita ggplot para elaborar un gráfico, sin embargo, nosotros podemos sacar un gráfico en una sola línea como vemos a continuación
+</blockquote>
+
+```{r out.width = '100%'}
+ggplot(estudio, aes(x = Longitud, y = Dispersion)) + 
+  geom_point()
+```
+
+Existen muchos tipos de capas en el mundo de **ggplot2**, aquí te dejamos esta [PÁGINA](https://ggplot2.tidyverse.org/reference/index.html#section-layer-geoms), en la cual encontrarás todos los tipos de capas disponibles para elaborar gráficos. La elección de cada capa dependerá estrictamente del tipo, cantidad de variables, y sobre todo, de la pregunta de investigación que estés intentando responder.
+
+Entre las capas más comunes y más utilizadas están:
+
+- <res>geom_point()</res>, Diagramas de dispersión
+- <res>geom_bar()</res>, Diagrama de barras
+- <res>geom_histogram()</res>, Histogramas
+- <res>geom_line()</res>, Gráfico de líneas
+- <res>geom_boxplot()</res>, Diagramas de caja
+
+## Temas
+
+Los temas de **ggplot2** permiten modificar aspectos estéticos del gráfico que no tienen que ver con los datos en sí. Eso incluye los ejes, etiquetas, colores de fondo, el tamaño de los márgenes, etc. No es habitual (y se desaconseja a los usuarios menos expertos) tener que alterar los temas que **ggplot2** usa por defecto. Solo se vuelve necesario cuando los gráficos tienen que adecuarse a una imagen corporativa o atenerse a algún criterio de publicación exigente.
+
+<center>
+![](https://i.ibb.co/KGz158p/sulli.gif){width=350}
+</center><br>
+
+Entre los temas más comunes tenemos:
+
+- <res>theme_gray()</res>: color de fondo gris y líneas de cuadrícula blancas
+
+- <res>theme_bw()</res>: una variación de theme_grey() que usa un fondo blanco y líneas de cuadrícula grises delgadas.
+
+- <res>theme_linedraw()</res>: un tema con solo líneas negras de varios anchos sobre fondos blancos, que recuerda a un dibujo lineal.
+
+- <res>theme_light()</res>: similar a theme_linedraw() pero con líneas y ejes de color gris claro, para dirigir más la atención hacia los datos.
+
+- <res>theme_dark()</res>: el primo oscuro de theme_light(), con tamaños de línea similares pero un fondo oscuro. Útil para hacer resaltar líneas finas de colores.
+
+- <res>theme_minimal()</res>: un tema minimalista sin anotaciones de fondo.
+
+```{r out.width = '100%'}
+p + theme_grey() + ggtitle("theme_grey()")
+p + theme_bw() + ggtitle("theme_bw()")
+p + theme_linedraw() + ggtitle("theme_linedraw()")
+p + theme_light() + ggtitle("theme_light()")
+p + theme_dark() + ggtitle("theme_dark()")
+p + theme_minimal() + ggtitle("theme_minimal()")
+```
+
+Como vemos, hay varios tipos de _temas_, eso varía según tu gusto y lo que te pidan. Siempre ten en cuenta que un gráfico es la carta de presentación de un proyecto, así que si inviertes en una buena gráfica, posiblemente el lector esté más a gusto con lo que ve, recuerda que todo entra por lo ojos...
+
+<center>
+![](https://i.ibb.co/YT3Qqmr/theme.gif){width=350}
+</center><br>
+
+Para utilizar más temas, puedes hacer uso del paquete **ggthemes**. En esta [PÁGINA](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/) podrás ampliar la información y ver que temas hay disponibles.
+
+
+## Modificando los temas
+
+A pesar de encontrar muchos temas en línea, cada persona puede elaborar su plantilla de forma autónoma, haciendo uso de cada elemento que compone un tema. Para ello en el código utilizaremos el comando <res>theme()</res>, el cual nos permitirá direccionar las ordenes hacía la modificación del gráfico.
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+¡¡¡Atención, atención!!!
+
+Realizar estas modificaciones a veces puede ser un poco agobiante, requiere efuerzo, tiempo y dedicación, pero una vez lo tengas, todo será más fácil
+</blockquote>
+
+Hay alrededor de **40** elementos únicos que controlan la apariencia del lienzo. Se pueden agrupar aproximadamente en cinco categorías: gráfico, eje, leyenda, panel y faceta. Las siguientes secciones mostraremos algunas modificaciones para cada uno de ellos.
+
+<center>
+![](https://i.ibb.co/343JKst/happy.gif){width=350}
+</center><br>
+
+**ELEMENTOS DEL GRÁFICO**
+
+|Elemento           |Código           |Descripción  |
+|-------------------|-----------------|-------------|
+|plot.background    |element_rect()   |Fondo del gráfico|
+|plot.title         |element_text()   |Título del gráfico|
+|plot.margin        |margin()         |Márgen alrededor del gráfico|
+
+<br>
+
+De forma predeterminada, **ggplot2** usa un fondo blanco que asegura que la trama se pueda usar donde sea que pueda terminar (por ejemplo, incluso si lo guardas como _png_ y lo colocas en una diapositiva con un fondo negro). Al exportar gráficos para usar en otros sistemas, es posible que desees hacer que el fondo sea transparente con fill = NA. En relación a las márgenes tenemos los siguientes valores por defecto (margin(top = 0, right = 0, below = 0, left = 0). A continuación veamos un ejemplo de este caso
+
+```{r out.width = '100%'}
+p + theme(
+    # Cambiamos el color de la línea de fondo por "red" y su ancho
+  plot.background = element_rect(colour = "red", size = 6)
+)
+p + theme(
+    # Cambiamos el color de fondo por "blue" 
+  plot.background = element_rect(fill = "blue"),
+    # Cambiamos las márgenes de 0 a 2 unidades
+  plot.margin = margin(5, 5, 5, 5),
+    # Ajustamos el tipo de letra, el color y el tamaño
+  plot.title = element_text(face = "bold", colour = "yellow")
+  )+
+  ggtitle("Título de la gráfica")
+```
+
+<br>
+
+**ELEMENTOS DE LOS EJES**
+
+|Elemento|Código|Descripción|
+|-----|-----|-----|
+|axis.line|element_line()|Línea paralela al eje (oculta en temas predeterminados)|
+|axis.text|element_text()|Etiquetas de marca|
+|axis.text.x|element_text()|Etiquetas de marca del eje x|
+|axis.text.y|element_text()|Etiquetas de marca del eje y|
+|axis.title|element_text()|títulos de eje|
+|axis.title.x|element_text()|título del eje x|
+|axis.title.y|element_text()|título del eje y|
+|axis.ticks|element_line()|marcas de graduación del eje|
+|axis.ticks.length|unit()|longitud de las marcas de graduación|
+
+<br>
+
+Si deseas modificar las propiedades de ambos ejes a la vez, utiliza <res>axis.text</res>, si no, puedes modificarlos independientemente con los otros códigos <res>axis.text.x</res> y <res>axis.text.x</res>. Veamos un ejemplo de estas modificaciones
+
+```{r out.width = '100%'}
+  # Cambiamos el estilo de los ejes
+  # Modificamos el ancho de los ejes y su color
+p + theme(axis.line = element_line(colour = "grey50", size = 1.5))
+  # Cambiamos el estilo de ambos ejes
+  # Modificamos color y tamaño
+p + theme(axis.text = element_text(color = "blue", size = 12))
+  # O Cambiar el estilo de las etiquetas de un sólo eje
+  # Modificamos el ángulo de la etiqueta "x" y su posición (vjust y hjust)
+  # Esto nos sirve si tenemos etiquetas muy grandes
+p + theme(axis.text.x = element_text(angle = -45, vjust = 0.5, hjust = 0.5))
+```
+
+<br>
+
+**ELEMENTOS DE LA LEYENDA**
+
+|Elemento|Código base|Descripción|
+|-----|-----|-----|
+|legend.backgroun|delement_rect()|Fondo de la leyenda|
+|legend.key|element_rect()|Fondo de las claves de leyenda|
+|legend.key.size|unit()|Tamaño de la clave de leyenda|
+|legend.key.height|unit()|Altura de la clave de leyenda|
+|legend.key.width|unit()|Ancho de la clave de leyenda|
+|legend.margin|unit()|Margen de leyenda|
+|legend.text|element_text()|Etiquetas de leyenda|
+|legend.text.align|0–1|Leyenda alineación de la etiqueta (0 = derecha, 1 = izquierda)|
+|legend.title|element_text()|Nombre de la leyenda|
+|legend.title.align|0–1|Leyenda alineación del nombre (0 = derecha, 1 = izquierda)|
+|legend.position|center-right-left-bottom|Posición de la leyenda en el gráfico|
+
+<br>
+
+Veamos un ejemplo de estos elementos, para ello utilicemos la base de datos <res>iris</res>
+
+```{r out.width = '100%'}
+i <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, 
+                      colour = Species))+
+  geom_point()
+
+  # Modifiquemos el fondo de la caja de leyenda 
+  # Además del color y ancho de la línea de la caja
+i + theme(
+  legend.background = element_rect(
+    fill = "lemonchiffon", 
+    colour = "red", 
+    size = 1
+  )
+)
+
+  # Modifiquemos el color y medidas de cada caja de la leyenda
+i + theme(
+  legend.key = element_rect(color = "blue"),
+  legend.key.width = unit(0.9, "cm"),
+  legend.key.height = unit(0.75, "cm")
+)
+
+  # Modifiquemos la posición de la leyenda
+  # Además modifiquemos el tamaño y estilo de la letra
+i + theme(
+  legend.text = element_text(size = 15),
+  legend.title = element_text(size = 15, face = "bold"),
+  legend.position = "bottom"
+)
+```
+
+<br>
+
+**ELEMENTOS DEL PANEL**
+
+|Elemento|Código|Descripción|
+|-----|-----|-----|
+|panel.background|element_rect()|Fondo del panel (debajo de los datos)|
+|panel.border|element_rect()|Borde del panel (sobre los datos)|
+|panel.grid.major|element_line()|Líneas de cuadrícula principales|
+|panel.grid.major.x|element_line()|Líneas de cuadrícula principales| verticales|
+|panel.grid.major.y|element_line()|Líneas de cuadrícula principales horizontales|
+|panel.grid.minor|element_line()|Líneas de cuadrícula menores|
+|panel.grid.minor.x|element_line()|Líneas de cuadrícula verticales menores|
+|panel.grid.minor.y|element_line()|Líneas de cuadrícula menores horizontales|
+|aspect.radio|numeric|Relación de aspecto de la trama|
+
+<br>
+
+La principal diferencia entre <res>panel.background</res> y <res>panel.border</res> es que el fondo se dibuja debajo de los datos y el borde se dibuja encima
+
+Ahora veamos unos buenos ejemplos
+
+```{r out.width = '100%'}
+  # Modifiquemos el color del fondo
+p + theme(panel.background = element_rect(fill = "lightblue"))
+
+# Modifiquemos el color y ancho de las líneas principales de la cuadrícula en ambos ejes
+p + theme(
+  panel.grid.major = element_line(color = "gray60", size = 0.8)
+)
+# Modifiquemos el color y ancho de las líneas principales de la cuadrícula en el eje "x"
+# Además modifiquemos el radio a 9:16
+p + theme(
+  panel.grid.major.x = element_line(color = "gray60", size = 0.8),
+  aspect.ratio = 9 / 16
+)
+```
+
+<br>
+
+**ELEMENTOS DE LA FACETA**
+
+Laas facetas nos permiten dividir nuestros datos en lienzos diferentes, sobre alguna variable que consideremos esencial para tal. Una característica de estos gráficos, es que es adecuada para poder hacer comparaciones en variables que comparten ejes. A continuación veamos más información para modificar este aspecto de la gráfica
+
+|Elemento|Código|Descripción|
+|-----|-----|-----|
+|strip.background|element_rect()|Fondo de las tiras del panel|
+|strip.text|element_text()|Tira de texto|
+|strip.text.x|element_text()|Tira horizontal de texto|
+|strip.text.y|element_text()|Tira vertical de texto|
+|panel.margin|unit()|Margen entre facetas|
+|panel.margin.x|unit()|Margen entre facetas (vertical)|
+|panel.margin.y|unit()|Margen entre facetas (horizontal)|
+
+<br>
+
+Hagámos unos bueno gráficos para entender algunas de estas modificaciones
+
+```{r message=FALSE, warning=FALSE, out.width = '100%'}
+f <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width))+
+  geom_point()+
+  # Divimos la gráfica por la variable "Species"
+  facet_wrap(~Species)
+f
+
+  # Modificamos el ancho entre las facetas
+f + theme(panel.margin = unit(0.5, "in"))
+
+  # Modificamos el color del fondo de la faceta
+  # Además, modificamos el color y ancho de la línea
+  # Así como el color y tamaño de la letra
+f + theme(
+  strip.background = element_rect(fill = "green", color = "red", size = 2),
+  strip.text = element_text(colour = "black", size = 14)
+)
+```
+
+## Resumen
+
+El día de hoy pudimos saber un poco más acerca del paquete **ggplot2**, un excelente paquete que nos permitirá explorar y modificar sus elementos, para dejarlos según nuestro estilo o según las especificaciones que algunos investigadores y/o autores puedan requerir. Por ejemplo, a través de estas modificaciones puedes realizar gráficos tipo publicación, osea, que estéticamente sean lo mejor, con un tamaño estipulado, fondos óptimos, tipo de letra adecuada, en fin... muchas otras normas que nos piden los editores de las revistas más prestigiosas en el área de biología y afines.
+
+<center>
+![](https://i.ibb.co/71NMtw1/dance2.gif){width=350}
+</center><br>
+
+Aprendimos los requerimientos para que el paquete funcione adecuadamente y no nos genere error; sin embargo, como todo lo de **R** y **Biología**, pues un solo POST no es suficiente, hay muuuuuuchas más cosas que puedes aprender con **ggplot2**, este sólo fue un principio y te invitamos a leer y jugar más con este paquete, tal vez seas el próximo desarrollador de paquetes de gráficos para R.
+
+<center>
+![](https://i.ibb.co/WfF2N99/cool.gif){width=350}
+</center><br>
+
+Si necesitas más información acerca de este tema, puedes pasarte por esta página y leer su contenido - [Extensiones ggplot2](https://exts.ggplot2.tidyverse.org/gallery/)
+
+Muchas gracias por tu lectura, esperamos que te lleves algo más que sólo cansancio por ver tanto código; sabemos que R es un mundo a veces despiadado, pero que deja sensaciones únicas en la mente, prácticamente R juega contigo, como **tu ex**...
+
+¡Hasta la próxima...!
+
+<center>
+![](https://i.ibb.co/yFJYTdt/bye.gif){width=350}
+</center><br>
+
+## Bibliografía 
+
+- [ggplot2](https://ggplot2.tidyverse.org/)
+
+- [Una breve introducción a ggplot2](http://verso.mat.uam.es/~joser.berrendero/R/introggplot2.html)
+
+- [R para profesionales de los datos: una introducción](https://www.datanalytics.com/libro_r/elementos-de-un-grafico-en-ggplot2.html)
+
+- [Introducción a ggplot2](https://www.datanalytics.com/libro_r/introduccion-a-ggplot2.html)
+
+- [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/polishing.html)
+
+## Más información 
+
+Estos análisis se han realizado utilizando el software R (v.4.1.0) y Rstudio (v. 1.4.1717)
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>

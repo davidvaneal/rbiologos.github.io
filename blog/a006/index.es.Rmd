@@ -1,0 +1,288 @@
+---
+title: Entonces... ¿cómo cargo mis datos a R?
+author: David Vanegas
+date: '2021-04-12'
+image: "https://i.ibb.co/QXs1vw7/Es.png"
+slug: []
+categories:
+  - R
+tags:
+  - Datos
+  - Lectura
+  - R
+  - RStudio
+---
+
+> Una de las etapas más sencillas pero que suele ser la más problemática en nuestros proyectos y tareas en R, es la carga de datos. 
+
+<center>
+![](https://i.ibb.co/68N8Mmw/preo.gif){width="300"}
+</center><br>
+
+Esto se debe a que muchas veces no sabemos sobre la naturaleza de nuestros datos y a pesar de que R es una gran herramienta, este programa solo lee datos (*no intenciones*) y no va a poder hacer todo por nosotros.
+
+Por tanto, en este post vamos a aprender sobre la importación de datos en los formatos que más manejamos, porque hay una gran cantidad de ellos que por el momento no vamos a utilizar. Estos datos pueden estar guardados en un archivo en nuestra computadora o presentarse como archivos en línea.
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+Atención, atención!!!
+
+Antes de empezar con nuestra carga de datos debemos tener en cuenta los siguientes aspectos para trabajar con nuestros datos y archivos
+</blockquote>
+
+1. Debemos evitar nombres, valores o campos con espacios en blanco. Este error es muy común ya que R interpreta cada espacio en blanco como una variable, resultando en errores relacionados con el número de elementos en nuestro conjunto de datos
+2. Escoger nombres cortos en lugar de largos, esto te servirá demasiado para poder trabajar con los datos dentro del programa, no es lo mismo digitar el sitio llamado "portón amarillo cerca de la casa de huespedes de la finca La Primorosa ubicada en el municipio de.... bla bla bla" a solo tener en cuenta que aquel sitio va a ser llamado "sitio1"
+3. Evitar usar los siguientes símbolos en los nombres: ?, $, %, ^, &, *, (, ), -, #, ?, ,, <, >, /, |, \, [, ], { y }.
+4. Borrar cualquier comentario que hayamos insertado en nuestros archivos para evitar datos extras, de lo contrario distintos valores serán introducidos en nuestro archivo
+
+Ahora SI, a lo que vinimos!
+
+<center>
+![](https://i.ibb.co/Hn4rYJn/feliz.gif){width="300"}
+</center>
+
+## Lectura de archivos ***.txt***
+
+Es del tipo de archivos más populares en nuestras computadoras. Se trata de un archivo de texto plano, por lo que su tratamiento será un poco más sencillo, rara vez necesita más argumentos de los especificados. Para poder importarlo a nuestra base de R sólo necesitaremos la función <res>read.table()</res>, recuerda que si necesitas información sobre esta función, puedes digitar <res>?read.table()</res>. 
+
+La función <res>read.table()</res> tiene varios argumentos para poder leer archivos. Los más importantes son:
+
+- <res>file</res>: ubicación del archivo.
+- <res>header</res>: si posee o no una fila con los nombres de las columnas.
+- <res>col.names</res>: indicamos manualmente el nombre de las columnas de nuestro data frame, llegado el caso de no tenerlos 
+- <res>stringsAsFactors</res>: por defecto, los campos de texto se los trata como factor. Si queremos que se los trate como cadenas ponemos este argumento a FALSE.
+- <res>sep</res>: seleccionamos el símbolo que se utiliza para delimitar las columnas.
+- <res>dec</res>: indicamos el símbolo que se utiliza para la representación decimal.
+
+Así, la sintaxis básica para nuestra lectura será de la siguiente manera, en la cual guardaremos nuestros datos en una variable, para poder trabajar fácilmente con ella 
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+Atención, atención!!!
+
+Puedes descargar este archivo <res>.txt</res> para que puedas ver la forma de los datos y para que hagas el ejercicio de lectura en R
+</blockquote>
+
+<center>
+<a href="https://drive.google.com/uc?id=14drpgXNmwwy-vqjGTUvyhx2c8oBZ9Wqr&export=download"><img src="https://i.ibb.co/dfgPD3F/txt-icon.png" alt="descarga" border="0" width="150"></a>
+</center><br>
+
+```{r eval=FALSE}
+a <- read.table(file = "txt_ejemplo.txt", # Nombre del archivo
+                # También puedes especificar la dirección
+                header = FALSE, # Si se muestra el encabezado (TRUE) o no (FALSE)
+                sep = "", # Aquí especificamos el tipo de separador de las columnas
+                dec = ".") # Tipo de signo para especificar decimales, punto o coma
+```
+
+> Ten en cuenta que la lectura de datos con este tipo de sintaxis, es si y solo si nuestro archivo está alojado en la misma dirección del directorio de R, tal y como lo vimos en nuestro anterior [POST](https://rbiologos.github.io/blog/a004/), si no te generará ERROR. 
+
+Si ese no es el caso y tenemos nuestro archivo en otra carpeta, podemos ingresar la función <res>choose.files()</res> como argumento, con el fin de buscar la carpeta donde está alojado, así pues quedará de la siguiente forma
+
+```{r }
+read.table(choose.files(), # Esto abrirá una ventana para encontrar nuestro archivo
+           header = TRUE,
+           sep = ",",
+           dec = ".")
+```
+
+Como podemos ver, nuestro archivo ha sido cargado con total éxito, 5 variables con 6 datos cada una!
+
+<center>
+![](https://i.ibb.co/S6zDB90/happy.gif){width="300"}
+</center><br>
+
+¿Pero que pasaría si ingresamos mal los datos? Veamos algunos ejemplos
+
+En este ejemplo, no especificamos el header, ni la separación ni la puntuación de nuestros datos
+
+```{r }
+read.table(choose.files(),
+           header = FALSE)
+```
+
+Como puedes observar nuestros datos quedaron de forma desorganizada porque no le especificamos a R como debía separar nuestros datos, así que el programa los lee como si fuesen uno por fila. Además, si observas los nombres de nuestras variables pasan a ser un dato más! 
+
+<center>
+![](https://i.ibb.co/N6GSxfD/no.gif){width="300"}
+</center><br>
+
+Ahora veamos este otro ejemplo, donde especificamos mal los argumentos en el Header, en separación y puntuación
+
+```{r error=TRUE}
+read.table(choose.files(), # Esto abrirá una ventana para buscar nuestro archivo
+           header=FALSE,
+           sep = ".",
+           dec = ",")
+```
+
+Y nuestro resultado ni siquiera se muestra, nos genera un error inmediato, R nos avisará que nuestros datos están erróneos, y puede que no sean nuestros datos como en este ejemplo, si no que no especificamos bien nuestra función de lectura.
+
+<center>
+![](https://i.ibb.co/SVY9tZT/help.gif){width="300"}
+</center>
+
+## Lectura de archivos ***.csv***
+
+El formato CSV (*Comma Separated Values*) es uno de los más comunes a la hora de intercambiar datos entre aplicaciones. Un archivo en este formato es un archivo de texto, en el que cada fila es una muestra u ocurrencia y cada columna una variable. Los datos en cada fila se separan entre sí mediante comas, de ahí la denominación del formato.Este tipo de dato será un poco más recurrente en nuestra área en particular.
+
+Este tipo de archivos lo podemos crear fácilmente en Excel como se ve en las siguientes imágenes, solo debemos tener en cuenta que no se deben dejar filas vacías, no se debe colorear, no se deben colocar bordes ni nada.
+
+<center>
+<img src="https://i.ibb.co/VwZDWND/final-606273fa32e29f0085e699da-364467.gif" alt="final-606273fa32e29f0085e699da-364467" border="0" class="responsive"><br>
+Guardar archivos .csv desde Excel
+</center>
+<br>
+
+<center>
+<img src="https://i.ibb.co/Pggh11f/Drive-csv.gif" alt="Drive-csv" border="0" class="responsive"><br>
+Guardar archivos .csv desde Googlesheets
+</center><br>
+
+Para poder leer este tipo de archivo necesitaremos la función <res>read.csv()</res>, al igual hay muchas otras funciones que tienen como finalidad la lectura de este archivo, sin embargo, esta es la más utilizada en general. Los argumentos son muy similares a la función <res>read.table()</res> así que no tendremos muchos problemas para acceder a ella
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+Atención, atención!!!
+
+Puedes descargar este archivo <res>.csv</res> para que puedas ver la forma de los datos y para que hagas el ejercicio de lectura en R
+</blockquote>
+
+<center>
+<a href="https://drive.google.com/uc?export=download&id=1HB8iGkt6F5z4NMog_3TkBYwq7Plsxqaw"><img src="https://i.ibb.co/6gx1V1Y/csv-icon.png" alt="descarga" border="0" width="150"></a>
+</center><br>
+
+```{r}
+read.csv(file = "csv_ejemplo.csv",
+           header = TRUE,
+           sep = ",",
+           dec = ".")
+```
+Y así, hemos cargado nuestro archivo, vamos aprendiendo cada vez más!
+
+<center>
+![](https://i.ibb.co/hKs2mc4/ride.gif){width="300"}
+</center>
+
+## Descargar datos en línea
+
+Hay una cantidad inimaginable de datos en la web que podemos descargar y utilizar para nuestros estudios y como nos encanta usar R, pues también hay una forma de descargarlos directamente a R y no ocupar memoria de nuestra PC con un archivo más (aclaramos que va a utilizar memoria de otra manera, pero unicamente cuando lo usemos en nuestra sesión de R)
+
+Para empezar, vamos a utilizar las mismas funciones que usábamos para cargar, como lo vimos anteriormente; la única diferencia consiste en que, en lugar de proporcionar la ruta al fichero, tendremos que proporcionar la ruta de internet, por medio de una variable, tal cual vemos en este ejemplo
+
+```{r}
+url<-"https://drive.google.com/uc?id=14drpgXNmwwy-vqjGTUvyhx2c8oBZ9Wqr&export=download"
+```
+
+En este paso, unicamente guardamos la dirección del archivo en línea en una variable, puedes llamarla de cualquier manera. Ahora, vamos a realizar los mismos pasos que ya habíamos aprendido, solo que en el nombre del archivo vamos a poner nuestra variable anteriormente creada
+
+```{r}
+read.table(url, # Especificamos nuestra variable "url"
+           header = TRUE,
+           sep = ",",
+           dec = ".")
+```
+
+<center>
+<img src="https://i.ibb.co/h7x8p9f/voil.gif" alt="voil" border="0" width="300"><br>Y... voilà!!!
+</center><br>
+
+## Lectura Archivos ***.xlsx***
+
+Ahora aprenderemos sobre la lectura de archivos <res>Excel</res>. Para ello, es necesario que tengamos instalado en nuestra base el paquete <res>readxl<res/> y recuerda que para hacer uso de ello, debemos cargarlo en nuestro sistema con la función <res>library()<res/>
+
+```{r eval=FALSE}
+install.packages("readxl")
+```
+
+```{r}
+library(readxl)
+```
+
+
+Así, los argumentos para nuestra función <res>read_excel</res>, contiene las siguentes pautas
+
+```{r eval=FALSE}
+hoja_excel <- read_excel(path = '', # Dirección del archivo
+                        sheet = "iris", # Hoja del archivo a leer
+                        range = "C1:E4", # Podemos leer solamente un rango de la hoja
+                        n_max = 8) # Podemos leer una cantidad máxima de datos
+```
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+Atención, atención!!!
+
+Puedes descargar este archivo <res>.xlsx</res> para que puedas ver la forma de los datos y para que hagas el ejercicio de lectura en R
+</blockquote>
+
+<center>
+<a href="https://drive.google.com/uc?id=1cN-kIyIVeyZhRcJdYFljHgyO-UuI9ucO&export=download"><img src="https://i.ibb.co/XzfKvzx/xls.png" alt="xls" border="0" width="150"></a>
+</center><br>
+
+```{r}
+read_excel(choose.files(),
+                  sheet = "iris",
+                  n_max = 6)
+```
+Así, podemos observar que nuestros 6 primeros datos de la hoja <res>iris</res> del libro <res>xls_ejemplo</res> han sido cargados con éxito!
+
+<center>
+![](https://i.ibb.co/SNryVtq/hap.gif){width="300"}
+</center>
+
+## Importar múltiples archivos
+
+Finalmente, en algunas situaciónes nos encontramos frente a esta situación: tener múltiples archivos para nuestros proyectos, lo que supone la lectura de cada uno de ellos, y si son bastantes, pues la tares se vuelve un poco tediosa, por ello, acá te mostramos una forma de poder leer todos nuestros archivos (ten en cuenta que deben tener la misma extensión) en nuestra carpeta de trabajo.
+
+Primero obtenemos la lista de archivos dentro de la carpeta en cuestión
+
+```{r eval=FALSE}
+archivos <- list.files(path = 'C:/Users/David/Desktop/Proyecto')
+```
+
+Posteriormente, leeremos todos los archivos a partir de una nueva lista con la función <res>lappy()</res>
+
+```{r eval=FALSE}
+lista_archivos <- lapply(archivos, read.csv()) 
+# En este ejemplo leeremos solamente archivos .csv
+# Tu puedes igual definir otro tipo de archivos
+```
+
+## Resumen del post
+
+Bueno, hoy nos enfrentamos a uno de los pasos más complejos en nuestros estudios, la lectura de datos. Pudimos aprender a importar archivos <res>.txt</res>, <res>.csv</res> y <res>.xlsx</res>, los tipos de archivos más comunes que utilizamos en la ciencia, ten en cuenta que hay muchos otros, y si te enfrentas a uno de ellos, nos puedes escribir y lo explicaremos o simplemente puedes indagar en google y encontrar muchas referencias para solucionar tu problema. Ánimo!!!
+
+<center>
+![](https://i.ibb.co/yFZpsHC/Kmta.gif){width="300"}
+</center>
+
+## Después de importar los datos *¿Cómo los analizo?*
+
+Luego de aprender a importar datos en R, es necesario analizar nuestros datos, saber a que nos enfrentamos y como debemos tratarlos... pero espera, esto cuenta como spoiler... eso vendrá en nuestro próximo post, que viene cargado con muchas más cosas para recordar y aprender!!
+
+## **Te esperamos!!!**
+
+<br>
+<center>
+![](https://i.ibb.co/GMc8BTf/final.gif){width="300"}
+</center>
+<br>
+
+```
+Información consultada
+
+- Jakob Jenkov (2020) R - Load Data
+- Al-Ahmadgaid Asaad in R bloggers (2013) Importing Data to R
+- Karlijn Willems in Datacamp (2018) This R Data Import Tutorial Is Everything You Need
+- Matias Andina (2015) Introducción a estadística con R
+- Freddy Hernández (2012) Manual de R
+- RCoder
+- Mauricio Anderson (2016) Curso de R
+```
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>

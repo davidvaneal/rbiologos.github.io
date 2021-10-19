@@ -1,0 +1,78 @@
+---
+title: Información de utilidad - Lectura de datos
+author: Eduardo Grajales
+date: '2021-04-19'
+image: "https://i.ibb.co/wBfNVWj/A007.png"
+slug: []
+categories:
+  - R
+tags:
+  - R
+  - RStudio
+  - Datos
+  - Lectura
+---
+
+¡Hey Rblogger! Abrimos esta pequeña nota para contarte que existe otra forma de cargar tus datos a R y Rstudio, y es muy diferente a las que ya viste en el anterior [POST](https://rbiologos.github.io/blog/a006/). Para algunos será muy atractiva, para otros, no tanto. Pero acá estamos es pa´ enseñar; así que esperamos te sirva.
+
+Mucha parla, ¡Al grano pues!
+
+<center>
+![](https://i.ibb.co/F7xpBq3/1.gif){width="250"}
+</center><br>
+
+Existe una función en R que se llama <res>readtable()</res> y en ella se puede asignar un argumento llamado <res>clipboard</res>. Lo que este argumento va a hacer por ti, es que va a **permitir cargar datos copiados desde una tabla de excel**. 
+
+<center>
+![](https://i.ibb.co/txYRqqK/boom.gif){width="250"}
+</center><br>
+
+**Bueno... ¿Y cómo lo vas a hacer?** 
+
+Pues, siguiendo estos sencillos pasos:
+
+1. Ten una base datos en excel o en la web de interés, que necesites copiar para cargar en R.
+2. Abre Rstudio o R, el que sea de tu preferencia, usa la siguiente línea de código y asigna un nombre a tu data, preferiblemente que indique o sugiera que contiene tus datos, así cómo lo ves en el ejemplo.
+
+```{r, eval=FALSE}
+primates <- read.table("clipboard", sep = "\t", header = TRUE)
+#\t Significa separación por tabulaciones.
+```
+
+3. Finalmente, revisa atentamente la siguiente explicación
+
+<center>
+<img src="https://i.ibb.co/wNYyLj6/video-1.gif" alt="video" border="0" class="responsive">
+</center><br>
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+
+Debes tener en cuenta, cual es el formato que delimita tus datos; es decir, si es delimitado por comas, por tabulaciones, por espacios o por punto y coma.
+</blockquote>
+
+¿Pero dirás, para qué debo saber eso?
+
+Pues lo debes saber para asignar correctamente el <res>sep = " "</res>. Si no ingresas el tipo de separación correcta de tus datos, pues tendremos un error en nuestros datos! Aquí te dejamos como es su símbolo por si lo has olvidado
+
+<center>
+![](https://i.ibb.co/5RQGvr6/sep.jpg){width="350"}
+</center>
+
+## Pa´ finalizar
+
+Copiar nuestros datos directamente es una herramienta que nos puede servir mucho, esto va a depender de tus gustos para trabajar con uno u otro código, osea, *pa´ gustos los colores*
+
+**Listo!!!**
+
+Esto es todo, espero te sea de mucha utilidad, nos vemos en un próximo post...
+
+<center>
+![](https://i.ibb.co/Z1DwJPQ/bye.gif){width="250"}
+</center>
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>

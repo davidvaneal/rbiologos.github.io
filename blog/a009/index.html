@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+	<meta charset="utf-8">
+	<title>Análisis exploratorio de Datos - Parte II</title>
+
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="El espacio perfecto para Biólogos y R">
+	
+	<meta name="author" content="&lt;/R Biólogos&gt;">
+	<meta name="generator" content="Hugo 0.83.1" />
+
+	<!-- plugins -->
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/plugins/bootstrap/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/plugins/themify-icons/themify-icons.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/plugins/magnific-popup/magnific-popup.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/plugins/slick/slick.css">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim%7cQuattrocento&#43;Sans:400,700&amp;display=swap">
+	
+
+	<!-- Main Stylesheet -->
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/css/style.min.css" media="screen">
+
+	<!-- Custom stylesheet - for your changes -->
+	
+  <link rel="stylesheet" href="https://rbiologos.github.io/css/custom.min.css" media="screen">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="https://i.ibb.co/93QhLPT/Fav.png" type="image/x-icon">
+	<link rel="icon" href="https://i.ibb.co/93QhLPT/Fav.png" type="image/x-icon">
+
+	
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-N49JEEK9KF"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-N49JEEK9KF');
+	</script>
+	
+
+</head>
+
+
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="55">
+  <div id="content">
+    
+<!-- preloader start -->
+<div class="preloader">
+  
+  <img src="https://i.ibb.co/BjJWHb3/preloader.gif" alt="preloader" width="300">
+  
+</div>
+<!-- preloader end -->
+
+
+
+<section class="sticky-top navigation">
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<a class="navbar-brand p-0" href="/">
+				
+				<img class="lozad" data-src="https://i.ibb.co/93QhLPT/Fav.png" alt="R Biólogos" height="42">
+				
+			</a>
+
+			<button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navigation">
+				<ul class="navbar-nav ml-auto">
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#https://rbiologos.github.io/">Inicio</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#blog">Blog</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#team">Equipo</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#about">¿Qué somos?</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#feature">¿Qué hacemos?</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#contact">Contacto</a>
+					</li>
+					
+				</ul></div>
+				
+				<select id="select-language" onchange="location = this.value;">
+					
+					
+					
+					
+					
+					
+					
+					
+					<option id="es" value="https://rbiologos.github.io/blog/a009/" selected>ES
+					</option>
+					
+					
+					
+					
+					
+					
+					
+					
+				</select>
+				
+			
+			<script>
+  (function() {
+    var id = '06c75f9c-882f-11eb-a152-0242ac130002';
+    var ci_search = document.createElement('script');
+    ci_search.type = 'text/javascript';
+    ci_search.async = true;
+    ci_search.src = 'https://cse.expertrec.com/api/js/ci_common.js?id=' + id;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ci_search, s);
+  })();
+</script><ci-search></ci-search>
+		</nav>
+	</div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1>Análisis exploratorio de Datos - Parte II</h1>
+        <ul class="list-inline mb-50">
+          <li class="list-inline-item"><a href="/author/david-vanegas/">David Vanegas</a></li>
+          <li class="list-inline-item">Tuesday, May 25, 2021</li>
+        </ul>
+        <img class="img-fluid mb-50 lozad" data-src="https://i.ibb.co/tqn3DqX/ES.png" alt="blog-image">
+      </div>
+      <div class="col-lg-8 offset-lg-2">
+        <div class="post-single-content">
+          
+<script src="https://rbiologos.github.io/blog/a009/index.es_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Uno de los mecanismos de exploración de datos más usados y efectivos son las representaciones gráficas de los elementos a partir de una base de datos.</p>
+<center>
+<img src="https://i.ibb.co/JmkNYcZ/laptop.gif" width="350" />
+</center>
+<p><br></p>
+<p>Esta transformación de una base de datos a un formato visual nos permite identificar características y relaciones entre los elementos de los datos. Por defecto, R cuenta en su estructura base con múltiples funciones para la generación de gráficos, como nubes de puntos, líneas, barras, gráficos circulares, etc.</p>
+<p>En el mundo de R hay muchas funciones que nos permiten realizar este tipo de gráficos, entre las más populares y completas, tenemos las funciones de gráfico propias de R, la cúal trataremos en este <strong>POST</strong> y funciones mucho más completas como ggplot2, función que veremos en una próxima oportunidad.</p>
+<p>Recuerda que los pasos básicos son muy importantes conocerlos y no podemos dejar de verlos, ten paciencia que ya llegaremos a ver muchás más cosas que nos servirán en nuestros estudios biológicos.</p>
+<center>
+<blockquote>
+<strong><em>Antes de correr, tuviste que aprender a caminar.</em></strong>
+</blockquote>
+</center>
+<p><br></p>
+<p>Ahora sí, vamos a por ello.</p>
+<p><br></p>
+<div id="gráficos-básicos" class="section level2">
+<h2>Gráficos básicos</h2>
+<p>La forma más básica de generar un gráfico de datos, es utilizando la función <res>plot()</res>.</p>
+<p>Esta función tiene un comportamiento especial, pues dependiendo del tipo de dato que le demos como argumento, generará diferentes tipos de gráfica. Además, para cada tipo de gráfico, podremos ajustar diferentes parámetros que controlan su aspecto, dentro de esta misma función.</p>
+<center>
+<img src="https://i.ibb.co/0Dyd2kW/deal.gif" width="350" />
+</center>
+<p><br></p>
+<p>A continuación, veremos algunos ejemplos y cómo utilizarlos, para ello, usaremos la base de datos confiable <res><strong>iris</strong></res>, así que veamos un resumen sobre ella, ¡Vamos por ello!</p>
+<pre class="r"><code>summary(iris)</code></pre>
+<pre><code>##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##        Species  
+##  setosa    :50  
+##  versicolor:50  
+##  virginica :50  
+##                 
+##                 
+## </code></pre>
+<pre class="r"><code># clase de nuestras variables
+lapply(iris, class)</code></pre>
+<pre><code>## $Sepal.Length
+## [1] &quot;numeric&quot;
+## 
+## $Sepal.Width
+## [1] &quot;numeric&quot;
+## 
+## $Petal.Length
+## [1] &quot;numeric&quot;
+## 
+## $Petal.Width
+## [1] &quot;numeric&quot;
+## 
+## $Species
+## [1] &quot;factor&quot;</code></pre>
+<p>Como podemos ver, tenemos 5 variables, 4 de ellas son del tipo <res>numeric</res> (longitud y ancho del sépalo y pétalo) y un <res>factor</res> de tres especies de flores.</p>
+</div>
+<div id="diagrama-de-dispersión" class="section level2">
+<h2>Diagrama de dispersión</h2>
+<p>Cuando estamos interesados en la interacción de dos variables cuantitativas, podemos hacer uso de este tipo de gráficas. Estos análisis permiten responder a preguntas como:</p>
+<ul>
+<li>¿Existe alguna relación entre una variable <res>x</res> con otra variable <res>y</res>?</li>
+<li>¿Esta relación es negativa o positiva?</li>
+<li>¿Mediante qué tipo de función se relacionan?, ¿Lineal o no lineal?</li>
+</ul>
+<p>Los datos se representarán de izquierda a derecha en el eje X según el orden que ocupan en el vector, siendo su altura (posición en el eje Y) proporcional al valor del dato en sí. Así, podemos ingresar variables para poder inferir su posible comportamiento y relación. No te preocupes, ya explicaremos con más detalle.</p>
+<center>
+<img src="https://i.ibb.co/101SXjf/rock.gif" width="350" />
+</center>
+<p><br></p>
+<p><strong>Diagrama de dispersión de una variable</strong></p>
+<p>En el siguiente ejemplo vamos a representar graficamente la longitud de sépalo para las muestras de iris.</p>
+<pre class="r"><code>plot(iris$Sepal.Length)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-2-1.png" width="100%" /></p>
+<p>Como observamos, en el eje X aparecen las 150 observaciones, mientras que en el eje Y se indica la longitud de sépalo para cada observación. Pero si detallamos más a fondo de una simple gráfica podemos observar que más o menos los datos de las variables de la base, están ordenados. Los primeras muestran valores inferiores a los últimas, con un ascenso y cierto nivel de dispersión. Así, vamos observando pistas de lo que podríamos hacer con nuestros datos, paso a paso, ¡desenredamos esta maraña!</p>
+<center>
+<img src="https://i.ibb.co/VQSjrSR/shirt.gif" width="350" />
+</center>
+<p><br></p>
+<p><strong>Diagrama de dispersión de dos variables</strong></p>
+<p>Este tipo de represetación se realiza para poder inferir una posible relación entre las variables, como vemos a continuación:</p>
+<pre class="r"><code># Simplemente las separamos con una coma (,)
+plot(iris$Sepal.Length, iris$Sepal.Width)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-3-1.png" width="100%" /></p>
+<p>Pero como observamos, aquí no hay nada, nadita, nada. En este caso no podemos asegurar que hay una posible relación, ¿Y como sabemos esto? Es una apreación sencilla, no vas a observar que los puntos sigan un patrón (representada por una línea), no, en este caso los puntos están totalmente dispersos y por ello, podemos inferir que no hay una posible relación entre las dos variables.</p>
+<center>
+<img src="https://i.ibb.co/hYs8hbt/cry.gif" width="350" />
+</center>
+<p><br></p>
+<p><strong>Diagrama de dispersión de tres variables</strong></p>
+<p>Aunque en estas gráficas solamente contamos con dos ejes, y por tanto pueden
+representarse los valores correspondientes a dos variables, es posible aprovechar los atributos de los puntos: color, tipo de símbolo y tamaño, para mostrar variables adicionales.</p>
+<p>En el siguiente ejercicio se usa el color de los puntos para representar la especie de cada observación, añadiendo el parámetro <res>col</res> (color).</p>
+<pre class="r"><code>plot(iris$Sepal.Length, iris$Sepal.Width,
+     col = iris$Species)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-4-1.png" width="100%" /></p>
+<p><br></p>
+<p>Como podemos observar nuestros datos van a tomar colores según la variable <res>species</res>, recordemos que tenemos tres especies y por tanto, tenemos tres colores. El siguiente paso es buscar algún tipo de agrupamiento por especies; en este caso podemos apreciar cierto agrupamiento de datos de una especie, mientras que las otras dos no son fáciles de apreciar.</p>
+<center>
+<img src="https://i.ibb.co/71QbFXs/fight.gif" width="350" />
+</center>
+<p><br></p>
+<p>Ahora demósle un poco de detalle a nuestra gráfica, para ello vamos a tener en cuenta algunas generalidades estéticas descritas a continuación:</p>
+<ul>
+<li>pch: valores numéricos (0 - 25) que especifican las formas de los puntos.</li>
+<li>cex: valores numéricos que indican el tamaño en puntos.</li>
+<li>col: nombre del color para los puntos.</li>
+</ul>
+<pre class="r"><code># Ahora veamos las formas disponibles para pch:
+library(ggpubr)
+ggpubr::show_point_shapes()</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-5-1.png" width="100%" /></p>
+<p>Además de otras que daremos a conocer en este código:</p>
+<pre class="r"><code>plot(iris$Petal.Length, iris$Petal.Width, 
+     col = iris$Species, 
+      pch = 19, ## Forma de los puntos
+      xlab = &quot;Longitud del pétalo&quot;, ## Título del eje x
+      ylab = &quot;Ancho del petalo&quot;) ## Título del eje y
+
+# Titulos principales de la gráfica
+title(main = &quot;IRIS&quot;,
+      sub = &quot;Exploración de los pétalos según especie&quot;,
+      col.main = &quot;blue&quot;, col.sub = &quot;grey&quot;) # Cambia su color
+
+legend(&quot;bottomright&quot;, ## Posición de la leyenda
+       legend = levels(iris$Species), ## Datos para la leyenda
+       col = unique(iris$Species), ## Adjuntamos los colores
+       pch = 19, ## Forma de los puntos
+       bty = &quot;n&quot;) ## Elimina la línea de la caja de la leyenda</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-6-1.png" width="100%" /></p>
+<p><br></p>
+<p>Así, podremos ir modificando algunas cosas para que nuestro gráfico sea mucho más presentable, en este paso ya es cuestión de estilos y gustos, practica, ensaya y modifica según tu preferencia, ¡Siéntete libre!</p>
+<center>
+<p><img src="https://i.ibb.co/yqfbVR0/style.gif" width="350" /></p>
+</center>
+<p><br></p>
+</div>
+<div id="gráfico-de-líneas" class="section level2">
+<h2>Gráfico de líneas</h2>
+<p>Los gráficos de líneas se utilizan para mostrar el valor cuantitativo en un intervalo o intervalo de tiempo continuo. Se usa con mayor frecuencia para mostrar tendencias y relaciones (cuando se agrupan con otras líneas). Los gráficos de línea también ayudan a dar un “panorama general” en un intervalo, para ver cómo se ha desarrollado durante ese período.</p>
+<p>Para este ejercicio vamos a utilizar la siguiente base de datos, que es un estudio sobre escarabajos coprófagos. Las variables estudiadas son <res>Longitud de los escarabajos</res> y <res>Tasa de dispersión de semillas</res>.</p>
+<center>
+<a href="https://min.gitcdn.link/repo/RBiologos/rbiologos.github.io/main/blog/a009/Datos%20gr%C3%A1ficas.csv"><img src="https://i.ibb.co/6gx1V1Y/csv-icon.png" alt="descarga" border="0" width="150"></a>
+</center>
+<p><br></p>
+<blockquote>
+<p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" />
+¡¡¡Atención, atención!!!</p>
+La función par(mfrow = c(f, c)) que utilizaremos a continuación tiene como fin agrupar varios gráficos en un solo lienzo, para ello debemos especificar el número de filas y columnas que necesitaremos.
+</blockquote>
+<pre class="r"><code>par(mfrow = c(1, 2)) # Necesitamos una fila y dos columnas
+r&lt;-read.csv(choose.files())
+# Gráfica sin línea
+plot(r$Dispersion, r$Longitud, main=&quot;Gráfica sin línea&quot;)
+# Gráfica con línea
+plot(r$Dispersion, r$Longitud, 
+     type = &quot;l&quot;, # Código para trazar la línea entre puntos
+     main=&quot;Gráfica con línea&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-7-1.png" width="100%" /></p>
+<p><br></p>
+<p>Como podemos observar para representar adecuadamente una gráfica de línea es indispensable agregar el argumento <res>type</res>, el cual conectará los puntos ordenados con líneas rectas. Igualmente podemos agregar otros argumentos como <res>lwd</res> el cual nos ayuda a modificar el ancho de la línea y <res>lyd</res> el cual nos modifica el estilo de la línea como vemos en esta figura:</p>
+<center>
+<img src="https://i.ibb.co/3pmKSJv/line.png" width="350" />
+</center>
+<p><br></p>
+<p>Y lo trabajamos en el siguiente código:</p>
+<pre class="r"><code>plot(r$Dispersion, r$Longitud, 
+     type = &quot;l&quot;, 
+     lwd = 4, 
+     lty = 3, 
+     col = &quot;red&quot;,
+     main = &quot;Estudio coprófagos&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-8-1.png" width="100%" /></p>
+<p>Y así vemos como podemos modificar el ancho y tipo de línea, un código sencillo y que te ayudará a darle más estilo a tus gráficas bases.</p>
+</div>
+<div id="gráfico-de-cajas" class="section level2">
+<h2>Gráfico de cajas</h2>
+<p>Este tipo de diagrama, conocido como gráfica de cajas y bigotes, nos permite apreciar de un vistazo el cómo se distribuyen los valores de una variable, si están más o menos concentrados o dispersos respecto a los cuartiles centrales, y si existen valores anómalos.</p>
+<p>Una gráfica de este tipo dibuja un rectángulo cruzado por una línea recta horizontal. Esta linea recta representa la mediana, el segundo cuartil, su base representa el pimer cuartil y su parte superior el tercer cuartil. Al rango entre el primer y tercer cuartil se le conoce como intercuartílico (RIC).</p>
+<blockquote>
+<p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" />
+¡¡¡Atención, atención!!!</p>
+Recuerda que el valor de x debe ser una variable del tipo <strong>factor</strong>
+</blockquote>
+<pre class="r"><code>plot(iris$Species, iris$Petal.Length,
+     main = &quot;Longitud de pétalos de 3 especies del género Iris&quot;, 
+     xlab = &quot;Especies&quot;, 
+     ylab = &quot;Longitud (cm)&quot;, 
+     col = c(&quot;orange&quot;, &quot;yellow&quot;, &quot;green&quot;),
+     font = 3)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-9-1.png" width="100%" /></p>
+<p>De esta manera, podemos observar que la especie <em>I. setosa</em> posee pétalos y sépalos de menor tamaño con respecto a las otras especies estudiadas, donde la especie <em>I. virginica</em> al parecer posee los sépalos y pétalos de mayor tamaño.</p>
+<center>
+<img src="https://i.ibb.co/rydHjC2/Uh-oh.gif" width="350" />
+</center>
+<p><br></p>
+</div>
+<div id="gráfico-de-barras" class="section level2">
+<h2>Gráfico de barras</h2>
+<p>Este es quizás el tipo de gráfico mejor conocido por todos. Una gráfica de este tipo nos muestra la frecuencia con la que se han observado los datos de variables cualitativas o cuantitativas discretas con un rango limitado de valores (número de cilindros de un vehículo, número de hijos de una persona, etc.), con una barra para cada categoría de esta variable.</p>
+<p>La función <res>plot()</res> puede generar gráficos de barra si damos como argumento (x) un vector de factor o cadena de texto, sin dar un argumento (y). Para este gráfico utilizaremos la base de datos <res>chickwts</res> que es una base de datos propia de R, de un estudio que realizó un experimento para medir y comparar la efectividad de varios suplementos alimenticios en la tasa de crecimiento de los pollos.</p>
+<pre class="r"><code>plot(x = chickwts$feed,
+     col=c(&#39;red&#39;,&#39;black&#39;,&#39;green&#39;,&#39;blue&#39;, &#39;orange&#39;, &#39;grey&#39;),
+     xlab=&quot;Suplementos alimenticios&quot;,
+     ylab=&quot;Total de experimentos&quot;,
+     main=&quot;Suplementos alimenticios en pollos&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-10-1.png" width="100%" /></p>
+<p><br></p>
+<p>Por supuesto, este tipo de gráficos también permite personalizarlo para cambiar su aspecto visual. Por ejemplo, podemos mostrar las barras en sentido horizontal.</p>
+<pre class="r"><code>plot(x = chickwts$feed,
+     border = &#39;red&#39;, ## Color borde de las barras
+     col = &#39;green&#39;, ## Color barras
+     xlab = &quot;Frecuencia&quot;,
+     main = &quot;Suplementos alimenticios en pollos&quot;,
+     horiz = 1, ## Código para las barras horizontales
+     las = 1, ## Orientación de las etiquetas del eje 
+     ## siempre horizontal (1), siempre perpendicular al eje (2) y siempre vertical (3)
+     space = 0, ## Espacio entre barras
+     width = c(3,1,3,2,4,3)) ## Ancho de las barras</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-11-1.png" width="100%" /></p>
+<p><br></p>
+<p>Y así obtenemos nuestro gráfico y quedó según nuestras especificaciones, con lo cuál ya podemos dar un análisis previo de sus datos. Por ejemplo, acá podemos observar que la cantidad del suplemento alimenticio <res>soybean</res> (14) es mayor con respecto a los otros tipos.</p>
+<center>
+<img src="https://i.ibb.co/MMF2ygZ/bird.gif" width="350" />
+</center>
+<p><br></p>
+</div>
+<div id="gráfico-histograma" class="section level2">
+<h2>Gráfico Histograma</h2>
+<p>Un histograma visualiza la distribución de los datos a lo largo de un intervalo continuo o un período de tiempo determinado. Cada barra en un histograma representa la frecuencia tabulada en cada intervalo/barra. El área total del histograma es igual al número de datos.</p>
+<p>Los histogramas ayudan a dar una estimación de dónde se concentran los valores, cuáles son los extremos y si hay vacíos o valores inusuales. También son útiles para dar una visión aproximada de la distribución de probabilidad.</p>
+<p>Para crear un histograma, vamos a utilizar los siguientes datos, que representan las distancias (en yardas) que recorre un ave cada hora en un estudio de monitoreo de la especie.</p>
+<pre class="r"><code>distancia &lt;- c(241.1, 284.4, 220.2, 272.4, 271.1, 268.3,
+               291.6, 241.6, 286.1, 285.9, 259.6, 299.6,
+               253.1, 239.6, 277.8, 263.8, 267.2, 272.6,
+               283.4, 234.5, 260.4, 264.2, 295.1, 276.4,
+               263.1, 251.4, 264.0, 269.2, 281.0, 283.2)</code></pre>
+<p>Este tipo de gráfico es de los pocos que no utilizamos con la función <res>plot()</res>. Así, podemos crear un histograma en R con la función <res>hist()</res>. Por defecto, la función creará un histograma de frecuencias.</p>
+<center>
+<img src="https://i.ibb.co/2c99by5/ohhhhhhh.gif" width="350" />
+</center>
+<p><br></p>
+<pre class="r"><code>hist(distancia, main = &quot;Histograma de frecuencias&quot;,
+     ylab = &quot;Frecuencia&quot;,
+     xlab = &quot;Yardas de vuelo&quot;,
+     col = &quot;cyan3&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-13-1.png" width="100%" /></p>
+<p><br></p>
+<p>Así podemos observar que en general el total de yardas más frecuente en el estudio fue entre 260 y 270 yardas, caso contrario, los valores menos frecuentes se presentan entre 220 y 230 yardas.</p>
+<p>Cabe aclarar que los histogramas son muy útiles para representar la distribución de los datos si el número de barras o clases se selecciona correctamente. Sin embargo, la selección del número de barras (o el ancho de las barras) puede ser complicada, debido a dos factores:</p>
+<ol style="list-style-type: decimal">
+<li>Pocas clases agruparán demasiado las observaciones.</li>
+<li>Con demasiadas clases habrá pocas observaciones en cada una de ellas aumentando la variabilidad del gráfico obtenido.</li>
+</ol>
+<p>Hay varias reglas para determinar el número de barras; en R, el método de <em>Sturges</em> se usa por defecto. Si quieres cambiar el número de barras, pasa al argumento <res>breaks</res> el número de clases que quieras.</p>
+<p>La fórmula del método de Sturges se muestra a continuación</p>
+<center>
+<pre><code>No barras = 1 + 3.3log(n)
+n = Datos totales</code></pre>
+</center>
+<pre class="r"><code>par(mfrow = c(1, 3)) # Necesitamos una fila y tres columnas
+hist(distancia, breaks = 2, main = &quot;Pocas clases&quot;, ylab = &quot;Frecuencia&quot;)
+hist(distancia, breaks = 50, main = &quot;Demasiadas clases&quot;, ylab = &quot;Frecuencia&quot;)
+hist(distancia, main = &quot;Método de Sturges&quot;, ylab = &quot;Frecuencia&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-14-1.png" width="100%" /></p>
+<p>Como puedes observar, entre estos gráficos difiere mucho su análisis, por tanto, te recomendamos dejarlo por defecto, sin embargo, dependiendo de tu pregunta de investigación o tus objetivos a cumplir, puedes modificar su estructura.</p>
+<p>¿Cansado? ¿Mucha información? Take it easy, no te apures, no querrás terminar más loco de lo que ya estás. Es de tiempo, ve despacio.</p>
+<center>
+<img src="https://i.ibb.co/DrBv1cm/tired.gif" width="350" />
+</center>
+<p><br></p>
+</div>
+<div id="gráfico-de-densidad" class="section level2">
+<h2>Gráfico de densidad</h2>
+<p>Un gráfico de densidad visualiza la distribución de datos en un intervalo o período de tiempo continuo. Este gráfico es una variación de un Histograma que usa el suavizado de <em>cerner</em> para trazar valores, permitiendo distribuciones más suaves al suavizar el ruido. Los picos de un gráfico de densidad ayudan a mostrar dónde los valores se concentran en el intervalo.</p>
+<pre class="r"><code>plot(density(distancia),
+     main=&quot;Gráfico de Densidad&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-15-1.png" width="100%" /></p>
+<p>Igualmente podemos representar la densidad de los datos a partir de barras, para ello utilizaremos nuevamente la función <res>hist()</res> y agregaremos el argumento <res>prob</res> el cual tiene valores <strong>TRUE</strong> y <strong>FALSE</strong>.</p>
+<pre class="r"><code>hist(distancia, prob = TRUE, main = &quot;Histograma de densidad&quot;,
+     ylab = &quot;Densidad&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a009/index.es_files/figure-html/unnamed-chunk-16-1.png" width="100%" /></p>
+<p><br></p>
+<p>Como podemos observar nuestro eje “Y” ha cambiado su escala, ya que se trata de una representación de densidad más no de frecuencia.</p>
+<center>
+<img src="https://i.ibb.co/c2gvXNb/scary.gif" width="350" />
+</center>
+<p><br></p>
+</div>
+<div id="pa-finalizar" class="section level2">
+<h2>Pa’ finalizar</h2>
+<p>Hoy hemos aprendido un paso importante en el análisis de nuestros datos a partir de una manera visual. Tal vez no te sientas tan cómodo leyendo números y no sea tan fácil ver tendencias entre los números. Quizá tu inteligencia sea más artísitica, y los gráficos te caerán de perlas.</p>
+<p>Podrás ver posibles tendencias, formas, datos extraños, etc. Sólo es cuestión de concentrarte un poco y mirar más allá de lo que ven tus ojos, así como cuando miras al amor de tu vida…</p>
+<center>
+<img src="https://i.ibb.co/kH5m1MR/love.gif" width="350" />
+</center>
+<p><br><br></p>
+<p>Y bueno… llegó la hora de la despedida, no te preocupes, de pronto coincidamos de nuevo en un nuevo POST. Mientras tanto, práctica, lee y recuerda que: ¡Puedes hacer estas cosas y muchas más! Sólo es cuestión de creer en tí mismo, ¡Ánimo!</p>
+<p>Hasta prontooo…</p>
+<center>
+<img src="https://i.ibb.co/Wn2Fpyf/run.gif" width="350" />
+</center>
+<p><br></p>
+<p>Bibliografía</p>
+<ul>
+<li><p><a href="https://www.datanovia.com/en/blog/pch-in-r-best-tips/">PCH in R Best Tips</a></p></li>
+<li><p><a href="https://bookdown.org/jboscomendoza/r-principiantes4/diagramas-de-caja.html">R para principiantes</a></p></li>
+<li><p><a href="https://datavizcatalogue.com/ES/index.html">Catálogo de Visualización de Datos</a></p></li>
+<li><p><a href="https://r-coder.com/histograma-r/#:~:text=Un%20histograma%20en%20R%20es%20el%20gr%C3%A1fico%20m%C3%A1s,y%20cuenta%20cu%C3%A1ntas%20observaciones%20caen%20en%20cada%20intervalo.">Histograma en R</a></p></li>
+<li><p><a href="https://datavizcatalogue.com/ES/metodos/grafica_de_linea.html">Gráfica de Línea</a></p></li>
+<li><p><a href="https://r-coder.com/grafico-lineas-r/">Gráfico de líneas en R</a></p></li>
+</ul>
+<p><br></p>
+<p><strong><em>Revisión</em></strong></p>
+<p><a href="https://rbiologos.github.io/author/eliana-tabares/">Eliana Tabares Lara</a></p>
+<p>Recuerda que todos nuestros códigos están almacenados en <a href="https://github.com/RBiologos/Posts">GitHub</a></p>
+<center>
+<img src="https://i.ibb.co/DpKmR1k/github.png" width="350" />
+</center>
+</div>
+
+        </div>
+        
+        
+
+<div class="social-share pt-4">
+	<h4>Comparte:</h4>
+	
+	<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2frbiologos.github.io%2fblog%2fa009%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=An%c3%a1lisis%20exploratorio%20de%20Datos%20-%20Parte%20II&amp;url=https%3a%2f%2frbiologos.github.io%2fblog%2fa009%2f"
+		target="_blank" rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="https://plus.google.com/share?url=https%3a%2f%2frbiologos.github.io%2fblog%2fa009%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--google resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M11.37 12.93c-.73-.52-1.4-1.27-1.4-1.5 0-.43.03-.63.98-1.37 1.23-.97 1.9-2.23 1.9-3.57 0-1.22-.36-2.3-1-3.05h.5c.1 0 .2-.04.28-.1l1.36-.98c.16-.12.23-.34.17-.54-.07-.2-.25-.33-.46-.33H7.6c-.66 0-1.34.12-2 .35-2.23.76-3.78 2.66-3.78 4.6 0 2.76 2.13 4.85 5 4.9-.07.23-.1.45-.1.66 0 .43.1.83.33 1.22h-.08c-2.72 0-5.17 1.34-6.1 3.32-.25.52-.37 1.04-.37 1.56 0 .5.13.98.38 1.44.6 1.04 1.84 1.86 3.55 2.28.87.23 1.82.34 2.8.34.88 0 1.7-.1 2.5-.34 2.4-.7 3.97-2.48 3.97-4.54 0-1.97-.63-3.15-2.33-4.35zm-7.7 4.5c0-1.42 1.8-2.68 3.9-2.68h.05c.45 0 .9.07 1.3.2l.42.28c.96.66 1.6 1.1 1.77 1.8.05.16.07.33.07.5 0 1.8-1.33 2.7-3.96 2.7-1.98 0-3.54-1.23-3.54-2.8zM5.54 3.9c.33-.38.75-.58 1.23-.58h.05c1.35.05 2.64 1.55 2.88 3.35.14 1.02-.08 1.97-.6 2.55-.32.37-.74.56-1.23.56h-.03c-1.32-.04-2.63-1.6-2.87-3.4-.13-1 .08-1.92.58-2.5zM23.5 9.5h-3v-3h-2v3h-3v2h3v3h2v-3h3" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="mailto:?subject=An%c3%a1lisis%20exploratorio%20de%20Datos%20-%20Parte%20II&amp;body=https%3a%2f%2frbiologos.github.io%2fblog%2fa009%2f" target="_self"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link"
+		href="https://reddit.com/submit/?url=https%3a%2f%2frbiologos.github.io%2fblog%2fa009%2f&amp;resubmit=true&amp;title=An%c3%a1lisis%20exploratorio%20de%20Datos%20-%20Parte%20II" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="whatsapp://send?text=An%c3%a1lisis%20exploratorio%20de%20Datos%20-%20Parte%20II%20https%3a%2f%2frbiologos.github.io%2fblog%2fa009%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1 0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+	
+	<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=An%c3%a1lisis%20exploratorio%20de%20Datos%20-%20Parte%20II&amp;url=https%3a%2f%2frbiologos.github.io%2fblog%2fa009%2f"
+		target="_blank" rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M.707 8.475C.275 8.64 0 9.508 0 9.508s.284.867.718 1.03l5.09 1.897 1.986 6.38a1.102 1.102 0 0 0 1.75.527l2.96-2.41a.405.405 0 0 1 .494-.013l5.34 3.87a1.1 1.1 0 0 0 1.046.135 1.1 1.1 0 0 0 .682-.803l3.91-18.795A1.102 1.102 0 0 0 22.5.075L.706 8.475z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+</div>
+        
+        
+        <div class="mt-5">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </div><!-- end Contact Area -->
+<footer id="footer" class="section-bg">
+	<div class="container">
+		<div class="row wow fadeInUp" data-wow-duration="500ms">
+			<div class="col-lg-12">
+
+			
+
+                        <!-- Footer Social Links -->
+				<div class="social-icon"><h1><center                                                    >Social</center></h1>
+					<ul class="list-inline">
+						
+						<li class="list-inline-item"><a href="https://www.instagram.com/rbiologos/" target="blank"><i class="ti-instagram" target="blank"></i></a></li>
+						
+						<li class="list-inline-item"><a href="https://www.facebook.com/rbiologos" target="blank"><i class="ti-facebook" target="blank"></i></a></li>
+						
+						<li class="list-inline-item"><a href="https://github.com/RBiologos/Posts" target="blank"><i class="ti-github" target="blank"></i></a></li>
+						
+					</ul>
+				</div>
+				
+				<center><img src="https://i.ibb.co/QXqp3ym/Logo.png" alt="R Biólogos" height="150" /></center>
+	
+				<!-- copyright -->
+				<div class="copyright text-center">
+				        
+					<a href="https://rbiologos.github.io/">
+					</a>
+					<br>
+					<p1>Copyright © 2020 Diseñado por <a href="https://github.com/davidvaneal">David Vanegas</a> bajo la plantilla <a href="https://themefisher.com">Themefisher</a> de <a href="https://gethugothemes.com">HUGO</a></p1>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- /footer -->
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="https://rbiologos.github.io/plugins/jquery/jquery.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/shuffle/shuffle.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/lazy-load/lozad.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/google-map/map.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://rbiologos.github.io/js/script.min.b98b8dcfa3dc53b74ecf3cf8724a1f75b4d217da25463ff3d6a28fc4a09e965bf9818dfce85452f5fb478bce779ee8cc.js" integrity="sha384-uYuNz6PcU7dOzzz4ckofdbTSF9olRj/z1qKPxKCellv5gY386FRS9ftHi853nujM"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-transparent">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+</body>
+
+</html>

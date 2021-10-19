@@ -1,0 +1,515 @@
+---
+title: Análisis exploratorio de Datos - Parte I
+author: David Vanegas
+date: '2021-04-28'
+image: "https://i.ibb.co/CPfzngW/1.png"
+slug: []
+categories:
+  - R
+tags:
+  - R
+  - RStudio
+  - Análisis
+  - Explorar
+  - Datos
+---
+
+```{r echo=FALSE, message=FALSE}
+library(dplyr)
+```
+
+
+> Cada base de datos es un problema diferente, con diversas variables y objetivos, por eso debe ser abordada de manera distinta
+
+Sin embargo, cuando se va a trabajar con cualquier base de datos es obligatorio realizar un análisis de la base, tanto analítica como gráficamente; incluso si son entregados en "bandeja de plata", siempre debemos corroborar su estructura e investigar su calidad. Realizando este análisis previo podremos:
+
+- Encontrar patrones.
+- Identificar errores.
+- Plantear nuevas hipótesis o preguntas.
+- Identificar relaciones entre variables.
+- Empezar a encontrar respuestas a nuestras preguntas de investigación.
+
+En este análisis también podemos realizar procedimientos de creación o transformación de nuestras variables como la selección o filtrado de nuestras observaciones.
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+¡¡¡Atención, atención!!!
+
+Debemos tener en cuenta que este análisis **NO** es un proceso formal con un conjunto estricto de reglas. Debes sentirte libre de investigar cada idea que se te ocurra. Algunas de estas ideas se desarrollarán y otras serán callejones sin salida.
+</blockquote>
+
+En este post intentaremos darte herramientas que te permitirán analizar de una buena manera tus datos. Es importante considerar que este es un primer paso y no corresponde a un análisis estadístico riguroso, pero puede permitirte encontrar respuestas o guiarte en el tipo de análisis que quieres realizar.
+
+***Bien, entonces... ¡¡¡Empecemos a trabajar!!!***
+
+<center>
+![](https://i.ibb.co/48KSFj8/9445.gif){width="350"}
+</center><br>
+
+Primero, vamos a importar una base de datos llamada <res>Datos</res>. De este modo, lo primero que nos interesa saber es qué atributos contiene, cuántas observaciones hay, etc.
+
+<center>
+<a href="https://min.gitcdn.link/repo/RBiologos/Pagina-RBio/main/content/spanish/blog/A008/DungBeetles.csv"><img src="https://i.ibb.co/6gx1V1Y/csv-icon.png" alt="descarga" border="0" width="150"></a>
+</center><br>
+
+```{r}
+disper <- read.csv(choose.files())
+head(disper)
+```
+
+### Información general
+
+Lo primero que haremos es digitar funciones que anteriormente habíamos utilizado en nuestros otros **POSTS**, tales como class() y str(). 
+
+```{r}
+# Muestra la clase de nuestra base
+class(disper) 
+
+# Y de cada una de nuestras variables con la función lapply()
+lapply(disper, class)
+
+
+# Muestra la estructura de la base
+str(disper)
+```
+Podemos observar que tenemos una base tipo <res>data.frame</res>, con 81 observaciones para cada una de las 4 variables en nuestra base de datos. Así, este conjunto de datos proporciona datos del sitio (character), dispersión salida 1 (integer), dispersión salida 2 (integer) y dispersión salida 3 (integer), datos tomados en un estudio sobre dispersion de semillas por escarabajos coprófagos.
+
+<center>
+![](https://i.ibb.co/gjRzRnf/study.gif){width="350"}
+</center><br>
+
+### Exploración del contenido
+
+Ahora vamos a conocer más acerca de nuestros datos, para ello utilizaremos una serie de funciones que nos permiten hacer un análisis previo.
+
+```{r}
+# Este comando nos permite conocer las dimensiones de la base de datos
+# Como recordarás son 81 observaciones para 4 variables
+dim(disper)
+
+# head() por defecto mostrará los 6 primeros datos
+# Ahora queremos que muestre los 10 primeros datos
+head(disper,10)
+
+# tail() por defecto mostrará los 6 últimos datos
+# Ahora queremos que muestre los 10 últimos datos
+tail(disper,10)
+```
+
+Al igual podemos utilizar la función <res>unique()</res> en la variable <res>sitios</res> para conocer los datos únicos que presenta dicha variable.
+
+```{r}
+unique(disper$sitio)
+```
+Como podemos observar el resultado generado son los valores únicos ("P", "BM", "BS", "P2", "BM2", "BS2", "P3", "BM3", "BS3") para la variable "sitio", los cuales fueron los sitios donde se tomaron los datos de dispersión.
+
+Ten en cuenta que puedes ejecutar algunas de estas funciones en cualquier variable que desees, pero no siempre será necesario. Así que siempre pregúntate (en caso de que las utilices): ¿En que te va a ayudar en tu ejercicio? Así, no se volverá algo más que sabrás, y no será un tiro al aire que no te aportará nada. 
+
+<center>
+![](https://i.ibb.co/X3Y7Mdq/unnamed.gif){width="350"}
+</center><br>
+
+Luego de obtener una información general de nuestro contenido, podemos realizar varias operaciones con nuestras variables, según las necesidades de nuestros proyectos; como te mencioné anteriormente, todo se puede realizar, pero no todo será necesario desarrollarlo, así que vamos a explorar un poco sobre ellas.
+
+## Operaciones con nuestras variables
+
+A veces, la toma de datos no es suficiente para poder responder nuestras preguntas de investigación, por lo que las operaciones matemáticas suele ser un paso que muchos investigadores realizan. Por tanto, nosotros podemos realizar operaciones de suma, resta, potenciación, radicación, etc, etc, etc... ¡Veamos un ejemplo!
+
+```{r}
+# Primero copiamos nuestra base a una nueva variable
+oper <- disper
+
+# En este ejemplo vamos a sobreescribir nuestros datos
+# Sin embargo, NO te recomiendo que realices esto
+oper$disp_1 <- oper$disp_1
+
+# Mejor, te recomiendo crear una nueva variable y escribir los nuevos datos
+oper$disp_4 <- oper$disp_2*2
+head(oper)
+```
+
+<center>
+![](https://i.ibb.co/pd1FLr8/ice-king.gif){width="350"}
+</center><br>
+
+Observa que hemos creado una nueva variable <res>disp_4</res> a partir de nuestros datos, multiplicamos nuestra variable <res>disp_2</res> por 2. Con esta orden la función va a tomar cada dato de la variable y aplicará la operación matemática establecida.
+
+## Rondeo de números
+
+Otra operación importante es el redondeo de números. Lo primero que tenemos que saber es que existen distintas maneras (matemáticamente hablando), de redondear o truncar un valor. Esto con el fin de tener los datos según necesitemos, en pocas palabras... "Depende de..." Típica frase de bióloga/o!
+
+<center>
+![](https://i.ibb.co/3FywnFS/science.gif){width="350"}
+</center><br>
+
+### ***Round***
+
+Nos devuelve un valor numérico decimal redondeado a los dígitos que le digamos. Es lo que podríamos llamar el redondeo clásico.
+
+```{r}
+disperound <- disper
+
+# Redondearemos a 2 cifras decimales nuestra variable disper_1
+disperound$disp_1 <- round(disperound$disp_1, 2)
+# Redondearemos a 1 cifra decimal nuestra variable disper_2
+disperound$disp_2 <- round(disperound$disp_2, 1)
+# Redondearemos a 0 cifras decimales nuestra variable disper_3
+disperound$disp_3 <- round(disperound$disp_3, 0)
+
+head(disperound)
+```
+
+### ***Ceiling***
+
+Nos devuelve el próximo valor entero del número elegido. Siempre devuelve el entero posterior, excepto cuando sea exacto (es decir, salta al próximo número entero desde el primer decimal).
+
+```{r}
+dispercei <- disper
+
+dispercei$disp_1 <- ceiling(dispercei$disp_1)
+
+head(dispercei)
+```
+
+### ***Trunc / Floor***
+
+Esto es básicamente lo que conocemos matemáticamente como truncar un valor. Es decir, deja literalmente el número entero. 
+
+```{r}
+dispertrunc <- disper
+disperfloor <- disper
+
+dispertrunc$disp_1 <- trunc(dispertrunc$disp_1)
+head(dispertrunc)
+disperfloor$disp_1 <- floor(disperfloor$disp_1)
+head(disperfloor)
+```
+
+
+## Otras modificaciones
+
+Luego de modificar nuestros datos podemos realizar unas pequeñas modificaciones para no perdernos en nuestros propios pensamientos y datos, primero los nombres, este cambio lo podemos realizar con la función <res>rename()</res>!
+
+<center>
+![](https://i.ibb.co/Lv33dMx/mind.gif){width="350"}
+</center><br>
+
+```{r}
+dispername <- disper
+
+# Con esta función sabremos los nombres de nuestra variables
+names(dispername)
+
+# Y podemos modificarlos según lo que necesitemos
+dispername <- rename(dispername, Lugares = sitio, Salida1 = disp_1,
+                 Salida2 = disp_2, Salida3 = disp_3)
+names(dispername)
+```
+
+Finalizado el análisis y modificación de nuestros datos, según nuestras necesidades, vamos a proceder a realizar una breve descripción estadística de estos datos, con el fin de describir los datos de una manera cuantitativa y tener una idea de lo que podemos o no podemos hacer con ellos.
+
+<center>
+![](https://i.ibb.co/86czzfZ/coffee.gif){width="350"}
+</center><br>
+
+## Estadística descriptiva 
+
+Para realizar un análisis de estadística descriptiva hay múltiples funciones, en este post abarcaremos las principales. 
+
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+¡¡¡Atención, atención!!!
+
+Si no tienes claros conceptos básicos de la estadística te invitamos a que leas un poco sobre ellos, ¡la idea es que no te enloquezcas leyendo este post!
+</blockquote>
+
+```{r}
+# Muestra el valor mínimo existente en el vector
+# na.rm = TRUE - Si hay presentes NAs mostrará el valor mínimo numérico
+# na.rm = FALSE - Si hay presentes NAs mostrará NA
+min(disper$disp_1, na.rm = TRUE)
+
+# Valor máximo
+max(disper$disp_1, na.rm = TRUE)
+
+# Valor mínimo y máximo
+range(disper$disp_1, na.rm = TRUE)
+
+# Valor de la media
+mean(disper$disp_1, na.rm = TRUE)
+
+# Valor de la varianza
+var(disper$disp_1, na.rm = TRUE)
+
+# Valor de la desviación estándar
+sd(disper$disp_1, na.rm = TRUE)
+
+# Valor de la mediana
+median(disper$disp_1, na.rm = TRUE)
+
+# Valores de quantiles
+quantile(disper$disp_1, na.rm = TRUE)
+```
+
+Ahora utilizaremos la función <res>summary()</res> la cual genera un resumen de nuestros datos de las funciones anteriormente mencionadas. Para variables numéricas se generan estadísticos básicos, como la media, mediana y cuartiles. Para variables cualitativas se generará un conteo de apariciones para cada posible valor.
+
+```{r}
+summary(disper)
+```
+
+Aunque usando todas las funciones antes descritas, podemos explorar el contenido de cualquier base de datos y obtener una visión general sobre su estructura, esta es una tarea que puede simplificarse enormemente gracias a funciones como <res>describe()</res>, que se encuentra en el paquete Hmisc.
+
+<center>
+![](https://i.ibb.co/VSwcJ1z/dance.gif){width="350"}
+</center><br>
+
+Esta función nos mostrará un resumen de cada una de las variables de nuestra base de datos, en la cual podemos ver valores de máximos, mínimos, medias, valores únicos, proporciones de estos valores, entre otros, tal y como observamos en el siguiente ejemplo:
+
+```{r message=FALSE}
+library(Hmisc)
+describe(disper)
+```
+
+Bien, ya conociendo un poco de un análisis estadístico previo de nuestras variables y conociendo como se comportan y que naturaleza tienen, vamos a conocer otras funciones muy especiales que serán fundamentales para tratar nuestros datos; funciones que nos permitirán realizar modificaciones pertinentes y dejar nuestros datos listos.
+
+## Verbos dplyr
+
+<center>
+![](https://i.ibb.co/N2rb9P4/dplyr.png){width="250"}
+</center><br>
+
+El paquete <res>dplyr</res> posee un conjunto de funciones de manipulación de datos que proporciona un conjunto consistente de verbos que te ayudan a resolver los desafíos más comunes de manipulación de datos.
+
+```{r message=FALSE}
+# Recuerda siempre cargar tus paquetes para trabajar con ellos
+library(dplyr)
+```
+
+Entre ellas encontramos las siguientes:
+
+1. <res>select()</res> elige variables basadas en sus nombres.
+2. <res>filter()</res> elige los casos en función de sus valores.
+3. <res>arrange()</res> cambia el orden de las filas.
+4. <res>mutate</res> agrega nuevas variables que son funciones de variables existentes.
+5. <res>group_by()</res> agrupa un conjunto de filas seleccionado en un conjunto de filas de resumen.
+
+<center>
+![](https://i.ibb.co/h8Cm4Bt/dplyr-f.png){width="350"}
+</center><br>
+
+Todos los verbos funcionan de manera similar:
+
+- El primer argumento es un marco de datos.
+- Los siguientes argumentos describen qué hacer con el marco de datos, utilizando los nombres de las variables (sin comillas).
+- El resultado es un nuevo marco de datos.
+
+Estas funciones juntas, facilitan la encadenación de varios pasos sencillos para lograr un resultado complejo. Profundicemos y veamos cómo funcionan estos verbos.
+
+<center>
+![](https://i.ibb.co/4KMM27C/interesting.gif){width="350"}
+</center><br>
+
+### select()
+
+Cuando tenemos muchas variables en nuestra base de datos, pero solo necesitamos trabajar con un subconjunto de ellas, podemos seleccionar un subconjunto de variables de nuestra base de datos a través del uso de la función <res>select()</res> del paquete <res>dplyr</res>
+
+```{r message=FALSE}
+## Tenemos dos formas
+
+# La primera es elegir las variables que necesitamos 
+selec <- select(disper, sitio, disp_3)
+head(selec)
+
+# La segunda es especificar las variables que NO necesitamos
+selec2 <- select(disper, -(disp_1))
+head(selec2)
+```
+Como ves, ahora sólo tendremos las variables con la cual podremos trabajar de manera más sencilla, sin todos esos demás datos.
+
+### filter()
+
+El filtrado se utiliza con el fin de seleccionar un subconjunto del data.frame que contiene nuestros datos. El uso básico del filtro se hace mediante la función <res>filter()</res>
+
+Para usar el filtrado de manera efectiva, se debe saber cómo seleccionar las observaciones que se desean, utilizando los operadores de comparación. R proporciona el paquete estándar: 
+
+<center>
+![](https://i.ibb.co/q5c2PLB/operador.png){width="350"}
+</center><br>
+
+Acá te presentamos un pequeño gráfico del funcionamiento de los operadores <res>&</res> y <res>|</res>
+
+<center>
+![](https://i.ibb.co/jrt1981/logical.png){width="350"}
+</center><br>
+
+Ahora, veamos un ejemplo de filtrado con nuestra base.
+
+```{r}
+# Filtramos para tener únicamente los valores del sitio "P"
+filt1 <- filter(disper, sitio == "P")
+unique(filt1$sitio)
+
+# Filtramos los datos menores a 50 en "disp_1"
+filt2 <- filter(disper, disp_1 < 50)
+summary(filt2$disp_1)
+
+# Al igual podemos guardar el filtrado en una nueva variable
+# Con dos términos de filtrado
+filt3 <- filter(disper, disp_3 < 75, sitio != "P")
+summary(filt3$disp_1)
+unique(filt3$sitio)
+```
+Así, podemos ver que se realizó nuestro filtrado correctamente y nuestra nueva variable tiene 24 observaciones para 4 variables.
+
+### arrange()
+
+Otro proceso muy habitual es reordenar las filas de nuestros datos. Esto se usa cuando queremos inspeccionar un conjunto de datos para buscar asociaciones entre las diferentes variables, lo que resulta difícil de hacer si no están ordenados. Para realizar la ordenación se utiliza la función <res>arrange()</res>, como vemos a continuación:
+
+```{r}
+# Ordenaremos de mayor a menor cada una de las variables
+ord <- arrange(disper, sitio, disp_1, disp_2, disp_3)
+
+# Ordenaremos de menor a mayor únicamente la variable disp_2 
+ord2 <- arrange(disper, desc(disp_2))
+```
+
+### mutate()
+
+En la creación de variables a partir de las originales de nuestros datos tenemos dos opciones: 
+
+1. Crear una nueva variable sin eliminar las variables originales
+2. Crear una nueva variable eliminando las variables originales.
+
+Así para nuestra primera opción (NO eliminar nuestras variables originales), usamos la función <res>mutate()</res>, como vemos a continuación:
+
+```{r}
+# Primero seleccionamos las variables que queremos trabajar
+sel <- select(disper, disp_1, disp_2, disp_3)
+mut <- mutate(sel, prom = ((disp_1 + disp_2 + disp_3)/3))
+head(mut)
+```
+Y listo, tenemos nuestra nueva variable (prom), la cual es un promedio de las tres variables de dispersión.
+
+Sin embargo, para nuestra segunda opción (eliminar nuestras variables originales), usamos la función <res>transmute()</res>, en la cual solo veremos la variable resultante como vemos a continuación (caso que NO te recomendamos, ¡después se arma tremendo lío!)
+```{r}
+sel <- select(disper, disp_1, disp_2, disp_3)
+tmut <- transmute(sel, prom = ((disp_1 + disp_2 + disp_3)/3))
+head(tmut)
+```
+
+### group_by()
+
+La función <res>group_by</res> es usada para agrupar datos según una variable, como vemos en este código:
+
+```{r}
+ejemgroup <- group_by(disper, sitio)
+ejemgroup
+```
+
+Pero, la función <res>group_by()</res> es extremadamente útil trabajando en conjunto con la función <res>summarise()</res>, por lo que recomendamos que siempre se tengan en cuenta ambas funciones, eso sí, utilizando funciones estadísticas como veremos a continuación:
+
+```{r}
+summarise(ejemgroup, mean(disp_1), min(disp_2), min(disp_3))
+```
+
+Como vemos, en las variables utilizamos funciones estadísticas como la media, mínimo y máximo. Siéntete libre de elegir las que creas pertinentes y respondan a tus preguntas. Ten presente que esto solo es un acercamiento a todo lo que podemos llegar a realizar, hay muuuuuuchas funciones y operaciones por hacer. Por ejemplo, una de ellas es la utilización de los pipeline, ¿Qué es? ¡Veamoslo a continuación!
+
+## Combinando operaciones con pipeline (%>%)
+
+El operador pipeline %>% es útil para concatenar/unir múltiples operaciones <res>dplyr</res>. 
+
+<center>
+![](https://i.ibb.co/yX6PTy4/ok.gif){width="350"}
+</center><br>
+
+Este operador nos permite escribir una secuencia de operaciones de izquierda a derecha, como vemos a continuación:
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+¡¡¡Atención, atención!!!
+
+El atajo de teclado para el operador %>% es ![](https://i.ibb.co/RbBhJnT/pipeline.png){width="350"}
+</blockquote>
+
+
+```{r}
+# Se puede realizar esta operación de la manera tradicional
+ejem1 <- select(disper, disp_1, disp_2)
+head(ejem1)
+
+# Utilizando pipeline obtenemos el mismo resultado
+ejempipe <- disper %>% select(disp_1, disp_2)
+head(ejempipe)
+```
+Esto quiere decir que el primer paso es llamar a la base de datos que consideremos y luego agregamos las funciones que necesitemos mediante el pipeline! Si, todas las que nos imaginemos, mira como queda este código:
+
+```{r}
+ejempipe2 <- disper %>% 
+            select(disp_1, disp_2)%>%
+            filter(disp_1<20)%>% 
+            arrange(disp_2)%>%
+            mutate(promedio = ((disp_1 + disp_2)/2))
+ejempipe2
+```
+Así, obtenemos un conjunto de datos completo con los elementos que ingresamos con alguno de los verbos <res>dplyr</res> en un sólo código con la ayuda del pipeline.
+ 
+***¡¡¡Pa' finalizar!!!***
+
+<center>
+![](https://i.ibb.co/tBNYNFx/mNEh5Q.gif){width="350"}
+</center><br>
+
+Como ves, no es una receta, hay múltiples caminos y cada uno de puede acercar o alejar de tu objetivo. En este punto, es útil considerar algunas preguntas para que comprendas que andas haciendo. 
+
+*¿Tienes los datos correctos?, ¿Tienes la pregunta correcta?, ¿Necesitas otros datos?*
+
+¡Siempre pregúntate que andas haciendo y si ese camino te lleva hacía donde quieres ir! (Aplica para la vida con condiciones y restricciones, lee la letra pequeña).
+
+<center>
+![](https://i.ibb.co/TKLCy1r/dance2.gif){width="350"}
+</center><br>
+
+Es importante ya que puedes simplemente estar haciendo cosas que no tendrán ningún sentido y únicamente perderás tiempo y neuronas. Agárrala suave, respira y revisa en donde estás parado y si eso responde tu pregunta; sino, agarra tu maleta, devúelvete y empieza de nuevo. ¡La vida misma se trata de ello!
+
+<center>
+![](https://i.ibb.co/cyLRjLb/feel.gif){width="350"}
+</center><br>
+
+***¡NUNCA ES TARDE PARA EMPEZAR!***
+
+Muchas gracias por leernos y esperamos que hayas aprendido o recordado algo más sobre el mundo de R. Nos vemos en la segunda parte de este post, en la cual ya empezaremos a ver algunos gráficos básicos!!
+
+<center>
+![](https://i.ibb.co/WKK5GzY/bye.gif){width="350"}
+</center>
+
+<br>
+<br>
+
+
+Bibliografía
+
+- [Data Analysis in R](https://bookdown.org/steve_midway/DAR/exploratory-data-analysis.html)
+
+- [Exploratory Data Analysis with R](https://bookdown.org/rdpeng/exdata/)
+
+- [R for Data Science](https://r4ds.had.co.nz/transform.html)
+
+- [Programación en R](https://rsanchezs.gitbooks.io/rprogramming/content/chapter9/pipeline.html)
+
+- [Primeros pasos en el análisis exploratorio de datos](https://rstudio-pubs-static.s3.amazonaws.com/324370_3452e507387846c984f2d72dfca4007e.html#introducci%C3%B3n)
+
+- [Análisis exploratorio y visualización de datos con R](http://www.fcharte.com/libros/ExploraVisualizaConR-Fcharte.pdf)
+
+- [Cómo Redondear y Truncar en R](https://estadisticamente.com/redondear-y-truncar-en-r/)
+
+### Revisión
+
+[Eliana Tabares Lara](https://rbiologos.github.io/author/eliana-tabares/)
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>

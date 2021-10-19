@@ -1,0 +1,98 @@
+---
+title: What do I need to get started in R?
+author: Eduardo Grajales
+date: '2021-03-18'
+image: "https://i.ibb.co/rxRdRHX/Nom-Nom-Borders.jpg"
+slug: []
+categories:
+  - R
+tags:
+  - R
+  - RStudio
+  - software
+---
+
+> To start this adventure, the first thing you need is to install <res>R</res> and <res>Rstudio</res>, without them I think it would be very difficult to start our adventure. 
+
+Remember that we need them both, R because it's a programming language and also software; and Rstudio for their valuable development environment.
+
+<center>
+<a href="https://www.icesi.edu.co/CRAN/" target="blank"><img border="0" width="250" src="https://i.ibb.co/8Dky4XB/download.png"/><br>R</a><br> 
+<br>
+<a href="https://download1.rstudio.org/desktop/windows/RStudio-1.4.1106.exe" target="blank"><img border="0" width="250" src="https://i.ibb.co/8Dky4XB/download.png" /><br>RStudio</a>
+</center><br>
+
+What else do we need? Willingness to learn, dedication and patience, yes, patience!
+
+Now you can calmly continue to install these wonders, you will not regret it! It is nothing that we do not know how to do now ... Next, next, next ... here we will be waiting impatiently for you.
+
+<center>
+![](https://i.ibb.co/kQhGvc9/impaciente.gif){width="300"} 
+</center><br>
+
+Ready! We assume that everything is already installed and we feel like children with new toys. We want you to become more familiar with Rstudio, as it is more user-friendly; In addition, it has a much prettier interface than R, it also has many shortcuts, hotkeys, and web assistance.
+
+<blockquote>After installing Rstudio and opening it you should be seeing something like this:</blockquote>
+
+<center>
+<img src="https://i.ibb.co/3k3Nf9D/desktop.jpg" alt="desktop" border="0" class="responsive">
+</center><br>
+
+In case you have any problems or did not get a result similar to this, you can watch next video tutorial on YouTube. From my point of view it is a very interesting channel 
+
+<center>
+<iframe class="responsive" height="450" src="https://www.youtube.com/embed/orjLGFmx6l4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center><br>
+
+Well, now a quick review by RStudio ... let's remember that RStudio interface is made up 4 areas or panels that fulfill a certain function and that we can rearrange from appearance options
+
+<center>
+<img src="https://i.ibb.co/pxWxmpN/desktops.jpg" alt="desktops" border="0" class="responsive">
+</center><br> 
+
+The <res>Window 1</res> will be our faithful friend, since this place we will spend most our time organizing and editing our command lines written in R language and running them using <res>CONTROL + ENTER</res>. All our code lines will be transformed into scripts, which will allow us to automate our processes more and more.
+
+<center>
+![](https://memegenerator.net/img/instances/59700966.jpg){Width="300"} 
+</center><br>
+
+The <res>Window 3</res> is where magic happens, all magic kinds, from installing libraries, to adding, subtracting, dividing, empowering, endless activities, because that's where R code is executed; However, not everything that comes out of there is wonders, it's also where the <res>ERROR</res> and warning messages will come out that annoy our lives a bit
+ 
+<center>
+![](https://i.ibb.co/QYKtKvz/e033fb79e2f46948828500bb65b2731a.gif){width="300"}
+</center><br>
+
+With our program installed, we can start to see what its characteristics are, from options to visual themes. Now we will tell you about an important issue that you must take into account when handling R.
+ 
+## Most common data types and data structure in R
+
+From my point of view, understanding or keeping in mind that there are different data types and that data structure in R also varies, will allow you to save yourself a lot of problems, it is serious, if you want you can write down in your notebook, because as long as you understand this, things that will come from now on will be much easier for you.
+
+### Data types
+
+I will try to summarize everything for you in a table, initially we can think in seven (7) data types, which are:
+
+<center>
+<img src="https://i.ibb.co/0jFNzPf/tabla1.png" alt="tabla1" border="0" class="responsive">
+</center><br>
+
+The topic about <res>data structure and some examples that help us understand these two topics</res> with which we usually work in R we will leave it for another post
+
+## In conclusion
+
+First, we have our new toy installed and how do we learn to use a new toy? The answer is very, very simple, <res>PLAYING WITH HIM!</res> I'll leave you a good book on R below for you to enjoy. Besides, there is nothing to worry about, here we will explain what you need to know.
+
+
+<center>
+<img src="https://i.ibb.co/VB4587G/libro-r.png" border="0" width="200"><br>
+<a href="https://r4ds.hadley.nz" target="blank">R for Data Science (English Version)</a>
+</center><br>
+
+As a second conclusion, we saw that there are <res>7 data types in R!</res>, did you know? Comment your answer and leave us your conclusions
+
+Finally, how could you see, data types in R are very simple, they are nothing strange, or anything that we cannot understand, but then we ask ourselves ... How am I going to know what data types I have? ... and well we tell you:
+
+<br>
+<br>
+
+**In the new post, WE WILL TELL YOU EVERYTHING!**

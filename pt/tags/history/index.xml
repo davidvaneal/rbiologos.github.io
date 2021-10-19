@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>history on R Biólogos</title>
+    <link>https://rbiologos.github.io/pt/tags/history/</link>
+    <description>Recent content in history on R Biólogos</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-CO</language>
+    <copyright>Copyright &amp;copy; 2020 Desenhado por [David Vanegas](https://github.com/davidvaneal) sob o modelo [Themefisher](https://themefisher.com) por [HUGO](https://gethugothemes.com)</copyright>
+    <lastBuildDate>Tue, 16 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/pt/tags/history/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>... e agora um pouco de teoria!</title>
+      <link>https://rbiologos.github.io/pt/blog/a002/</link>
+      <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.github.io/pt/blog/a002/</guid>
+      <description>Começaremos dizendo que  R  é uma das linguagens de programação mais amplamente utilizadas na pesquisa científica</description>
+    </item>
+    
+  </channel>
+</rss>

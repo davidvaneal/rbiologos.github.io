@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+	<meta charset="utf-8">
+	<title>Diseño de gráficos ggplot2 - Parte I</title>
+
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="El espacio perfecto para Biólogos y R">
+	
+	<meta name="author" content="&lt;/R Biólogos&gt;">
+	<meta name="generator" content="Hugo 0.83.1" />
+
+	<!-- plugins -->
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/plugins/bootstrap/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/plugins/themify-icons/themify-icons.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/plugins/magnific-popup/magnific-popup.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/plugins/slick/slick.css">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim%7cQuattrocento&#43;Sans:400,700&amp;display=swap">
+	
+
+	<!-- Main Stylesheet -->
+	
+	<link rel="stylesheet" href="https://rbiologos.github.io/css/style.min.css" media="screen">
+
+	<!-- Custom stylesheet - for your changes -->
+	
+  <link rel="stylesheet" href="https://rbiologos.github.io/css/custom.min.css" media="screen">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="https://i.ibb.co/93QhLPT/Fav.png" type="image/x-icon">
+	<link rel="icon" href="https://i.ibb.co/93QhLPT/Fav.png" type="image/x-icon">
+
+	
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-N49JEEK9KF"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-N49JEEK9KF');
+	</script>
+	
+
+</head>
+
+
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="55">
+  <div id="content">
+    
+<!-- preloader start -->
+<div class="preloader">
+  
+  <img src="https://i.ibb.co/BjJWHb3/preloader.gif" alt="preloader" width="300">
+  
+</div>
+<!-- preloader end -->
+
+
+
+<section class="sticky-top navigation">
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<a class="navbar-brand p-0" href="/">
+				
+				<img class="lozad" data-src="https://i.ibb.co/93QhLPT/Fav.png" alt="R Biólogos" height="42">
+				
+			</a>
+
+			<button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navigation">
+				<ul class="navbar-nav ml-auto">
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#https://rbiologos.github.io/">Inicio</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#blog">Blog</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#team">Equipo</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#about">¿Qué somos?</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#feature">¿Qué hacemos?</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#contact">Contacto</a>
+					</li>
+					
+				</ul></div>
+				
+				<select id="select-language" onchange="location = this.value;">
+					
+					
+					
+					
+					
+					
+					
+					
+					<option id="es" value="https://rbiologos.github.io/blog/a010/" selected>ES
+					</option>
+					
+					
+					
+					
+					
+					
+					
+					
+				</select>
+				
+			
+			<script>
+  (function() {
+    var id = '06c75f9c-882f-11eb-a152-0242ac130002';
+    var ci_search = document.createElement('script');
+    ci_search.type = 'text/javascript';
+    ci_search.async = true;
+    ci_search.src = 'https://cse.expertrec.com/api/js/ci_common.js?id=' + id;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ci_search, s);
+  })();
+</script><ci-search></ci-search>
+		</nav>
+	</div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1>Diseño de gráficos ggplot2 - Parte I</h1>
+        <ul class="list-inline mb-50">
+          <li class="list-inline-item"><a href="/author/david-vanegas/">David Vanegas</a></li>
+          <li class="list-inline-item">Tuesday, Jun 22, 2021</li>
+        </ul>
+        <img class="img-fluid mb-50 lozad" data-src="https://i.ibb.co/ZcSxz7X/Es.png" alt="blog-image">
+      </div>
+      <div class="col-lg-8 offset-lg-2">
+        <div class="post-single-content">
+          
+<script src="https://rbiologos.github.io/blog/a010/index.es_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Visualizar nuestros datos es una de las mejores formas para explorar y analizar las posibles relaciones que existen entre nuestras variables, tal y como lo habíamos visto en nuestro anterior <a href="https://rbiologos.github.io/blog/a009/">POST</a></p>
+<center>
+<img src="https://i.ibb.co/K65S1J8/eye.gif" width="350" />
+</center>
+<p><br></p>
+<p>El día de hoy aprenderemos acerca de un paquete muy especial y utilizado en nuestro medio para precisamente visualizar nuestros datos de manera estática. Dicho paquete es <res><strong>ggplot2</strong></res>. Así, <strong>ggplot2</strong> forma parte del conjunto de librerías llamado <a href="https://www.tidyverse.org/">tidyverse</a> y se resume como un sistema para crear gráficos de forma declarativa, basado en <a href="https://amzn.to/2ef1eWp">The Grammar of Graphics</a>.</p>
+<p>En este paquete nosotros podemos proporcionar los datos y asignar variables a la estética. De esta manera debemos saber que <strong>ggplot2</strong> usa las gráficas bases de R y luego se encarga de los detalles estéticos. Para graficar con esta función debemos tener en cuenta los siguientes elementos, los cuales son estrictamente para representar un gráfico con ggplot2, ten en cuenta que son muchos más</p>
+<ul>
+<li>Un <res>data frame</res> que contiene los datos que se quieren visualizar.</li>
+<li>Los <res>aesthetics</res>, es decir, una lista de relaciones entre las variables del fichero de datos y determinados aspectos del gráfico (como por ejemplo coordenadas, formas o colores).</li>
+<li>Los <res>geoms</res>, que especifican los elementos geométricos (puntos, líneas, círculos, etc) que se van a representar.</li>
+</ul>
+<p>Así, en lo que aprenderemos el día de hoy, será aprender acerca de como se puede generar un gráfico y las modificaciones que podemos realizar; y te adelantamos que en nuestro próximo <strong>POST</strong> aprenderemos sobre los diferentes gráficos que se pueden generar con este paquete, entonces sin más, ¡empezemos!</p>
+<p>La estructura general del código para obtener un gráfico es la siguiente:</p>
+<pre class="r"><code>## Tenemos los datos a visualizar
+ggplot(data = &#39;nombre del fichero de datos&#39;) +
+        ## Adherimos las variables que queremos graficar
+  geom_nombre1(aes(aesthetics1 = var1, aesthetics2 = var2, ...)) +
+        ## Finalmente adherimos las distintas capas tales como
+        ## Tipo de gráfico
+        ## Y modificaciones
+  geom_nombre2(...) </code></pre>
+<blockquote>
+Normalmente estos elementos se van añadiendo de forma consecutiva en distintas <strong>capas</strong> (layers). Para añadir una nueva capa se usa el signo <res>+</res>.
+</blockquote>
+<p>Tranqui, si no entendiste, más adelante tendremos ejemplos mucho más prácticos y podrás desenrendar esta maraña</p>
+<center>
+<img src="https://i.ibb.co/2YF4G4v/LCEq.gif" width="350" />
+</center>
+<p><br></p>
+<div id="instalación-y-uso" class="section level2">
+<h2>Instalación y uso</h2>
+<p>Para instalar <strong>ggplot2</strong> hay varias maneras, sin embargo, te aconsejamos que instales todo el paquete <res>tidyverse</res>, ya que en un futuro puedes necesitar de otras funciones que vienen incluidas en dicho paquete</p>
+<pre class="r"><code># La forma más fácil de obtener ggplot2 es instalar todo el tidyverse:
+install.packages(&quot;tidyverse&quot;)
+
+# Alternativamente, simplemente instalamos ggplot2:
+install.packages(&quot;ggplot2&quot;)
+
+# O la versión de desarrollo de GitHub:
+# install.packages(&quot;devtools&quot;)
+devtools::install_github(&quot;tidyverse/ggplot2&quot;)</code></pre>
+<p>Es difícil describir explícitamente cómo funciona <strong>ggplot2</strong> porque encarna una profunda filosofía de visualización. Sin embargo, en la mayoría de los casos, comienza digitando <res>ggplot()</res>, luego se proporciona un conjunto de datos y un mapeo estético (con <res>aes()</res>). Luego agregamos las capas (como <res>geom_point()</res> o <res>geom_histogram()</res> (<em>las cuales veremos con más detalle en un próximo post</em>)), escalas (como <res>scale_colour_brewer()</res>), especificaciones de facetas (como <res>facet_wrap()</res>) y sistemas de coordenadas (como <res>coord_flip()</res>). A continuación dejamos un par de imagenes que tienen como finalidad ilustar las múltiples tareas que podemos adherir a <strong>ggplot2</strong> y cuál es su código respectivo</p>
+<center>
+<img src="https://i.ibb.co/yqjG242/ggplot2-page-0001.jpg" style="width:100.0%" />.
+</center>
+<p><br></p>
+<center>
+<img src="https://i.ibb.co/JkzzmGs/ggplot2-page-0002.jpg" style="width:100.0%" />
+</center>
+<p><br></p>
+<p>Bien por el momento… Ahora, veremos los distintos argumentos que debemos ingresar a <strong>ggplot2</strong> para poder empezar a generar nuestros gráficos. Recuerda siempre cargar el paquete para poder hacer uso de el.</p>
+<pre class="r"><code>library(ggplot2)</code></pre>
+<center>
+<img src="https://i.ibb.co/cbwRZKX/dance.gif" width="350" />
+</center>
+<p><br></p>
+</div>
+<div id="datos" class="section level2">
+<h2>Datos</h2>
+<p>Al igual que en los gráficos bases vistos anteriormente, ingresamos la dirección del archivo en la que está alojados nuestros datos y lo guardamos en una variable.</p>
+<blockquote>
+<p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" />
+¡¡¡Atención, atención!!!</p>
+Una particularidad de <strong>ggplot2</strong> es que solo acepta un tipo de datos: <res>data.frames</res>. Otras funciones gráficas (p.e., hist) admiten vectores, listas u otro tipo de estructuras. ggplot2 <em>NO</em>.
+</blockquote>
+<p>Para este ejercicio vamos a utilizar nuevamente la siguiente base de datos, la cual es los resultados de un estudio sobre escarabajos coprófagos. Las variables estudiadas fueron <res>Longitud de los escarabajos</res> y <res>Tasa de dispersión de semillas por parte de los escarabajos</res>.</p>
+<center>
+<a href="https://min.gitcdn.link/repo/RBiologos/rbiologos.github.io/main/blog/a009/Datos%20gr%C3%A1ficas.csv"><img src="https://i.ibb.co/6gx1V1Y/csv-icon.png" alt="descarga" border="0" width="150"></a>
+</center>
+<center>
+Descarga aquí
+</center>
+<p><br></p>
+<pre class="r"><code>estudio &lt;- read.csv(choose.files())
+head(estudio)</code></pre>
+<pre><code>##   Longitud Dispersion
+## 1 11.84000   91.00000
+## 2 11.68333   90.25000
+## 3 11.16008   88.83333
+## 4 11.07750   86.91667
+## 5 10.92350   85.50000
+## 6 10.53300   82.50000</code></pre>
+<pre class="r"><code>dim(estudio)</code></pre>
+<pre><code>## [1] 24  2</code></pre>
+<p>Ahora lo cargamos a <strong>ggplot2</strong> mediante el siguiente código. Debemos tener en cuenta que mediante este paquete, podemos guardar nuestros datos como una variable, sin graficar directamente. A continuación veremos un ejemplo</p>
+<pre class="r"><code>## Creamos un objeto &quot;p&quot;, el cual contiene los datos que vamos a utilizar
+p &lt;- ggplot(estudio)</code></pre>
+<p>Así, hemos guardado nuestro posible gráfico en la variable <res>p</res>. en con el código anterior es insuficiente para crear un gráfico: aún no hemos indicado qué tipo de gráfico y capas queremos adherir, hasta el momento solo tiene guardardo los datos que utilizaría.</p>
+<center>
+<img src="https://i.ibb.co/pzBNBY1/giphy.gif" width="350" />
+</center>
+<p><br></p>
+</div>
+<div id="aesthetics" class="section level2">
+<h2>Aesthetics</h2>
+<p>En la terminología de <strong>ggplot2</strong> las aesthetics hacen referencia a los conjuntos de datos que hay en las columnas (variables), tales como edad, altura, ingresos, temperatura, etc.</p>
+<p>Al igual, dentro del lenguaje de los gráficos que implementa, es muy importante esa asociación explícita de significados a significantes, es decir, de columnas de datos a aesthetics. Siguiendo nuestro ejemplo</p>
+<pre class="r"><code>p &lt;- ggplot(estudio, aes(x = Longitud, y = Dispersion))</code></pre>
+<p>El objeto <res>p</res> resultante aún no es un gráfico ni se puede representar. Le faltan <strong>capas</strong>. Por el momento, solo están indicados los datos que va a utilizar y la relación (o mapeo) entre aesthetics y columnas de los datos.</p>
+<p>¿Cuántas aesthetics existen? Alrededor de una docena, sin embargo es posible que en nuestros gráficos utilicemos una o dos formas. Estos son los más utilizados:</p>
+<ul>
+<li><res>x</res> e <res>y</res>, distancias horizontal y vertical.</li>
+<li><res>colour</res>, para el color.</li>
+<li><res>size</res>, para el tamaño.</li>
+<li><res>shape</res>, que indica la forma de los puntos (cuadrados, triángulos, etc.) de los puntos o del trazo (continuo, punteado) de las líneas.</li>
+<li><res>alpha</res> para la transparencia: los valores más altos tendrían formas opacas y los más bajos, casi transparentes. De ahí la utilizad del canal alfa: da peso e importancia a las observaciones que la merecen.</li>
+<li><res>fill</res>, para el color de relleno de las formas sólidas (barras, etc.).</li>
+</ul>
+</div>
+<div id="capas" class="section level2">
+<h2>Capas</h2>
+<p>Las capas (o geoms para <strong>ggplot2</strong>) son los verbos del lenguaje de los gráficos. Indican qué hacer con los datos y las estéticas elegidas, cómo representarlos en un lienzo. Una vez añadida una capa al gráfico, este puede “graficarse”, tal y como vemos en el siguiente código:</p>
+<pre class="r"><code>p &lt;- p + geom_point()</code></pre>
+<blockquote>
+<p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" />
+¡¡¡Atención, atención!!!</p>
+Como hemos visto hasta el momento, hemos superpuesto los diferentes argumentos que necesita ggplot para elaborar un gráfico, sin embargo, nosotros podemos sacar un gráfico en una sola línea como vemos a continuación
+</blockquote>
+<pre class="r"><code>ggplot(estudio, aes(x = Longitud, y = Dispersion)) + 
+  geom_point()</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-8-1.png" width="100%" /></p>
+<p>Existen muchos tipos de capas en el mundo de <strong>ggplot2</strong>, aquí te dejamos esta <a href="https://ggplot2.tidyverse.org/reference/index.html#section-layer-geoms">PÁGINA</a>, en la cual encontrarás todos los tipos de capas disponibles para elaborar gráficos. La elección de cada capa dependerá estrictamente del tipo, cantidad de variables, y sobre todo, de la pregunta de investigación que estés intentando responder.</p>
+<p>Entre las capas más comunes y más utilizadas están:</p>
+<ul>
+<li><res>geom_point()</res>, Diagramas de dispersión</li>
+<li><res>geom_bar()</res>, Diagrama de barras</li>
+<li><res>geom_histogram()</res>, Histogramas</li>
+<li><res>geom_line()</res>, Gráfico de líneas</li>
+<li><res>geom_boxplot()</res>, Diagramas de caja</li>
+</ul>
+</div>
+<div id="temas" class="section level2">
+<h2>Temas</h2>
+<p>Los temas de <strong>ggplot2</strong> permiten modificar aspectos estéticos del gráfico que no tienen que ver con los datos en sí. Eso incluye los ejes, etiquetas, colores de fondo, el tamaño de los márgenes, etc. No es habitual (y se desaconseja a los usuarios menos expertos) tener que alterar los temas que <strong>ggplot2</strong> usa por defecto. Solo se vuelve necesario cuando los gráficos tienen que adecuarse a una imagen corporativa o atenerse a algún criterio de publicación exigente.</p>
+<center>
+<img src="https://i.ibb.co/KGz158p/sulli.gif" width="350" />
+</center>
+<p><br></p>
+<p>Entre los temas más comunes tenemos:</p>
+<ul>
+<li><p><res>theme_gray()</res>: color de fondo gris y líneas de cuadrícula blancas</p></li>
+<li><p><res>theme_bw()</res>: una variación de theme_grey() que usa un fondo blanco y líneas de cuadrícula grises delgadas.</p></li>
+<li><p><res>theme_linedraw()</res>: un tema con solo líneas negras de varios anchos sobre fondos blancos, que recuerda a un dibujo lineal.</p></li>
+<li><p><res>theme_light()</res>: similar a theme_linedraw() pero con líneas y ejes de color gris claro, para dirigir más la atención hacia los datos.</p></li>
+<li><p><res>theme_dark()</res>: el primo oscuro de theme_light(), con tamaños de línea similares pero un fondo oscuro. Útil para hacer resaltar líneas finas de colores.</p></li>
+<li><p><res>theme_minimal()</res>: un tema minimalista sin anotaciones de fondo.</p></li>
+</ul>
+<pre class="r"><code>p + theme_grey() + ggtitle(&quot;theme_grey()&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-1.png" width="100%" /></p>
+<pre class="r"><code>p + theme_bw() + ggtitle(&quot;theme_bw()&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-2.png" width="100%" /></p>
+<pre class="r"><code>p + theme_linedraw() + ggtitle(&quot;theme_linedraw()&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-3.png" width="100%" /></p>
+<pre class="r"><code>p + theme_light() + ggtitle(&quot;theme_light()&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-4.png" width="100%" /></p>
+<pre class="r"><code>p + theme_dark() + ggtitle(&quot;theme_dark()&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-5.png" width="100%" /></p>
+<pre class="r"><code>p + theme_minimal() + ggtitle(&quot;theme_minimal()&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-9-6.png" width="100%" /></p>
+<p>Como vemos, hay varios tipos de <em>temas</em>, eso varía según tu gusto y lo que te pidan. Siempre ten en cuenta que un gráfico es la carta de presentación de un proyecto, así que si inviertes en una buena gráfica, posiblemente el lector esté más a gusto con lo que ve, recuerda que todo entra por lo ojos…</p>
+<center>
+<img src="https://i.ibb.co/YT3Qqmr/theme.gif" width="350" />
+</center>
+<p><br></p>
+<p>Para utilizar más temas, puedes hacer uso del paquete <strong>ggthemes</strong>. En esta <a href="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/">PÁGINA</a> podrás ampliar la información y ver que temas hay disponibles.</p>
+</div>
+<div id="modificando-los-temas" class="section level2">
+<h2>Modificando los temas</h2>
+<p>A pesar de encontrar muchos temas en línea, cada persona puede elaborar su plantilla de forma autónoma, haciendo uso de cada elemento que compone un tema. Para ello en el código utilizaremos el comando <res>theme()</res>, el cual nos permitirá direccionar las ordenes hacía la modificación del gráfico.</p>
+<blockquote>
+<p><img src="https://i.ibb.co/Wkj4z61/alerta.gif" width="100" />
+¡¡¡Atención, atención!!!</p>
+Realizar estas modificaciones a veces puede ser un poco agobiante, requiere efuerzo, tiempo y dedicación, pero una vez lo tengas, todo será más fácil
+</blockquote>
+<p>Hay alrededor de <strong>40</strong> elementos únicos que controlan la apariencia del lienzo. Se pueden agrupar aproximadamente en cinco categorías: gráfico, eje, leyenda, panel y faceta. Las siguientes secciones mostraremos algunas modificaciones para cada uno de ellos.</p>
+<center>
+<img src="https://i.ibb.co/343JKst/happy.gif" width="350" />
+</center>
+<p><br></p>
+<p><strong>ELEMENTOS DEL GRÁFICO</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Elemento</th>
+<th>Código</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>plot.background</td>
+<td>element_rect()</td>
+<td>Fondo del gráfico</td>
+</tr>
+<tr class="even">
+<td>plot.title</td>
+<td>element_text()</td>
+<td>Título del gráfico</td>
+</tr>
+<tr class="odd">
+<td>plot.margin</td>
+<td>margin()</td>
+<td>Márgen alrededor del gráfico</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>De forma predeterminada, <strong>ggplot2</strong> usa un fondo blanco que asegura que la trama se pueda usar donde sea que pueda terminar (por ejemplo, incluso si lo guardas como <em>png</em> y lo colocas en una diapositiva con un fondo negro). Al exportar gráficos para usar en otros sistemas, es posible que desees hacer que el fondo sea transparente con fill = NA. En relación a las márgenes tenemos los siguientes valores por defecto (margin(top = 0, right = 0, below = 0, left = 0). A continuación veamos un ejemplo de este caso</p>
+<pre class="r"><code>p + theme(
+    # Cambiamos el color de la línea de fondo por &quot;red&quot; y su ancho
+  plot.background = element_rect(colour = &quot;red&quot;, size = 6)
+)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-10-1.png" width="100%" /></p>
+<pre class="r"><code>p + theme(
+    # Cambiamos el color de fondo por &quot;blue&quot; 
+  plot.background = element_rect(fill = &quot;blue&quot;),
+    # Cambiamos las márgenes de 0 a 2 unidades
+  plot.margin = margin(5, 5, 5, 5),
+    # Ajustamos el tipo de letra, el color y el tamaño
+  plot.title = element_text(face = &quot;bold&quot;, colour = &quot;yellow&quot;)
+  )+
+  ggtitle(&quot;Título de la gráfica&quot;)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-10-2.png" width="100%" /></p>
+<p><br></p>
+<p><strong>ELEMENTOS DE LOS EJES</strong></p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Elemento</th>
+<th>Código</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>axis.line</td>
+<td>element_line()</td>
+<td>Línea paralela al eje (oculta en temas predeterminados)</td>
+</tr>
+<tr class="even">
+<td>axis.text</td>
+<td>element_text()</td>
+<td>Etiquetas de marca</td>
+</tr>
+<tr class="odd">
+<td>axis.text.x</td>
+<td>element_text()</td>
+<td>Etiquetas de marca del eje x</td>
+</tr>
+<tr class="even">
+<td>axis.text.y</td>
+<td>element_text()</td>
+<td>Etiquetas de marca del eje y</td>
+</tr>
+<tr class="odd">
+<td>axis.title</td>
+<td>element_text()</td>
+<td>títulos de eje</td>
+</tr>
+<tr class="even">
+<td>axis.title.x</td>
+<td>element_text()</td>
+<td>título del eje x</td>
+</tr>
+<tr class="odd">
+<td>axis.title.y</td>
+<td>element_text()</td>
+<td>título del eje y</td>
+</tr>
+<tr class="even">
+<td>axis.ticks</td>
+<td>element_line()</td>
+<td>marcas de graduación del eje</td>
+</tr>
+<tr class="odd">
+<td>axis.ticks.length</td>
+<td>unit()</td>
+<td>longitud de las marcas de graduación</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Si deseas modificar las propiedades de ambos ejes a la vez, utiliza <res>axis.text</res>, si no, puedes modificarlos independientemente con los otros códigos <res>axis.text.x</res> y <res>axis.text.x</res>. Veamos un ejemplo de estas modificaciones</p>
+<pre class="r"><code>  # Cambiamos el estilo de los ejes
+  # Modificamos el ancho de los ejes y su color
+p + theme(axis.line = element_line(colour = &quot;grey50&quot;, size = 1.5))</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-11-1.png" width="100%" /></p>
+<pre class="r"><code>  # Cambiamos el estilo de ambos ejes
+  # Modificamos color y tamaño
+p + theme(axis.text = element_text(color = &quot;blue&quot;, size = 12))</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-11-2.png" width="100%" /></p>
+<pre class="r"><code>  # O Cambiar el estilo de las etiquetas de un sólo eje
+  # Modificamos el ángulo de la etiqueta &quot;x&quot; y su posición (vjust y hjust)
+  # Esto nos sirve si tenemos etiquetas muy grandes
+p + theme(axis.text.x = element_text(angle = -45, vjust = 0.5, hjust = 0.5))</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-11-3.png" width="100%" /></p>
+<p><br></p>
+<p><strong>ELEMENTOS DE LA LEYENDA</strong></p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Elemento</th>
+<th>Código base</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>legend.backgroun</td>
+<td>delement_rect()</td>
+<td>Fondo de la leyenda</td>
+</tr>
+<tr class="even">
+<td>legend.key</td>
+<td>element_rect()</td>
+<td>Fondo de las claves de leyenda</td>
+</tr>
+<tr class="odd">
+<td>legend.key.size</td>
+<td>unit()</td>
+<td>Tamaño de la clave de leyenda</td>
+</tr>
+<tr class="even">
+<td>legend.key.height</td>
+<td>unit()</td>
+<td>Altura de la clave de leyenda</td>
+</tr>
+<tr class="odd">
+<td>legend.key.width</td>
+<td>unit()</td>
+<td>Ancho de la clave de leyenda</td>
+</tr>
+<tr class="even">
+<td>legend.margin</td>
+<td>unit()</td>
+<td>Margen de leyenda</td>
+</tr>
+<tr class="odd">
+<td>legend.text</td>
+<td>element_text()</td>
+<td>Etiquetas de leyenda</td>
+</tr>
+<tr class="even">
+<td>legend.text.align</td>
+<td>0–1</td>
+<td>Leyenda alineación de la etiqueta (0 = derecha, 1 = izquierda)</td>
+</tr>
+<tr class="odd">
+<td>legend.title</td>
+<td>element_text()</td>
+<td>Nombre de la leyenda</td>
+</tr>
+<tr class="even">
+<td>legend.title.align</td>
+<td>0–1</td>
+<td>Leyenda alineación del nombre (0 = derecha, 1 = izquierda)</td>
+</tr>
+<tr class="odd">
+<td>legend.position</td>
+<td>center-right-left-bottom</td>
+<td>Posición de la leyenda en el gráfico</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Veamos un ejemplo de estos elementos, para ello utilicemos la base de datos <res>iris</res></p>
+<pre class="r"><code>i &lt;- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, 
+                      colour = Species))+
+  geom_point()
+
+  # Modifiquemos el fondo de la caja de leyenda 
+  # Además del color y ancho de la línea de la caja
+i + theme(
+  legend.background = element_rect(
+    fill = &quot;lemonchiffon&quot;, 
+    colour = &quot;red&quot;, 
+    size = 1
+  )
+)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-12-1.png" width="100%" /></p>
+<pre class="r"><code>  # Modifiquemos el color y medidas de cada caja de la leyenda
+i + theme(
+  legend.key = element_rect(color = &quot;blue&quot;),
+  legend.key.width = unit(0.9, &quot;cm&quot;),
+  legend.key.height = unit(0.75, &quot;cm&quot;)
+)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-12-2.png" width="100%" /></p>
+<pre class="r"><code>  # Modifiquemos la posición de la leyenda
+  # Además modifiquemos el tamaño y estilo de la letra
+i + theme(
+  legend.text = element_text(size = 15),
+  legend.title = element_text(size = 15, face = &quot;bold&quot;),
+  legend.position = &quot;bottom&quot;
+)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-12-3.png" width="100%" /></p>
+<p><br></p>
+<p><strong>ELEMENTOS DEL PANEL</strong></p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Elemento</th>
+<th>Código</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>panel.background</td>
+<td>element_rect()</td>
+<td>Fondo del panel (debajo de los datos)</td>
+</tr>
+<tr class="even">
+<td>panel.border</td>
+<td>element_rect()</td>
+<td>Borde del panel (sobre los datos)</td>
+</tr>
+<tr class="odd">
+<td>panel.grid.major</td>
+<td>element_line()</td>
+<td>Líneas de cuadrícula principales</td>
+</tr>
+<tr class="even">
+<td>panel.grid.major.x</td>
+<td>element_line()</td>
+<td>Líneas de cuadrícula principales</td>
+</tr>
+<tr class="odd">
+<td>panel.grid.major.y</td>
+<td>element_line()</td>
+<td>Líneas de cuadrícula principales horizontales</td>
+</tr>
+<tr class="even">
+<td>panel.grid.minor</td>
+<td>element_line()</td>
+<td>Líneas de cuadrícula menores</td>
+</tr>
+<tr class="odd">
+<td>panel.grid.minor.x</td>
+<td>element_line()</td>
+<td>Líneas de cuadrícula verticales menores</td>
+</tr>
+<tr class="even">
+<td>panel.grid.minor.y</td>
+<td>element_line()</td>
+<td>Líneas de cuadrícula menores horizontales</td>
+</tr>
+<tr class="odd">
+<td>aspect.radio</td>
+<td>numeric</td>
+<td>Relación de aspecto de la trama</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>La principal diferencia entre <res>panel.background</res> y <res>panel.border</res> es que el fondo se dibuja debajo de los datos y el borde se dibuja encima</p>
+<p>Ahora veamos unos buenos ejemplos</p>
+<pre class="r"><code>  # Modifiquemos el color del fondo
+p + theme(panel.background = element_rect(fill = &quot;lightblue&quot;))</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-13-1.png" width="100%" /></p>
+<pre class="r"><code># Modifiquemos el color y ancho de las líneas principales de la cuadrícula en ambos ejes
+p + theme(
+  panel.grid.major = element_line(color = &quot;gray60&quot;, size = 0.8)
+)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-13-2.png" width="100%" /></p>
+<pre class="r"><code># Modifiquemos el color y ancho de las líneas principales de la cuadrícula en el eje &quot;x&quot;
+# Además modifiquemos el radio a 9:16
+p + theme(
+  panel.grid.major.x = element_line(color = &quot;gray60&quot;, size = 0.8),
+  aspect.ratio = 9 / 16
+)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-13-3.png" width="100%" /></p>
+<p><br></p>
+<p><strong>ELEMENTOS DE LA FACETA</strong></p>
+<p>Laas facetas nos permiten dividir nuestros datos en lienzos diferentes, sobre alguna variable que consideremos esencial para tal. Una característica de estos gráficos, es que es adecuada para poder hacer comparaciones en variables que comparten ejes. A continuación veamos más información para modificar este aspecto de la gráfica</p>
+<table>
+<thead>
+<tr class="header">
+<th>Elemento</th>
+<th>Código</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>strip.background</td>
+<td>element_rect()</td>
+<td>Fondo de las tiras del panel</td>
+</tr>
+<tr class="even">
+<td>strip.text</td>
+<td>element_text()</td>
+<td>Tira de texto</td>
+</tr>
+<tr class="odd">
+<td>strip.text.x</td>
+<td>element_text()</td>
+<td>Tira horizontal de texto</td>
+</tr>
+<tr class="even">
+<td>strip.text.y</td>
+<td>element_text()</td>
+<td>Tira vertical de texto</td>
+</tr>
+<tr class="odd">
+<td>panel.margin</td>
+<td>unit()</td>
+<td>Margen entre facetas</td>
+</tr>
+<tr class="even">
+<td>panel.margin.x</td>
+<td>unit()</td>
+<td>Margen entre facetas (vertical)</td>
+</tr>
+<tr class="odd">
+<td>panel.margin.y</td>
+<td>unit()</td>
+<td>Margen entre facetas (horizontal)</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Hagámos unos bueno gráficos para entender algunas de estas modificaciones</p>
+<pre class="r"><code>f &lt;- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width))+
+  geom_point()+
+  # Divimos la gráfica por la variable &quot;Species&quot;
+  facet_wrap(~Species)
+f</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-14-1.png" width="100%" /></p>
+<pre class="r"><code>  # Modificamos el ancho entre las facetas
+f + theme(panel.margin = unit(0.5, &quot;in&quot;))</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-14-2.png" width="100%" /></p>
+<pre class="r"><code>  # Modificamos el color del fondo de la faceta
+  # Además, modificamos el color y ancho de la línea
+  # Así como el color y tamaño de la letra
+f + theme(
+  strip.background = element_rect(fill = &quot;green&quot;, color = &quot;red&quot;, size = 2),
+  strip.text = element_text(colour = &quot;black&quot;, size = 14)
+)</code></pre>
+<p><img src="https://rbiologos.github.io/blog/a010/index.es_files/figure-html/unnamed-chunk-14-3.png" width="100%" /></p>
+</div>
+<div id="resumen" class="section level2">
+<h2>Resumen</h2>
+<p>El día de hoy pudimos saber un poco más acerca del paquete <strong>ggplot2</strong>, un excelente paquete que nos permitirá explorar y modificar sus elementos, para dejarlos según nuestro estilo o según las especificaciones que algunos investigadores y/o autores puedan requerir. Por ejemplo, a través de estas modificaciones puedes realizar gráficos tipo publicación, osea, que estéticamente sean lo mejor, con un tamaño estipulado, fondos óptimos, tipo de letra adecuada, en fin… muchas otras normas que nos piden los editores de las revistas más prestigiosas en el área de biología y afines.</p>
+<center>
+<img src="https://i.ibb.co/71NMtw1/dance2.gif" width="350" />
+</center>
+<p><br></p>
+<p>Aprendimos los requerimientos para que el paquete funcione adecuadamente y no nos genere error; sin embargo, como todo lo de <strong>R</strong> y <strong>Biología</strong>, pues un solo POST no es suficiente, hay muuuuuuchas más cosas que puedes aprender con <strong>ggplot2</strong>, este sólo fue un principio y te invitamos a leer y jugar más con este paquete, tal vez seas el próximo desarrollador de paquetes de gráficos para R.</p>
+<center>
+<img src="https://i.ibb.co/WfF2N99/cool.gif" width="350" />
+</center>
+<p><br></p>
+<p>Si quieres más información puedes leer esto <a href="https://exts.ggplot2.tidyverse.org/gallery/">Extensiones ggplot2</a></p>
+<p>Muchas gracias por tu lectura, esperamos que te lleves algo más que sólo cansancio por ver tanto código; sabemos que R es un mundo a veces despiadado, pero que deja sensaciones únicas en la mente, prácticamente R juega contigo, como <strong>tu ex</strong>…</p>
+<p>¡Hasta la próxima…!</p>
+<center>
+<img src="https://i.ibb.co/yFJYTdt/bye.gif" width="350" />
+</center>
+<p><br></p>
+</div>
+<div id="bibliografía" class="section level2">
+<h2>Bibliografía</h2>
+<ul>
+<li><p><a href="https://ggplot2.tidyverse.org/">ggplot2</a></p></li>
+<li><p><a href="http://verso.mat.uam.es/~joser.berrendero/R/introggplot2.html">Una breve introducción a ggplot2</a></p></li>
+<li><p><a href="https://www.datanalytics.com/libro_r/elementos-de-un-grafico-en-ggplot2.html">R para profesionales de los datos: una introducción</a></p></li>
+<li><p><a href="https://www.datanalytics.com/libro_r/introduccion-a-ggplot2.html">Introducción a ggplot2</a></p></li>
+<li><p><a href="https://ggplot2-book.org/polishing.html">ggplot2: Elegant Graphics for Data Analysis</a></p></li>
+</ul>
+<p>Recuerda que todos nuestros códigos están almacenados en <a href="https://github.com/RBiologos/Posts">GitHub</a></p>
+<center>
+<img src="https://i.ibb.co/DpKmR1k/github.png" width="350" />
+</center>
+</div>
+
+        </div>
+        
+        
+
+<div class="social-share pt-4">
+	<h4>Comparte:</h4>
+	
+	<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2frbiologos.github.io%2fblog%2fa010%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Dise%c3%b1o%20de%20gr%c3%a1ficos%20ggplot2%20-%20Parte%20I&amp;url=https%3a%2f%2frbiologos.github.io%2fblog%2fa010%2f"
+		target="_blank" rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="https://plus.google.com/share?url=https%3a%2f%2frbiologos.github.io%2fblog%2fa010%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--google resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M11.37 12.93c-.73-.52-1.4-1.27-1.4-1.5 0-.43.03-.63.98-1.37 1.23-.97 1.9-2.23 1.9-3.57 0-1.22-.36-2.3-1-3.05h.5c.1 0 .2-.04.28-.1l1.36-.98c.16-.12.23-.34.17-.54-.07-.2-.25-.33-.46-.33H7.6c-.66 0-1.34.12-2 .35-2.23.76-3.78 2.66-3.78 4.6 0 2.76 2.13 4.85 5 4.9-.07.23-.1.45-.1.66 0 .43.1.83.33 1.22h-.08c-2.72 0-5.17 1.34-6.1 3.32-.25.52-.37 1.04-.37 1.56 0 .5.13.98.38 1.44.6 1.04 1.84 1.86 3.55 2.28.87.23 1.82.34 2.8.34.88 0 1.7-.1 2.5-.34 2.4-.7 3.97-2.48 3.97-4.54 0-1.97-.63-3.15-2.33-4.35zm-7.7 4.5c0-1.42 1.8-2.68 3.9-2.68h.05c.45 0 .9.07 1.3.2l.42.28c.96.66 1.6 1.1 1.77 1.8.05.16.07.33.07.5 0 1.8-1.33 2.7-3.96 2.7-1.98 0-3.54-1.23-3.54-2.8zM5.54 3.9c.33-.38.75-.58 1.23-.58h.05c1.35.05 2.64 1.55 2.88 3.35.14 1.02-.08 1.97-.6 2.55-.32.37-.74.56-1.23.56h-.03c-1.32-.04-2.63-1.6-2.87-3.4-.13-1 .08-1.92.58-2.5zM23.5 9.5h-3v-3h-2v3h-3v2h3v3h2v-3h3" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="mailto:?subject=Dise%c3%b1o%20de%20gr%c3%a1ficos%20ggplot2%20-%20Parte%20I&amp;body=https%3a%2f%2frbiologos.github.io%2fblog%2fa010%2f" target="_self"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link"
+		href="https://reddit.com/submit/?url=https%3a%2f%2frbiologos.github.io%2fblog%2fa010%2f&amp;resubmit=true&amp;title=Dise%c3%b1o%20de%20gr%c3%a1ficos%20ggplot2%20-%20Parte%20I" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="whatsapp://send?text=Dise%c3%b1o%20de%20gr%c3%a1ficos%20ggplot2%20-%20Parte%20I%20https%3a%2f%2frbiologos.github.io%2fblog%2fa010%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1 0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+	
+	<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Dise%c3%b1o%20de%20gr%c3%a1ficos%20ggplot2%20-%20Parte%20I&amp;url=https%3a%2f%2frbiologos.github.io%2fblog%2fa010%2f"
+		target="_blank" rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M.707 8.475C.275 8.64 0 9.508 0 9.508s.284.867.718 1.03l5.09 1.897 1.986 6.38a1.102 1.102 0 0 0 1.75.527l2.96-2.41a.405.405 0 0 1 .494-.013l5.34 3.87a1.1 1.1 0 0 0 1.046.135 1.1 1.1 0 0 0 .682-.803l3.91-18.795A1.102 1.102 0 0 0 22.5.075L.706 8.475z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+</div>
+        
+        
+        <div class="mt-5">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </div><!-- end Contact Area -->
+<footer id="footer" class="section-bg">
+	<div class="container">
+		<div class="row wow fadeInUp" data-wow-duration="500ms">
+			<div class="col-lg-12">
+
+			
+
+                        <!-- Footer Social Links -->
+				<div class="social-icon"><h1><center                                                    >Social</center></h1>
+					<ul class="list-inline">
+						
+						<li class="list-inline-item"><a href="https://www.instagram.com/rbiologos/" target="blank"><i class="ti-instagram" target="blank"></i></a></li>
+						
+						<li class="list-inline-item"><a href="https://www.facebook.com/rbiologos" target="blank"><i class="ti-facebook" target="blank"></i></a></li>
+						
+						<li class="list-inline-item"><a href="https://github.com/RBiologos/Posts" target="blank"><i class="ti-github" target="blank"></i></a></li>
+						
+					</ul>
+				</div>
+				
+				<center><img src="https://i.ibb.co/QXqp3ym/Logo.png" alt="R Biólogos" height="150" /></center>
+	
+				<!-- copyright -->
+				<div class="copyright text-center">
+				        
+					<a href="https://rbiologos.github.io/">
+					</a>
+					<br>
+					<p1>Copyright © 2020 Diseñado por <a href="https://github.com/davidvaneal">David Vanegas</a> bajo la plantilla <a href="https://themefisher.com">Themefisher</a> de <a href="https://gethugothemes.com">HUGO</a></p1>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- /footer -->
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="https://rbiologos.github.io/plugins/jquery/jquery.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/shuffle/shuffle.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/lazy-load/lozad.min.js"></script>
+
+<script src="https://rbiologos.github.io/plugins/google-map/map.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://rbiologos.github.io/js/script.min.b98b8dcfa3dc53b74ecf3cf8724a1f75b4d217da25463ff3d6a28fc4a09e965bf9818dfce85452f5fb478bce779ee8cc.js" integrity="sha384-uYuNz6PcU7dOzzz4ckofdbTSF9olRj/z1qKPxKCellv5gY386FRS9ftHi853nujM"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-transparent">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+</body>
+
+</html>

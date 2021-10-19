@@ -1,0 +1,370 @@
+---
+title: Tipo e estrutura de dados
+author: Eduardo Grajales
+date: '2021-04-07'
+image: "https://i.ibb.co/SvxLRK6/pt.png"
+slug: []
+categories:
+  - R
+tags:
+  - Dados
+  - Estrutura
+  - RStudio
+---
+
+Você já viu como trabalhar em R e Rstudio, aprendeu a configurar seu diretório de trabalho, instalar bibliotecas e chamá-las, sobre scripts e como são úteis para trabalhar em R.
+
+Ou seja, você já tem seus primeiros passos de conhecimento sobre R, você já aumentou 1% de seu fitness, você tem 1% a mais de probabilidade a seu favor, e se ainda não leu, deixo aqui [*... e agora um pouco de teoria*](https://rbiologos.github.io/pt/blog/a002/).
+
+<center>
+![](https://i.ibb.co/DtSmB7p/bean.gif){width="200"}
+</center><br>
+
+Como é a dívida prometida, no post intitulado [*O que eu preciso para começar no R?*](https://rbiologos.github.io/pt/blog/a003/), Você viu que existem 7 tipos de dados (inteiro, numérico, lógico, personagem, fator, NA e NULL); Agora, neste post começaremos com a verificação dos tipos de dados, ou seja, você saberá quais tipos de dados R está lendo.
+
+Para atingir este objetivo, você precisa ter um banco de dados para estudar, em R você pode encontrar várias bases para praticar, mas desta vez usaremos <res>iris</res>; que é um banco de dados com valores associados a **comprimento** e **largura** de sépalas e pétalas de várias espécies de plantas que podemos explorar, então você aprenderá como enviar seu próprio arquivo para R.
+
+## Exploração de dados
+
+Vamos começar este post dando um breve resumo sobre a exploração de dados, mas tenha em mente que iremos mais fundo em um post futuro. Para realizar esta tarefa existem algumas funções Rbase próprias, como <res>head()</res>, <res>tail()</res>, entre outras. No entanto, existem muitas outras funções para poder fazer uma exploração e transformação adequada dos dados.
+
+Vamos começar explorando um pouco o banco de dados <res>iris</res> e ver quais elementos o compõem
+
+> Nota: Tudo após o sinal <res>#</res> em nosso código, **R** pula, assim como quando seu amor pula suas mensagens de bom dia.
+
+```{r}
+head(iris) # Usado para exibir as primeiras 6 linhas de dados.
+tail(iris) # Em vez disso, mostra os últimos 6
+```
+
+Também temos a função <res>View()</res>, que é uma função bastante útil; além disso, considero que deve ser o primeiro a usar ao carregar nossos dados em **R** para visualizar os dados em uma nova janela e assim poder fazer uma primeira inspeção. Vamos fazer o próximo exercício e usar esta função
+
+```{r, eval=FALSE}
+iris
+View(iris)
+```
+
+Você notou alguma diferença ao chamar apenas <res>iris</res> e usar <res>View(iris)</res>? Suponho que você conseguiu ver a grande diferença que existe em inspecionar dados em uma janela Rstudio para ter que vê-los no console.
+
+> Neste ponto, gostaria de fazer um esclarecimento: também existem bibliotecas especializadas em exploração de dados.
+
+Por exemplo, a biblioteca <res>tidyverse</res> que por sua vez contém um conjunto completo de bibliotecas, incluindo <res>dplyr</res>, é uma das bibliotecas mais usadas por cientistas de dados por causa de seu manuseio fácil e como eles chamam isso por causa de sua "Curva de Aprendizado" que se refere à quantidade de informação disponível e ao número de pessoas que a estudam.
+
+Outra função muito interessante para saber os tipos de dados que nosso conjunto de dados contém é: <res>class()</res>, esta função vai nos mostrar no console que tipo de dados temos, pois à primeira vista é muito difícil saiba disso, e se realizarmos este pré-processo antes de iniciar nossa análise, poderemos evitar vários problemas com várias bibliotecas R, que são muito claras e muito sensíveis com o tipo de dados que precisamos para fazer nossas análises.
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width = "100"}
+Atenção Atenção!!!
+
+O símbolo <res><-</res> que usamos para atribuir variáveis, ou em outras palavras, para nomear coisas. Se digitalizarmos <res>Alt</res> + <res>-</res> Este símbolo aparecerá no Rstudio.
+</blockquote>
+
+```{r}
+número <- 357 # Por se tratar de um número, esperamos que o que vamos obter seja "numeric"
+class(número)
+
+nome <- "Aotus"# Como está entre aspas Aotus, esperamos que você leia como personagem
+class(nome)
+
+combinado <- c(2,1.62, "alelo", "HardyWeinberg") 
+# letra "c" é usada para concatenar (grupo)
+class(combinado)
+```
+
+** O que aconteceu com nossa variável chamada combinada? **
+
+Lá podemos ver que duas coisas aconteceram; primeiro, temos diferentes tipos de dados, é claro para nós que existem dados do tipo <res>numeric</res> (2 e 1.6) e <res>character</res> ("Alelo", "HardyWeinberg"), mas a função mostrou que todos eram <res>character</res>.
+
+**Por que isso está acontecendo?**
+
+Isso ocorre implicitamente em **R** por algo chamado _coercion_; ou seja, os dados são forçados a se transformar em outro tipo de dados, ou como diz o velho ditado: "Quem anda entre o mel, algo pega"
+
+<center>
+![](https://i.ibb.co/NW1rg3F/honey.gif){width="290"}
+</center><br>
+
+Essa coerção tem uma ordem hierárquica, ou seja, R vai transformar nossos dados de acordo com uma ordem estabelecida e não acontece de forma aleatória. Ordem que podemos ver abaixo:
+
+<res>lógico</res> -> <res>inteiro</res> -> <res>numérico</res> -> <res>caractere</res>
+
+Agora que você sabe o que aconteceu e que isso pode acontecer em seus projetos, é necessário prestar mais atenção aos seus dados e saber a importância de revisá-los antes de começar a executar um código a partir de uma biblioteca. Por outro lado, você deve ter em mente que _coercion_ ocorre sem que o desejemos, mas nem sempre será o caso, podemos transformar dados desde que seja lógico fazê-lo usando <res>as()</res> família (veremos isso mais tarde).
+
+Continuando com nossos exercícios, vou mostrar mais um exemplo usando a função <res>class()</res>, acompanhada pela função <res>lapply()</res> (que veremos em outro post mais em profundidade, se você quiser saber como funciona, em seu console escreva <res>?lapply</res>) que nos ajudará a avaliar cada coluna dos dados do banco de dados. Aqui, pretendemos explorar que tipo de dados temos em nosso quadro de dados ou banco de dados.
+
+```{r}
+lapply(iris, class)
+```
+
+Como você pode ver, com este par de funções trabalhando em conjunto, podemos saber quais tipos de dados temos em nosso dataframe, isso facilitará muito nosso fluxo de trabalho.
+
+### Transformação de dados ou coerção de força.
+
+Agora se, com tudo o que você já sabe, vai entender melhor a transformação de dados por meio de exemplos, então, vamos torná-lo amiguinho:
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+Atenção Atenção!!!
+
+O símbolo <res>$</res> que usamos em R para "chamar" uma coluna em nosso banco de dados
+</blockquote>
+
+Neste exemplo, ficará um pouco mais claro. Temos uma base de dados chamada <res>Projeto</res> e os locais que foram trabalhados foram numerados, ao invés de ter dado um nome, que problema! Assim, vamos olhar nossos primeiros dados e depois ver o tipo de classe da coluna <res>Lugar</res>, como vemos neste código:
+
+```{r echo=FALSE}
+Projeto <- iris
+names(Projeto)[1] <- "Lugar"
+Projeto[1]<-round(Projeto[1], 0)
+```
+
+```{r }
+head(Projeto)
+class(Projeto$Lugar)
+```
+
+Como você poderia observar que esta coluna de dados é identificada por **R** como <res>numeric</res>, mas já sabemos que não são números, mas sim nomes de sites, por isso, nós temos que transformá-los para que R não os confunda e talvez gere um erro em nossa análise. Para fazer isso, usaremos a função <res>as.character()</res> como vemos no próximo exemplo
+
+```{r}
+char <- as.character(Projeto$Lugar)
+class(char)
+```
+
+E nossa intenção estava pronta!
+
+Mas ... Então, só posso transformar de **numeric** em **character**?
+
+<center>
+![](https://i.ibb.co/4RKG2Py/not.gif){width="200"}
+</center><br>
+
+Você também pode executar outros tipos de coerção, dependendo do que você precisa ou conforme solicitado usando os comandos que você verá na próxima tabela:
+
+<center>
+| Função para transformar | - Tipo de coerção ou transformação |
+:--:|:--:
+<res>as.integer()</res>|Inteiro
+<res>as.numeric()</res>|Numérico
+<res>as.factor()</res>|Fator
+<res>as.logical()</res>|Lógico
+<res>as.null()</res>|Null
+</center><br>
+
+**Como usá-los?** Digo que são usados como fizemos com <res>as.character()</res>
+
+#### Conclusão sobre o tipo de dados e transformação.
+
+Até agora você aprendeu a identificar os tipos de dados usando a função <res>class()</res> e também sobre a coerção que ocorre automaticamente em R ao criar um vetor, que pensamos ter diferentes tipos de dados; você também aprendeu sobre a família <res>as()</res> para forçar a coerção ou transformar dados no tipo de dados de que você precisa.
+
+Além disso, você aprendeu sobre a exploração de dados básicos usando as funções <res>View()</res>, <res>head()</res> e <res>tail()</res>, que o ajudarão muito a evite transtornos com R e assim possa saber como seu banco de dados está organizado ou composto e você também viu, que em R muitas maneiras de fazer o mesmo, então não se preocupe, você se contenta com o que mais gosta.
+
+## Estrutura de dados
+
+A estrutura de dados são objetos que contêm um tipo de dados ou vários tipos de dados e têm características diferentes, como dimensões, se forem homogêneas ou heterogêneas.
+
+| Homogêneo | Característico | Heterogêneo | Característico |
+: -: |: --- |: -: |: -
+Vetor (uma dimensão) | Coleção de um ou mais dados do mesmo tipo. Sua dimensão é a mesma quantidade de dados que possui | Lista (uma dimensão) | Como os vetores, possui apenas uma dimensão, mas seus dados podem ser de tipos diferentes e até conter estruturas.
+Matriz (duas dimensões) | Vetor multidimensional. **Ele só pode conter dados de um único tipo** e tem apenas duas dimensões, <res>High</res> e <res>Length</res> | Quadro de dados (duas dimensões) | Eles têm duas dimensões e podem contêm dados de diferentes tipos, é o mais comum para análise de dados (versão mais flexível de uma matriz).
+Matriz (n dimensões) | Mesmas características de uma matriz, mas pode ter mais de duas dimensões |
+
+### Agora, veremos como cada uma dessas estruturas funciona com exemplos úteis.
+
+***Vetores***
+
+Vetores são a estrutura de dados mais simples em R, como vimos na tabela anterior, sua dimensão depende da quantidade de dados que contém e pode ter apenas um tipo de dados.
+
+**Como você pode saber se tem um vetor e como criar vetores?**
+
+Você já conhece a função <res>class()</res> que nos ajuda a identificar o tipo de dados que temos e, às vezes, a estrutura do tipo de dados; no entanto, a família de funções <res>is()</res> é a mais adequada para definir a estrutura de dados como o próximo código:
+
+```{r}
+3
+is.vector(3)
+class(3)
+```
+
+> Como você pode saber, ao usar as duas funções, elas nos dão resultados diferentes, já que a função <res>class()</res> indicará o tipo de dados e a função <res>is()</res>. Por ser lógico, nos dirá se é (TRUE) ou (FALSE), esse tipo de resposta é conhecido como Boolean.
+
+Outro exemplo:
+
+```{r}
+três <- 3
+class(três)
+is.vector(três)
+```
+
+> A forma de criar um vetor é muito simples; Além do mais, durante todo esse tempo que você assistiu, precisamos do operador <res><-</res> e, se você for adicionar vários dados do mesmo tipo, use <res>c()</res>. Por outro lado, há algo muito importante que você deve aprender e é a maneira pela qual você vai atribuir nomes à estrutura de dados. O importante é que eles significam algo para você e que outra pessoa possa entender.
+
+Mais exemplos:
+
+```{r}
+num <- c(1233,555,88,99,17)
+class(num)
+is.vector(num)
+
+nomb <- c("Uiara", "Jandiara", "Wenda", 
+          "Allessandro", "Maicon", "Guilherme")
+class(nomb)
+is.vector(nomb)
+```
+
+Agora é a sua vez de praticar, criar diferentes vetores, com diferentes tipos de dados, explorar tudo o que você puder fazer, por exemplo, tentar adicionar vetores numéricos e ver o que acontece, como no próximo exemplo:
+
+```{r}
+ex1 <- c(112,667,99,56,47,12)
+ex2 <- c(22,65,23.8,99,101,41)
+
+sum <- ex1 + ex2
+sum
+```
+
+O que aconteceu? Resta-lhe descrever da melhor maneira o que aconteceu. E se os vetores não tiverem o mesmo número de dados? Nos digam!
+
+***Matrizes e matrizes***
+
+Essas estruturas são usadas em matemática e estatística; Além do mais, é uma das estruturas mais comuns e solicitadas em muitos dos pacotes que costumamos usar em Biologia, e também é um dos motivos pelos quais nos desesperamos com R e queremos bater no teclado como loucos.
+
+<center>
+![](https://i.ibb.co/DLw8dzR/computer.gif){width="250"}
+</center><br>
+
+***Agora, como reconhecer e criar matrizes?***
+
+É tão fácil escrever <res>matrix()</res>, esta função aceita dois argumentos, <res>nrow</res> (número de linhas) e <res>ncol</res> (número de colunas) para indicar o número de linhas e colunas da matriz que você irá gerar, como no próximo código
+
+> Podemos fazer isso sem especificar o número de colunas e linhas. Para este exemplo, você vai gerar uma matriz de 1 a 12 da seguinte forma: 1:12
+
+```{r}
+matrix(1:12)
+```
+
+Aqui R nos mostra automaticamente uma matriz com 12 linhas e uma coluna, mas suponha que você queira 6 linhas e 2 colunas, para isso entraremos como próximo código
+
+```{r}
+matrix(1:12, nrow = 6, ncol = 2)
+```
+
+Agora crie uma matriz com números de 1 a 12 (1:12) com nrow de 6 e ncol de 4, veja o que acontece.
+
+Também podemos criar matrizes juntando vetores com as funções <res>cbind()</res> (junção como colunas) e <res>rbind()</res> (junção como linhas) da seguinte forma:
+
+```{r message=FALSE, warning=FALSE}
+vec1 <- c(1:5)
+vec2 <- c(10:15)
+vec3 <- c(20:25)
+vec4 <- c(35:40)
+
+matriz1 <- cbind(vec1, vec2, vec3,vec4)
+matriz1
+
+matriz2<-rbind(vec1, vec2, vec3, vec4)
+matriz2
+```
+
+Como você pode ver, essas funções são muito úteis para nós e nos permitem realizar tarefas específicas.
+
+> Com matrizes, você também pode realizar operações aritméticas.
+
+```{r}
+matriz1 + 1
+matriz1 * 2
+matriz2 ^ 3
+```
+
+Como você pode ver, a operação aritmética é realizada para cada dado na matriz
+
+Agora você verá a estrutura de dados que é realmente mais usada por nós em biologia, <res>data frames</res>. Mas ... Por que é o mais usado? É o mais utilizado, porque é a estrutura que melhor se adapta às nossas necessidades; Além disso, é assim que salvamos nossos dados no Excel e geralmente carregamos o arquivo.csv
+
+Geralmente, as linhas em um quadro de dados representam indivíduos ou observações e as colunas representam atributos, características ou variáveis.
+
+***Qual é a aparência de um quadro de dados?***
+
+O quadro de dados <res>iris</res> que estamos usando é uma amostra clara da organização e dos tipos de dados que um quadro de dados pode conter.
+
+***Mas, como posso criar um quadro de dados no RStudio?***
+
+De forma rápida e fácil, usaremos a função <res>data.frame()</res>, na qual podemos inserir uma série de vetores que irão compor nosso quadro de dados, no próximo exemplo iremos inserir 4 vetores com 4 dados diferentes classes, esta é uma das vantagens de um quadro de dados, podemos usar diferentes tipos de dados.
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width = "100"}
+Atenção Atenção!!!
+
+Lembre-se de que os quadros de dados exigem que as variáveis tenham o mesmo comprimento. Por este motivo, temos que nos certificar de que o número de argumentos passados para cada vetor é o mesmo
+</blockquote>
+
+```{r}
+meu_df <- data.frame(
+  "inteiro" = 1:4, 
+  "fator" = c("a", "b", "c", "d"), #  Observe que os caracteres devem estar entre ""
+  "número" = c(1.2, 3.4, 4.5, 5.6),
+  "corrente" = as.character(c("a", "b", "c", "d")))
+  
+meu_df  
+```
+
+Assim, podemos ver que nosso quadro de dados foi criado com sucesso, mais uma vez o convidamos a brincar com essas funções e se tornar mais amigo delas.
+
+Finalmente, podemos usar a função <res>str()</res> para conhecer a estrutura de nossos dados em um quadro de dados, como podemos ver abaixo
+
+```{r}
+str(meu_df)
+```
+
+Agora você pode observar a estrutura de cada um dos nossos dados, 4 observações de 4 variáveis, em que especificamos o tipo de dados de cada coluna ou variável.
+
+## Listas
+
+Para encerrar nossa nutritiva postagem de hoje, falaremos sobre listas, que são estruturas de dados unidimensionais, têm apenas comprimento, mas ao contrário dos vetores, cada um de seus elementos pode ser de um tipo diferente ou mesmo de uma classe diferente, para o que são estruturas heterogêneas. Portanto, podemos criar listas que contêm dados atômicos, vetores, matrizes, matrizes, quadros de dados, de modo que o comprimento de uma lista seja igual ao número de elementos que ela contém, independentemente do tipo ou classe que sejam.
+
+Para criar uma lista, usamos a função <res>list()</res>, que nos pede os elementos que queremos incluir em nossa lista. Para esta estrutura, não importam as dimensões ou comprimentos dos elementos que queremos incluir, como vemos a seguir:
+
+```{r}
+meu_vetor <- 1:10
+meu_matriz <- matrix(1:4, nrow = 2)
+meu_df     <- data.frame("num" = 1:3, "letra" = c("a", "b", "c"))
+
+meu_lista <- list("meu_vetor" = meu_vetor, "meu_matriz" = meu_matriz, "meu_df" = meu_df)
+
+meu_lista
+```
+
+Como podemos ver, temos nossos dados inseridos em nossa lista e nos mostra sua organização. Agora vamos prosseguir para chamar um único elemento de nossa lista, faremos isso inserindo o nome da lista criada e então digitaremos o operador <res>$</res> (cifrão), como faremos no próximo código
+
+```{r}
+meu_lista$um_vetor 
+# Chamamos de elemento "vetor"
+```
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width = "100"}
+ Atenção Atenção!!!
+
+Atenção: não é possível vetorizar operações aritméticas usando uma lista!
+</blockquote>
+
+Preparar!!!
+
+Terminamos este post interessante e nutritivo, que estava cheio de muitas coisas para aprender e muitas outras para digerir, passamos por um breve aprendizado sobre exploração de dados (que discutiremos mais profundamente, em nossos próximos capítulos), até todas as informações sobre estrutura e tipos de dados, você já sabe que existem tipos de dados numéricos, caracteres, entre outros, e sua organização como vetores, frames de dados e listas.
+
+Com essas informações, esperamos que você conheça melhor seus dados e como o R nos ajuda a tratá-los. Não tenha medo e tente brincar com as funções e data frames que o R nos fornece, não importa que você esteja tendo erros, é normal, todos nós passamos por estes e se precisar de algo, estaremos aqui !!!
+
+<br>
+<br>
+<br>
+
+***
+
+***
+
+Bibliografia:
+
+[R para iniciantes](https://bookdown.org/jboscomendoza/r-principiantes4/data-frames.html)
+
+[Guia completo para Markdown e sua integração com R](https://rstudio-pubs-static.s3.amazonaws.com/330387_5a40ca72c3b14824acedceb7d34618d1.html)
+
+[RStudio para estatísticas descritivas em ciências sociais](https://bookdown.org/gboccardo/manual-ED-UCH/)
+
+[Manipulação de dados e pesquisa reproduzível em R](https://derek-corcoran-barrios.github.io/Libro/_book/index.html)
+
+[Ciência de dados com R](https://rsanchezs.gitbooks.io/ciencia-de-datos-con-r/content/)
+
+***
