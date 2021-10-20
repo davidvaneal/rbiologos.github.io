@@ -2,421 +2,421 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>rbiologos.com/blog/</loc>
+    <loc>https://rbiologos.com/blog/</loc>
     <lastmod>2021-10-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/blog/"
+                href="https://rbiologos.com/en/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/blog/"
+                href="https://rbiologos.com/pt/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/blog/"
+                href="https://rbiologos.com/blog/"
                 />
   </url><url>
-    <loc>rbiologos.com/categories/</loc>
+    <loc>https://rbiologos.com/categories/</loc>
     <lastmod>2021-10-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/categories/"
+                href="https://rbiologos.com/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/categories/"
+                href="https://rbiologos.com/pt/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/categories/"
+                href="https://rbiologos.com/categories/"
                 />
   </url><url>
-    <loc>rbiologos.com/tags/errores/</loc>
+    <loc>https://rbiologos.com/tags/errores/</loc>
     <lastmod>2021-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/tags/estad%C3%ADstica/</loc>
+    <loc>https://rbiologos.com/tags/estad%C3%ADstica/</loc>
     <lastmod>2021-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/tags/hip%C3%B3tesis/</loc>
+    <loc>https://rbiologos.com/tags/hip%C3%B3tesis/</loc>
     <lastmod>2021-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/tags/inferencia/</loc>
+    <loc>https://rbiologos.com/tags/inferencia/</loc>
     <lastmod>2021-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/blog/a013/</loc>
+    <loc>https://rbiologos.com/blog/a013/</loc>
     <lastmod>2021-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/tags/p-valor/</loc>
+    <loc>https://rbiologos.com/tags/p-valor/</loc>
     <lastmod>2021-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/tags/par%C3%A1metros/</loc>
+    <loc>https://rbiologos.com/tags/par%C3%A1metros/</loc>
     <lastmod>2021-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/categories/r/</loc>
+    <loc>https://rbiologos.com/categories/r/</loc>
     <lastmod>2021-10-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/categories/r/"
+                href="https://rbiologos.com/en/categories/r/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/categories/r/"
+                href="https://rbiologos.com/pt/categories/r/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/categories/r/"
+                href="https://rbiologos.com/categories/r/"
                 />
   </url><url>
-    <loc>rbiologos.com/</loc>
+    <loc>https://rbiologos.com/</loc>
     <lastmod>2021-10-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/"
+                href="https://rbiologos.com/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/"
+                href="https://rbiologos.com/pt/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/"
+                href="https://rbiologos.com/"
                 />
   </url><url>
-    <loc>rbiologos.com/categories/rstudio/</loc>
+    <loc>https://rbiologos.com/categories/rstudio/</loc>
     <lastmod>2021-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/tags/</loc>
+    <loc>https://rbiologos.com/tags/</loc>
     <lastmod>2021-10-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/tags/"
+                href="https://rbiologos.com/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/tags/"
+                href="https://rbiologos.com/pt/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/tags/"
+                href="https://rbiologos.com/tags/"
                 />
   </url><url>
-    <loc>rbiologos.com/tags/binomial/</loc>
+    <loc>https://rbiologos.com/tags/binomial/</loc>
     <lastmod>2021-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/tags/datos/</loc>
+    <loc>https://rbiologos.com/tags/datos/</loc>
     <lastmod>2021-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/blog/a012/</loc>
+    <loc>https://rbiologos.com/blog/a012/</loc>
     <lastmod>2021-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/tags/distribuci%C3%B3n/</loc>
+    <loc>https://rbiologos.com/tags/distribuci%C3%B3n/</loc>
     <lastmod>2021-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/tags/normal/</loc>
+    <loc>https://rbiologos.com/tags/normal/</loc>
     <lastmod>2021-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/blog/a011/</loc>
+    <loc>https://rbiologos.com/blog/a011/</loc>
     <lastmod>2021-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/tags/ggplot2/</loc>
+    <loc>https://rbiologos.com/tags/ggplot2/</loc>
     <lastmod>2021-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/tags/gr%C3%A1ficos/</loc>
+    <loc>https://rbiologos.com/tags/gr%C3%A1ficos/</loc>
     <lastmod>2021-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/tags/visualizaci%C3%B3n/</loc>
+    <loc>https://rbiologos.com/tags/visualizaci%C3%B3n/</loc>
     <lastmod>2021-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/blog/a010/</loc>
+    <loc>https://rbiologos.com/blog/a010/</loc>
     <lastmod>2021-06-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/tags/r/</loc>
-    <lastmod>2021-06-22T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="rbiologos.com/en/tags/r/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="rbiologos.com/pt/tags/r/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="rbiologos.com/tags/r/"
-                />
-  </url><url>
-    <loc>rbiologos.com/tags/rstudio/</loc>
+    <loc>https://rbiologos.com/tags/r/</loc>
     <lastmod>2021-06-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/tags/rstudio/"
+                href="https://rbiologos.com/en/tags/r/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/tags/rstudio/"
+                href="https://rbiologos.com/pt/tags/r/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/tags/rstudio/"
+                href="https://rbiologos.com/tags/r/"
                 />
   </url><url>
-    <loc>rbiologos.com/tags/an%C3%A1lisis/</loc>
+    <loc>https://rbiologos.com/tags/rstudio/</loc>
+    <lastmod>2021-06-22T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rbiologos.com/en/tags/rstudio/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://rbiologos.com/pt/tags/rstudio/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://rbiologos.com/tags/rstudio/"
+                />
+  </url><url>
+    <loc>https://rbiologos.com/tags/an%C3%A1lisis/</loc>
     <lastmod>2021-05-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/blog/a009/</loc>
+    <loc>https://rbiologos.com/blog/a009/</loc>
     <lastmod>2021-05-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/tags/explorar/</loc>
+    <loc>https://rbiologos.com/tags/explorar/</loc>
     <lastmod>2021-05-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/blog/a008/</loc>
+    <loc>https://rbiologos.com/blog/a008/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/blog/a007/</loc>
+    <loc>https://rbiologos.com/blog/a007/</loc>
     <lastmod>2021-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/tags/lectura/</loc>
+    <loc>https://rbiologos.com/tags/lectura/</loc>
     <lastmod>2021-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/blog/a006/</loc>
+    <loc>https://rbiologos.com/blog/a006/</loc>
     <lastmod>2021-04-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/blog/a006/"
+                href="https://rbiologos.com/en/blog/a006/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/blog/a006/"
+                href="https://rbiologos.com/pt/blog/a006/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/blog/a006/"
+                href="https://rbiologos.com/blog/a006/"
                 />
   </url><url>
-    <loc>rbiologos.com/tags/estructura/</loc>
+    <loc>https://rbiologos.com/tags/estructura/</loc>
     <lastmod>2021-04-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>rbiologos.com/blog/a005/</loc>
+    <loc>https://rbiologos.com/blog/a005/</loc>
     <lastmod>2021-04-06T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/blog/a005/"
+                href="https://rbiologos.com/en/blog/a005/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/blog/a005/"
+                href="https://rbiologos.com/pt/blog/a005/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/blog/a005/"
+                href="https://rbiologos.com/blog/a005/"
                 />
   </url><url>
-    <loc>rbiologos.com/tags/software/</loc>
+    <loc>https://rbiologos.com/tags/software/</loc>
     <lastmod>2021-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/tags/software/"
+                href="https://rbiologos.com/en/tags/software/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/tags/software/"
+                href="https://rbiologos.com/pt/tags/software/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/tags/software/"
+                href="https://rbiologos.com/tags/software/"
                 />
   </url><url>
-    <loc>rbiologos.com/blog/a004/</loc>
+    <loc>https://rbiologos.com/blog/a004/</loc>
     <lastmod>2021-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/blog/a004/"
+                href="https://rbiologos.com/en/blog/a004/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/blog/a004/"
+                href="https://rbiologos.com/pt/blog/a004/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/blog/a004/"
+                href="https://rbiologos.com/blog/a004/"
                 />
   </url><url>
-    <loc>rbiologos.com/blog/a003/</loc>
+    <loc>https://rbiologos.com/blog/a003/</loc>
     <lastmod>2021-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/blog/a003/"
+                href="https://rbiologos.com/en/blog/a003/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/blog/a003/"
+                href="https://rbiologos.com/pt/blog/a003/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/blog/a003/"
+                href="https://rbiologos.com/blog/a003/"
                 />
   </url><url>
-    <loc>rbiologos.com/blog/a002/</loc>
+    <loc>https://rbiologos.com/blog/a002/</loc>
     <lastmod>2021-03-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/blog/a002/"
+                href="https://rbiologos.com/en/blog/a002/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/blog/a002/"
+                href="https://rbiologos.com/pt/blog/a002/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/blog/a002/"
+                href="https://rbiologos.com/blog/a002/"
                 />
   </url><url>
-    <loc>rbiologos.com/tags/history/</loc>
+    <loc>https://rbiologos.com/tags/history/</loc>
     <lastmod>2021-03-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/tags/history/"
+                href="https://rbiologos.com/en/tags/history/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/tags/history/"
+                href="https://rbiologos.com/pt/tags/history/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/tags/history/"
+                href="https://rbiologos.com/tags/history/"
                 />
   </url><url>
-    <loc>rbiologos.com/blog/a001/</loc>
+    <loc>https://rbiologos.com/blog/a001/</loc>
     <lastmod>2021-03-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/blog/a001/"
+                href="https://rbiologos.com/en/blog/a001/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/blog/a001/"
+                href="https://rbiologos.com/pt/blog/a001/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/blog/a001/"
+                href="https://rbiologos.com/blog/a001/"
                 />
   </url><url>
-    <loc>rbiologos.com/shop/2g/</loc>
+    <loc>https://rbiologos.com/shop/2g/</loc>
   </url><url>
-    <loc>rbiologos.com/author/</loc>
+    <loc>https://rbiologos.com/author/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/author/"
+                href="https://rbiologos.com/en/author/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/author/"
+                href="https://rbiologos.com/pt/author/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/author/"
+                href="https://rbiologos.com/author/"
                 />
   </url><url>
-    <loc>rbiologos.com/author/david-vanegas/</loc>
+    <loc>https://rbiologos.com/author/david-vanegas/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/author/david-vanegas/"
+                href="https://rbiologos.com/en/author/david-vanegas/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/author/david-vanegas/"
+                href="https://rbiologos.com/pt/author/david-vanegas/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/author/david-vanegas/"
+                href="https://rbiologos.com/author/david-vanegas/"
                 />
   </url><url>
-    <loc>rbiologos.com/author/eduardo-grajales/</loc>
+    <loc>https://rbiologos.com/author/eduardo-grajales/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/author/eduardo-grajales/"
+                href="https://rbiologos.com/en/author/eduardo-grajales/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/author/eduardo-grajales/"
+                href="https://rbiologos.com/pt/author/eduardo-grajales/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/author/eduardo-grajales/"
+                href="https://rbiologos.com/author/eduardo-grajales/"
                 />
   </url><url>
-    <loc>rbiologos.com/author/eliana-tabares/</loc>
+    <loc>https://rbiologos.com/author/eliana-tabares/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="rbiologos.com/en/author/eliana-tabares/"
+                href="https://rbiologos.com/en/author/eliana-tabares/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="rbiologos.com/pt/author/eliana-tabares/"
+                href="https://rbiologos.com/pt/author/eliana-tabares/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="rbiologos.com/author/eliana-tabares/"
+                href="https://rbiologos.com/author/eliana-tabares/"
                 />
   </url><url>
-    <loc>rbiologos.com/shop/</loc>
+    <loc>https://rbiologos.com/shop/</loc>
   </url>
 </urlset>
