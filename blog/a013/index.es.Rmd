@@ -16,7 +16,7 @@ tags:
   - Errores
 ---
 
-Se llama estadística inferencial o inferencia estadística a la rama de la Estadística encargada de hacer deducciones, es decir, inferir propiedades, conclusiones y tendencias, a partir de una muestra del conjunto. Su papel es interpretar, hacer proyecciones y comparaciones. 
+Se llama inferencia estadística a la rama de la Estadística encargada de hacer deducciones, es decir, inferir propiedades, conclusiones y tendencias, a partir de una muestra del conjunto. Su papel es interpretar, hacer proyecciones y comparaciones. 
 
 Ahhhh bueno, te me cuidas, pero ¿qué? ¿cómo se come? ¿qué con eso?
 
