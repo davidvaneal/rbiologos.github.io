@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dados on R Biólogos</title>
-    <link>https://rbiologos.github.io/pt/tags/dados/</link>
+    <link>rbiologos.com/pt/tags/dados/</link>
     <description>Recent content in Dados on R Biólogos</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-CO</language>
     <copyright>Copyright &amp;copy; 2020 Desenhado por [David Vanegas](https://github.com/davidvaneal) sob o modelo [Themefisher](https://themefisher.com) por [HUGO](https://gethugothemes.com)</copyright>
-    <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/pt/tags/dados/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="rbiologos.com/pt/tags/dados/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tipo e estrutura de dados</title>
-      <link>https://rbiologos.github.io/pt/blog/a005/</link>
+      <link>rbiologos.com/pt/blog/a005/</link>
       <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/pt/blog/a005/</guid>
+      <guid>rbiologos.com/pt/blog/a005/</guid>
       <description>Você já viu como trabalhar em R e Rstudio, aprendeu a configurar seu diretório de trabalho, instalar bibliotecas e chamá-las, sobre scripts e como são úteis para trabalhar em R.</description>
     </item>
     

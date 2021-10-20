@@ -2,72 +2,72 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on R Biólogos</title>
-    <link>https://rbiologos.github.io/pt/tags/</link>
+    <link>rbiologos.com/pt/tags/</link>
     <description>Recent content in Tags on R Biólogos</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-CO</language>
     <copyright>Copyright &amp;copy; 2020 Desenhado por [David Vanegas](https://github.com/davidvaneal) sob o modelo [Themefisher](https://themefisher.com) por [HUGO](https://gethugothemes.com)</copyright>
-    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/pt/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="rbiologos.com/pt/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Leitura</title>
-      <link>https://rbiologos.github.io/pt/tags/leitura/</link>
+      <link>rbiologos.com/pt/tags/leitura/</link>
       <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/pt/tags/leitura/</guid>
+      <guid>rbiologos.com/pt/tags/leitura/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>https://rbiologos.github.io/pt/tags/r/</link>
+      <link>rbiologos.com/pt/tags/r/</link>
       <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/pt/tags/r/</guid>
+      <guid>rbiologos.com/pt/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RStudio</title>
-      <link>https://rbiologos.github.io/pt/tags/rstudio/</link>
+      <link>rbiologos.com/pt/tags/rstudio/</link>
       <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/pt/tags/rstudio/</guid>
+      <guid>rbiologos.com/pt/tags/rstudio/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Dados</title>
-      <link>https://rbiologos.github.io/pt/tags/dados/</link>
+      <link>rbiologos.com/pt/tags/dados/</link>
       <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/pt/tags/dados/</guid>
+      <guid>rbiologos.com/pt/tags/dados/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Estrutura</title>
-      <link>https://rbiologos.github.io/pt/tags/estrutura/</link>
+      <link>rbiologos.com/pt/tags/estrutura/</link>
       <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/pt/tags/estrutura/</guid>
+      <guid>rbiologos.com/pt/tags/estrutura/</guid>
       <description></description>
     </item>
     
     <item>
       <title>software</title>
-      <link>https://rbiologos.github.io/pt/tags/software/</link>
+      <link>rbiologos.com/pt/tags/software/</link>
       <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/pt/tags/software/</guid>
+      <guid>rbiologos.com/pt/tags/software/</guid>
       <description></description>
     </item>
     
     <item>
       <title>history</title>
-      <link>https://rbiologos.github.io/pt/tags/history/</link>
+      <link>rbiologos.com/pt/tags/history/</link>
       <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/pt/tags/history/</guid>
+      <guid>rbiologos.com/pt/tags/history/</guid>
       <description></description>
     </item>
     

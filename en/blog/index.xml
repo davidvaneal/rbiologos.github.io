@@ -2,63 +2,63 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on R Biólogos</title>
-    <link>https://rbiologos.github.io/en/blog/</link>
+    <link>rbiologos.com/en/blog/</link>
     <description>Recent content in Blogs on R Biólogos</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-CO</language>
     <copyright>Copyright &amp;copy; 2020 Designed by [David Vanegas](https://github.com/davidvaneal) under the template [Themefisher](https://themefisher.com) by [HUGO](https://gethugothemes.com)</copyright>
-    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="rbiologos.com/en/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>So... how do I upload my data?</title>
-      <link>https://rbiologos.github.io/en/blog/a006/</link>
+      <link>rbiologos.com/en/blog/a006/</link>
       <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/en/blog/a006/</guid>
+      <guid>rbiologos.com/en/blog/a006/</guid>
       <description>One of the simplest stages, but which is usually the most problematic in our projects and tasks in R, is loading data.</description>
     </item>
     
     <item>
       <title>Data type and structure</title>
-      <link>https://rbiologos.github.io/en/blog/a005/</link>
+      <link>rbiologos.com/en/blog/a005/</link>
       <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/en/blog/a005/</guid>
+      <guid>rbiologos.com/en/blog/a005/</guid>
       <description>You’ve already seen how to work in R and Rstudio, you’ve learned to configure your working directory, install libraries and call them, about scripts and how useful they’re to work in R.</description>
     </item>
     
     <item>
       <title>How does R work?</title>
-      <link>https://rbiologos.github.io/en/blog/a004/</link>
+      <link>rbiologos.com/en/blog/a004/</link>
       <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/en/blog/a004/</guid>
+      <guid>rbiologos.com/en/blog/a004/</guid>
       <description>Before delving into data and Data structures in R, let’s know, configure and take into account RStudio environment generalities</description>
     </item>
     
     <item>
       <title>What do I need to get started in R?</title>
-      <link>https://rbiologos.github.io/en/blog/a003/</link>
+      <link>rbiologos.com/en/blog/a003/</link>
       <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/en/blog/a003/</guid>
+      <guid>rbiologos.com/en/blog/a003/</guid>
       <description>To start this adventure, the first thing you need is to install R and Rstudio, without them I think it would be very difficult to start our adventure.</description>
     </item>
     
     <item>
       <title>... and now a bit of theory!</title>
-      <link>https://rbiologos.github.io/en/blog/a002/</link>
+      <link>rbiologos.com/en/blog/a002/</link>
       <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/en/blog/a002/</guid>
+      <guid>rbiologos.com/en/blog/a002/</guid>
       <description>We will start by telling you that R is one of the most widely used programming languages in scientific research</description>
     </item>
     
     <item>
       <title>Why did we create this page?</title>
-      <link>https://rbiologos.github.io/en/blog/a001/</link>
+      <link>rbiologos.com/en/blog/a001/</link>
       <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/en/blog/a001/</guid>
+      <guid>rbiologos.com/en/blog/a001/</guid>
       <description>About us?
 We are David Vanegas and Eduardo Grajales, two biologists from the University of Quindío passionate about the world of programming and R</description>
     </item>

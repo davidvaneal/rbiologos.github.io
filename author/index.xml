@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors on R Biólogos</title>
-    <link>https://rbiologos.github.io/author/</link>
+    <link>rbiologos.com/author/</link>
     <description>Recent content in Authors on R Biólogos</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-CO</language>
-    <copyright>Copyright &amp;copy; 2020 Diseñado por [David Vanegas](https://github.com/davidvaneal) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright><atom:link href="https://rbiologos.github.io/author/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright &amp;copy; 2020 Diseñado por [David Vanegas](https://github.com/davidvaneal) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright><atom:link href="rbiologos.com/author/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>David Vanegas</title>
-      <link>https://rbiologos.github.io/author/david-vanegas/</link>
+      <link>rbiologos.com/author/david-vanegas/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/author/david-vanegas/</guid>
+      <guid>rbiologos.com/author/david-vanegas/</guid>
       <description>Soy un biólogo, amante de los insectos. Me considero una persona apasionada por la vida, por ello, disfruto todas las actividades relacionadas con esta como la investigación y el turismo, lo cual nos permite entender los diferentes procesos naturales y establecer contacto con la realidad.</description>
     </item>
     
     <item>
       <title>Eduardo Grajales</title>
-      <link>https://rbiologos.github.io/author/eduardo-grajales/</link>
+      <link>rbiologos.com/author/eduardo-grajales/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/author/eduardo-grajales/</guid>
+      <guid>rbiologos.com/author/eduardo-grajales/</guid>
       <description>Soy biólogo de profesión y apasionado por los ecosistemas de alta montaña. Me considero una persona bastante curiosa, alegre, siempre con deseo de aprender, conocer, explorar diferentes lugares cargados de mucha naturaleza y, sobre todo, compartir mis conocimientos tanto a colegas (o afines a la profesión) como a personas que por diferentes factores desconocen totalmente la importancia del medio ambiente y el rol de la educación ambiental.</description>
     </item>
     
     <item>
       <title>Eliana Tabares Lara</title>
-      <link>https://rbiologos.github.io/author/eliana-tabares/</link>
+      <link>rbiologos.com/author/eliana-tabares/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/author/eliana-tabares/</guid>
+      <guid>rbiologos.com/author/eliana-tabares/</guid>
       <description>Bióloga, con particular interés en las áreas de la genética y la conservación. Me considero una persona en constante aprendizaje, siempre en búsqueda de nuevos temas y áreas del conocimiento de los cuales enriquecerme y aprovecharlos.</description>
     </item>
     

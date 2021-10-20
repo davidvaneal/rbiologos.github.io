@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Structure on R Biólogos</title>
-    <link>https://rbiologos.github.io/en/tags/structure/</link>
+    <link>rbiologos.com/en/tags/structure/</link>
     <description>Recent content in Structure on R Biólogos</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-CO</language>
     <copyright>Copyright &amp;copy; 2020 Designed by [David Vanegas](https://github.com/davidvaneal) under the template [Themefisher](https://themefisher.com) by [HUGO](https://gethugothemes.com)</copyright>
-    <lastBuildDate>Tue, 06 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/en/tags/structure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="rbiologos.com/en/tags/structure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Data type and structure</title>
-      <link>https://rbiologos.github.io/en/blog/a005/</link>
+      <link>rbiologos.com/en/blog/a005/</link>
       <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/en/blog/a005/</guid>
+      <guid>rbiologos.com/en/blog/a005/</guid>
       <description>You’ve already seen how to work in R and Rstudio, you’ve learned to configure your working directory, install libraries and call them, about scripts and how useful they’re to work in R.</description>
     </item>
     

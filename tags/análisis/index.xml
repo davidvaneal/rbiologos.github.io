@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Análisis on R Biólogos</title>
-    <link>https://rbiologos.github.io/tags/an%C3%A1lisis/</link>
+    <link>rbiologos.com/tags/an%C3%A1lisis/</link>
     <description>Recent content in Análisis on R Biólogos</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-CO</language>
     <copyright>Copyright &amp;copy; 2020 Diseñado por [David Vanegas](https://github.com/davidvaneal) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright>
-    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.github.io/tags/an%C3%A1lisis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="rbiologos.com/tags/an%C3%A1lisis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Análisis exploratorio de Datos - Parte II</title>
-      <link>https://rbiologos.github.io/blog/a009/</link>
+      <link>rbiologos.com/blog/a009/</link>
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/blog/a009/</guid>
+      <guid>rbiologos.com/blog/a009/</guid>
       <description>Uno de los mecanismos de exploración de datos más usados y efectivos son las representaciones gráficas de los elementos a partir de una base de datos.</description>
     </item>
     
     <item>
       <title>Análisis exploratorio de Datos - Parte I</title>
-      <link>https://rbiologos.github.io/blog/a008/</link>
+      <link>rbiologos.com/blog/a008/</link>
       <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://rbiologos.github.io/blog/a008/</guid>
+      <guid>rbiologos.com/blog/a008/</guid>
       <description>Cada base de datos es un problema diferente, con diversas variables y objetivos, por eso debe ser abordada de manera distinta</description>
     </item>
     
