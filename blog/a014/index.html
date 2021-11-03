@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+	<meta charset="utf-8">
+	<title>Introducción Pruebas Paramétricas y No Paramétricas</title>
+
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="El espacio perfecto para Biólogos y R">
+	
+	<meta name="author" content="&lt;/R Biólogos&gt;">
+	<meta name="generator" content="Hugo 0.83.1" />
+
+	<!-- plugins -->
+	
+	<link rel="stylesheet" href="https://rbiologos.com/plugins/bootstrap/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.com/plugins/themify-icons/themify-icons.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.com/plugins/magnific-popup/magnific-popup.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.com/plugins/slick/slick.css">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim%7cQuattrocento&#43;Sans:400,700&amp;display=swap">
+	
+
+	<!-- Main Stylesheet -->
+	
+	<link rel="stylesheet" href="https://rbiologos.com/css/style.min.css" media="screen">
+
+	<!-- Custom stylesheet - for your changes -->
+	
+  <link rel="stylesheet" href="https://rbiologos.com/css/custom.min.css" media="screen">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="https://i.ibb.co/93QhLPT/Fav.png" type="image/x-icon">
+	<link rel="icon" href="https://i.ibb.co/93QhLPT/Fav.png" type="image/x-icon">
+
+	
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-N49JEEK9KF"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-N49JEEK9KF');
+	</script>
+	
+
+</head>
+
+
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="55">
+  <div id="content">
+    
+<!-- preloader start -->
+<div class="preloader">
+  
+  <img src="https://i.ibb.co/BjJWHb3/preloader.gif" alt="preloader" width="300">
+  
+</div>
+<!-- preloader end -->
+
+
+
+<section class="sticky-top navigation">
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<a class="navbar-brand p-0" href="/">
+				
+				<img class="lozad" data-src="https://i.ibb.co/93QhLPT/Fav.png" alt="R Biólogos" height="42">
+				
+			</a>
+
+			<button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navigation">
+				<ul class="navbar-nav ml-auto">
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#https://rbiologos.com/">Inicio</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#blog">Blog</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#team">Equipo</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#about">¿Qué somos?</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#feature">¿Qué hacemos?</a>
+					</li>
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#contact">Contacto</a>
+					</li>
+					
+				</ul></div>
+				
+				<select id="select-language" onchange="location = this.value;">
+					
+					
+					
+					
+					
+					
+					
+					
+					<option id="es" value="https://rbiologos.com/blog/a014/" selected>ES
+					</option>
+					
+					
+					
+					
+					
+					
+					
+					
+				</select>
+				
+			
+			<script>
+  (function() {
+    var id = '06c75f9c-882f-11eb-a152-0242ac130002';
+    var ci_search = document.createElement('script');
+    ci_search.type = 'text/javascript';
+    ci_search.async = true;
+    ci_search.src = 'https://cse.expertrec.com/api/js/ci_common.js?id=' + id;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ci_search, s);
+  })();
+</script><ci-search></ci-search>
+		</nav>
+	</div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1>Introducción Pruebas Paramétricas y No Paramétricas</h1>
+        <ul class="list-inline mb-50">
+          <li class="list-inline-item"><a href="/author/david-vanegas/">David Vanegas</a></li>
+          <li class="list-inline-item">Tuesday, Nov 2, 2021</li>
+        </ul>
+        <img class="img-fluid mb-50 lozad" data-src="https://i.ibb.co/wyVvhWz/ES.png" alt="blog-image">
+      </div>
+      <div class="col-lg-8 offset-lg-2">
+        <div class="post-single-content">
+          
+<script src="https://rbiologos.com/blog/a014/index.es_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Otro de los aspectos que permite hacer la inferencia es determinar si existe o no asociación entre diferentes variables, es decir, de unas hipótesis cuya validez debemos confirmar o rechazar.</p>
+<center>
+<img src="https://i.ibb.co/bv4rMJs/dance.gif" width="350" />
+</center>
+<p><br></p>
+<p>Y para llevar a cabo esta comprobación aplicamos unas pruebas estadísticas o tests, que permiten contrastar la veracidad o falsedad de las hipótesis enunciadas desde el punto de vista estadístico, si no recuerdas este tema, te invitamos a que leas nuestro pasado <a href="https://rbiologos.com/blog/a013/">Post</a> Este tipo de pruebas se clasifican en pruebas paramétricas y pruebas no paramétricas.</p>
+<p>En este nuevo post hablaremos de los test requeridos para considerar si nuestros datos se pueden manejar bajo las pruebas paramétricas o las no paramétricas, como supuestos de <strong><em>normalidad</em></strong> y <strong><em>homocedasticidad</em></strong>. Cabe recordar que las pruebas <em>paramétricas</em> <strong><em>exigen</em></strong> ciertos requisitos previos para su aplicación, donde su incumplimiento conlleva la necesidad de recurrir a pruebas estadísticas <em>no paramétricas</em>.</p>
+<ul>
+<li><p>Variable de estudio: tiene que ser numérica. Esto es, la variable dependiente debe estar medida en una escala que sea, por lo menos, de intervalo.</p></li>
+<li><p>Normalidad: El análisis y observaciones que se obtienen de las muestras deben considerarse normales.</p></li>
+<li><p>Homocedasticidad: Las varianzas de la variable dependiente en los grupos que se comparan deben ser aproximadamente iguales, es decir, que sean homogéneas,</p></li>
+<li><p>Errores: Los errores que se presenten deben de ser independientes. Esto solo sucede cuando los sujetos son asignados de forma aleatoria y se distribuyen de forma normal dentro del grupo.</p></li>
+<li><p>n muestreal: La n es el tamaño de la población. En este caso, el tamaño de la población de la muestra no puede ser inferior a 30, y será mejor cuanto más se acerque a la n de toda la población.</p></li>
+</ul>
+<p>!Bien!</p>
+<p>Entonces empecemos a aprender a como calcular cada uno de los requisitos para determinar si podemos hacer un estudio paramétrico o no</p>
+<center>
+<img src="https://i.ibb.co/wCKxW7J/face.gif" width="350" />
+</center>
+<p><br></p>
+<div id="normalidad" class="section level2">
+<h2>Normalidad</h2>
+<p>La lógica de la prueba se basa en las desviaciones que presentan las estadísticas de orden de la muestra respecto a los valores esperados de los estadísticos de orden de la normal estándar.</p>
+<p>Para estudiar si una muestra aleatoria proviene de una población con distribución normal se disponen de tres herramientas que se listan a continuación.</p>
+<ul>
+<li>Histograma y/o densidad.</li>
+<li>Gráfico de cuantiles teóricos (QQplot).</li>
+<li>Pruebas de hipótesis.</li>
+</ul>
+<p>Al evaluar visualmente la simetría de la distribución de los datos a partir de un gráfico de histograma y/o densidad, si observamos que este no cumple la simetría (sesgo a uno de los lados) o si se observa una distribución con más de una moda, eso sería indicio de que la muestra no proviene de una población normal. Por otra parte, si se observa simetría en los datos, esto <strong><em>NO</em></strong> garantiza que la muestra aleatoria proviene de una población normal y se hace necesario recurrir a otras herramientas específicas para estudiar normalidad como lo son los gráficos <strong><em>QQplot</em></strong> y pruebas de hipótesis.</p>
+<center>
+<img src="https://i.ibb.co/3NK5WcB/faces.gif" width="350" />
+</center>
+<p><br></p>
+<p>A continuación profundizaremos un poco sobre el uso de cada de las tres herramientas anteriormente nombradas para estudiar la normalidad.</p>
+<div id="histograma-yo-gráfico-de-densidad" class="section level4">
+<h4>Histograma y/o gráfico de densidad</h4>
+<p>Consiste en representar los datos mediante un histograma (Fig. 1) y/o gráfico de densidad (Fig. 2), superponer la curva de una distribución normal con la misma media y desviación estándar que muestran los datos.</p>
+<p>Para realizar este ejemplo vamos a utilizar la base de datos <res>iris</res>, base que da las medidas en centímetros de las variables longitud y ancho del sépalo, y largo y ancho del pétalo, respectivamente, para 50 flores de cada una de las 3 especies de iris, con el fin de mostrar los alcances de este tipo de gráfica (Fig. 1) en la prueba</p>
+<pre class="r"><code>## Cargamos el paquete ggplot2
+library(ggplot2)
+
+## Calculamos la media y desviación estándar para la longitud del sépalo
+distmean &lt;- mean(iris$Sepal.Length)
+distsd &lt;- sd(iris$Sepal.Length)
+
+## Y graficamos
+ggplot(data = iris, aes(x = Sepal.Length)) +
+   geom_histogram(aes(y = ..density.., fill = ..count.., color=..count..),
+                  alpha = 0.7, binwidth = 0.2) +
+  stat_function(fun = dnorm, colour = &quot;black&quot;, size=2,
+                args = list(mean = distmean, sd = distsd))+
+  
+  xlab(&quot;Distancia&quot;) + 
+  ylab(&quot;Densidad&quot;)+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.text.y = element_text(size = 16),
+        axis.text.x = element_text(size = 14))+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = &quot;black&quot;, size = 1),
+        panel.background = element_blank())+
+  theme(legend.key = element_blank())+
+  labs(colour = &quot;Cantidad&quot;, fill = &quot;Cantidad&quot;)</code></pre>
+<p><img src="https://rbiologos.com/blog/a014/index.es_files/figure-html/unnamed-chunk-1-1.png" width="100%" />
+Fig. 1. Histograma y Curva normal teórica de la longitud del sépalo de las flores del género <em>Iris</em></p>
+<p><strong><em>Gráfica de densidad</em></strong></p>
+<pre class="r"><code>plot(density(iris$Sepal.Length), main = &#39;Density Plot of Sepal Length&#39;, xlab = &#39; Sepal Length&#39;)</code></pre>
+<p><img src="https://rbiologos.com/blog/a014/index.es_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Fig. 2. Histograma y Curva normal teórica de la longitud del sépalo de las flores del género <em>Iris</em></p>
+<p>Como muestran la gráficas, no queda claro el cumplimiento de la normalidad. Visualmente, la variable sepal lenght <strong><em>NO</em></strong> parece distribuida normalmente. En el gráfico de densidad se puede apreciar que tiene una parte superior plana con sesgo positivo. Esto es bastante común, por lo que el uso de todas las herramientas es fundamental para no caer en malas desiciones.</p>
+</div>
+<div id="gráfico-de-cuantiles-teóricos-qqplot" class="section level4">
+<h4>Gráfico de cuantiles teóricos (qqplot)</h4>
+<p>Consiste en comparar los cuantiles de la distribución observada con los cuantiles teóricos de una distribución normal con la misma media y desviación estándar que los datos. Cuanto más se aproximen los datos a una normal, más alineados están los puntos entorno a la recta. Este gráfico (Fig. 3) lo realizamos con la función <res>qqnorm()</res> y la recta de normalidad con <res>qqline()</res>.</p>
+<pre class="r"><code>qqnorm(iris$Sepal.Length, pch = 1, frame = FALSE, 
+       main = &quot;Gráfico Q-Q&quot;, 
+       xlab = &quot;Cuantiles teóricos&quot;, 
+       ylab = &quot;Quantiles de la muestra&quot;)
+qqline(iris$Sepal.Length, col = &quot;steelblue&quot;, lwd = 2)</code></pre>
+<p><img src="https://rbiologos.com/blog/a014/index.es_files/figure-html/unnamed-chunk-3-1.png" width="100%" /></p>
+<p>Fig. 3. Gráfico de cuantiles teóricos con el la función <em>qqnorm</em> de la longitud del sépalo de la base de datos <em>iris</em></p>
+<p>Otra forma de ver el comportamiento de nuestros datos es con el paquete <res>car</res>, el cuál nos mostrará de manera más óptima dicho comportamiento (Fig. 4) y su función <res>qqPlot()</res></p>
+<pre class="r"><code>## La paquete &quot;car&quot;, tiene como dependencia &quot;carData&quot;
+library(car)</code></pre>
+<pre><code>## Loading required package: carData</code></pre>
+<pre class="r"><code>qqPlot(iris$Sepal.Length, pch = 16, col = c(&quot;black&quot;), 
+       col.lines = &quot;blue&quot;, cex = 1,
+       main = &quot;Gráfica Q-Q&quot;, id = F )</code></pre>
+<p><img src="https://rbiologos.com/blog/a014/index.es_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Fig. 4. Gráfico de cuantiles teóricos con el la función <em>qqPlot</em> de la longitud del sépalo de la base de datos <em>iris</em></p>
+<p>De acuerdo al comportamiento en el <strong><em>gráfico Q-Q</em></strong>, podemos indagar que nuestros datos si parecen cierta distribución normal, observemos que los puntos parecen caer sobre una línea recta, sin embargo, como bien habíamos dicho anteriormente, es mejor realizar todos los pasos para no cometer algún error de apreciación.</p>
+<p><strong><em>Pruebas de hipótesis</em></strong></p>
+<p>Para poder asumir y contrastar los valores de las diferentes pruebas de hipótesis que veremos a continuación, es necesario tener bajo consideración el Test de hipótesis, el cual formularemos con un nivel de significancia de <res>α = 0.05</res> de la siguiente manera</p>
+<pre><code>Hipótesis nula (H0): Los datos siguen una distribución normal
+
+Hipótesis alternativa (Ha): Los datos no siguen una distribución normal</code></pre>
+<p>Bajo la siguiente decisión: si el valor p es menor al valor α (p &lt; α), la prueba estadística es significativa, no existiría normalidad en los datos.</p>
+<p>Los paquetes que utilizaremos para realizar las diferentes pruebas son <res>nortest</res>, <res>normtest</res></p>
+<p>Para realizar los test de Normalidad de los datos, existen varias pruebas que podremos trabajar. Estas difieren entre ellas por lo métodos utilizados y/o cantidad de datos, así que siempre es mejor profundizar en los métodos que estamos utilizando para tener pleno conocimiento de lo que andamos haciendo.</p>
+<p>A continuación veremos algunas de ellas</p>
+<center>
+<img src="https://i.ibb.co/qJ04XPJ/Decisive.gif" width="350" />
+</center>
+<p><br></p>
+<p><strong><em>Prueba de Anderson-Darling</em></strong></p>
+<p>Es una prueba <strong><em>no paramétrica</em></strong> sobre los datos de una muestra que provienen de una distribución específica. Principalmente se basa en la distancia de la distribución hipotética F, y la función de la distribución empírica Fn, donde n es el número de elementos en la muestra.</p>
+<blockquote>
+<p>El número de muestra debe de ser mayor a 7 y permite missing values.</p>
+</blockquote>
+<pre class="r"><code>## Paquete &quot;nortest&quot;
+library(nortest)
+
+## Fijamos la base de datos para utilizarla
+attach(iris)
+
+ad.test(Sepal.Length)</code></pre>
+<pre><code>## 
+##  Anderson-Darling normality test
+## 
+## data:  Sepal.Length
+## A = 0.8892, p-value = 0.02251</code></pre>
+<p>Así, nuestro p valor es igual a <strong><em>0.02251</em></strong>, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
+<p><strong><em>Prueba de Cramer-Von Mises</em></strong></p>
+<p>El Criterio de Cramer Von Mises, utiliza como criterio la distancia mínima de la función de distribución acumulada F en comparación con la función de distribución empírica Fn.</p>
+<p>Es útil para pequeñas muestras y usa los momentos como criterio y es una alternativa a la prueba de Kolmogorov-Smirnov.</p>
+<pre class="r"><code>## Paquete &quot;nortest&quot;
+
+## Crearemos una pequeña base
+Sepal.Length2 &lt;- Sepal.Length[1:10]
+
+cvm.test(Sepal.Length2)</code></pre>
+<pre><code>## 
+##  Cramer-von Mises normality test
+## 
+## data:  Sepal.Length2
+## W = 0.036995, p-value = 0.7033</code></pre>
+<p>Como nuestro p valor es igual a <strong><em>0.7033</em></strong> y por consiguiente mayor a <strong><em>0.05</em></strong> con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
+<p><strong><em>Prueba de Lilliefors (Kolmogorov-Smirnov)</em></strong></p>
+<p>Utiliza la diferencia máxima absoluta entre la función de distribución acumulada empírica y la hipotética</p>
+<p>Aunque el estadístico de prueba obtenido de lillie.text(x) es el mismo que el obtenido de ks(x,“pnorm”,mean(x),sd(x)), no es correcto usar el p-value de este último para la hipótesis compuesta de normalidad (media y varianza desconocidas), ya que la distribución del estadístico de prueba es diferente cuando se estiman los parámetros.</p>
+<blockquote>
+<p>Se aplica más ampliamente cuando la muestra es grande.</p>
+</blockquote>
+<pre class="r"><code>## Paquete &quot;nortest&quot;
+
+lillie.test(Sepal.Length)</code></pre>
+<pre><code>## 
+##  Lilliefors (Kolmogorov-Smirnov) normality test
+## 
+## data:  Sepal.Length
+## D = 0.088654, p-value = 0.005788</code></pre>
+<p>Bajo este test nuestro p valor es igual a <strong><em>0.005788</em></strong>, por lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
+<p><strong><em>Prueba de Pearson chi-square</em></strong></p>
+<p>Compara la distribución observada de los datos con una distribución esperada. La prueba de χ2 de Pearson generalmente no se recomienda para probar en la hipótesis compuesta de normalidad debido a sus propiedades de potencia son inferiores en comparación con otras pruebas.</p>
+<blockquote>
+<p>Basada en una distribución χ2, que corresponde a una prueba de bondad de ajuste.</p>
+</blockquote>
+<pre class="r"><code>## Paquete &quot;nortest&quot;
+
+pearson.test(Sepal.Length)</code></pre>
+<pre><code>## 
+##  Pearson chi-square normality test
+## 
+## data:  Sepal.Length
+## P = 17.4, p-value = 0.1352</code></pre>
+<p>El resultado de nuestro p valor en este tipo es igual a <strong><em>0.1352</em></strong>, con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
+<p><strong><em>Prueba de Shapiro-Francia</em></strong></p>
+<p>La prueba de Shapiro-Francia es simplemente la correlación al cuadrado entre los valores de la muestra ordenados y los cuantiles esperados (aproximación) de la distribución normal estándar</p>
+<blockquote>
+<p>Simplificación de la prueba Shapiro-Wilk y este tipo de prueba funciona bien, también el número de datos debe estar entre 5 y 5000.</p>
+</blockquote>
+<pre class="r"><code>## Paquete &quot;nortest&quot;
+
+sf.test(Sepal.Length)</code></pre>
+<pre><code>## 
+##  Shapiro-Francia normality test
+## 
+## data:  Sepal.Length
+## W = 0.97961, p-value = 0.02621</code></pre>
+<p>Así, nuestro p valor es igual a <strong><em>0.02621</em></strong>, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
+<p><strong><em>Prueba de Frosini</em></strong></p>
+<p>La prueba de Frosini para la normalidad se basa en el siguiente estadístico:</p>
+<center>
+<img src="https://i.ibb.co/zGmDXCf/Frosini.jpg" width="200" />
+</center>
+<p><br></p>
+<pre class="r"><code>## Paquete &quot;normtest&quot;
+library(normtest)
+
+frosini.norm.test(Sepal.Length, nrepl=2000)</code></pre>
+<pre><code>## 
+##  Frosini test for normality
+## 
+## data:  Sepal.Length
+## B = 0.2799, p-value = 0.0565</code></pre>
+<p>El resultado de nuestro p valor es mayor a 0.05, con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
+<p><strong><em>Prueba de Geary</em></strong></p>
+<p>La prueba de Geary se basa en el siguiente estadístico</p>
+<center>
+<img src="https://i.ibb.co/LrQ1C3J/Geray.jpg" width="200" />
+</center>
+<p><br></p>
+<blockquote>
+<p>Usa los valores acumulados muestrales, sus medias y desviaciones estándar</p>
+</blockquote>
+<pre class="r"><code>## Paquete &quot;normtest&quot;
+geary.norm.test(Sepal.Length)</code></pre>
+<pre><code>## 
+##  Geary test for normality
+## 
+## data:  Sepal.Length
+## d = 0.8331, p-value = 0.0255</code></pre>
+<p>Por tanto, nuestro p valor es igual a <strong><em>0.02</em></strong>, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
+<p><strong><em>Prueba de Hegazy-Green</em></strong></p>
+<p>La prueba de Hegazy-Green para la normalidad se basa en el siguiente estadístico:</p>
+<center>
+<img src="https://i.ibb.co/3M97BnQ/Hegazy-Green.jpg" width="200" />
+</center>
+<p><br></p>
+<pre class="r"><code>## Paquete &quot;normtest&quot;
+
+## nrepl: considera el número de replicas en simulación de Monte Carlo
+hegazy1.norm.test(Sepal.Length, nrepl = 20000) </code></pre>
+<pre><code>## 
+##  Hegazy-Green test for normality
+## 
+## data:  Sepal.Length
+## T = 0.098714, p-value = 0.03805</code></pre>
+<p>Con este tipo de test nuestro p valor es menor a 0.05, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
+<p><strong><em>Prueba de Jarque-Bera Ajustada</em></strong></p>
+<p>La prueba de Jarque–Bera Ajustada para la normalidad se basa en el siguiente estadístico:</p>
+<center>
+<img src="https://i.ibb.co/LNs2hNm/Jarque-Bera-Ajustada.jpg" width="200" />
+</center>
+<p><br></p>
+<blockquote>
+<p>Utiliza un estadístico en la prueba que involucra la curtosis y la asimetría. – Usada por economistas.</p>
+</blockquote>
+<pre class="r"><code>## Paquete &quot;normtest&quot;
+
+jb.norm.test(Sepal.Length, nrepl = 2000)</code></pre>
+<pre><code>## 
+##  Jarque-Bera test for normality
+## 
+## data:  Sepal.Length
+## JB = 4.4859, p-value = 0.0835</code></pre>
+<p>El resultado para el p valor es igual mayor a 0.05, por lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
+<p><strong><em>Prueba de Kurtosis</em></strong></p>
+<p>La prueba de Kurtosis para la normalidad se basa en el siguiente estadístico:</p>
+<center>
+<img src="https://i.ibb.co/bd9tZTJ/Kurtosis.jpg" width="200" />
+</center>
+<p><br></p>
+<pre class="r"><code>## Paquete &quot;normtest&quot;
+
+kurtosis.norm.test(Sepal.Length, nrepl = 2000)</code></pre>
+<pre><code>## 
+##  Kurtosis test for normality
+## 
+## data:  Sepal.Length
+## T = 2.4264, p-value = 0.1135</code></pre>
+<p>Así, nuestro p valor es igual a <strong><em>0.1045</em></strong>, con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
+<p><strong><em>Prueba de Skewness</em></strong></p>
+<p>La prueba de Skewness para la normalidad se basa en el siguiente estadístico:</p>
+<center>
+<img src="https://i.ibb.co/QPn2VMh/Skewness.jpg" width="200" />
+</center>
+<p><br></p>
+<pre class="r"><code>## Paquete &quot;normtest&quot;
+
+skewness.norm.test(Sepal.Length, nrepl = 2000)</code></pre>
+<pre><code>## 
+##  Skewness test for normality
+## 
+## data:  Sepal.Length
+## T = 0.31175, p-value = 0.1055</code></pre>
+<p>Así, nuestro p valor es igual mayor a 0.05, con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
+<p><strong><em>Prueba de Spiegelhalter</em></strong></p>
+<p>La prueba de Spiegelhalter para la normalidad se basa en el siguiente estadístico:</p>
+<center>
+<img src="https://i.ibb.co/NTMtwRK/Spiegelhalter.jpg" width="200" />
+</center>
+<p><br></p>
+<pre class="r"><code>## Paquete &quot;normtest&quot;
+
+spiegelhalter.norm.test(Sepal.Length, nrepl=2000)</code></pre>
+<pre><code>## 
+##  Spiegelhalter test for normality
+## 
+## data:  Sepal.Length
+## T = 1.2022, p-value = 0.9705</code></pre>
+<p>Nuestro p valor es mayor a 0.05, con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
+<p><strong><em>Prueba de Weisberg-Bingham</em></strong></p>
+<p>La prueba de Weisberg-Bingham para la normalidad se basa en el siguiente estadístico:</p>
+<center>
+<img src="https://i.ibb.co/d5ZgJCv/Weisberg-Bingham.jpg" width="200" />
+</center>
+<p><br></p>
+<pre class="r"><code>## Paquete &quot;normtest&quot;
+
+wb.norm.test(Sepal.Length, nrepl=2000)</code></pre>
+<pre><code>## 
+##  Weisberg-Bingham test for normality
+## 
+## data:  Sepal.Length
+## WB = 0.97961, p-value = 0.031</code></pre>
+<p>Nuestro resultado para el p valor es mayor a 0.05, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
+<p><strong><em>Prueba de Agostino</em></strong></p>
+<p>La prueba de Agostino sirve para medir el nivel de asimetría de una normal en los datos. Bajo la hipótesis de la normalidad, los datos deben ser simétricos (es decir, la asimetría debe ser igual a cero).</p>
+<pre class="r"><code>## Paquete &quot;moment&quot;
+library(moments)
+
+agostino.test(Sepal.Length)</code></pre>
+<pre><code>## 
+##  D&#39;Agostino skewness test
+## 
+## data:  Sepal.Length
+## skew = 0.31175, z = 1.59630, p-value = 0.1104
+## alternative hypothesis: data have a skewness</code></pre>
+<p>Así, nuestro p valor es igual a <strong><em>0.1104</em></strong>, con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
+<p><strong><em>Prueba de Shapiro-Wilk</em></strong></p>
+<p>La prueba de Shapiro-Wilk es ampliamente recomendada para la prueba de normalidad y proporciona una mejor potencia que K-S. Se basa en la correlación entre los datos y las puntuaciones normales correspondientes.</p>
+<p>La prueba de normalidad es sensible al tamaño de muestra. Las muestras pequeñas con mayor frecuencia pasan las pruebas de normalidad. Por lo tanto, es importante combinar la inspección visual y la prueba de significación de normalidad para tomar la decisión correcta.</p>
+<blockquote>
+<p>Es más poderosa cuando se compara con otras pruebas de normalidad cuando la muestra es pequeña.</p>
+</blockquote>
+<pre class="r"><code>shapiro.test(Sepal.Length)</code></pre>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  Sepal.Length
+## W = 0.97609, p-value = 0.01018</code></pre>
+<p>Así, nuestro p valor es igual a <strong><em>0.01018</em></strong>, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
+<p><strong><em>Resumen normalidad</em></strong></p>
+<p>Visto los diferentes resultados de las pruebas realizadas para evidenciar normalidad, podemos inferir que los resultados dependerán en gran medida del tipo de test que elijamos usar. Y la pregunta del millón sería ¿entonces cuál debo utilizar? Pues no podemos darte una única respuesta, todo va a depender de tus datos, de la pregunta de investigación que quieras responder y la teoría detrás de cada análisis, porque es a partir de ello que tomaremos la mejor desición sobre que tipo de prueba es la más adecuada.</p>
+<center>
+<img src="https://i.ibb.co/vYdnczW/loco.gif" width="350" />
+</center>
+<p><br></p>
+<p>Sin embargo, la <strong><em>Prueba de Shapiro-Wilk</em></strong> es uno de los test más confiables y robustos, por lo que según sus resultados, nuestros datos NO se ajustarían a una distribución normal, por lo que hasta este momento, tendrémos que usar las pruebas para datos no paramétricos</p>
+</div>
+</div>
+<div id="homocesdasticidad" class="section level2">
+<h2>Homocesdasticidad</h2>
+<p>La homocedasticidad en un modelo estadístico predictivo ocurre si en todos los grupos de datos de una o más observaciones, la varianza del modelo respecto de las variables explicativas (o independientes) se mantiene constante. Así, un modelo de regresión puede ser homocedástico o no, en cuyo caso se habla de heterocedasticidad. Una varianza constante nos permite disponer de modelos más fiables, además, si una varianza, aparte de ser constante es también más pequeña, nos dará como resultado una predicción del modelo más fiable.</p>
+<blockquote>
+<p>La heterocedasticidad es, en estadística, cuando los errores no son constantes a lo largo de toda la muestra. El término es contrario a homocedasticidad.</p>
+</blockquote>
+<center>
+<img src="https://i.ibb.co/89CcvLL/img.jpg" width="350" />
+</center>
+<p><br></p>
+<p>En realidad es muy común observar que en un modelo de regresión aparezca la heterocedasticidad, ya que es complicado encontrar la variables perfectas desde el principio del experimento. Estos son algunos motivos que pueden producir heterocedasticidad</p>
+<p>Contrastar la homocedasticidad de nuestros datos es en muchos test estadísticos una condición necesaria para poder ejecutarlos. Existen test para contrastar la homocedasticidad específicos para dos grupos (test F de Fisher) o para más de dos (test de Bartlett). Sin embargo, el test de Levene permite contrastar la homocedasticidad independientemente del número de grupos presentes. Es decir, lo puede ejecutar sobre dos o más de dos.</p>
+<p>Existen diferentes test que permiten evaluar la distribución de la varianza. Todos ellos consideran como hipótesis nula que la varianza es igual entre los grupos y como hipótesis alternativa que no lo es. La diferencia entre ellos es el estadístico de centralidad que utilizan:</p>
+<ul>
+<li><p>Los test que trabajan con la media de la varianza son los más potentes cuando las poblaciones que se comparan se distribuyen de forma normal.</p></li>
+<li><p>Utilizar la media truncada mejora el test cuando los datos siguen una distribución de Cauchy (colas grandes).</p></li>
+<li><p>La mediana consigue mejorarlo cuando los datos siguen una distribución asimétrica.</p></li>
+</ul>
+<p>Por lo general, si no se puede alcanzar cierta seguridad de que las poblaciones que se comparan son de tipo normal, es recomendable recurrir a test que comparen la mediana de la varianza.</p>
+<p>A continuación veremos algunos test para profundizar un poco más en el tema</p>
+<center>
+<img src="https://i.ibb.co/SyDpFpv/computer.gif" width="350" />
+</center>
+<p><br></p>
+<p><strong><em>F-test</em></strong></p>
+<p>También conocido como contraste de la razón de varianzas, contrasta la hipótesis nula de que dos poblaciones normales tienen la misma varianza. Es muy potente, detecta diferencias muy sutiles, pero es muy sensible a violaciones de la normalidad de las poblaciones. Por esta razón, no es un test recomendable si no se tiene mucha certeza de que las poblaciones se distribuyen de forma normal.</p>
+<p>Hagamos un ejercicio, esta vez lo haremos con la confiable base de datos <res>iris</res>. Para ello, vamos a cargar los paquetes necesarios</p>
+<pre class="r"><code>library(ggplot2)
+library(dplyr)
+
+## Cargamos la base de datos &quot;iris&quot; 
+data(&quot;iris&quot;)
+
+## Filtramos los datos que utilizaremos
+iris2 &lt;- filter(iris, Species %in% c(&quot;versicolor&quot;, &quot;virginica&quot;))
+
+dim(iris2)</code></pre>
+<pre><code>## [1] 100   5</code></pre>
+<pre class="r"><code>head(iris2)</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+## 1          7.0         3.2          4.7         1.4 versicolor
+## 2          6.4         3.2          4.5         1.5 versicolor
+## 3          6.9         3.1          4.9         1.5 versicolor
+## 4          5.5         2.3          4.0         1.3 versicolor
+## 5          6.5         2.8          4.6         1.5 versicolor
+## 6          5.7         2.8          4.5         1.3 versicolor</code></pre>
+<p>Ahora calculemos la varianza de la longitud del pétalo (Petal.Length) de las dos especies de plantas, <em>I. versicolor</em> e <em>I. virginica</em>)</p>
+<pre class="r"><code>aggregate(Petal.Length~Species, data = iris2, FUN = var)</code></pre>
+<pre><code>##      Species Petal.Length
+## 1 versicolor    0.2208163
+## 2  virginica    0.3045878</code></pre>
+<p>Ahora si hagamos la prueba</p>
+<pre class="r"><code>var.test(x = iris2[iris2$Species == &quot;versicolor&quot;, &quot;Petal.Length&quot;],
+         y = iris2[iris2$Species == &quot;virginica&quot;, &quot;Petal.Length&quot;] )</code></pre>
+<pre><code>## 
+##  F test to compare two variances
+## 
+## data:  iris2[iris2$Species == &quot;versicolor&quot;, &quot;Petal.Length&quot;] and iris2[iris2$Species == &quot;virginica&quot;, &quot;Petal.Length&quot;]
+## F = 0.72497, num df = 49, denom df = 49, p-value = 0.2637
+## alternative hypothesis: true ratio of variances is not equal to 1
+## 95 percent confidence interval:
+##  0.411402 1.277530
+## sample estimates:
+## ratio of variances 
+##          0.7249678</code></pre>
+<p>Así, de acuerdo al resultado anterior, <em>p-value = 0.2637</em>, podemos concluir que no se encuentra diferencias significativas entre las varianzas de los dos grupos, osea, tenemos un comportamiento de las varianzas en homocedasticidad.</p>
+<p><strong><em>Test de Levene</em></strong></p>
+<p>El test de Levene se puede aplicar con la función <res>leveneTest()<res/> del paquete <res>car</res>. Se caracteriza, además de por poder comparar 2 o más poblaciones, por permitir elegir entre diferentes estadísticos de centralidad: mediana (por defecto), media, media truncada. Esto es importante a la hora de contrastar la homocedasticidad dependiendo de si los grupos se distribuyen de forma normal o no.</p>
+<pre class="r"><code>library(car)
+
+leveneTest(y = iris2$Petal.Length, group = iris2$Species, center = &quot;median&quot;)</code></pre>
+<pre><code>## Levene&#39;s Test for Homogeneity of Variance (center = &quot;median&quot;)
+##       Df F value Pr(&gt;F)
+## group  1  1.0674 0.3041
+##       98</code></pre>
+<p>Así, de acuerdo al resultado anterior <em>0.3041</em>, podemos concluir que no se encuentra diferencias significativas entre las varianzas de los dos grupos, osea, tenemos un comportamiento de las varianzas en homocedasticidad.</p>
+<p><strong><em>Test de Bartlett</em></strong></p>
+<p>Permite contrastar la igualdad de varianza en 2 o más poblaciones sin necesidad de que el tamaño de los grupos sea el mismo. Es más sensible que el <strong><em><em>Test de Levene</em></em></strong> a la falta de normalidad, pero si se está seguro de que los datos provienen de una distribución normal, es la mejor opción.</p>
+<pre class="r"><code>## Organizamos los datos para realizar el test
+a &lt;- iris[iris$Species == &quot;versicolor&quot;, &quot;Petal.Length&quot;]
+b &lt;- iris[iris$Species == &quot;virginica&quot;, &quot;Petal.Length&quot;]
+
+## Aplicamos el test
+bartlett.test(list(a,b))</code></pre>
+<pre><code>## 
+##  Bartlett test of homogeneity of variances
+## 
+## data:  list(a, b)
+## Bartlett&#39;s K-squared = 1.249, df = 1, p-value = 0.2637</code></pre>
+<p>Así, de acuerdo al resultado anterior, <strong><em>p-value = 0.2637</em></strong>, podemos concluir que no se encuentra diferencias significativas entre las varianzas de los dos grupos, osea, tenemos un comportamiento de las varianzas en homocedasticidad.</p>
+<p>Ahora, si se aplica a los 3 grupos a la vez, sí hay evidencias de que la varianza no es la misma en todos ellos. Idea que se puede intuir a partir de sus gráficas (Fig. 5).</p>
+<pre class="r"><code>ggplot(iris, aes(x = Species, y = Petal.Length)) + 
+  geom_boxplot(color = &quot;black&quot;, fill = &quot;steelblue&quot;)+
+  geom_jitter(alpha = 0.5)+
+  scale_y_continuous(&quot;Longitud del pétalo&quot;, 
+                     limits = c(0, 8),
+                     breaks = seq(0, 8, by = 2))+
+  scale_x_discrete(&quot;Iris&quot;)+
+  theme(axis.title.y = element_text(size = 18),
+        axis.title.x = element_text(size = 18, face = &quot;italic&quot;),
+        axis.text.y = element_text(size = 16),
+        axis.text.x = element_text(size = 16, face = &quot;italic&quot;))+
+  theme(panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = &quot;black&quot;, size = 1),
+        panel.background = element_blank())</code></pre>
+<p><img src="https://rbiologos.com/blog/a014/index.es_files/figure-html/unnamed-chunk-25-1.png" width="100%" /></p>
+<p>Fig. 5. Comportamiento de datos de la Longitud del pétalo para tres especies de plantas del género <em>Iris</em>.</p>
+<p>Ahora organizamos nuestro datos para poder seguir con el ejercicio</p>
+<pre class="r"><code>## Calculamos la varianza respecto a las variables
+aggregate(Petal.Length ~ Species, data = iris, FUN = var)</code></pre>
+<pre><code>##      Species Petal.Length
+## 1     setosa   0.03015918
+## 2 versicolor   0.22081633
+## 3  virginica   0.30458776</code></pre>
+<pre class="r"><code>## Y aplicamos el test
+bartlett.test(iris$Sepal.Length ~ iris$Species)</code></pre>
+<pre><code>## 
+##  Bartlett test of homogeneity of variances
+## 
+## data:  iris$Sepal.Length by iris$Species
+## Bartlett&#39;s K-squared = 16.006, df = 2, p-value = 0.0003345</code></pre>
+<p>Así, de acuerdo al resultado anterior, <strong><em>p-value = 0.0003345</em></strong>, podemos concluir que si se encuentran diferencias significativas entre las varianzas de los tres grupos, osea, tenemos un comportamiento de las varianzas en heterocedasticidad.</p>
+<p><strong><em>Test de Brown-Forsythe</em></strong></p>
+<p>La prueba de Brown-Forsythe (B-F) se utiliza para probar el supuesto de varianzas iguales en ANOVA. Se puede encontrar dentro del paquete <res>onewaytests</res>, y se realiza con la función <res>hov()</res>. Este test es equivalente al <strong><em>Test de Levene</em></strong> cuando se emplea la mediana como medida de centralidad.</p>
+<pre class="r"><code>library(onewaytests)
+
+iris %&gt;%
+  group_by(Species) %&gt;%
+  summarize(Variance = var(Petal.Length))</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##   Species    Variance
+##   &lt;fct&gt;         &lt;dbl&gt;
+## 1 setosa       0.0302
+## 2 versicolor   0.221 
+## 3 virginica    0.305</code></pre>
+<pre class="r"><code>bf.test(Petal.Length ~ Species, data = iris)</code></pre>
+<pre><code>## 
+##   Brown-Forsythe Test (alpha = 0.05) 
+## ------------------------------------------------------------- 
+##   data : Petal.Length and Species 
+## 
+##   statistic  : 1180.161 
+##   num df     : 2 
+##   denom df   : 106.1748 
+##   p.value    : 3.016132e-73 
+## 
+##   Result     : Difference is statistically significant. 
+## -------------------------------------------------------------</code></pre>
+<p>En nuestro ejemplo, se rechaza la hipótesis nula, por lo que podemos concluir que si se encuentran diferencias significativas entre las varianzas de los tres grupos, osea, tenemos un comportamiento de las varianzas en heterocedasticidad.</p>
+<p><strong><em>Resumen Homocesdasticidad</em></strong></p>
+<p>Si tenemos la seguridad de que nuestras muestras siguen una distribución normal, son recomendables el <strong><em>F-test</em></strong> y el test de <strong><em>Bartlet</em></strong>, pareciendo ser el segundo más recomendable ya que el primero es muy potente pero extremadamente sensible a desviaciones de la normal.</p>
+<p>Si no se tiene la seguridad de que las poblaciones de origen son normales, se recomiendan el <strong><em>Test de Leven</em></strong> utilizando la mediana.</p>
+</div>
+<div id="conclusión" class="section level2">
+<h2>Conclusión</h2>
+<p>Como pudimos leer y aprender, debemos hacer pruebas a nuestros datos para saber que tipo de pruebas podríamos aplicar a futuro, dependiendo si son datos paramétricos o no paramétricos. En la cual la normalidad y la homocesdasticidad de los datos, jugarán un papel importante, en la decisión personal a partir de los resultados de las pruebas de que tipo de datos tenemos.</p>
+<p>Recuerda que las diferentes pruebas tienen un mismo objetivo, pero todas manejan ciertos critrios que dependerán de nuestros datos, nuestras preguntas de investigación y lo que en nuestro proceso de aprendizaje, podamos afirmar si es o no la prueba adecuada para nuestro estudio.</p>
+<center>
+<img src="https://i.ibb.co/fds6BC7/dancing.gif" width="350" />
+</center>
+<p><br></p>
+<p>Así que los invitamos a seguir leyendo mucho más, recuerden que la intención de estos post no es más si no dar pequeñas pinceladas del amplio mundo de R en la biología.</p>
+<p>No siendo más, muchas gracias por leernos y esperemos realmente, que de una u otra forma podamos contribuir al conocimiento de la ciencia.</p>
+<center>
+<img src="https://i.ibb.co/1dBjTMs/mine.gif" width="350" />
+</center>
+<p><br></p>
+</div>
+<div id="literatura-citada" class="section level2">
+<h2>Literatura citada</h2>
+<ul>
+<li><p><a href="https://redined.mecd.gob.es/xmlui/bitstream/handle/11162/15044/00720123000097.pdf?sequence=1&amp;isAllowed=y">Cómo aplicar las pruebas paramétricas bivariadas t de Student y ANOVA en SPSS. Caso práctico</a></p></li>
+<li><p><a href="https://lamenteesmaravillosa.com/pruebas-parametricas-definicion-y-caracteristicas/">Pruebas paramétricas: definición y características</a></p></li>
+<li><p><a href="https://data.library.virginia.edu/understanding-q-q-plots/">Understanding Q-Q Plots</a></p></li>
+<li><p><a href="http://www.sthda.com/english/wiki/qq-plots-quantile-quantile-plots-r-base-graphs">QQ-plots: Quantile-Quantile plots - R Base Graphs</a></p></li>
+<li><p><a href="https://rpubs.com/dvillasanao/Pruebas_de_Normalidad">Pruebas de Normalidad</a></p></li>
+<li><p><a href="https://rpubs.com/MSiguenas/122473">Pruebas de Normalidad</a></p></li>
+<li><p><a href="https://rpubs.com/luisxsuper/normalidad_test">Pruebas de Normalidad</a></p></li>
+<li><p><a href="https://www.lifeder.com/homocedasticidad/">Homocedasticidad: qué es, importancia y ejemplos</a></p></li>
+<li><p><a href="https://economipedia.com/definiciones/heterocedasticidad.html">Heterocedasticidad</a></p></li>
+<li><p><a href="https://vivaelsoftwarelibre.com/test-de-levene-homocedasticidad/">Test de Levene Homocedasticidad</a></p></li>
+<li><p><a href="https://www.cienciadedatos.net/documentos/9_homogeneidad_de_varianza_homocedasticidad.html">Análisis de la homogeneidad de varianza (homocedasticidad)</a></p></li>
+</ul>
+</div>
+<div id="más-información" class="section level2">
+<h2>Más información</h2>
+<p>Estos análisis se han realizado utilizando el software R (v.4.1.0) y Rstudio (v. 1.4.1717)</p>
+<p>Recuerda que todos nuestros códigos están almacenados en <a href="https://github.com/RBiologos/Posts">GitHub</a></p>
+<center>
+<img src="https://i.ibb.co/DpKmR1k/github.png" width="350" />
+</center>
+</div>
+
+        </div>
+        
+        
+
+<div class="social-share pt-4">
+	<h4>Comparte:</h4>
+	
+	<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2frbiologos.com%2fblog%2fa014%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Introducci%c3%b3n%20Pruebas%20Param%c3%a9tricas%20y%20No%20Param%c3%a9tricas&amp;url=https%3a%2f%2frbiologos.com%2fblog%2fa014%2f"
+		target="_blank" rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="https://plus.google.com/share?url=https%3a%2f%2frbiologos.com%2fblog%2fa014%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--google resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M11.37 12.93c-.73-.52-1.4-1.27-1.4-1.5 0-.43.03-.63.98-1.37 1.23-.97 1.9-2.23 1.9-3.57 0-1.22-.36-2.3-1-3.05h.5c.1 0 .2-.04.28-.1l1.36-.98c.16-.12.23-.34.17-.54-.07-.2-.25-.33-.46-.33H7.6c-.66 0-1.34.12-2 .35-2.23.76-3.78 2.66-3.78 4.6 0 2.76 2.13 4.85 5 4.9-.07.23-.1.45-.1.66 0 .43.1.83.33 1.22h-.08c-2.72 0-5.17 1.34-6.1 3.32-.25.52-.37 1.04-.37 1.56 0 .5.13.98.38 1.44.6 1.04 1.84 1.86 3.55 2.28.87.23 1.82.34 2.8.34.88 0 1.7-.1 2.5-.34 2.4-.7 3.97-2.48 3.97-4.54 0-1.97-.63-3.15-2.33-4.35zm-7.7 4.5c0-1.42 1.8-2.68 3.9-2.68h.05c.45 0 .9.07 1.3.2l.42.28c.96.66 1.6 1.1 1.77 1.8.05.16.07.33.07.5 0 1.8-1.33 2.7-3.96 2.7-1.98 0-3.54-1.23-3.54-2.8zM5.54 3.9c.33-.38.75-.58 1.23-.58h.05c1.35.05 2.64 1.55 2.88 3.35.14 1.02-.08 1.97-.6 2.55-.32.37-.74.56-1.23.56h-.03c-1.32-.04-2.63-1.6-2.87-3.4-.13-1 .08-1.92.58-2.5zM23.5 9.5h-3v-3h-2v3h-3v2h3v3h2v-3h3" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="mailto:?subject=Introducci%c3%b3n%20Pruebas%20Param%c3%a9tricas%20y%20No%20Param%c3%a9tricas&amp;body=https%3a%2f%2frbiologos.com%2fblog%2fa014%2f" target="_self"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link"
+		href="https://reddit.com/submit/?url=https%3a%2f%2frbiologos.com%2fblog%2fa014%2f&amp;resubmit=true&amp;title=Introducci%c3%b3n%20Pruebas%20Param%c3%a9tricas%20y%20No%20Param%c3%a9tricas" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="whatsapp://send?text=Introducci%c3%b3n%20Pruebas%20Param%c3%a9tricas%20y%20No%20Param%c3%a9tricas%20https%3a%2f%2frbiologos.com%2fblog%2fa014%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1 0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+	
+	<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Introducci%c3%b3n%20Pruebas%20Param%c3%a9tricas%20y%20No%20Param%c3%a9tricas&amp;url=https%3a%2f%2frbiologos.com%2fblog%2fa014%2f"
+		target="_blank" rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M.707 8.475C.275 8.64 0 9.508 0 9.508s.284.867.718 1.03l5.09 1.897 1.986 6.38a1.102 1.102 0 0 0 1.75.527l2.96-2.41a.405.405 0 0 1 .494-.013l5.34 3.87a1.1 1.1 0 0 0 1.046.135 1.1 1.1 0 0 0 .682-.803l3.91-18.795A1.102 1.102 0 0 0 22.5.075L.706 8.475z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+</div>
+        
+        
+        <div class="mt-5">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </div><!-- end Contact Area -->
+<footer id="footer" class="section-bg">
+	<div class="container">
+		<div class="row wow fadeInUp" data-wow-duration="500ms">
+			<div class="col-lg-12">
+
+			
+
+                        <!-- Footer Social Links -->
+				<div class="social-icon"><h1><center                                                    >Social</center></h1>
+					<ul class="list-inline">
+						
+						<li class="list-inline-item"><a href="https://www.instagram.com/rbiologos/" target="blank"><i class="ti-instagram" target="blank"></i></a></li>
+						
+						<li class="list-inline-item"><a href="https://www.facebook.com/rbiologos" target="blank"><i class="ti-facebook" target="blank"></i></a></li>
+						
+						<li class="list-inline-item"><a href="https://github.com/RBiologos/Posts" target="blank"><i class="ti-github" target="blank"></i></a></li>
+						
+					</ul>
+				</div>
+				
+				<center><img src="https://i.ibb.co/QXqp3ym/Logo.png" alt="R Biólogos" height="150" /></center>
+	
+				<!-- copyright -->
+				<div class="copyright text-center">
+				        
+					<a href="https://rbiologos.com/">
+					</a>
+					<br>
+					<p1>Copyright © 2020 Diseñado por <a href="https://github.com/davidvaneal">David Vanegas</a> bajo la plantilla <a href="https://themefisher.com">Themefisher</a> de <a href="https://gethugothemes.com">HUGO</a></p1>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- /footer -->
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="https://rbiologos.com/plugins/jquery/jquery.min.js"></script>
+
+<script src="https://rbiologos.com/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://rbiologos.com/plugins/slick/slick.min.js"></script>
+
+<script src="https://rbiologos.com/plugins/shuffle/shuffle.min.js"></script>
+
+<script src="https://rbiologos.com/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<script src="https://rbiologos.com/plugins/lazy-load/lozad.min.js"></script>
+
+<script src="https://rbiologos.com/plugins/google-map/map.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://rbiologos.com/js/script.min.b98b8dcfa3dc53b74ecf3cf8724a1f75b4d217da25463ff3d6a28fc4a09e965bf9818dfce85452f5fb478bce779ee8cc.js" integrity="sha384-uYuNz6PcU7dOzzz4ckofdbTSF9olRj/z1qKPxKCellv5gY386FRS9ftHi853nujM"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-transparent">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+</body>
+
+</html>

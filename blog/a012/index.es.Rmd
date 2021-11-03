@@ -113,10 +113,10 @@ Utilizamos la distribución hipergeométrica para muestras obtenidas de poblacio
 
 # ¡¡¡¡STOOOOOOOOP!!!!
 
-Bueno bueno, descansemos un poco, bien es cierto que parecemos locos hablando. Ve, toma agua, estira tu cuerpo y sigue leyendo que ya vamos por la mitad
+Bueno bueno, descansemos un poco, bien es cierto que parecemos locos hablando. Ve, toma agua, estira tu cuerpo y sigue leyendo que ya vamos por la mitad...
 
 <center>
-![](https://i.ibb.co/3h5vMsM/crazy.gif){witdh="350"}
+![](https://i.ibb.co/3h5vMsM/crazy.gif){width=350}
 </center><br>
 
 ## Variables continuas
