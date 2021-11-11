@@ -2,7 +2,7 @@
 <html lang="es-CO">
 <head>
 	<meta charset="utf-8">
-	<title>Introducción Pruebas Paramétricas y No Paramétricas</title>
+	<title>Supuestos estadísticos</title>
 
 	<!-- mobile responsive meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -148,12 +148,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 offset-lg-2 text-center">
-        <h1>Introducción Pruebas Paramétricas y No Paramétricas</h1>
+        <h1>Supuestos estadísticos</h1>
         <ul class="list-inline mb-50">
           <li class="list-inline-item"><a href="/author/david-vanegas/">David Vanegas</a></li>
           <li class="list-inline-item">Tuesday, Nov 2, 2021</li>
         </ul>
-        <img class="img-fluid mb-50 lozad" data-src="https://i.ibb.co/wyVvhWz/ES.png" alt="blog-image">
+        <img class="img-fluid mb-50 lozad" data-src="https://i.ibb.co/sF7Xfgq/ES.png" alt="blog-image">
       </div>
       <div class="col-lg-8 offset-lg-2">
         <div class="post-single-content">
@@ -358,7 +358,7 @@ frosini.norm.test(Sepal.Length, nrepl=2000)</code></pre>
 ##  Frosini test for normality
 ## 
 ## data:  Sepal.Length
-## B = 0.2799, p-value = 0.0565</code></pre>
+## B = 0.2799, p-value = 0.059</code></pre>
 <p>El resultado de nuestro p valor es mayor a 0.05, con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
 <p><strong><em>Prueba de Geary</em></strong></p>
 <p>La prueba de Geary se basa en el siguiente estadístico</p>
@@ -375,7 +375,7 @@ geary.norm.test(Sepal.Length)</code></pre>
 ##  Geary test for normality
 ## 
 ## data:  Sepal.Length
-## d = 0.8331, p-value = 0.0255</code></pre>
+## d = 0.8331, p-value = 0.018</code></pre>
 <p>Por tanto, nuestro p valor es igual a <strong><em>0.02</em></strong>, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
 <p><strong><em>Prueba de Hegazy-Green</em></strong></p>
 <p>La prueba de Hegazy-Green para la normalidad se basa en el siguiente estadístico:</p>
@@ -391,7 +391,7 @@ hegazy1.norm.test(Sepal.Length, nrepl = 20000) </code></pre>
 ##  Hegazy-Green test for normality
 ## 
 ## data:  Sepal.Length
-## T = 0.098714, p-value = 0.03805</code></pre>
+## T = 0.098714, p-value = 0.03775</code></pre>
 <p>Con este tipo de test nuestro p valor es menor a 0.05, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
 <p><strong><em>Prueba de Jarque-Bera Ajustada</em></strong></p>
 <p>La prueba de Jarque–Bera Ajustada para la normalidad se basa en el siguiente estadístico:</p>
@@ -409,7 +409,7 @@ jb.norm.test(Sepal.Length, nrepl = 2000)</code></pre>
 ##  Jarque-Bera test for normality
 ## 
 ## data:  Sepal.Length
-## JB = 4.4859, p-value = 0.0835</code></pre>
+## JB = 4.4859, p-value = 0.0755</code></pre>
 <p>El resultado para el p valor es igual mayor a 0.05, por lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
 <p><strong><em>Prueba de Kurtosis</em></strong></p>
 <p>La prueba de Kurtosis para la normalidad se basa en el siguiente estadístico:</p>
@@ -424,7 +424,7 @@ kurtosis.norm.test(Sepal.Length, nrepl = 2000)</code></pre>
 ##  Kurtosis test for normality
 ## 
 ## data:  Sepal.Length
-## T = 2.4264, p-value = 0.1135</code></pre>
+## T = 2.4264, p-value = 0.1085</code></pre>
 <p>Así, nuestro p valor es igual a <strong><em>0.1045</em></strong>, con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
 <p><strong><em>Prueba de Skewness</em></strong></p>
 <p>La prueba de Skewness para la normalidad se basa en el siguiente estadístico:</p>
@@ -439,7 +439,7 @@ skewness.norm.test(Sepal.Length, nrepl = 2000)</code></pre>
 ##  Skewness test for normality
 ## 
 ## data:  Sepal.Length
-## T = 0.31175, p-value = 0.1055</code></pre>
+## T = 0.31175, p-value = 0.116</code></pre>
 <p>Así, nuestro p valor es igual mayor a 0.05, con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
 <p><strong><em>Prueba de Spiegelhalter</em></strong></p>
 <p>La prueba de Spiegelhalter para la normalidad se basa en el siguiente estadístico:</p>
@@ -454,7 +454,7 @@ spiegelhalter.norm.test(Sepal.Length, nrepl=2000)</code></pre>
 ##  Spiegelhalter test for normality
 ## 
 ## data:  Sepal.Length
-## T = 1.2022, p-value = 0.9705</code></pre>
+## T = 1.2022, p-value = 0.9725</code></pre>
 <p>Nuestro p valor es mayor a 0.05, con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
 <p><strong><em>Prueba de Weisberg-Bingham</em></strong></p>
 <p>La prueba de Weisberg-Bingham para la normalidad se basa en el siguiente estadístico:</p>
@@ -469,7 +469,7 @@ wb.norm.test(Sepal.Length, nrepl=2000)</code></pre>
 ##  Weisberg-Bingham test for normality
 ## 
 ## data:  Sepal.Length
-## WB = 0.97961, p-value = 0.031</code></pre>
+## WB = 0.97961, p-value = 0.0285</code></pre>
 <p>Nuestro resultado para el p valor es mayor a 0.05, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
 <p><strong><em>Prueba de Agostino</em></strong></p>
 <p>La prueba de Agostino sirve para medir el nivel de asimetría de una normal en los datos. Bajo la hipótesis de la normalidad, los datos deben ser simétricos (es decir, la asimetría debe ser igual a cero).</p>
@@ -720,7 +720,7 @@ iris %&gt;%
 	</a>
 
 	
-	<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Introducci%c3%b3n%20Pruebas%20Param%c3%a9tricas%20y%20No%20Param%c3%a9tricas&amp;url=https%3a%2f%2frbiologos.com%2fblog%2fa014%2f"
+	<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Supuestos%20estad%c3%adsticos&amp;url=https%3a%2f%2frbiologos.com%2fblog%2fa014%2f"
 		target="_blank" rel="noopener" aria-label="">
 		<div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
 			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -746,7 +746,7 @@ iris %&gt;%
 	</a>
 
 	
-	<a class="resp-sharing-button__link" href="mailto:?subject=Introducci%c3%b3n%20Pruebas%20Param%c3%a9tricas%20y%20No%20Param%c3%a9tricas&amp;body=https%3a%2f%2frbiologos.com%2fblog%2fa014%2f" target="_self"
+	<a class="resp-sharing-button__link" href="mailto:?subject=Supuestos%20estad%c3%adsticos&amp;body=https%3a%2f%2frbiologos.com%2fblog%2fa014%2f" target="_self"
 		rel="noopener" aria-label="">
 		<div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
 			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -760,7 +760,7 @@ iris %&gt;%
 
 	
 	<a class="resp-sharing-button__link"
-		href="https://reddit.com/submit/?url=https%3a%2f%2frbiologos.com%2fblog%2fa014%2f&amp;resubmit=true&amp;title=Introducci%c3%b3n%20Pruebas%20Param%c3%a9tricas%20y%20No%20Param%c3%a9tricas" target="_blank"
+		href="https://reddit.com/submit/?url=https%3a%2f%2frbiologos.com%2fblog%2fa014%2f&amp;resubmit=true&amp;title=Supuestos%20estad%c3%adsticos" target="_blank"
 		rel="noopener" aria-label="">
 		<div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small">
 			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -773,7 +773,7 @@ iris %&gt;%
 	</a>
 
 	
-	<a class="resp-sharing-button__link" href="whatsapp://send?text=Introducci%c3%b3n%20Pruebas%20Param%c3%a9tricas%20y%20No%20Param%c3%a9tricas%20https%3a%2f%2frbiologos.com%2fblog%2fa014%2f" target="_blank"
+	<a class="resp-sharing-button__link" href="whatsapp://send?text=Supuestos%20estad%c3%adsticos%20https%3a%2f%2frbiologos.com%2fblog%2fa014%2f" target="_blank"
 		rel="noopener" aria-label="">
 		<div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small">
 			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -785,7 +785,7 @@ iris %&gt;%
 		</div>
 	</a>
 	
-	<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Introducci%c3%b3n%20Pruebas%20Param%c3%a9tricas%20y%20No%20Param%c3%a9tricas&amp;url=https%3a%2f%2frbiologos.com%2fblog%2fa014%2f"
+	<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Supuestos%20estad%c3%adsticos&amp;url=https%3a%2f%2frbiologos.com%2fblog%2fa014%2f"
 		target="_blank" rel="noopener" aria-label="">
 		<div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small">
 			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">

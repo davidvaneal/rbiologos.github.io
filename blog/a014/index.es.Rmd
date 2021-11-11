@@ -1,8 +1,8 @@
 ---
-title: Introducción Pruebas Paramétricas y No Paramétricas
+title: Supuestos estadísticos
 author: David Vanegas
 date: '2021-11-02'
-image: https://i.ibb.co/wyVvhWz/ES.png
+image: https://i.ibb.co/sF7Xfgq/ES.png
 slug: []
 categories:
   - R
