@@ -169,20 +169,37 @@
 
 
 <p>Se llama inferencia estadística a la rama de la Estadística encargada de hacer deducciones, es decir, inferir propiedades, conclusiones y tendencias, a partir de una muestra del conjunto. Su papel es interpretar, hacer proyecciones y comparaciones.</p>
+<center>
+<img src="https://i.ibb.co/rks53Tm/Wubba-lubba-dub-dub.gif" width="350" />
+</center>
+<p><br></p>
+<div id="contenido-del-post" class="section level1">
+<h1>Contenido del post</h1>
+<ul>
+<li><a href="#1">Introducción</a></li>
+<li><a href="#2">Estimación de parámetros</a></li>
+<li><a href="#3">Intérvalos de confianza</a></li>
+<li><a href="#4">Pruebas de hipótesis</a></li>
+<li><a href="#5">Conclusión</a></li>
+<li><a href="#6">Bibliografía</a></li>
+<li><a href="#7">Más información</a></li>
+</ul>
+</div>
+<div id="introducción" class="section level1">
+<h1>Introducción</h1>
+<p><a name="1"></a></p>
+<p>Pues, la estadística inferencial emplea usualmente mecanismos que nos permiten llevar a cabo dichas deducciones, tales como pruebas de estimación puntual (o de intervalos de confianza), pruebas de hipótesis, pruebas paramétricas (como de media, de diferencia de medias, proporciones, etc) y no paramétricas (como la prueba del chi-cuadrado, etc). También le son útiles los análisis de correlación y de regresión, las series cronológicas, el análisis de varianza, entre otros.</p>
+<p>Su objetivo es extraer conclusiones de utilidad sobre el total de las observaciones posibles basándose en la información obtenida. Los dos tipos de problemas que resuelven las técnicas estadísticas son: estimación y contraste de hipótesis. En ambos casos se trata de generalizar la información obtenida en una muestra a una población. Estas técnicas exigen que la muestra sea aleatoria.</p>
 <p>Ahhhh bueno, te me cuidas, pero ¿qué? ¿cómo se come? ¿qué con eso?</p>
 <center>
 <img src="https://i.ibb.co/st3rh5p/ok.gif" width="350" />
 </center>
 <p><br></p>
-<p>Pues, la estadística inferencial emplea usualmente mecanismos que nos permiten llevar a cabo dichas deducciones, tales como pruebas de estimación puntual (o de intervalos de confianza), pruebas de hipótesis, pruebas paramétricas (como de media, de diferencia de medias, proporciones, etc) y no paramétricas (como la prueba del chi-cuadrado, etc). También le son útiles los análisis de correlación y de regresión, las series cronológicas, el análisis de varianza, entre otros.</p>
-<p>Su objetivo es extraer conclusiones de utilidad sobre el total de las observaciones posibles basándose en la información obtenida. Los dos tipos de problemas que resuelven las técnicas estadísticas son: estimación y contraste de hipótesis. En ambos casos se trata de generalizar la información obtenida en una muestra a una población. Estas técnicas exigen que la muestra sea aleatoria.</p>
 <p>Bien, entonces aprendamos sobre algunas consideraciones y métodos que debemos tener en cuenta en nuestros estudios</p>
-<center>
-<img src="https://i.ibb.co/rks53Tm/Wubba-lubba-dub-dub.gif" width="350" />
-</center>
-<p><br></p>
-<div id="estimación-de-parámetros" class="section level2">
-<h2>Estimación de parámetros</h2>
+</div>
+<div id="estimación-de-parámetros" class="section level1">
+<h1>Estimación de parámetros</h1>
+<p><a name="2"></a></p>
 <p>En general, de las variables experimentales u observacionales no conocemos la función densidad de probabilidad. Podemos conocer la familia de distribución (normal, binomial,…) pero no los parámetros. Para calcularlos necesitaríamos tener todos los posibles valores de la variable, lo que no suele ser posible.</p>
 <p>La inferencia estadística trata de cómo obtener información (inferir) sobre los parámetros a partir de subconjuntos de valores (muestras) de la variable. Evidentemente, habrá una distribución muestral para cada estadístico, no sólo para la media, y en consecuencia un error típico para cada estadístico.</p>
 <p>Veamos un ejemplo que podemos tener en cuenta, queremos estudiar cuál es la altura media de los árboles en cierta ciudad de Colombia. La variable objeto de estudio es la altura de los árboles en cierta ciudad de Colombia, mientras que, el parámetro es la altura media de los árboles de esa ciudad. Entonces, si para cada muestra posible calculamos la media muestral, obtenemos un valor distinto, habrá por tanto una <strong><em>función densidad de probabilidad</em></strong>, llamada distribución muestral de medias.</p>
@@ -193,8 +210,9 @@
 </center>
 <p><br></p>
 </div>
-<div id="intérvalos-de-confianza" class="section level2">
-<h2>Intérvalos de confianza</h2>
+<div id="intérvalos-de-confianza" class="section level1">
+<h1>Intérvalos de confianza</h1>
+<p><a name="3"></a></p>
 <p>Un intervalo de confianza es una técnica de estimación utilizada en inferencia estadística que permite acotar un par o varios pares de valores, dentro de los cuales se encontrará la estimación puntual buscada (con una determinada probabilidad).</p>
 <p>Un intervalo de confianza nos va a permitir calcular dos valores alrededor de una media muestral (uno superior y otro inferior). Estos valores van a acotar un rango dentro del cual, con una determinada probabilidad, se va a localizar el parámetro poblacional.</p>
 <p>Conocer el verdadero poblacional, por lo general, suele ser algo muy complicado. Pensemos en una población de mariposas en una región. ¿Podríamos saber el vuelo medio por mariposa de esa población? En principio sí. Simplemente tendríamos que hacer varios registros y calcular la media. Sin embargo, seguir ese proceso sería tremendamente laborioso y complicaría bastante el estudio.</p>
@@ -211,8 +229,9 @@
 <li>Lo estimado en la muestra (media, varianza, diferencia de medias…): De esto va a depender el estadístico para el cálculo del intervalo.</li>
 </ul>
 </div>
-<div id="pruebas-de-hipótesis" class="section level2">
-<h2>Pruebas de hipótesis</h2>
+<div id="pruebas-de-hipótesis" class="section level1">
+<h1>Pruebas de hipótesis</h1>
+<p><a name="4"></a></p>
 <p>Una hipótesis se define como una afirmación transitoria que debe ser sometida a prueba. La inferencia estadística propone un procedimiento para llevar a cabo la prueba de las hipótesis. Propone, primero, enunciarlas formalmente y luego contrastarlas con la evidencia de los datos. Son los datos, entonces, con su coro de características, los que dirán si una hipótesis es falsa o verdadera.</p>
 <center>
 <img src="https://i.ibb.co/DC99GgQ/false.gif" width="350" />
@@ -225,7 +244,9 @@
 <img src="https://i.ibb.co/9cMVKff/defies.gif" width="350" />
 </center>
 <p><br></p>
-<p><strong><em>Plantear hipótesis</em></strong></p>
+<ul>
+<li><strong><em>Plantear hipótesis</em></strong></li>
+</ul>
 <p>En primer lugar, debemos plantear la hipótesis en términos estadísticos, entonces veremos cómo se escribirían las hipótesis que queremos contrastar:</p>
 <ul>
 <li><p><strong><em>H0</em></strong> conocida como <em>hipótesis nula</em>. Esta hipótesis formalmente plantea que los valores comparados son iguales.</p></li>
@@ -235,19 +256,27 @@
 <img src="https://i.ibb.co/tctZzFf/twins.gif" width="350" />
 </center>
 <p><br></p>
-<p><strong><em>Nivel de significación</em></strong></p>
+<ul>
+<li><strong><em>Nivel de significación</em></strong></li>
+</ul>
 <p>El nivel de significación es la probabilidad de que la diferencia observada se deba al azar. Interesa que esta probabilidad sea pequeña, por eso, en la práctica se utilizan valores iguales o inferiores a <strong><em>0.05</em></strong>. El valor más usado es 0.05 pero también puede ser 0.04, 0.02, 0.01, etc. Al nivel de significación se le identifica con la letra griega alfa <em>(α)</em>.</p>
 <p>Cabe aclarar que cuando usamos los datos de una muestra para tomar decisiones acerca de un parámetro, existe el riesgo de llegar a una conclusión incorrecta. De hecho se pueden presentar dos tipos diferentes de error cuando se aplica la metodología de la prueba de hipótesis.</p>
 <center>
 <img src="https://i.ibb.co/2hV0CjD/error.gif" width="350" />
 </center>
 <p><br></p>
-<p><strong><em>Error Tipo I</em></strong></p>
+<ul>
+<li><strong><em>Error Tipo I</em></strong></li>
+</ul>
 <p>Si rechazamos la hipótesis nula cuando es verdadera, podemos cometemos un error de tipo I. La probabilidad de cometer un error de tipo I es <em>α</em>, que es el nivel de significancia que establecemos para nuestra prueba de hipótesis. Un <em>α</em> de 0.05 indica que estamos dispuestos a aceptar una probabilidad de 5% de estar equivocados al rechazar la hipótesis nula. Para reducir este riesgo, debemos utilizar un valor menor para <em>α</em>. Sin embargo, usar un valor menor para alfa significa que tendremos menos probabilidad de detectar una diferencia si esta realmente existe.</p>
-<p><strong><em>Error Tipo II</em></strong></p>
+<ul>
+<li><strong><em>Error Tipo II</em></strong></li>
+</ul>
 <p>Cuando la hipótesis nula es falsa y no la rechazamos, cometemos un error de tipo II. La probabilidad de cometer un error de tipo II es <em>β</em>, que depende de la potencia de la prueba. Podemos reducir el riesgo de cometer un error de tipo II al asegurarse de que la prueba tenga suficiente potencia. Para ello, debemos asegurar de que el tamaño de la muestra sea lo suficientemente grande como para detectar una diferencia práctica cuando esta realmente exista.</p>
 <p>La probabilidad de rechazar la hipótesis nula cuando es falsa es igual a <em>1–β</em>. Este valor es la potencia de la prueba.</p>
-<p><strong><em>P Valor</em></strong></p>
+<ul>
+<li><strong><em>P Valor</em></strong></li>
+</ul>
 <p>Los valores de <em>p</em> son comúnmente utilizados para probar (y descartar) una <em>H0</em>, cuanto menor sea el valor de <em>p</em>, menor es la probabilidad de que un conjunto de valores observados ocurra por casualidad. Un valor <em>p</em> de <strong><em>0.05</em></strong> o menos suele entenderse en el sentido de que las observaciones son estadísticamente significativas y justifica los resultados de un estudio. Pero eso no es necesariamente cierto, se debe analizar con cuidado por parte de los investigadores por lo que hay que evitar sacar conclusiones científicas o tomar decisiones basadas solo en los valores de <em>p</em>.</p>
 <center>
 <img src="https://i.ibb.co/VSKzwL7/travel.gif" width="350" />
@@ -256,137 +285,15 @@
 <p>Un valor <em>p</em> de <strong><em>0.05</em></strong>, no significa que hay una posibilidad del 95% que una determinada hipótesis es correcta. Más bien, significa que, si la <em>H0</em> es verdadera, y todas las demás suposiciones hechas son válidas, hay una probabilidad del <strong><em>5%</em></strong> de obtener un resultado al menos tan extremo como el observado. Y un valor de p no puede indicar la importancia de un hallazgo; por ejemplo, un medicamento puede tener un efecto estadísticamente significativo en los niveles de glucosa en la sangre del paciente sin tener un efecto terapéutico, en este caso hay relevancia estadística pero el hallazgo clínico también es importante dado que dicho medicamento no es eficaz en el tratamiento de la diabetes.</p>
 <p>En términos generales podemos conocer el comportamiento de la hipótesis en relación al valor <em>p</em></p>
 <ul>
-<li><em>p</em> = 0.10, tenemos alguna evidencia que H0 no es verdadera.</li>
-<li><em>p</em> = 0.05, tenemos fuerte evidencia que H0 no es verdadera.</li>
-<li><em>p</em> = 0.01, tenemos muy fuerte evidencia que H0 no es verdadera.</li>
-<li><em>p</em> = 0.001, tenemos una extremadamente fuerte evidencia que H0 no es verdadera.</li>
+<li><em>p</em> = 0.10, tenemos alguna evidencia que <em>H0</em> no es verdadera.</li>
+<li><em>p</em> = 0.05, tenemos fuerte evidencia que <em>H0</em> no es verdadera.</li>
+<li><em>p</em> = 0.01, tenemos muy fuerte evidencia que <em>H0</em> no es verdadera.</li>
+<li><em>p</em> = 0.001, tenemos una extremadamente fuerte evidencia que <em>H0</em> no es verdadera.</li>
 </ul>
 </div>
-<div id="pruebas-paramétricas" class="section level2">
-<h2>Pruebas paramétricas</h2>
-<p>Las pruebas paramétricas asumen distribuciones estadísticas subyacentes a los datos. Por tanto, deben cumplirse algunas condiciones de validez, de modo que el resultado de la prueba paramétrica sea fiable. Por ejemplo, la prueba t de Student para dos muestras independientes será fiable solo si cada muestra se ajusta a una distribución normal y si las varianzas son homogéneas.</p>
-<center>
-<img src="https://i.ibb.co/3sz6zck/excuse-me.gif" width="350" />
-</center>
-<p><br></p>
-<p>Las ventajas de las pruebas paramétricas son:</p>
-<ul>
-<li>Sensibles a rasgos de los datos recolectados</li>
-<li>Estimaciones probabilísticas más exactas</li>
-<li>Tienen una mayor eficiencia estadística</li>
-<li>Mayor poder estadístico</li>
-</ul>
-<p>Las desventajas de las purebas paramétricas son:</p>
-<ul>
-<li>Más complicadas de calcular</li>
-<li>Solo se pueden aplicar si se cumplen sus supuestos</li>
-</ul>
-<p>Algunos de los análisis más populares son:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Análisis</th>
-<th align="left">Paramétrico</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Describir un grupo</td>
-<td align="left">μ - σ2</td>
-</tr>
-<tr class="even">
-<td align="left">Comparar un grupo a un valor</td>
-<td align="left">T Student de una muestra</td>
-</tr>
-<tr class="odd">
-<td align="left">Comparar medias en dos grupos</td>
-<td align="left">T Student de dos muestras</td>
-</tr>
-<tr class="even">
-<td align="left">Comparar medias en dos grupos apareados</td>
-<td align="left">T Student apareada</td>
-</tr>
-<tr class="odd">
-<td align="left">Comparar medias en tres o más grupos</td>
-<td align="left">ANOVA</td>
-</tr>
-<tr class="even">
-<td align="left">Correlación entre dos variables</td>
-<td align="left">Pearson (Lineal)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="pruebas-no-paramétricas" class="section level2">
-<h2>Pruebas No Paramétricas</h2>
-<p>Este tipo de pruebas no requieren que las muestras tengan una distrtibución conocida (por ejemplo, la distribución normal) por lo que también se les conoce como pruebas de distribución libre. Aunque el término no paramétrico suguiere que no se basan en un parámetro, existen pruebas no paramétricas que sí dependen de un parámetro, por ejemplo, la mediana.</p>
-<center>
-<img src="https://i.ibb.co/hYsXwSw/free.gif" width="350" />
-</center>
-<p><br></p>
-<p>Las ventajas de las pruebas no paramétricas son:</p>
-<ul>
-<li>Las pruebas no paramétricas nos permiten analizar datos en escala nominal u ordinal</li>
-<li>Se pueden aplicar a una amplia variedad de situaciones</li>
-<li>Se pueden utilizar variables de nivel de medición nominal</li>
-<li>Son más fáciles de calcular</li>
-</ul>
-<p>Las desventajas de las pruebas no paramétricas son:</p>
-<ul>
-<li>Su eficiencia estadística es menor</li>
-<li>Su poder estadístico es menor</li>
-<li>Desperdician información</li>
-</ul>
-<p>Algunos de los análisis más populares son:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Tamaño de la muestra</th>
-<th align="left">Tipo variable</th>
-<th align="left">Análisis</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Una muestra</td>
-<td align="left">Cuantitativa - Cualitativa</td>
-<td align="left">Chi cuadrado - Binomial</td>
-</tr>
-<tr class="even">
-<td align="left">Dos muestras</td>
-<td align="left">Independientes - Cuantitativas</td>
-<td align="left">U de Mann Whitney</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">Relacionadas - Cuantitativas</td>
-<td align="left">Wilcoxon</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">Relacionadas - Cualitativas</td>
-<td align="left">Mc Nemar</td>
-</tr>
-<tr class="odd">
-<td align="left">Más de dos muestras</td>
-<td align="left">Independientes - Cuantitativas</td>
-<td align="left">Kruskal Wallis</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">Relacionadas - Cuantitativas</td>
-<td align="left">Friedman</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">Relacionadas - Cualitativas</td>
-<td align="left">Q de Cochran</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="resumen" class="section level2">
-<h2>Resumen</h2>
+<div id="conclusión" class="section level1">
+<h1>Conclusión</h1>
+<p><a name="5"></a></p>
 <p>Y buenooooo, seguimos aprendiendo cada post, más y más, algunas veces no tan divertidas como otras, pero siempre podremos aprender algo más que nos servirá en nuestros objetivos personales y profesionales</p>
 <center>
 <img src="https://i.ibb.co/zfYRqq3/boss.gif" width="350" />
@@ -400,8 +307,9 @@
 </center>
 <p><br></p>
 </div>
-<div id="bibliografía" class="section level2">
-<h2>Bibliografía</h2>
+<div id="bibliografía" class="section level1">
+<h1>Bibliografía</h1>
+<p><a name="6"></a></p>
 <ul>
 <li><p><a href="https://concepto.de/estadistica-inferencial/">Estadística inferencial</a></p></li>
 <li><p><a href="https://www.significados.com/estadistica/">Significado de Estadística</a></p></li>
@@ -413,12 +321,11 @@
 <li><p><a href="http://recursostic.educacion.es/descartes/web/materiales_didacticos/Muestreo_Inferencia_Estadistica/pruebas_hipotesis.html">Pruebas de hipótesis</a></p></li>
 <li><p><a href="https://blogs.ugto.mx/enfermeriaenlinea/unidad-didactica-3-las-pruebas-de-hipotesis/">Pruebas de hipótesis</a></p></li>
 <li><p><a href="https://support.minitab.com/es-mx/minitab/18/help-and-how-to/statistics/basic-statistics/supporting-topics/basics/type-i-and-type-ii-error/">¿Qué son los errores de tipo I y tipo II?</a></p></li>
-<li><p><a href="https://www.rpubs.com/tonosan/param_no_param">Estadística paramétrica y no paramétrica</a></p></li>
-<li><p><a href="https://enviromigration.files.wordpress.com/2016/04/pruebas-paramc3a9tricas-y-no-parametricas.pdf">Pruebas paramétricas y no paramétricas</a></p></li>
 </ul>
 </div>
-<div id="más-información" class="section level2">
-<h2>Más información</h2>
+<div id="más-información" class="section level1">
+<h1>Más información</h1>
+<p><a name="7"></a></p>
 <p>Estos análisis se han realizado utilizando el software R (v.4.1.0) y Rstudio (v. 1.4.1717)</p>
 <p>Recuerda que todos nuestros códigos están almacenados en <a href="https://github.com/RBiologos/Posts">GitHub</a></p>
 <center>

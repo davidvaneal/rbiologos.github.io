@@ -1,0 +1,396 @@
+---
+title: Pruebas paramétricas - Parte I
+author: David Vanegas
+date: '2021-11-26'
+image: https://i.ibb.co/svwd3XW/ES.png
+slug: []
+categories:
+  - R
+  - RStudio
+tags:
+  - T Test
+  - Z Test
+  - Paramétricas
+  - Test
+  - Normalidad
+  - Homocedasticidad
+  - Análisis
+  - Estadística
+---
+
+Se conoce como estadística paramétrica a las pruebas que se basan en el muestreo de una población con parámetros específicos. 
+
+# Contenido del post
+
+- [Introducción](#1)
+- [Test Z](#2)
+- [Test F](#3)
+- [Test T de Student](#4)
+- [Resumen](#5)
+- [Bibliografía](#6)
+- [Más información](#7)
+
+# Introducción 
+<a name="1"></a>
+
+Las pruebas paramétricas asumen distribuciones estadísticas subyacentes a los datos. Por tanto, deben cumplirse algunas condiciones de validez, de modo que el resultado de la prueba paramétrica sea fiable. Por ejemplo, la prueba t de Student para dos muestras independientes será fiable solo si cada muestra se ajusta a una distribución normal y si las varianzas son homogéneas. 
+
+<center>
+![](https://i.ibb.co/G0bnfWW/tongue.gif){width="350"}
+</center><br>
+
+Las ventajas de las pruebas paramétricas son:
+
+- Sensibles a rasgos de los datos recolectados
+- Estimaciones probabilísticas más exactas
+- Tienen una mayor eficiencia estadística
+- Mayor poder estadístico
+
+Las desventajas de las purebas paramétricas son:
+
+- Más complicadas de calcular
+- Solo se pueden aplicar si se cumplen sus supuestos
+
+Algunos de los análisis más populares son:
+
+|Análisis|Paramétrico|
+|:-----|:-----|
+|Describir un grupo|μ - σ2|
+|Comparar un grupo a un valor|T Student de una muestra|
+|Comparar medias en dos grupos|T Student de dos muestras|
+|Comparar medias en dos grupos apareados|T Student apareada|
+|Comparar medias en tres o más grupos|ANOVA|
+|Correlación entre dos variables|Pearson (Lineal)|
+
+# Test Z
+<a name="2"></a>
+
+Se utiliza para determinar el grado de significatividad estadística de las diferencias entre las medias de dos conjuntos de datos. Se utiliza cuando las muestras son amplias (de más de 30 individuos aproximadamente) e independientes (esto es, no correlacionadas).
+
+Cuando se tiene una población con distribución normal (o aproximada a la normal) y se conoce la varianza es posible emplear el estadístico Z para la prueba de hipótesis. Se parte del supuesto que _H0: μ0 = μ1_.
+
+<center>
+![](https://i.ibb.co/R3m3cT2/original.gif){width="350"}
+</center><br>
+
+> Recordemos que las varianzas son una medida de dispersión, es decir, qué tan dispersos están los datos con respecto a la media. Los valores más altos representan mayor dispersión. 
+
+Para realizar nuestra prueba de hipótesis con la función <res>z.test()</res> necesitamos instalar el paquete <res>BSDA</res>. Los parámetros de la función los podemos encontrar en este [LINK](https://www.rdocumentation.org/packages/BSDA/versions/1.2.1/topics/z.test)
+
+```{r eval=FALSE}
+z.test(
+  x, # Vector numérico; Se permiten NA e Inf, pero se eliminarán.
+  y = NULL, # Vector numérico; Se permiten NA e Inf, pero se eliminarán
+  alternative = "two.sided", # Indica la especificación de la hipótesis alternativa, "greater", "less" o "two.sided"
+  mu = 0, # Un solo número que representa el valor de la media o la diferencia en las medias especificadas por la hipótesis nula
+  sigma.x = NULL, # Un solo número que representa la desviación estándar de la población para x
+  sigma.y = NULL, # Un solo número que representa la desviación estándar de la población para y
+  conf.level = 0.95 # Nivel de confianza para el intervalo de confianza, restringido a estar entre cero y uno
+)
+```
+
+
+Veamos entonces algunos ejemplos con algunas consideraciones sobre nuestros datos
+
+### Una población normal con desviación estándar conocida
+
+Se desea contrastar con un nivel de significancia del 5% la hipótesis de que la estatura media de los hombres de 18 o más años de un país es igual a ***175***, contra la alternativa que es menor que ***175***. Suponiendo que la desviación estándar es de ***4.5***. 
+
+> Asumiremos que los datos tienen una distribución normal
+
+```{r message=FALSE, warning=FALSE}
+# Cargamos el paquete
+library(BSDA)
+
+# Creamos nuestros datos
+muestra <- c(167,167,168,168,168,169,171,172,173,175,175,175,177,182)
+
+z.test(x = muestra,
+       alternative = "less", 
+       mu = 175,
+       sigma.x = sd(muestra), 
+       conf.level = 0.95)
+```
+
+Así, de acuerdo a nuestros resultados podemos rechazar _Ho_, ya que existe suficiente evidencia de que la estatura media de los hombres en ese país es menor que ***175***.
+
+### Dos poblaciones normales con varianzas conocidas
+
+Un dueño de una fábrica tiene un pedido muy grande y para llevarlo a cabo necesita conocer cuál de las dos máquinas para realizar el proceso trabaja con mayor velocidad, el intuye que la maquina 2 es más efectiva y para ello hace una prueba, toman el tiempo de fabricación en minutos de 10 productos en cada máquina. ¿Es posible que la maquina 2 tenga un mejor tiempo de producción que la maquina 1 usando un nivel de significancia de 0.05?
+
+<center>
+![](https://i.ibb.co/WgML6X6/vikings-river.gif){width="350"}
+</center><br>
+
+> Asumiremos que los datos tienen una distribución normal
+
+Hipótesis: 
+
+- _Ho: μ1 - μ2 = 0_
+- _Ha: μ2 > μ1_
+
+```{r}
+maquina_1 <- c(14,13,15,14,17,16,15,16,13,17)
+maquina_2 <- c(16,15,14,17,12,17,15,16,15,14)
+
+z.test(x = maquina_1,
+       y = maquina_2,
+       alternative = "greater",
+       mu = 0,
+       sigma.x = sd(maquina_1), # sd() función para calcular desviación estándar
+       sigma.y = sd(maquina_2),
+       conf.level = 0.95)
+```
+
+Como podemos observar en nuestros resultados, nuestra hipótesis nula fue rechazada, en su lugar nuestra hipótesis alternativa es aceptada, en conclusión, podemos decir que existe evidencia que la _máquina 2_ es más rápida que la _máquina 1_. 
+
+# Test F
+<a name="4"></a>
+
+El test F de Fisher calcula la relación entre la varianza más grande y la varianza más pequeña. Usamos la prueba F cuando queremos verificar dónde las medias de tres o más grupos son diferentes o no. Se utiliza para evaluar si las varianzas de dos poblaciones (A y B) son iguales. Para ello utilizaremos la función <res>var.test()</res> con los argumentos que veremos a continuación y que podrás consultar en este [_LINK_](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/var.test), con las siguientes hipótesis planteadas
+
+- _H0: σ1^2^ = σ2^2^_ (Las varianzas poblacionales son iguales)
+
+- _H1: σ1^2^ ≠ σ2^2^_ (Las varianzas de población _no_ son iguales)
+
+```{r eval=FALSE}
+var.test(formula, # Fórmula de la forma lhs ~ rhs donde lhs es una variable numérica que da los valores de los datos y rhs un factor con dos niveles que dan los grupos correspondientes.
+         data, # Matriz opcional o marco de datos que contiene las variables en la fórmula fórmula. Por defecto, las variables se toman del entorno (fórmula)
+         subset, # Vector opcional que especifica un subconjunto de observaciones que se utilizarán.
+         na.action) # Función que indica lo que debería suceder cuando los datos contienen NA
+```
+
+Veamos un ejemplo, con las edades de los investigadores de dos grupos de estudio en la Universidad
+
+<center>
+![](https://i.ibb.co/tX7JKVf/vikingbattle.gif){width="350"}
+</center><br>
+
+```{r}
+# Definimos los dos grupos
+data <- data.frame(valores = c(18, 19, 22, 25, 27, 28, 41, 45, 51, 55,
+                            14, 15, 15, 17, 18, 22, 25, 25, 27, 34),
+                   grupo = rep(c('A', 'B'), each = 10))
+
+# Realizamos un F-test para determinar si las varianzas son iguales
+var.test(valores ~ grupo, data = data)
+```
+
+Así, el estadístico de la prueba F es ***4.3871*** y el _valor p_ correspondiente es ***0.03825***. Dado que este valor p es menor que ***.05***, rechazaríamos la hipótesis nula. Esto significa que tenemos suficiente evidencia para decir que las dos variaciones de población _NO_ son iguales.
+
+# Test T de student
+<a name="3"></a>
+
+Es un estadístico para comparar la media de una muestra _(x̄)_ con la de la población _(μ)_ sin necesidad de conocer su varianza _(σ)_. El hecho de que los valores promedio de cada grupo no sean iguales no implica que haya evidencias de una diferencia significativa. Dado que cada grupo tiene su propia variabilidad, aunque el tratamiento no sea eficaz, las medias muestrales no tienen por qué ser exactas. Este test fue desarrollado por _William Sealy Gosset_, mejor conocido por su pseudónimo _Student_.
+
+<center>
+![](https://i.ibb.co/TPvj3Vs/battle.gif){width="350"}
+</center><br>
+
+Para utilizar la t de Student es necesario que se cumplan los siguientes supuestos:
+
+- La muestra es aleatoria
+- Se desconoce la _σ_
+- Los datos tienen una distribución normal o n ≥ 30
+- Los errores tienen una distribución normal
+- Cuando se comparan dos distribuciones las varianzas son iguales _(σ1 = σ2)_
+
+La función requerida para este cálculo es <res>t.test()</res>, podrás encontrar más información de la función en este [_LINK_](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/t.test). Veamos sus parámetros
+
+```{r eval=FALSE}
+t.test(x, y = NULL, # Un vector numérico (no vacío) de valores de datos
+       alternative = c("two.sided", "less", "greater"), # Especificando la hipótesis alternativa
+       mu = 0, # Número que indica el valor real de la media (o la diferencia de medias si está realizando una prueba de dos muestras).
+       paired = FALSE, # Un indicador lógico que indica si desea una prueba t emparejada.
+       var.equal = FALSE, # Variable lógica que indica si se deben tratar las dos varianzas como iguales
+       conf.level = 0.95) # Nivel de confianza del intervalo.
+```
+
+### Test T de student para una muestra
+
+Permite comprobar si es posible aceptar que la media de la población es un valor determinado. Se toma una muestra y el Test permite evaluar si es razonable mantener la Hipótesis nula de que la media es tal valor.
+
+Se trata de un test paramétrico; o sea, parte de la suposición de que la variable analizada en el conjunto de la población sigue una variabilidad, una distribución como la de la campana de Gauss. Por lo tanto, podemos pensar que la distribución normal es un buen modelo de esa población. 
+
+Para este ejemplo utilizaremos la variable largo del sépalo (sepal.lenght) de la especue _I. setosa_ de la base _Iris_, asumiendo que cumple con los criterios establecidos para este tipo de test, como lo vimos en nuestro anterior [_POST_](https://rbiologos.com/blog/a014/)
+
+<center>
+![](https://i.ibb.co/ckQPHxC/vikings.gif){width="350"}
+</center><br>
+
+Así, asumiremos que un investigador propone que a partir de sus observaciones considera que la longitud del sépalo de _I. setosa_ es de 5.3cm 
+
+```{r}
+# Filtamos la información para nuestro ejercicio
+datos <- iris[iris$Species == "setosa", ]$Sepal.Length
+
+t.test(datos, 
+       alternative = "two.sided",
+       mu = 5.3, 
+       conf.level = 0.95)
+```
+
+Por tanto, el resultado nos presenta que la media teórica no corresponde a los datos que se estudiaron. El valor de la media con un intervalo de confianza del 95% situa a la media entre los valores de ***4.905824*** y ***5.106176***, con una media aritmética de ***5.006***, por lo cual la propuesta dek investigador es inválida.
+
+### Test T de student para dos muestras de medias poblacionales independientes
+
+Para realizar este tipo de análisis las observaciones tienen que ser independientes unas de las otras. Para ello el muestreo debe ser aleatorio y el tamaño de la muestra inferior al 10% de la población.
+
+Los pasos a seguir para realizar un t-test de medias independientes son:
+
+1. Establecer las hipótesis
+
+Hipótesis nula _(Ho)_: por lo general es la hipótesis escéptica, la que considera que no hay diferencia o cambio. Suele contener en su definición el símbolo =. En el caso de comparar dos medias independientes la hipótesis nula considera que _μ1 = μ2_.
+
+Hipótesis alternativa _(Ha)_: considera que el valor real de la media poblacional es mayor, menor o distinto del valor que establece la _Ho_. Suele contener los símbolos _>, <, ≠_. En el caso de comparar dos medias independientes la hipótesis alternativa considera que _μ1 ≠ μ2_.
+
+2. Calcular el estadístico (parámetro estimado)
+
+El estadístico es el valor que se calcula a partir de la muestra y que se quiere extrapolar a la población de origen. En este caso es la diferencia de las medias muestrales _(x̄1 - x̄2)_.
+
+3. Determinar el tipo de test, una o dos colas
+
+Los test de hipótesis pueden ser de una cola o de dos colas. Si la hipótesis alternativa emplea _“>”_ o _“<”_ se trata de un test de una cola, en el que solo se analizan desviaciones en un sentido. Si la hipótesis alternativa es del tipo “diferente de” se trata de un test de dos colas, en el que se analizan posibles desviaciones en las dos direcciones. Solo se emplean test de una cola cuando se sabe con seguridad que las desviaciones de interés son en un sentido y únicamente si se ha determinado antes de observar la muestra, no a posteriori.
+
+<center>
+![](https://i.ibb.co/xFKdJVK/lagertha.gif){width="350"}
+</center><br>
+
+***Ejemplo***
+
+Ahora, exploraremos la relación entre las especies del género _Iris_ (species) y el largo de su sépalo (Sepal.Length) de la base de datos _Iris_. Una es una variable categórica y la otra es una variable continua. Para tener una idea rápida de si uno afecta al otro, podemos mirar el diagrama de caja y en la cual asumiremos que cumplen con los criterios que deben cumplir para hacer un test paramétrico como lo vimos en nuestro anterior [_POST_](https://rbiologos.com/blog/a014/)
+
+```{r message=FALSE, out.width="100%"}
+# Cargamos las librerías necesarias
+library(ggplot2)
+
+# Filtramos la información, vamos a eliminar los datos de la especie I. virginica y observamos los datos
+datos2 <- iris[iris$Species != "virginica",]
+head(datos2)
+
+# Recuerda que la base Iris está por defecto en un computadora 
+ggplot(datos2, aes(x = Species, y = Sepal.Length)) + 
+  geom_boxplot() + 
+  labs(x = "Especies", 
+       y = "Largo del sépalo")+
+  theme_bw()
+```
+
+Ahora calculemos el _p valor_ a partir del estadístico _t student_. R tiene una función integrada que permite realizar t-test para una o dos muestras, tanto con corrección (en caso de que las varianzas no sean iguales) como sin ella. Esta función devuelve tanto el p-value del test como el intervalo de confianza para la verdadera diferencia de medias.
+
+```{r}
+# Filtramos la información para realizar el test
+x <- iris[iris$Species == "setosa", ]$Sepal.Length
+y <- iris[iris$Species == "versicolor", ]$Sepal.Length
+
+t.test(x, 
+       y, 
+       paired = FALSE, 
+       alternative = "two.sided", 
+       var.equal = FALSE)
+```
+Como podemos observar en los resultados anteriores, el valor de p es ***2.2^16^*** es significativamente más bajo que nuestro umbral del 5%. Por tanto, podemos rechazar la hipótesis nula y aceptar la alternativa.
+
+Según la hipótesis alternativa, los valores de _Sepal.Length_ para varias especies son estadísticamente diferentes entre sí, es decir, los valores están claramente separados entre las diferentes clases de especies.
+
+### Test T de student para dos muestras de medias poblacionales dependientes (pareadas)
+
+Dos medias son dependientes o pareadas cuando proceden de grupos o muestras dependientes, esto es, cuando existe una relación entre las observaciones de las muestras. Este escenario ocurre a menudo cuando los resultados se generan a partir de los mismos individuos bajo condiciones distintas.
+
+Las pruebas pareadas tienen la ventaja frente a los independientes de que se puede controlar mejor la variación no sistematica, ya que se bloquean al estar examinando los mismos individuos dos veces, no dos grupos de individuos distintos.
+
+<center>
+![](https://i.ibb.co/VQ7zKqD/ubbe.gif){width="350"}
+</center><br>
+
+Veamos un ejemplo, donde el programa de biología ha decidido contratar a un nuevo profesor para un grupo de estudio. Para decidir si al cabo de un año mantienen su contrato se selecciona aleatoriamente a 10 estudiantes y se resgistran sus avances en el proyecto (0 a 5, donde 5 es la mayor nota) al inicio del año, al final del año se volverá a registrar esos mismos 10 estudiantes. En vista de los datos obtenidos ¿Hay diferencia significativa entre el rendimiento de los estudiantes tras un año de estudiar con el nuevo profesor?
+
+```{r}
+# Creamos las variables deseadas
+notas <- data.frame(
+          estudiante = c(1:10),
+          antes = c(2.9, 3.5, 2.8, 4.5, 3.7, 2.9, 2.6, 3.5, 4.4, 1.3),
+          despues = c(2.7, 3.6, 2.0, 4.2, 3.6, 2.0, 2.0, 3.5, 4.6, 1.1)
+        )
+head(notas)
+```
+
+Al tratarse de datos pareados, interesa conocer la diferencia en cada par de observaciones, al igual que otros ejemplos asumiremos el cumplimiento de los supuestos par pruebas paramétricas. 
+
+R contiene la función <res>t.test()</res> que realiza un test con datos pareados si se le indica en el argumento. R calcula automáticamente las diferencias para cada evento, asumiendo que se las posiciones de cada vector se corresponden a los datos de un mismo individuo. Está función calcula además el intervalo de confianza para la diferencia de medias.
+
+```{r}
+t.test(x = notas$antes, 
+       y = notas$despues, 
+       alternative = "two.sided",
+       mu = 0, 
+       paired = TRUE, # Datos pareados
+       conf.level = 0.95)
+```
+
+Como el _p-value_ > _α_, no hay evidencias estadísticas significativas para rechazar _H0_ en favor de _HA_. Por lo tanto, no se pude considerar que el rendimiento de los estudiantes haya cambiado, al parecer este profe no conservará su puesto.
+
+### Test T de Student para dos muestras independientes con varianzas no homogéneas
+
+Para este ejemplo vamos a suponer que nuestros datos anteriores son muestras normales pero no tienen varianzas iguales. Por ello, procederemos a realizar el test de Welch. Los siguientes vectores muestran los puntajes de los exámenes de los estudiantes de cada grupo
+
+```{r}
+booklet <- c(90, 85, 88, 89, 94, 91, 79, 83, 87, 88, 91, 90)
+no_booklet <- c(67, 90, 71, 95, 88, 83, 72, 66, 75, 86, 93, 84)
+
+t.test(booklet, 
+       no_booklet)
+```
+
+De nuestros resultados podemos ver que el estadístico de prueba t es ***2.2361*** y el _valor p_ correspondiente es ***0.04171***.
+
+Dado que este _valor p_ es menor que ***.05***, podemos rechazar la hipótesis nula y concluir que existe una diferencia estadísticamente significativa en las puntuaciones medias de los exámenes entre los dos grupos.
+
+# Resumen
+<a name="5"></a>
+
+Como pudimos leer en este post, hay varios estadísticos que nos permitirán tratar nuestros datos paramétricos, recordemos que deben complir ciertos criterios para ser llamados de esta manera.
+
+En nuestro próximo post veremos otro análisis muy importante como lo es el _Análisis de Varianzas_ o conocido como _***ANOVA***_.
+
+Hasta pronto y gracias por acompañarños, recuerda que si tienes alguna duda o comentario, nos puedes escribir a través de nuestras redes sociales o nuestro correo
+
+¡¡¡Hasta pronto!!!
+
+<center>
+![](https://i.ibb.co/vX335L7/dead.gif){width="350"}
+</center><br>
+
+# Bibliografía
+<a name="6"></a>
+
+- [Prueba Z](https://www.dicenlen.eu/es/diccionario/entradas/prueba-z)
+
+- [13. Pruebas de hipótesis para la media de una población](https://rstudio-pubs-static.s3.amazonaws.com/607000_89fe88b16d4047ad9f968f0e862273dd.html#1)
+
+- [Prueba de hipotésis](https://rpubs.com/will10/558310)
+
+- [Test de la t de Student para una muestra](https://jllopisperez.com/2012/12/16/test-de-la-t-de-student-para-una-muestra/)
+
+- [Estadística paramétrica y no paramétrica](https://www.rpubs.com/tonosan/param_no_param)
+
+- [Chi-Square and T tests on Iris Data](https://svaditya.github.io/oldblog/chi_square_and_t_tests_on_iris_data.html)
+
+- [T-test](https://rpubs.com/Joaquin_AR/218467)
+
+- [How to Perform Welch’s t-Test in R](https://www.statology.org/welch-t-test-in-r/)
+
+- [How to Perform an F-Test in R](https://www.statology.org/f-test-in-r/)
+
+- [¿Qué es la regresión lineal?](https://la.mathworks.com/discovery/linear-regression.html)
+
+# Más información
+<a name="7"></a>
+
+Estos análisis se han realizado utilizando el software R (v.4.1.0) y Rstudio (v. 1.4.1717)
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>

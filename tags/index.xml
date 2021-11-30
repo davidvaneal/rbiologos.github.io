@@ -7,13 +7,76 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>es-CO</language>
     <copyright>Copyright &amp;copy; 2020 Diseñado por [David Vanegas](https://github.com/davidvaneal) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright>
-    <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Análisis</title>
       <link>https://rbiologos.com/tags/an%C3%A1lisis/</link>
-      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://rbiologos.com/tags/an%C3%A1lisis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Estadística</title>
+      <link>https://rbiologos.com/tags/estad%C3%ADstica/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.com/tags/estad%C3%ADstica/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Homocedasticidad</title>
+      <link>https://rbiologos.com/tags/homocedasticidad/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.com/tags/homocedasticidad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Normalidad</title>
+      <link>https://rbiologos.com/tags/normalidad/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.com/tags/normalidad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Paramétricas</title>
+      <link>https://rbiologos.com/tags/param%C3%A9tricas/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.com/tags/param%C3%A9tricas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>T Test</title>
+      <link>https://rbiologos.com/tags/t-test/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.com/tags/t-test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>https://rbiologos.com/tags/test/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.com/tags/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Z Test</title>
+      <link>https://rbiologos.com/tags/z-test/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.com/tags/z-test/</guid>
       <description></description>
     </item>
     
@@ -68,15 +131,6 @@
       <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://rbiologos.com/tags/errores/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Estadística</title>
-      <link>https://rbiologos.com/tags/estad%C3%ADstica/</link>
-      <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://rbiologos.com/tags/estad%C3%ADstica/</guid>
       <description></description>
     </item>
     

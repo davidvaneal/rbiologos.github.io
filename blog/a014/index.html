@@ -169,11 +169,29 @@
 
 
 <p>Otro de los aspectos que permite hacer la inferencia es determinar si existe o no asociación entre diferentes variables, es decir, de unas hipótesis cuya validez debemos confirmar o rechazar.</p>
+<div id="contenido-del-post" class="section level1">
+<h1>Contenido del post</h1>
+<ul>
+<li><a href="#1">Introducción</a></li>
+<li><a href="#2">Normalidad</a>
+<ul>
+<li><a href="#3">Histograma y/o gráfico de densidad</a></li>
+<li><a href="#4">Gráfico de cuantiles teóricos</a></li>
+<li><a href="#5">Homocedasticidad</a></li>
+</ul></li>
+<li><a href="#6">Conclusión</a></li>
+<li><a href="#7">Bibliografía</a></li>
+<li><a href="#8">Más información</a></li>
+</ul>
 <center>
 <img src="https://i.ibb.co/bv4rMJs/dance.gif" width="350" />
 </center>
 <p><br></p>
-<p>Y para llevar a cabo esta comprobación aplicamos unas pruebas estadísticas o tests, que permiten contrastar la veracidad o falsedad de las hipótesis enunciadas desde el punto de vista estadístico, si no recuerdas este tema, te invitamos a que leas nuestro pasado <a href="https://rbiologos.com/blog/a013/">Post</a> Este tipo de pruebas se clasifican en pruebas paramétricas y pruebas no paramétricas.</p>
+</div>
+<div id="introducción" class="section level1">
+<h1>Introducción</h1>
+<p><a name="1"></a></p>
+<p>Para llevar a cabo esta comprobación aplicamos unas pruebas estadísticas o tests, que permiten contrastar la veracidad o falsedad de las hipótesis enunciadas desde el punto de vista estadístico, si no recuerdas este tema, te invitamos a que leas nuestro pasado <a href="https://rbiologos.com/blog/a013/">Post</a> Este tipo de pruebas se clasifican en pruebas paramétricas y pruebas no paramétricas.</p>
 <p>En este nuevo post hablaremos de los test requeridos para considerar si nuestros datos se pueden manejar bajo las pruebas paramétricas o las no paramétricas, como supuestos de <strong><em>normalidad</em></strong> y <strong><em>homocedasticidad</em></strong>. Cabe recordar que las pruebas <em>paramétricas</em> <strong><em>exigen</em></strong> ciertos requisitos previos para su aplicación, donde su incumplimiento conlleva la necesidad de recurrir a pruebas estadísticas <em>no paramétricas</em>.</p>
 <ul>
 <li><p>Variable de estudio: tiene que ser numérica. Esto es, la variable dependiente debe estar medida en una escala que sea, por lo menos, de intervalo.</p></li>
@@ -188,8 +206,10 @@
 <img src="https://i.ibb.co/wCKxW7J/face.gif" width="350" />
 </center>
 <p><br></p>
-<div id="normalidad" class="section level2">
-<h2>Normalidad</h2>
+</div>
+<div id="normalidad" class="section level1">
+<h1>Normalidad</h1>
+<p><a name="2"></a></p>
 <p>La lógica de la prueba se basa en las desviaciones que presentan las estadísticas de orden de la muestra respecto a los valores esperados de los estadísticos de orden de la normal estándar.</p>
 <p>Para estudiar si una muestra aleatoria proviene de una población con distribución normal se disponen de tres herramientas que se listan a continuación.</p>
 <ul>
@@ -203,8 +223,9 @@
 </center>
 <p><br></p>
 <p>A continuación profundizaremos un poco sobre el uso de cada de las tres herramientas anteriormente nombradas para estudiar la normalidad.</p>
-<div id="histograma-yo-gráfico-de-densidad" class="section level4">
-<h4>Histograma y/o gráfico de densidad</h4>
+<div id="histograma-yo-gráfico-de-densidad" class="section level2">
+<h2>Histograma y/o gráfico de densidad</h2>
+<p><a name="3"></a></p>
 <p>Consiste en representar los datos mediante un histograma (Fig. 1) y/o gráfico de densidad (Fig. 2), superponer la curva de una distribución normal con la misma media y desviación estándar que muestran los datos.</p>
 <p>Para realizar este ejemplo vamos a utilizar la base de datos <res>iris</res>, base que da las medidas en centímetros de las variables longitud y ancho del sépalo, y largo y ancho del pétalo, respectivamente, para 50 flores de cada una de las 3 especies de iris, con el fin de mostrar los alcances de este tipo de gráfica (Fig. 1) en la prueba</p>
 <pre class="r"><code>## Cargamos el paquete ggplot2
@@ -236,14 +257,17 @@ ggplot(data = iris, aes(x = Sepal.Length)) +
   labs(colour = &quot;Cantidad&quot;, fill = &quot;Cantidad&quot;)</code></pre>
 <p><img src="https://rbiologos.com/blog/a014/index.es_files/figure-html/unnamed-chunk-1-1.png" width="100%" />
 Fig. 1. Histograma y Curva normal teórica de la longitud del sépalo de las flores del género <em>Iris</em></p>
-<p><strong><em>Gráfica de densidad</em></strong></p>
+<ul>
+<li><strong><em>Gráfica de densidad</em></strong></li>
+</ul>
 <pre class="r"><code>plot(density(iris$Sepal.Length), main = &#39;Density Plot of Sepal Length&#39;, xlab = &#39; Sepal Length&#39;)</code></pre>
-<p><img src="https://rbiologos.com/blog/a014/index.es_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="https://rbiologos.com/blog/a014/index.es_files/figure-html/unnamed-chunk-2-1.png" width="100%" /></p>
 <p>Fig. 2. Histograma y Curva normal teórica de la longitud del sépalo de las flores del género <em>Iris</em></p>
 <p>Como muestran la gráficas, no queda claro el cumplimiento de la normalidad. Visualmente, la variable sepal lenght <strong><em>NO</em></strong> parece distribuida normalmente. En el gráfico de densidad se puede apreciar que tiene una parte superior plana con sesgo positivo. Esto es bastante común, por lo que el uso de todas las herramientas es fundamental para no caer en malas desiciones.</p>
 </div>
-<div id="gráfico-de-cuantiles-teóricos-qqplot" class="section level4">
-<h4>Gráfico de cuantiles teóricos (qqplot)</h4>
+<div id="gráfico-de-cuantiles-teóricos-qqplot" class="section level2">
+<h2>Gráfico de cuantiles teóricos (qqplot)</h2>
+<p><a name="4"></a></p>
 <p>Consiste en comparar los cuantiles de la distribución observada con los cuantiles teóricos de una distribución normal con la misma media y desviación estándar que los datos. Cuanto más se aproximen los datos a una normal, más alineados están los puntos entorno a la recta. Este gráfico (Fig. 3) lo realizamos con la función <res>qqnorm()</res> y la recta de normalidad con <res>qqline()</res>.</p>
 <pre class="r"><code>qqnorm(iris$Sepal.Length, pch = 1, frame = FALSE, 
        main = &quot;Gráfico Q-Q&quot;, 
@@ -253,16 +277,18 @@ qqline(iris$Sepal.Length, col = &quot;steelblue&quot;, lwd = 2)</code></pre>
 <p><img src="https://rbiologos.com/blog/a014/index.es_files/figure-html/unnamed-chunk-3-1.png" width="100%" /></p>
 <p>Fig. 3. Gráfico de cuantiles teóricos con el la función <em>qqnorm</em> de la longitud del sépalo de la base de datos <em>iris</em></p>
 <p>Otra forma de ver el comportamiento de nuestros datos es con el paquete <res>car</res>, el cuál nos mostrará de manera más óptima dicho comportamiento (Fig. 4) y su función <res>qqPlot()</res></p>
-<pre class="r"><code>## La paquete &quot;car&quot;, tiene como dependencia &quot;carData&quot;
-library(car)</code></pre>
-<pre><code>## Loading required package: carData</code></pre>
-<pre class="r"><code>qqPlot(iris$Sepal.Length, pch = 16, col = c(&quot;black&quot;), 
+<pre class="r"><code>## El paquete &quot;car&quot;, tiene como dependencia &quot;carData&quot;
+library(car)
+
+qqPlot(iris$Sepal.Length, pch = 16, col = c(&quot;black&quot;), 
        col.lines = &quot;blue&quot;, cex = 1,
        main = &quot;Gráfica Q-Q&quot;, id = F )</code></pre>
-<p><img src="https://rbiologos.com/blog/a014/index.es_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="https://rbiologos.com/blog/a014/index.es_files/figure-html/unnamed-chunk-4-1.png" width="100%" /></p>
 <p>Fig. 4. Gráfico de cuantiles teóricos con el la función <em>qqPlot</em> de la longitud del sépalo de la base de datos <em>iris</em></p>
 <p>De acuerdo al comportamiento en el <strong><em>gráfico Q-Q</em></strong>, podemos indagar que nuestros datos si parecen cierta distribución normal, observemos que los puntos parecen caer sobre una línea recta, sin embargo, como bien habíamos dicho anteriormente, es mejor realizar todos los pasos para no cometer algún error de apreciación.</p>
-<p><strong><em>Pruebas de hipótesis</em></strong></p>
+<ul>
+<li><strong><em>Pruebas de hipótesis</em></strong></li>
+</ul>
 <p>Para poder asumir y contrastar los valores de las diferentes pruebas de hipótesis que veremos a continuación, es necesario tener bajo consideración el Test de hipótesis, el cual formularemos con un nivel de significancia de <res>α = 0.05</res> de la siguiente manera</p>
 <pre><code>Hipótesis nula (H0): Los datos siguen una distribución normal
 
@@ -275,7 +301,9 @@ Hipótesis alternativa (Ha): Los datos no siguen una distribución normal</code>
 <img src="https://i.ibb.co/qJ04XPJ/Decisive.gif" width="350" />
 </center>
 <p><br></p>
-<p><strong><em>Prueba de Anderson-Darling</em></strong></p>
+<ul>
+<li><strong><em>Prueba de Anderson-Darling</em></strong></li>
+</ul>
 <p>Es una prueba <strong><em>no paramétrica</em></strong> sobre los datos de una muestra que provienen de una distribución específica. Principalmente se basa en la distancia de la distribución hipotética F, y la función de la distribución empírica Fn, donde n es el número de elementos en la muestra.</p>
 <blockquote>
 <p>El número de muestra debe de ser mayor a 7 y permite missing values.</p>
@@ -293,7 +321,9 @@ ad.test(Sepal.Length)</code></pre>
 ## data:  Sepal.Length
 ## A = 0.8892, p-value = 0.02251</code></pre>
 <p>Así, nuestro p valor es igual a <strong><em>0.02251</em></strong>, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
-<p><strong><em>Prueba de Cramer-Von Mises</em></strong></p>
+<ul>
+<li><strong><em>Prueba de Cramer-Von Mises</em></strong></li>
+</ul>
 <p>El Criterio de Cramer Von Mises, utiliza como criterio la distancia mínima de la función de distribución acumulada F en comparación con la función de distribución empírica Fn.</p>
 <p>Es útil para pequeñas muestras y usa los momentos como criterio y es una alternativa a la prueba de Kolmogorov-Smirnov.</p>
 <pre class="r"><code>## Paquete &quot;nortest&quot;
@@ -308,7 +338,9 @@ cvm.test(Sepal.Length2)</code></pre>
 ## data:  Sepal.Length2
 ## W = 0.036995, p-value = 0.7033</code></pre>
 <p>Como nuestro p valor es igual a <strong><em>0.7033</em></strong> y por consiguiente mayor a <strong><em>0.05</em></strong> con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
-<p><strong><em>Prueba de Lilliefors (Kolmogorov-Smirnov)</em></strong></p>
+<ul>
+<li><strong><em>Prueba de Lilliefors (Kolmogorov-Smirnov)</em></strong></li>
+</ul>
 <p>Utiliza la diferencia máxima absoluta entre la función de distribución acumulada empírica y la hipotética</p>
 <p>Aunque el estadístico de prueba obtenido de lillie.text(x) es el mismo que el obtenido de ks(x,“pnorm”,mean(x),sd(x)), no es correcto usar el p-value de este último para la hipótesis compuesta de normalidad (media y varianza desconocidas), ya que la distribución del estadístico de prueba es diferente cuando se estiman los parámetros.</p>
 <blockquote>
@@ -323,7 +355,9 @@ lillie.test(Sepal.Length)</code></pre>
 ## data:  Sepal.Length
 ## D = 0.088654, p-value = 0.005788</code></pre>
 <p>Bajo este test nuestro p valor es igual a <strong><em>0.005788</em></strong>, por lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
-<p><strong><em>Prueba de Pearson chi-square</em></strong></p>
+<ul>
+<li><strong><em>Prueba de Pearson chi-square</em></strong></li>
+</ul>
 <p>Compara la distribución observada de los datos con una distribución esperada. La prueba de χ2 de Pearson generalmente no se recomienda para probar en la hipótesis compuesta de normalidad debido a sus propiedades de potencia son inferiores en comparación con otras pruebas.</p>
 <blockquote>
 <p>Basada en una distribución χ2, que corresponde a una prueba de bondad de ajuste.</p>
@@ -337,7 +371,9 @@ pearson.test(Sepal.Length)</code></pre>
 ## data:  Sepal.Length
 ## P = 17.4, p-value = 0.1352</code></pre>
 <p>El resultado de nuestro p valor en este tipo es igual a <strong><em>0.1352</em></strong>, con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
-<p><strong><em>Prueba de Shapiro-Francia</em></strong></p>
+<ul>
+<li><strong><em>Prueba de Shapiro-Francia</em></strong></li>
+</ul>
 <p>La prueba de Shapiro-Francia es simplemente la correlación al cuadrado entre los valores de la muestra ordenados y los cuantiles esperados (aproximación) de la distribución normal estándar</p>
 <blockquote>
 <p>Simplificación de la prueba Shapiro-Wilk y este tipo de prueba funciona bien, también el número de datos debe estar entre 5 y 5000.</p>
@@ -351,7 +387,9 @@ sf.test(Sepal.Length)</code></pre>
 ## data:  Sepal.Length
 ## W = 0.97961, p-value = 0.02621</code></pre>
 <p>Así, nuestro p valor es igual a <strong><em>0.02621</em></strong>, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
-<p><strong><em>Prueba de Frosini</em></strong></p>
+<ul>
+<li><strong><em>Prueba de Frosini</em></strong></li>
+</ul>
 <p>La prueba de Frosini para la normalidad se basa en el siguiente estadístico:</p>
 <center>
 <img src="https://i.ibb.co/zGmDXCf/Frosini.jpg" width="200" />
@@ -365,9 +403,11 @@ frosini.norm.test(Sepal.Length, nrepl=2000)</code></pre>
 ##  Frosini test for normality
 ## 
 ## data:  Sepal.Length
-## B = 0.2799, p-value = 0.059</code></pre>
+## B = 0.2799, p-value = 0.0575</code></pre>
 <p>El resultado de nuestro p valor es mayor a 0.05, con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
-<p><strong><em>Prueba de Geary</em></strong></p>
+<ul>
+<li><strong><em>Prueba de Geary</em></strong></li>
+</ul>
 <p>La prueba de Geary se basa en el siguiente estadístico</p>
 <center>
 <img src="https://i.ibb.co/LrQ1C3J/Geray.jpg" width="200" />
@@ -382,9 +422,11 @@ geary.norm.test(Sepal.Length)</code></pre>
 ##  Geary test for normality
 ## 
 ## data:  Sepal.Length
-## d = 0.8331, p-value = 0.018</code></pre>
+## d = 0.8331, p-value = 0.02</code></pre>
 <p>Por tanto, nuestro p valor es igual a <strong><em>0.02</em></strong>, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
-<p><strong><em>Prueba de Hegazy-Green</em></strong></p>
+<ul>
+<li><strong><em>Prueba de Hegazy-Green</em></strong></li>
+</ul>
 <p>La prueba de Hegazy-Green para la normalidad se basa en el siguiente estadístico:</p>
 <center>
 <img src="https://i.ibb.co/3M97BnQ/Hegazy-Green.jpg" width="200" />
@@ -398,9 +440,11 @@ hegazy1.norm.test(Sepal.Length, nrepl = 20000) </code></pre>
 ##  Hegazy-Green test for normality
 ## 
 ## data:  Sepal.Length
-## T = 0.098714, p-value = 0.03775</code></pre>
+## T = 0.098714, p-value = 0.03575</code></pre>
 <p>Con este tipo de test nuestro p valor es menor a 0.05, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
-<p><strong><em>Prueba de Jarque-Bera Ajustada</em></strong></p>
+<ul>
+<li><strong><em>Prueba de Jarque-Bera Ajustada</em></strong></li>
+</ul>
 <p>La prueba de Jarque–Bera Ajustada para la normalidad se basa en el siguiente estadístico:</p>
 <center>
 <img src="https://i.ibb.co/LNs2hNm/Jarque-Bera-Ajustada.jpg" width="200" />
@@ -416,9 +460,11 @@ jb.norm.test(Sepal.Length, nrepl = 2000)</code></pre>
 ##  Jarque-Bera test for normality
 ## 
 ## data:  Sepal.Length
-## JB = 4.4859, p-value = 0.0755</code></pre>
+## JB = 4.4859, p-value = 0.0775</code></pre>
 <p>El resultado para el p valor es igual mayor a 0.05, por lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
-<p><strong><em>Prueba de Kurtosis</em></strong></p>
+<ul>
+<li><strong><em>Prueba de Kurtosis</em></strong></li>
+</ul>
 <p>La prueba de Kurtosis para la normalidad se basa en el siguiente estadístico:</p>
 <center>
 <img src="https://i.ibb.co/bd9tZTJ/Kurtosis.jpg" width="200" />
@@ -431,9 +477,11 @@ kurtosis.norm.test(Sepal.Length, nrepl = 2000)</code></pre>
 ##  Kurtosis test for normality
 ## 
 ## data:  Sepal.Length
-## T = 2.4264, p-value = 0.1085</code></pre>
+## T = 2.4264, p-value = 0.1045</code></pre>
 <p>Así, nuestro p valor es igual a <strong><em>0.1045</em></strong>, con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
-<p><strong><em>Prueba de Skewness</em></strong></p>
+<ul>
+<li><strong><em>Prueba de Skewness</em></strong></li>
+</ul>
 <p>La prueba de Skewness para la normalidad se basa en el siguiente estadístico:</p>
 <center>
 <img src="https://i.ibb.co/QPn2VMh/Skewness.jpg" width="200" />
@@ -446,9 +494,11 @@ skewness.norm.test(Sepal.Length, nrepl = 2000)</code></pre>
 ##  Skewness test for normality
 ## 
 ## data:  Sepal.Length
-## T = 0.31175, p-value = 0.116</code></pre>
+## T = 0.31175, p-value = 0.098</code></pre>
 <p>Así, nuestro p valor es igual mayor a 0.05, con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
-<p><strong><em>Prueba de Spiegelhalter</em></strong></p>
+<ul>
+<li><strong><em>Prueba de Spiegelhalter</em></strong></li>
+</ul>
 <p>La prueba de Spiegelhalter para la normalidad se basa en el siguiente estadístico:</p>
 <center>
 <img src="https://i.ibb.co/NTMtwRK/Spiegelhalter.jpg" width="200" />
@@ -461,9 +511,11 @@ spiegelhalter.norm.test(Sepal.Length, nrepl=2000)</code></pre>
 ##  Spiegelhalter test for normality
 ## 
 ## data:  Sepal.Length
-## T = 1.2022, p-value = 0.9725</code></pre>
+## T = 1.2022, p-value = 0.9735</code></pre>
 <p>Nuestro p valor es mayor a 0.05, con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
-<p><strong><em>Prueba de Weisberg-Bingham</em></strong></p>
+<ul>
+<li><strong><em>Prueba de Weisberg-Bingham</em></strong></li>
+</ul>
 <p>La prueba de Weisberg-Bingham para la normalidad se basa en el siguiente estadístico:</p>
 <center>
 <img src="https://i.ibb.co/d5ZgJCv/Weisberg-Bingham.jpg" width="200" />
@@ -476,9 +528,11 @@ wb.norm.test(Sepal.Length, nrepl=2000)</code></pre>
 ##  Weisberg-Bingham test for normality
 ## 
 ## data:  Sepal.Length
-## WB = 0.97961, p-value = 0.0285</code></pre>
+## WB = 0.97961, p-value = 0.0245</code></pre>
 <p>Nuestro resultado para el p valor es mayor a 0.05, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
-<p><strong><em>Prueba de Agostino</em></strong></p>
+<ul>
+<li><strong><em>Prueba de Agostino</em></strong></li>
+</ul>
 <p>La prueba de Agostino sirve para medir el nivel de asimetría de una normal en los datos. Bajo la hipótesis de la normalidad, los datos deben ser simétricos (es decir, la asimetría debe ser igual a cero).</p>
 <pre class="r"><code>## Paquete &quot;moment&quot;
 library(moments)
@@ -491,7 +545,9 @@ agostino.test(Sepal.Length)</code></pre>
 ## skew = 0.31175, z = 1.59630, p-value = 0.1104
 ## alternative hypothesis: data have a skewness</code></pre>
 <p>Así, nuestro p valor es igual a <strong><em>0.1104</em></strong>, con lo que podríamos concluir que nuestros datos siguen una distribución normal</p>
-<p><strong><em>Prueba de Shapiro-Wilk</em></strong></p>
+<ul>
+<li><strong><em>Prueba de Shapiro-Wilk</em></strong></li>
+</ul>
 <p>La prueba de Shapiro-Wilk es ampliamente recomendada para la prueba de normalidad y proporciona una mejor potencia que K-S. Se basa en la correlación entre los datos y las puntuaciones normales correspondientes.</p>
 <p>La prueba de normalidad es sensible al tamaño de muestra. Las muestras pequeñas con mayor frecuencia pasan las pruebas de normalidad. Por lo tanto, es importante combinar la inspección visual y la prueba de significación de normalidad para tomar la decisión correcta.</p>
 <blockquote>
@@ -504,7 +560,9 @@ agostino.test(Sepal.Length)</code></pre>
 ## data:  Sepal.Length
 ## W = 0.97609, p-value = 0.01018</code></pre>
 <p>Así, nuestro p valor es igual a <strong><em>0.01018</em></strong>, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal</p>
-<p><strong><em>Resumen normalidad</em></strong></p>
+<ul>
+<li><strong><em>Resumen normalidad</em></strong></li>
+</ul>
 <p>Visto los diferentes resultados de las pruebas realizadas para evidenciar normalidad, podemos inferir que los resultados dependerán en gran medida del tipo de test que elijamos usar. Y la pregunta del millón sería ¿entonces cuál debo utilizar? Pues no podemos darte una única respuesta, todo va a depender de tus datos, de la pregunta de investigación que quieras responder y la teoría detrás de cada análisis, porque es a partir de ello que tomaremos la mejor desición sobre que tipo de prueba es la más adecuada.</p>
 <center>
 <img src="https://i.ibb.co/vYdnczW/loco.gif" width="350" />
@@ -513,8 +571,9 @@ agostino.test(Sepal.Length)</code></pre>
 <p>Sin embargo, la <strong><em>Prueba de Shapiro-Wilk</em></strong> es uno de los test más confiables y robustos, por lo que según sus resultados, nuestros datos NO se ajustarían a una distribución normal, por lo que hasta este momento, tendrémos que usar las pruebas para datos no paramétricos</p>
 </div>
 </div>
-<div id="homocesdasticidad" class="section level2">
-<h2>Homocesdasticidad</h2>
+<div id="homocesdasticidad" class="section level1">
+<h1>Homocesdasticidad</h1>
+<p><a name="5"></a></p>
 <p>La homocedasticidad en un modelo estadístico predictivo ocurre si en todos los grupos de datos de una o más observaciones, la varianza del modelo respecto de las variables explicativas (o independientes) se mantiene constante. Así, un modelo de regresión puede ser homocedástico o no, en cuyo caso se habla de heterocedasticidad. Una varianza constante nos permite disponer de modelos más fiables, además, si una varianza, aparte de ser constante es también más pequeña, nos dará como resultado una predicción del modelo más fiable.</p>
 <blockquote>
 <p>La heterocedasticidad es, en estadística, cuando los errores no son constantes a lo largo de toda la muestra. El término es contrario a homocedasticidad.</p>
@@ -537,7 +596,9 @@ agostino.test(Sepal.Length)</code></pre>
 <img src="https://i.ibb.co/SyDpFpv/computer.gif" width="350" />
 </center>
 <p><br></p>
-<p><strong><em>F-test</em></strong></p>
+<ul>
+<li><strong><em>F-test</em></strong></li>
+</ul>
 <p>También conocido como contraste de la razón de varianzas, contrasta la hipótesis nula de que dos poblaciones normales tienen la misma varianza. Es muy potente, detecta diferencias muy sutiles, pero es muy sensible a violaciones de la normalidad de las poblaciones. Por esta razón, no es un test recomendable si no se tiene mucha certeza de que las poblaciones se distribuyen de forma normal.</p>
 <p>Hagamos un ejercicio, esta vez lo haremos con la confiable base de datos <res>iris</res>. Para ello, vamos a cargar los paquetes necesarios</p>
 <pre class="r"><code>library(ggplot2)
@@ -579,8 +640,10 @@ dim(iris2)</code></pre>
 ## ratio of variances 
 ##          0.7249678</code></pre>
 <p>Así, de acuerdo al resultado anterior, <em>p-value = 0.2637</em>, podemos concluir que no se encuentra diferencias significativas entre las varianzas de los dos grupos, osea, tenemos un comportamiento de las varianzas en homocedasticidad.</p>
-<p><strong><em>Test de Levene</em></strong></p>
-<p>El test de Levene se puede aplicar con la función <res>leveneTest()<res/> del paquete <res>car</res>. Se caracteriza, además de por poder comparar 2 o más poblaciones, por permitir elegir entre diferentes estadísticos de centralidad: mediana (por defecto), media, media truncada. Esto es importante a la hora de contrastar la homocedasticidad dependiendo de si los grupos se distribuyen de forma normal o no.</p>
+<ul>
+<li><strong><em>Test de Levene</em></strong></li>
+</ul>
+<p>El test de Levene se puede aplicar con la función <res>leveneTest()</res> del paquete <res>car</res>. Se caracteriza, además de por poder comparar 2 o más poblaciones, por permitir elegir entre diferentes estadísticos de centralidad: mediana (por defecto), media, media truncada. Esto es importante a la hora de contrastar la homocedasticidad dependiendo de si los grupos se distribuyen de forma normal o no.</p>
 <pre class="r"><code>library(car)
 
 leveneTest(y = iris2$Petal.Length, group = iris2$Species, center = &quot;median&quot;)</code></pre>
@@ -589,7 +652,9 @@ leveneTest(y = iris2$Petal.Length, group = iris2$Species, center = &quot;median&
 ## group  1  1.0674 0.3041
 ##       98</code></pre>
 <p>Así, de acuerdo al resultado anterior <em>0.3041</em>, podemos concluir que no se encuentra diferencias significativas entre las varianzas de los dos grupos, osea, tenemos un comportamiento de las varianzas en homocedasticidad.</p>
-<p><strong><em>Test de Bartlett</em></strong></p>
+<ul>
+<li><strong><em>Test de Bartlett</em></strong></li>
+</ul>
 <p>Permite contrastar la igualdad de varianza en 2 o más poblaciones sin necesidad de que el tamaño de los grupos sea el mismo. Es más sensible que el <strong><em><em>Test de Levene</em></em></strong> a la falta de normalidad, pero si se está seguro de que los datos provienen de una distribución normal, es la mejor opción.</p>
 <pre class="r"><code>## Organizamos los datos para realizar el test
 a &lt;- iris[iris$Species == &quot;versicolor&quot;, &quot;Petal.Length&quot;]
@@ -637,7 +702,9 @@ bartlett.test(iris$Sepal.Length ~ iris$Species)</code></pre>
 ## data:  iris$Sepal.Length by iris$Species
 ## Bartlett&#39;s K-squared = 16.006, df = 2, p-value = 0.0003345</code></pre>
 <p>Así, de acuerdo al resultado anterior, <strong><em>p-value = 0.0003345</em></strong>, podemos concluir que si se encuentran diferencias significativas entre las varianzas de los tres grupos, osea, tenemos un comportamiento de las varianzas en heterocedasticidad.</p>
-<p><strong><em>Test de Brown-Forsythe</em></strong></p>
+<ul>
+<li><strong><em>Test de Brown-Forsythe</em></strong></li>
+</ul>
 <p>La prueba de Brown-Forsythe (B-F) se utiliza para probar el supuesto de varianzas iguales en ANOVA. Se puede encontrar dentro del paquete <res>onewaytests</res>, y se realiza con la función <res>hov()</res>. Este test es equivalente al <strong><em>Test de Levene</em></strong> cuando se emplea la mediana como medida de centralidad.</p>
 <pre class="r"><code>library(onewaytests)
 
@@ -664,12 +731,15 @@ iris %&gt;%
 ##   Result     : Difference is statistically significant. 
 ## -------------------------------------------------------------</code></pre>
 <p>En nuestro ejemplo, se rechaza la hipótesis nula, por lo que podemos concluir que si se encuentran diferencias significativas entre las varianzas de los tres grupos, osea, tenemos un comportamiento de las varianzas en heterocedasticidad.</p>
-<p><strong><em>Resumen Homocesdasticidad</em></strong></p>
+<ul>
+<li><strong><em>Resumen Homocesdasticidad</em></strong></li>
+</ul>
 <p>Si tenemos la seguridad de que nuestras muestras siguen una distribución normal, son recomendables el <strong><em>F-test</em></strong> y el test de <strong><em>Bartlet</em></strong>, pareciendo ser el segundo más recomendable ya que el primero es muy potente pero extremadamente sensible a desviaciones de la normal.</p>
 <p>Si no se tiene la seguridad de que las poblaciones de origen son normales, se recomiendan el <strong><em>Test de Leven</em></strong> utilizando la mediana.</p>
 </div>
-<div id="conclusión" class="section level2">
-<h2>Conclusión</h2>
+<div id="conclusión" class="section level1">
+<h1>Conclusión</h1>
+<p><a name="6"></a></p>
 <p>Como pudimos leer y aprender, debemos hacer pruebas a nuestros datos para saber que tipo de pruebas podríamos aplicar a futuro, dependiendo si son datos paramétricos o no paramétricos. En la cual la normalidad y la homocesdasticidad de los datos, jugarán un papel importante, en la decisión personal a partir de los resultados de las pruebas de que tipo de datos tenemos.</p>
 <p>Recuerda que las diferentes pruebas tienen un mismo objetivo, pero todas manejan ciertos critrios que dependerán de nuestros datos, nuestras preguntas de investigación y lo que en nuestro proceso de aprendizaje, podamos afirmar si es o no la prueba adecuada para nuestro estudio.</p>
 <center>
@@ -683,8 +753,9 @@ iris %&gt;%
 </center>
 <p><br></p>
 </div>
-<div id="literatura-citada" class="section level2">
-<h2>Literatura citada</h2>
+<div id="literatura-citada" class="section level1">
+<h1>Literatura citada</h1>
+<p><a name="7"></a></p>
 <ul>
 <li><p><a href="https://redined.mecd.gob.es/xmlui/bitstream/handle/11162/15044/00720123000097.pdf?sequence=1&amp;isAllowed=y">Cómo aplicar las pruebas paramétricas bivariadas t de Student y ANOVA en SPSS. Caso práctico</a></p></li>
 <li><p><a href="https://lamenteesmaravillosa.com/pruebas-parametricas-definicion-y-caracteristicas/">Pruebas paramétricas: definición y características</a></p></li>
@@ -699,8 +770,9 @@ iris %&gt;%
 <li><p><a href="https://www.cienciadedatos.net/documentos/9_homogeneidad_de_varianza_homocedasticidad.html">Análisis de la homogeneidad de varianza (homocedasticidad)</a></p></li>
 </ul>
 </div>
-<div id="más-información" class="section level2">
-<h2>Más información</h2>
+<div id="más-información" class="section level1">
+<h1>Más información</h1>
+<p><a name="8"></a></p>
 <p>Estos análisis se han realizado utilizando el software R (v.4.1.0) y Rstudio (v. 1.4.1717)</p>
 <p>Recuerda que todos nuestros códigos están almacenados en <a href="https://github.com/RBiologos/Posts">GitHub</a></p>
 <center>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homocedasticidad on R Biólogos</title>
+    <link>https://rbiologos.com/tags/homocedasticidad/</link>
+    <description>Recent content in Homocedasticidad on R Biólogos</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-CO</language>
+    <copyright>Copyright &amp;copy; 2020 Diseñado por [David Vanegas](https://github.com/davidvaneal) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright>
+    <lastBuildDate>Fri, 26 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.com/tags/homocedasticidad/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pruebas paramétricas - Parte I</title>
+      <link>https://rbiologos.com/blog/a015/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.com/blog/a015/</guid>
+      <description>Se conoce como estadística paramétrica a las pruebas que se basan en el muestreo de una población con parámetros específicos.</description>
+    </item>
+    
+  </channel>
+</rss>

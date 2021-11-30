@@ -18,11 +18,25 @@ tags:
 
 Otro de los aspectos que permite hacer la inferencia es determinar si existe o no asociación entre diferentes variables, es decir, de unas hipótesis cuya validez debemos confirmar o rechazar. 
 
+# Contenido del post
+
+- [Introducción](#1)
+- [Normalidad](#2)
+    - [Histograma y/o gráfico de densidad](#3)
+    - [Gráfico de cuantiles teóricos](#4)
+    - [Homocedasticidad](#5)
+- [Conclusión](#6)
+- [Bibliografía](#7)
+- [Más información](#8)
+
 <center>
 ![](https://i.ibb.co/bv4rMJs/dance.gif){width=350}
 </center><br>
 
-Y para llevar a cabo esta comprobación aplicamos unas pruebas estadísticas o tests, que permiten contrastar la veracidad o falsedad de las hipótesis enunciadas desde el punto de vista estadístico, si no recuerdas este tema, te invitamos a que leas nuestro pasado [Post](https://rbiologos.com/blog/a013/) Este tipo de pruebas se clasifican en pruebas paramétricas y pruebas no paramétricas.
+# Introducción 
+<a name="1"></a>
+
+Para llevar a cabo esta comprobación aplicamos unas pruebas estadísticas o tests, que permiten contrastar la veracidad o falsedad de las hipótesis enunciadas desde el punto de vista estadístico, si no recuerdas este tema, te invitamos a que leas nuestro pasado [Post](https://rbiologos.com/blog/a013/) Este tipo de pruebas se clasifican en pruebas paramétricas y pruebas no paramétricas.
 
 En este nuevo post hablaremos de los test requeridos para considerar si nuestros datos se pueden manejar bajo las pruebas paramétricas o las no paramétricas, como supuestos de ***normalidad*** y ***homocedasticidad***. Cabe recordar que las pruebas _paramétricas_ ***exigen*** ciertos requisitos previos para su aplicación, donde su incumplimiento conlleva la necesidad de recurrir a pruebas estadísticas _no paramétricas_.
 
@@ -44,7 +58,8 @@ Entonces empecemos a aprender a como calcular cada uno de los requisitos para de
 ![](https://i.ibb.co/wCKxW7J/face.gif){width=350}
 </center><br>
 
-## Normalidad
+# Normalidad 
+<a name="2"></a>
 
 La lógica de la prueba se basa en las desviaciones que presentan las estadísticas de orden de la muestra respecto a los valores esperados de los estadísticos de orden de la normal estándar.
 
@@ -62,7 +77,8 @@ Al evaluar visualmente la simetría de la distribución de los datos a partir de
 
 A continuación profundizaremos un poco sobre el uso de cada de las tres herramientas anteriormente nombradas para estudiar la normalidad.
 
-#### Histograma y/o gráfico de densidad
+## Histograma y/o gráfico de densidad 
+<a name="3"></a>
 
 Consiste en representar los datos mediante un histograma (Fig. 1) y/o gráfico de densidad (Fig. 2), superponer la curva de una distribución normal con la misma media y desviación estándar que muestran los datos.
 
@@ -99,9 +115,9 @@ ggplot(data = iris, aes(x = Sepal.Length)) +
 ```
 Fig. 1. Histograma y Curva normal teórica de la longitud del sépalo de las flores del género _Iris_
 
-***Gráfica de densidad***
+- ***Gráfica de densidad***
 
-```{r}
+```{r out.width="100%"}
 plot(density(iris$Sepal.Length), main = 'Density Plot of Sepal Length', xlab = ' Sepal Length')
 ```
 
@@ -109,7 +125,8 @@ Fig. 2. Histograma y Curva normal teórica de la longitud del sépalo de las flo
 
 Como muestran la gráficas, no queda claro el cumplimiento de la normalidad. Visualmente, la variable sepal lenght ***NO*** parece distribuida normalmente. En el gráfico de densidad se puede apreciar que tiene una parte superior plana con sesgo positivo. Esto es bastante común, por lo que el uso de todas las herramientas es fundamental para no caer en malas desiciones.
 
-#### Gráfico de cuantiles teóricos (qqplot)
+## Gráfico de cuantiles teóricos (qqplot) 
+<a name="4"></a>
 
 Consiste en comparar los cuantiles de la distribución observada con los cuantiles teóricos de una distribución normal con la misma media y desviación estándar que los datos. Cuanto más se aproximen los datos a una normal, más alineados están los puntos entorno a la recta. Este gráfico (Fig. 3) lo realizamos con la función <res>qqnorm()</res> y la recta de normalidad con <res>qqline()</res>.
 
@@ -125,8 +142,8 @@ Fig. 3. Gráfico de cuantiles teóricos con el la función _qqnorm_ de la longit
 
 Otra forma de ver el comportamiento de nuestros datos es con el paquete <res>car</res>, el cuál nos mostrará de manera más óptima dicho comportamiento (Fig. 4) y su función <res>qqPlot()</res>
 
-```{r}
-## La paquete "car", tiene como dependencia "carData"
+```{r out.width="100%", message=FALSE}
+## El paquete "car", tiene como dependencia "carData"
 library(car)
 
 qqPlot(iris$Sepal.Length, pch = 16, col = c("black"), 
@@ -138,7 +155,7 @@ Fig. 4. Gráfico de cuantiles teóricos con el la función _qqPlot_ de la longit
 
 De acuerdo al comportamiento en el ***gráfico Q-Q***, podemos indagar que nuestros datos si parecen cierta distribución normal, observemos que los puntos parecen caer sobre una línea recta, sin embargo, como bien habíamos dicho anteriormente, es mejor realizar todos los pasos para no cometer algún error de apreciación.
 
-***Pruebas de hipótesis***
+- ***Pruebas de hipótesis***
 
 Para poder asumir y contrastar los valores de las diferentes pruebas de hipótesis que veremos a continuación, es necesario tener bajo consideración el Test de hipótesis, el cual formularemos con un nivel de significancia de <res>α = 0.05</res> de la siguiente manera
 
@@ -160,7 +177,7 @@ A continuación veremos algunas de ellas
 ![](https://i.ibb.co/qJ04XPJ/Decisive.gif){width=350}
 </center><br>
 
-***Prueba de Anderson-Darling***
+- ***Prueba de Anderson-Darling***
 
 Es una prueba ***no paramétrica*** sobre los datos de una muestra que provienen de una distribución específica. Principalmente se basa en la distancia de la distribución hipotética F, y la función de la distribución empírica Fn, donde n es el número de elementos en la muestra.
 
@@ -178,7 +195,7 @@ ad.test(Sepal.Length)
 
 Así, nuestro p valor es igual a ***0.02251***, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal
 
-***Prueba de Cramer-Von Mises***
+- ***Prueba de Cramer-Von Mises***
 
 El Criterio de Cramer Von Mises, utiliza como criterio la distancia mínima de la función de distribución acumulada F en comparación con la función de distribución empírica Fn.
 
@@ -194,7 +211,7 @@ cvm.test(Sepal.Length2)
 ```
 Como nuestro p valor es igual a ***0.7033*** y por consiguiente mayor a ***0.05*** con lo que podríamos concluir que nuestros datos siguen una distribución normal
 
-***Prueba de Lilliefors (Kolmogorov-Smirnov)***
+- ***Prueba de Lilliefors (Kolmogorov-Smirnov)***
 
 Utiliza la diferencia máxima absoluta entre la función de distribución acumulada empírica y la hipotética
 
@@ -209,7 +226,7 @@ lillie.test(Sepal.Length)
 ```
 Bajo este test nuestro p valor es igual a ***0.005788***, por lo que podríamos concluir que nuestros datos NO siguen una distribución normal
 
-***Prueba de Pearson chi-square***
+- ***Prueba de Pearson chi-square***
 
 Compara la distribución observada de los datos con una distribución esperada. La prueba de χ2 de Pearson generalmente no se recomienda para probar en la hipótesis compuesta de normalidad debido a sus propiedades de potencia son inferiores en comparación con otras pruebas.
 
@@ -223,7 +240,7 @@ pearson.test(Sepal.Length)
 
 El resultado de nuestro p valor en este tipo es igual a ***0.1352***, con lo que podríamos concluir que nuestros datos siguen una distribución normal
 
-***Prueba de Shapiro-Francia***
+- ***Prueba de Shapiro-Francia***
 
 La prueba de Shapiro-Francia es simplemente la correlación al cuadrado entre los valores de la muestra ordenados y los cuantiles esperados (aproximación) de la distribución normal estándar
 
@@ -237,7 +254,7 @@ sf.test(Sepal.Length)
 
 Así, nuestro p valor es igual a ***0.02621***, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal
 
-***Prueba de Frosini***
+- ***Prueba de Frosini***
 
 La prueba de Frosini para la normalidad se basa en el siguiente estadístico:
 
@@ -253,7 +270,7 @@ frosini.norm.test(Sepal.Length, nrepl=2000)
 ```
 El resultado de nuestro p valor es mayor a 0.05, con lo que podríamos concluir que nuestros datos siguen una distribución normal
 
-***Prueba de Geary***
+- ***Prueba de Geary***
 
 La prueba de Geary se basa en el siguiente estadístico
 
@@ -270,7 +287,7 @@ geary.norm.test(Sepal.Length)
 
 Por tanto, nuestro p valor es igual a ***0.02***, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal
 
-***Prueba de Hegazy-Green***
+- ***Prueba de Hegazy-Green***
 
 La prueba de Hegazy-Green para la normalidad se basa en el siguiente estadístico:
 
@@ -287,7 +304,7 @@ hegazy1.norm.test(Sepal.Length, nrepl = 20000)
 
 Con este tipo de test nuestro p valor es menor a 0.05, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal
 
-***Prueba de Jarque-Bera Ajustada***
+- ***Prueba de Jarque-Bera Ajustada***
 
 La prueba de Jarque–Bera Ajustada para la normalidad se basa en el siguiente estadístico:
 
@@ -304,7 +321,7 @@ jb.norm.test(Sepal.Length, nrepl = 2000)
 ```
 El resultado para el p valor es igual mayor a 0.05, por lo que podríamos concluir que nuestros datos siguen una distribución normal
 
-***Prueba de Kurtosis***
+- ***Prueba de Kurtosis***
 
 La prueba de Kurtosis para la normalidad se basa en el siguiente estadístico:
 
@@ -319,7 +336,7 @@ kurtosis.norm.test(Sepal.Length, nrepl = 2000)
 ```
 Así, nuestro p valor es igual a ***0.1045***, con lo que podríamos concluir que nuestros datos siguen una distribución normal
 
-***Prueba de Skewness***
+- ***Prueba de Skewness***
 
 La prueba de Skewness para la normalidad se basa en el siguiente estadístico:
 
@@ -334,7 +351,7 @@ skewness.norm.test(Sepal.Length, nrepl = 2000)
 ```
 Así, nuestro p valor es igual mayor a 0.05, con lo que podríamos concluir que nuestros datos siguen una distribución normal
 
-***Prueba de Spiegelhalter***
+- ***Prueba de Spiegelhalter***
 
 La prueba de Spiegelhalter para la normalidad se basa en el siguiente estadístico:
 
@@ -349,7 +366,7 @@ spiegelhalter.norm.test(Sepal.Length, nrepl=2000)
 ```
 Nuestro p valor es mayor a 0.05, con lo que podríamos concluir que nuestros datos siguen una distribución normal
 
-***Prueba de Weisberg-Bingham***
+- ***Prueba de Weisberg-Bingham***
 
 La prueba de Weisberg-Bingham para la normalidad se basa en el siguiente estadístico:
 
@@ -364,7 +381,7 @@ wb.norm.test(Sepal.Length, nrepl=2000)
 ```
 Nuestro resultado para el p valor es mayor a  0.05, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal
 
-***Prueba de Agostino***
+- ***Prueba de Agostino***
 
 La prueba de Agostino sirve para medir el nivel de asimetría de una normal en los datos. Bajo la hipótesis de la normalidad, los datos deben ser simétricos (es decir, la asimetría debe ser igual a cero).
 
@@ -376,7 +393,7 @@ agostino.test(Sepal.Length)
 ```
 Así, nuestro p valor es igual a ***0.1104***, con lo que podríamos concluir que nuestros datos siguen una distribución normal
 
-***Prueba de Shapiro-Wilk***
+- ***Prueba de Shapiro-Wilk***
 
 La prueba de Shapiro-Wilk es ampliamente recomendada para la prueba de normalidad y proporciona una mejor potencia que K-S. Se basa en la correlación entre los datos y las puntuaciones normales correspondientes.
 
@@ -390,7 +407,7 @@ shapiro.test(Sepal.Length)
 
 Así, nuestro p valor es igual a ***0.01018***, con lo que podríamos concluir que nuestros datos NO siguen una distribución normal
 
-***Resumen normalidad***
+- ***Resumen normalidad***
 
 Visto los diferentes resultados de las pruebas realizadas para evidenciar normalidad, podemos inferir que los resultados dependerán en gran medida del tipo de test que elijamos usar. Y la pregunta del millón sería ¿entonces cuál debo utilizar? Pues no podemos darte una única respuesta, todo va a depender de tus datos, de la pregunta de investigación que quieras responder y la teoría detrás de cada análisis, porque es a partir de ello que tomaremos la mejor desición sobre que tipo de prueba es la más adecuada. 
 
@@ -400,7 +417,8 @@ Visto los diferentes resultados de las pruebas realizadas para evidenciar normal
  
 Sin embargo, la ***Prueba de Shapiro-Wilk*** es uno de los test más confiables y robustos, por lo que según sus resultados, nuestros datos NO se ajustarían a una distribución normal, por lo que hasta este momento, tendrémos que usar las pruebas para datos no paramétricos
 
-## Homocesdasticidad
+# Homocesdasticidad 
+<a name="5"></a>
 
 La homocedasticidad en un modelo estadístico predictivo ocurre si en todos los grupos de datos de una o más observaciones, la varianza del modelo respecto de las variables explicativas (o independientes) se mantiene constante. Así, un modelo de regresión puede ser homocedástico o no, en cuyo caso se habla de heterocedasticidad. Una varianza constante nos permite disponer de modelos más fiables, además, si una varianza, aparte de ser constante es también más pequeña, nos dará como resultado una predicción del modelo más fiable.
 
@@ -430,7 +448,7 @@ A continuación veremos algunos test para profundizar un poco más en el tema
 ![](https://i.ibb.co/SyDpFpv/computer.gif){width=350}
 </center><br>
 
-***F-test***
+- ***F-test***
 
 También conocido como contraste de la razón de varianzas, contrasta la hipótesis nula de que dos poblaciones normales tienen la misma varianza. Es muy potente, detecta diferencias muy sutiles, pero es muy sensible a violaciones de la normalidad de las poblaciones. Por esta razón, no es un test recomendable si no se tiene mucha certeza de que las poblaciones se distribuyen de forma normal.
 
@@ -465,9 +483,9 @@ var.test(x = iris2[iris2$Species == "versicolor", "Petal.Length"],
 
 Así, de acuerdo al resultado anterior, *p-value = 0.2637*, podemos concluir que no se encuentra diferencias significativas entre las varianzas de los dos grupos, osea, tenemos un comportamiento de las varianzas en homocedasticidad.
 
-***Test de Levene***
+- ***Test de Levene***
 
-El test de Levene se puede aplicar con la función <res>leveneTest()<res/> del paquete <res>car</res>. Se caracteriza, además de por poder comparar 2 o más poblaciones, por permitir elegir entre diferentes estadísticos de centralidad: mediana (por defecto), media, media truncada. Esto es importante a la hora de contrastar la homocedasticidad dependiendo de si los grupos se distribuyen de forma normal o no.
+El test de Levene se puede aplicar con la función <res>leveneTest()</res> del paquete <res>car</res>. Se caracteriza, además de por poder comparar 2 o más poblaciones, por permitir elegir entre diferentes estadísticos de centralidad: mediana (por defecto), media, media truncada. Esto es importante a la hora de contrastar la homocedasticidad dependiendo de si los grupos se distribuyen de forma normal o no.
 
 ```{r}
 library(car)
@@ -477,7 +495,7 @@ leveneTest(y = iris2$Petal.Length, group = iris2$Species, center = "median")
 
 Así, de acuerdo al resultado anterior *0.3041*, podemos concluir que no se encuentra diferencias significativas entre las varianzas de los dos grupos, osea, tenemos un comportamiento de las varianzas en homocedasticidad.
 
-***Test de Bartlett***
+- ***Test de Bartlett***
 
 Permite contrastar la igualdad de varianza en 2 o más poblaciones sin necesidad de que el tamaño de los grupos sea el mismo. Es más sensible que el ***_Test de Levene_*** a la falta de normalidad, pero si se está seguro de que los datos provienen de una distribución normal, es la mejor opción.
 
@@ -527,7 +545,7 @@ bartlett.test(iris$Sepal.Length ~ iris$Species)
 
 Así, de acuerdo al resultado anterior, ***p-value = 0.0003345***, podemos concluir que si se encuentran diferencias significativas entre las varianzas de los tres grupos, osea, tenemos un comportamiento de las varianzas en heterocedasticidad.
 
-***Test de Brown-Forsythe***
+- ***Test de Brown-Forsythe***
 
 La prueba de Brown-Forsythe (B-F) se utiliza para probar el supuesto de varianzas iguales en ANOVA. Se puede encontrar dentro del paquete <res>onewaytests</res>, y se realiza con la función <res>hov()</res>. Este test es equivalente al ***Test de Levene*** cuando se emplea la mediana como medida de centralidad.
 
@@ -543,13 +561,14 @@ bf.test(Petal.Length ~ Species, data = iris)
 
 En nuestro ejemplo, se rechaza la hipótesis nula, por lo que podemos concluir que si se encuentran diferencias significativas entre las varianzas de los tres grupos, osea, tenemos un comportamiento de las varianzas en heterocedasticidad. 
 
-***Resumen Homocesdasticidad***
+- ***Resumen Homocesdasticidad***
 
 Si tenemos la seguridad de que nuestras muestras siguen una distribución normal, son recomendables el ***F-test*** y el test de ***Bartlet***, pareciendo ser el segundo más recomendable ya que el primero es muy potente pero extremadamente sensible a desviaciones de la normal. 
 
 Si no se tiene la seguridad de que las poblaciones de origen son normales, se recomiendan el ***Test de Leven*** utilizando la mediana.
 
-## Conclusión
+# Conclusión 
+<a name="6"></a>
 
 Como pudimos leer y aprender, debemos hacer pruebas a nuestros datos para saber que tipo de pruebas podríamos aplicar a futuro, dependiendo si son datos paramétricos o no paramétricos. En la cual la normalidad y la homocesdasticidad de los datos, jugarán un papel importante, en la decisión personal a partir de los resultados de las pruebas de que tipo de datos tenemos.
 
@@ -567,7 +586,8 @@ No siendo más, muchas gracias por leernos y esperemos realmente, que de una u o
 ![](https://i.ibb.co/1dBjTMs/mine.gif){width=350}
 </center><br>
 
-## Literatura citada
+# Literatura citada 
+<a name="7"></a>
 
 - [Cómo aplicar las pruebas paramétricas bivariadas t de Student y ANOVA en SPSS. Caso práctico](https://redined.mecd.gob.es/xmlui/bitstream/handle/11162/15044/00720123000097.pdf?sequence=1&isAllowed=y)
 
@@ -591,7 +611,8 @@ No siendo más, muchas gracias por leernos y esperemos realmente, que de una u o
 
 - [Análisis de la homogeneidad de varianza (homocedasticidad)](https://www.cienciadedatos.net/documentos/9_homogeneidad_de_varianza_homocedasticidad.html)
 
-## Más información 
+# Más información
+<a name="8"></a>
 
 Estos análisis se han realizado utilizando el software R (v.4.1.0) y Rstudio (v. 1.4.1717)
 
