@@ -18,7 +18,7 @@ tags:
   - Estadística
 ---
 
-Se conoce como estadística paramétrica a las pruebas que se basan en el muestreo de una población con parámetros específicos. 
+Se conoce como estadística paramétrica a las pruebas que se basan en el muestreo de una población con parámetros específicos como la normalidad y la homocedasticidad
 
 # Contenido del post
 
@@ -116,7 +116,7 @@ Así, de acuerdo a nuestros resultados podemos rechazar _Ho_, ya que existe sufi
 
 ### Dos poblaciones normales con varianzas conocidas
 
-Un dueño de una fábrica tiene un pedido muy grande y para llevarlo a cabo necesita conocer cuál de las dos máquinas para realizar el proceso trabaja con mayor velocidad, el intuye que la maquina 2 es más efectiva y para ello hace una prueba, toman el tiempo de fabricación en minutos de 10 productos en cada máquina. ¿Es posible que la maquina 2 tenga un mejor tiempo de producción que la maquina 1 usando un nivel de significancia de 0.05?
+Un dueño de una fábrica tiene un pedido muy grande y para llevarlo a cabo necesita conocer cuál de las dos máquinas para realizar el proceso trabaja con mayor velocidad, el intuye que la maquina 2 es más efectiva y para ello hace una prueba, toman el tiempo de fabricación en minutos de 10 productos en cada máquina. ¿Es posible que la máquina 2 tenga un mejor tiempo de producción que la máquina 1 usando un nivel de significancia de 0.05?
 
 <center>
 ![](https://i.ibb.co/WgML6X6/vikings-river.gif){width="350"}
@@ -176,7 +176,7 @@ data <- data.frame(valores = c(18, 19, 22, 25, 27, 28, 41, 45, 51, 55,
 var.test(valores ~ grupo, data = data)
 ```
 
-Así, el estadístico de la prueba F es ***4.3871*** y el _valor p_ correspondiente es ***0.03825***. Dado que este valor p es menor que ***.05***, rechazaríamos la hipótesis nula. Esto significa que tenemos suficiente evidencia para decir que las dos variaciones de población _NO_ son iguales.
+Así, el estadístico de la prueba F es ***4.3871*** y el _valor p_ correspondiente es ***0.03825***. Dado que este valor p es menor que ***.05***, rechazaríamos la hipótesis nula. Esto significa que, tenemos suficiente evidencia para decir que las dos variaciones de población _NO_ son iguales.
 
 # Test T de student
 <a name="3"></a>
@@ -212,7 +212,7 @@ Permite comprobar si es posible aceptar que la media de la población es un valo
 
 Se trata de un test paramétrico; o sea, parte de la suposición de que la variable analizada en el conjunto de la población sigue una variabilidad, una distribución como la de la campana de Gauss. Por lo tanto, podemos pensar que la distribución normal es un buen modelo de esa población. 
 
-Para este ejemplo utilizaremos la variable largo del sépalo (sepal.lenght) de la especue _I. setosa_ de la base _Iris_, asumiendo que cumple con los criterios establecidos para este tipo de test, como lo vimos en nuestro anterior [_POST_](https://rbiologos.com/blog/a014/)
+Para este ejemplo utilizaremos la variable largo del sépalo (sepal.lenght) de la especie _I. setosa_ de la base _Iris_, asumiendo que cumple con los criterios establecidos para este tipo de test, como lo vimos en nuestro anterior [_POST_](https://rbiologos.com/blog/a014/)
 
 <center>
 ![](https://i.ibb.co/ckQPHxC/vikings.gif){width="350"}
@@ -230,7 +230,7 @@ t.test(datos,
        conf.level = 0.95)
 ```
 
-Por tanto, el resultado nos presenta que la media teórica no corresponde a los datos que se estudiaron. El valor de la media con un intervalo de confianza del 95% situa a la media entre los valores de ***4.905824*** y ***5.106176***, con una media aritmética de ***5.006***, por lo cual la propuesta dek investigador es inválida.
+Por tanto, el resultado nos presenta que la media teórica no corresponde a los datos que se estudiaron. El valor de la media con un intervalo de confianza del 95% situa a la media entre los valores de ***4.905824*** y ***5.106176***, con una media aritmética de ***5.006***, por lo cual la propuesta del investigador es inválida.
 
 ### Test T de student para dos muestras de medias poblacionales independientes
 
@@ -276,7 +276,7 @@ ggplot(datos2, aes(x = Species, y = Sepal.Length)) +
   theme_bw()
 ```
 
-Ahora calculemos el _p valor_ a partir del estadístico _t student_. R tiene una función integrada que permite realizar t-test para una o dos muestras, tanto con corrección (en caso de que las varianzas no sean iguales) como sin ella. Esta función devuelve tanto el p-value del test como el intervalo de confianza para la verdadera diferencia de medias.
+Ahora calculemos el _p valor_ a partir del estadístico _t student_. R tiene una función integrada que permite realizar t-test para una o dos muestras, tanto con corrección (en caso de que las varianzas no sean iguales) como sin ella. Esta función devuelve tanto el _p-value_ del test como el intervalo de confianza para la verdadera diferencia de medias.
 
 ```{r}
 # Filtramos la información para realizar el test
@@ -349,7 +349,7 @@ Dado que este _valor p_ es menor que ***.05***, podemos rechazar la hipótesis n
 # Resumen
 <a name="5"></a>
 
-Como pudimos leer en este post, hay varios estadísticos que nos permitirán tratar nuestros datos paramétricos, recordemos que deben complir ciertos criterios para ser llamados de esta manera.
+Como pudimos leer en este post, hay varios estadísticos que nos permitirán tratar nuestros datos paramétricos, recordemos que deben cumplir ciertos criterios para ser llamados de esta manera.
 
 En nuestro próximo post veremos otro análisis muy importante como lo es el _Análisis de Varianzas_ o conocido como _***ANOVA***_.
 

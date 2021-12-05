@@ -168,7 +168,7 @@
 <script src="https://rbiologos.com/blog/a015/index.es_files/header-attrs/header-attrs.js"></script>
 
 
-<p>Se conoce como estadística paramétrica a las pruebas que se basan en el muestreo de una población con parámetros específicos.</p>
+<p>Se conoce como estadística paramétrica a las pruebas que se basan en el muestreo de una población con parámetros específicos como la normalidad y la homocedasticidad</p>
 <div id="contenido-del-post" class="section level1">
 <h1>Contenido del post</h1>
 <ul>
@@ -292,7 +292,7 @@ z.test(x = muestra,
 </div>
 <div id="dos-poblaciones-normales-con-varianzas-conocidas" class="section level3">
 <h3>Dos poblaciones normales con varianzas conocidas</h3>
-<p>Un dueño de una fábrica tiene un pedido muy grande y para llevarlo a cabo necesita conocer cuál de las dos máquinas para realizar el proceso trabaja con mayor velocidad, el intuye que la maquina 2 es más efectiva y para ello hace una prueba, toman el tiempo de fabricación en minutos de 10 productos en cada máquina. ¿Es posible que la maquina 2 tenga un mejor tiempo de producción que la maquina 1 usando un nivel de significancia de 0.05?</p>
+<p>Un dueño de una fábrica tiene un pedido muy grande y para llevarlo a cabo necesita conocer cuál de las dos máquinas para realizar el proceso trabaja con mayor velocidad, el intuye que la maquina 2 es más efectiva y para ello hace una prueba, toman el tiempo de fabricación en minutos de 10 productos en cada máquina. ¿Es posible que la máquina 2 tenga un mejor tiempo de producción que la máquina 1 usando un nivel de significancia de 0.05?</p>
 <center>
 <img src="https://i.ibb.co/WgML6X6/vikings-river.gif" width="350" />
 </center>
@@ -364,7 +364,7 @@ var.test(valores ~ grupo, data = data)</code></pre>
 ## sample estimates:
 ## ratio of variances 
 ##           4.387122</code></pre>
-<p>Así, el estadístico de la prueba F es <strong><em>4.3871</em></strong> y el <em>valor p</em> correspondiente es <strong><em>0.03825</em></strong>. Dado que este valor p es menor que <strong><em>.05</em></strong>, rechazaríamos la hipótesis nula. Esto significa que tenemos suficiente evidencia para decir que las dos variaciones de población <em>NO</em> son iguales.</p>
+<p>Así, el estadístico de la prueba F es <strong><em>4.3871</em></strong> y el <em>valor p</em> correspondiente es <strong><em>0.03825</em></strong>. Dado que este valor p es menor que <strong><em>.05</em></strong>, rechazaríamos la hipótesis nula. Esto significa que, tenemos suficiente evidencia para decir que las dos variaciones de población <em>NO</em> son iguales.</p>
 </div>
 <div id="test-t-de-student" class="section level1">
 <h1>Test T de student</h1>
@@ -393,7 +393,7 @@ var.test(valores ~ grupo, data = data)</code></pre>
 <h3>Test T de student para una muestra</h3>
 <p>Permite comprobar si es posible aceptar que la media de la población es un valor determinado. Se toma una muestra y el Test permite evaluar si es razonable mantener la Hipótesis nula de que la media es tal valor.</p>
 <p>Se trata de un test paramétrico; o sea, parte de la suposición de que la variable analizada en el conjunto de la población sigue una variabilidad, una distribución como la de la campana de Gauss. Por lo tanto, podemos pensar que la distribución normal es un buen modelo de esa población.</p>
-<p>Para este ejemplo utilizaremos la variable largo del sépalo (sepal.lenght) de la especue <em>I. setosa</em> de la base <em>Iris</em>, asumiendo que cumple con los criterios establecidos para este tipo de test, como lo vimos en nuestro anterior <a href="https://rbiologos.com/blog/a014/"><em>POST</em></a></p>
+<p>Para este ejemplo utilizaremos la variable largo del sépalo (sepal.lenght) de la especie <em>I. setosa</em> de la base <em>Iris</em>, asumiendo que cumple con los criterios establecidos para este tipo de test, como lo vimos en nuestro anterior <a href="https://rbiologos.com/blog/a014/"><em>POST</em></a></p>
 <center>
 <img src="https://i.ibb.co/ckQPHxC/vikings.gif" width="350" />
 </center>
@@ -417,7 +417,7 @@ t.test(datos,
 ## sample estimates:
 ## mean of x 
 ##     5.006</code></pre>
-<p>Por tanto, el resultado nos presenta que la media teórica no corresponde a los datos que se estudiaron. El valor de la media con un intervalo de confianza del 95% situa a la media entre los valores de <strong><em>4.905824</em></strong> y <strong><em>5.106176</em></strong>, con una media aritmética de <strong><em>5.006</em></strong>, por lo cual la propuesta dek investigador es inválida.</p>
+<p>Por tanto, el resultado nos presenta que la media teórica no corresponde a los datos que se estudiaron. El valor de la media con un intervalo de confianza del 95% situa a la media entre los valores de <strong><em>4.905824</em></strong> y <strong><em>5.106176</em></strong>, con una media aritmética de <strong><em>5.006</em></strong>, por lo cual la propuesta del investigador es inválida.</p>
 </div>
 <div id="test-t-de-student-para-dos-muestras-de-medias-poblacionales-independientes" class="section level3">
 <h3>Test T de student para dos muestras de medias poblacionales independientes</h3>
@@ -462,7 +462,7 @@ ggplot(datos2, aes(x = Species, y = Sepal.Length)) +
        y = &quot;Largo del sépalo&quot;)+
   theme_bw()</code></pre>
 <p><img src="https://rbiologos.com/blog/a015/index.es_files/figure-html/unnamed-chunk-8-1.png" width="100%" /></p>
-<p>Ahora calculemos el <em>p valor</em> a partir del estadístico <em>t student</em>. R tiene una función integrada que permite realizar t-test para una o dos muestras, tanto con corrección (en caso de que las varianzas no sean iguales) como sin ella. Esta función devuelve tanto el p-value del test como el intervalo de confianza para la verdadera diferencia de medias.</p>
+<p>Ahora calculemos el <em>p valor</em> a partir del estadístico <em>t student</em>. R tiene una función integrada que permite realizar t-test para una o dos muestras, tanto con corrección (en caso de que las varianzas no sean iguales) como sin ella. Esta función devuelve tanto el <em>p-value</em> del test como el intervalo de confianza para la verdadera diferencia de medias.</p>
 <pre class="r"><code># Filtramos la información para realizar el test
 x &lt;- iris[iris$Species == &quot;setosa&quot;, ]$Sepal.Length
 y &lt;- iris[iris$Species == &quot;versicolor&quot;, ]$Sepal.Length
@@ -556,7 +556,7 @@ t.test(booklet,
 <div id="resumen" class="section level1">
 <h1>Resumen</h1>
 <p><a name="5"></a></p>
-<p>Como pudimos leer en este post, hay varios estadísticos que nos permitirán tratar nuestros datos paramétricos, recordemos que deben complir ciertos criterios para ser llamados de esta manera.</p>
+<p>Como pudimos leer en este post, hay varios estadísticos que nos permitirán tratar nuestros datos paramétricos, recordemos que deben cumplir ciertos criterios para ser llamados de esta manera.</p>
 <p>En nuestro próximo post veremos otro análisis muy importante como lo es el <em>Análisis de Varianzas</em> o conocido como <em><strong><em>ANOVA</em></strong></em>.</p>
 <p>Hasta pronto y gracias por acompañarños, recuerda que si tienes alguna duda o comentario, nos puedes escribir a través de nuestras redes sociales o nuestro correo</p>
 <p>¡¡¡Hasta pronto!!!</p>
