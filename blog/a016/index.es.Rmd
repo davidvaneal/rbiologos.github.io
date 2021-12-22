@@ -1,0 +1,349 @@
+---
+title: Relaciones lineales
+author: David Vanegas
+date: '2021-12-22'
+image: https://i.ibb.co/XDRQpnz/ES.png
+slug: []
+categories:
+  - R
+  - RStudio
+tags:
+  - Estadística
+  - Paramétricas
+  - Normalidad
+  - P valor
+  - visualización
+---
+
+Cuando se evalúa la relación entres dos variables, es importante determinar cómo se relacionan estas, por tanto, una relación lineal es un término que se utiliza para describir una relación entre dos variables.
+
+<center>
+![](https://i.ibb.co/3c7tH9L/office.gif){width="350"}
+</center><br>
+
+# Contenido del post
+
+- [Introducción](#1)
+- [Regresión lineal simple](#2)
+- [Correlación lineal](#3)
+    - [Correlación de Pearson](#4)
+    - [coeficiente de determinación](#5)
+    - [Gráfico de correlaciones](#6)
+- [Resumen](#7)
+- [Bibliografía](#8)
+- [Anexos](#9)
+- [Más información](#10)
+
+
+# Introducción
+<a name="1"></a>
+        
+La regresión lineal es una técnica de modelado estadístico que se emplea para describir una variable de respuesta continua como una función de una o varias variables predictoras. Puede ayudar a comprender y predecir el comportamiento de sistemas complejos o a analizar datos biológicos. 
+
+<center>
+![](https://i.ibb.co/bNP3kYW/dance.gif){width="350"}
+</center><br>
+
+A continuación veremos algunas formas de la regresión con algunos ejemplos para que practiques
+
+# Regresión lineal simple
+<a name="2"></a>
+
+En un modelo de regresión lineal simple tratamos de explicar la relación que existe entre la variable respuesta ***Y*** y una única variable explicativa ***X***.
+
+Para trabajar el modelo de regresión lineal simple, es necesario trabajar con la función _<res>lm()</res>_, con los argumentos que vamos a mostrar a continuación, sin embargo, podemos tener más información de la función en este [_LINK_](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/lm)
+
+```{r eval=FALSE}
+lm(formula, # Objeto de clase 'fórmula': una descripción simbólica del modelo que se va a ajustar.
+   data, # Marco de datos, lista o entorno opcional que contiene las variables en el modo
+   na.action) # Función que indica lo que debería suceder cuando los datos contienen NA
+```
+
+vamos a poner en contexto una situación en donde tenemos las especies de plantas _Iris_. En este caso, nos va a interesar conocer la relación entre el largo del sépalo y el largo del pétalo.
+
+```{r warning=FALSE, out.width="100%", message=FALSE}
+# Cargamos el paquete dplyr para organizar los datos y ggplot2 para graficar
+library(dplyr)
+library(ggplot2)
+data("iris")
+
+# Veamos el comportamiento de los datos en una gráfica
+iris %>% 
+        ggplot(aes(x = Sepal.Length,
+                   y = Petal.Length)) +
+        geom_point()+
+        theme_bw()
+```
+
+Como podemos observar en este gráfico la tendencia lineal es clara, sin embargo, es necesario encontrar los valores estadísticos para afirmar este comportamiento. 
+
+```{r}
+modelo_lineal <- lm(Sepal.Length ~ Petal.Length, # De esta manera se formula la relación entre dos variables
+                    data = iris)
+
+summary(modelo_lineal)
+```
+
+Mediante este ejemplo podemos interpretar varios valores mostrados en el summary. Empecemos, el valor de _R^2^_ indica que el modelo calculado explica el ***76%*** de la variabilidad presente en la variable respuesta (Ancho del sépalo) mediante la variable independiente (Largo del sépalo), con un _p-value_ de ***2.2e-16***) el cual determina que sí es significativamente superior la varianza explicada por el modelo en comparación a la varianza total. Es el parámetro que determina si el modelo es significativo y por lo tanto se puede aceptar la veracidad del modelo.
+
+<center>
+![](https://i.ibb.co/5Rjzcb8/party.gif){width="350"}
+</center><br>
+
+Alternativamente, podemos agregar a nuestro gráfico la línea de tendencia lineal de nuestro modelo, mediante la función <res>geom_smooth()</res> para poder observar el comportamiento de nuestros resultados y verificarlos
+        
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Petal.Length)) +
+        geom_point() +
+        labs(x = "Largo del sépalo", y = "Largo del pétalo") +
+        geom_smooth(method = "lm", se = FALSE, color = "red") +
+        theme_bw()
+```
+ 
+De esta manera, podemos observar que nuestra línea de tendencia tiene cierto comportamiento en relación a la nube de puntos de la relación de nuestros datos, por lo cual, podemos inferir que nuestro modelo de regresión lineal si se está cumpliendo.
+
+# Correlación lineal
+<a name="3"></a>
+
+En ocasiones nos puede interesar estudiar si existe o no algún tipo de relación entre dos variables aleatorias. Las relaciones o asociaciones de este tipo entre variables se denominan correlaciones; y están medidas en escalas ordinales o de intervalos. En particular, nos interesa cuantificar la intensidad de la relación lineal entre dos variables.
+
+<center>
+![](https://i.ibb.co/sqLH8kf/the-office.gif){width="350"}
+</center><br>
+
+Un coeficiente de correlación mide el grado en que dos variables tienden a cambiar al mismo tiempo. Cuando el aumento de una de las variables viene acompañado del aumento de la otra, se trata de una correlación positiva o directa y viceversa. Una Correlación perfecta se da cuando todos los puntos de un diagrama de dispersión forman una linea recta perfecta. Estas correlaciones perfectas (positivas o negativas) prácticamente no existen en biología.
+
+Los coeficientes de correlación describen tanto la fuerza como la dirección de la relación y se pueden calcular mediante métodos paramétricos y no paramétricos. Y su calculo en R se puede hacer a través de la función <res>cor()</res>.
+
+> La correlación nos indica el signo y magnitud de la tendencia entre dos variables.
+
+El signo nos indica la dirección de la relación
+
+– Un valor positivo indica una relación directa o positiva,
+
+– Un valor negativo indica relación inversa o negativa,
+
+– Un valor nulo indica que no existe una tendencia entre ambas variables (puede ocurrir que no exista relación o que la relación sea más compleja que una tendencia, por ejemplo, una relación en forma de U).
+
+– La magnitud nos indica la fuerza de la relación, que toma valores entre -1 a 1.
+
+Cuanto más cercano sea el valor a los extremos del intervalo (1 o -1) más fuerte es la tendencia de las variables, o menor es la dispersión existe en los puntos alrededor de dicha tendencia. Cuanto más cercano sea a 0 sea el coeficiente de correlación, más débil será la tendencia, es decir, más dispersión habrá en la nube de puntos, como vemos en esta gráfica explicativa.
+
+<center>
+![](https://i.ibb.co/swkRmLh/corr.png){width=350}
+</center><br>
+
+```{r eval=FALSE}
+cor(x, y, use = "everything",
+    method = c("pearson", "kendall", "spearman"))
+```
+
+Los parámetos de la función son:
+
+- ***x***, ***y***: vectores cuantitativos.
+- use: parámetro que indica lo que se debe hacer cuando se presenten registros NA en alguno de los vectores. Las diferentes posibilidades son: ***everything***, ***all.obs***, ***complete.obs***, ***na.or.complete*** y ***pairwise.complete.obs***, el valor por defecto es ***everything***.
+- method: tipo de coeficiente de correlación a calcular, por defecto es ***pearson***, otros valores posibles son ***kendall*** y ***spearman***.
+
+<blockquote>
+![](https://i.ibb.co/Wkj4z61/alerta.gif){width="100"}
+¡¡¡Atención, atención!!!
+
+Ten en cuenta que si tus datos contienen valores perdidos, deberas usar el siguiente código R para manejar los valores perdidos mediante la eliminación por caso.
+</blockquote>
+
+```{r eval=FALSE}
+cor(data, use = "complete.obs")
+```
+
+Antes de continuar, para saber que tipo correlación aplicar es importante revisar los supuestos de las pruebas, en este ejercicio haremos las pruebas bajo el test de Normalidad de Shapiro-Wilk, como lo vimos en nuestro post [_Supuestos estadísticos_](https://rbiologos.com/blog/a014/). Si nuestros datos presentan una distribución normal, la *_Correlación de Pearson_* es la prueba adecuada para nuestros datos.
+
+## Correlación de Pearson
+<a name="4"></a>
+
+Es un coeficiente paramétrico que evalúa la relación lineal entre dos variables continuas. Una relación es lineal cuando un cambio en una variable se asocia con un cambio proporcional en la otra variable.
+
+<center>
+![](https://i.ibb.co/L9d6qNn/down.gif){width="350"}
+</center><br>
+
+Para este ejemplo usaremos la base de datos <res>Datos escarabajos</res>, la cual contiene los datos de un estudio de Escarabajos coprófagos y sus funciones ecológicas.
+
+<center>
+<a href="https://min.gitcdn.link/repo/davidvaneal/Documentos-RBiologos/main/Datos%20escarabajos.csv"><img src="https://i.ibb.co/6gx1V1Y/csv-icon.png" alt="descarga" border="0" width="150"></a>
+</center>
+<center>Descarga aquí</center><br>
+
+Usaremos las variables Individuos y Dispersión, con el fin de encontrar su posible correlación. Primero realizamos el test de Normalidad, con el fin de saber que tipo de prueba de correlación vamos a realizar.
+
+```{r}
+url <- "https://raw.githubusercontent.com/davidvaneal/Documentos-RBiologos/main/Datos%20escarabajos.csv"
+esc <- read.csv(url)
+
+shapiro.test(esc$Especies)
+shapiro.test(esc$Dispersión)
+```
+
+De acuerdo a nuestros resultados tenemos una distribución normal para nuestras variables, por lo que podemos usar una *_Correlación de Pearson_* para evaluar si la riqueza de especies de los escarabajos tiene relación con la tasa de semillas dispersadas por estos (%).
+
+```{r}
+cor.test(esc$Especies, esc$Dispersión,
+    method = c("pearson"))
+```
+
+Del resultado anterior vemos que existe una correlación de _***0.9246766***_ entre las dos variables, lo que quiere decir que si hay relaciones estadísticas significativas entre la riqueza de especies de escarabajos coprófagos y la tasa de semillas dispersadas.
+
+<center>
+![](https://i.ibb.co/d49yQP6/Wooo.gif){width="350"}
+</center><br>
+
+Ahora observemos el comportamiento de los puntos en una gráfica (Fig. 1), mediante el paquete *_ggplot2_*.
+
+```{r echo=FALSE, out.width="100%", message=FALSE}
+library(ggplot2)
+
+ggplot(esc, aes(x = Especies, y = Dispersión))+
+  geom_point(col='blue')+
+  geom_smooth(method = lm, colour="black", size = 0.5)+
+  scale_y_continuous("Dispersión de semillas (%)")+
+  scale_x_continuous("Riqueza de Especies")+
+  theme(axis.title.y = element_text(size = 16),
+        axis.title.x = element_text(size = 16),
+        axis.text.y = element_text(size = 13),
+        axis.text.x = element_text(size = 13))+
+  theme(panel.background = element_blank(), 
+        panel.border = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line = element_line(colour = "black", size = 1))
+```
+
+Fig. 1. Riqueza de especies de escarabajos prófagos y la tasa de semillas dispersadas por parte de estos [Anexo 1.](#anexo1)
+
+Claramente se observa un patrón de relación de la nube de puntos (Fig.  1), estos puntos no se observan dispersos y por tanto el valor del coeficiente de correlación. 
+
+## Coeficiente de determinación
+<a name="5"></a>
+
+El cuadrado del coeficiente de correlación de Pearson es, en si mismo, un estadístico de gran utilidad denominado coeficiente de determinación. Es una medida de la proporción de la variabilidad en una variable, atribuible a la variabilidad de la otra. 
+
+En otras palabras, ¿cual es la proporción de la variación total en Y que puede ser explicada por la variación en X?
+
+Para este ejercicio tomaremos el valor de correlación del ejercicio anterior
+
+```{r}
+coeffdet <- 0.9246766^2
+coeffdet
+```
+
+Así podemos deducir que aproximadamente el 85.50% de la riqueza de especies de los escarabajos está relacionado con la tasa de semillas dispersadas.
+
+<center>
+![](https://i.ibb.co/JtDkS1M/yes.gif){width="350"}
+</center><br>
+
+## Gráfico de correlaciones
+<a name="6"></a>
+
+Es posible representar gráficamente las matrices de correlaciones por medio de la función corrplot del paquete <res>corrplot</res> (Para obtener mayor información puedes consultar la siguiente página [_An Introduction to corrplot Packaged_](https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-intro.html).
+
+Para realizar este ejercicio vamos a utilizar los resultados de la correlación de la base de datos <res>Escarabajos</res> y todas sus variables, analizando en primera instancia su normalidad.
+
+```{r}
+lapply(esc, shapiro.test)
+```
+
+Como podemos ver la única variable que no cumple con el supuesto de normalidad es *_Biomasa_*. Por lo que vamos a realizar nuestro análisis de correlación sin dicha variable.
+
+```{r}
+## Eliminamos la variable "Biomasa"
+esc2 <- esc[,-3]
+
+## Cargamos el paquete para generar nuestro gráfico
+library(corrplot)
+
+## Seguimos con el análisis
+esc.cor <-round(cor(esc2), 4)
+esc.cor
+```
+```{r warning=FALSE}
+## También podemos modificar nuestro gráfico 
+
+## Definimos colores
+col <- colorRampPalette(c("#BB4444", "#EE9988", "#FFFFFF",
+                          "#77AADD", "#4477AA"))
+## Y graficamos
+corrplot(esc.cor, method = "shade", sade.col = NA, tl.col = "black", 
+         tl.srt = 45, col = col(200), addCoef.col = "black", 
+         addcolorlabel = "no", order = "AOE", type = "upper", diag = F)
+```
+
+En este tipo de gráficos en la diagonal están las variables, por encima están los cuadros de colores, entre más intensidad del color, ya sea azul (positiva) o rojo (negativa), mayor es la correlación, donde los colores ténues significan correlación baja. Dentro de cada cuadro se observan los valores exactos de correlación.
+
+<center>
+![](https://i.ibb.co/xzkRq9X/parkour.gif){width="350"}
+</center><br>
+
+Como podemos observar en nuestro gráfico, se muestra la matriz con los coeficientes de correlación entre todas las variables, siendo la correlación más fuerte entre la _tasa de dispersión de semillas_ y el _número de individuos_, y la más baja entre la _tasa de dispersión de semillas_ y la _longitud de los escarabajos_.
+
+# Resumen
+<a name="7"></a>
+
+Evidenciar una relación lineal entre dos variables parece ser sencillo bajo lo aprendido el día de hoy, sin embargo, es muy importante saber que detrás de todo ello hay matemática pura y dura que debemos tener muy en cuenta. Nosotros solamente te damos un pequeño empujón en el mundo de R, así que debes investigar y leer mucho más sobre estos temas.
+
+<center>
+![](https://i.ibb.co/7vX0QHH/bye.gif){width="350"}
+</center><br>
+
+Pudimos aprender un poco más sobre las relaciones paramétricas como las regresiones lineales simples y la correlación de Pearson. Sobre las regresiones lineales estudiamos los valores de sus resultados y como poder graficar para poder observar dicho comportamiento, recuerda que debemos observar y tener en cuenta nuestras gráficas y nuestros resultados para dar un dictamen más robusto. Asimismo, sobre la correlación de Pearson estudiamos sobre los signos y magnitudes de los resultados y como poder graficar dichos valores de resultados.
+
+Muchas gracias por leernos, esperamos puedan aprender tanto como nosotros en este post ¡hasta pronto!
+
+Ahhhh y aprovechamos para desearles una muy ***¡¡¡Feliz Navidad!!!***, que esta festividad sea un símbolo de amor y paz en el corazón de todo el mundo, con grandes aprendizajes y momentos felices en familia y amigos, brindando por los que no pueden estar y los que vendrán.
+
+<center>
+![](https://i.ibb.co/jvNk0gH/Christmas.gif){width="350"}
+</center><br>
+
+# Bibliografía
+<a name="8"></a>
+
+- [Correlación lineal y Regresión lineal simple](https://www.cienciadedatos.net/documentos/24_correlacion_y_regresion_lineal#Correlaci%C3%B3n_lineal)
+
+- [Correlación y Regresión Lineal](https://rpubs.com/osoramirez/316691)
+
+- [Medidas de correlación](https://fhernanb.github.io/Manual-de-R/correl.html#correl)
+
+- [Coeficientes de correlación](https://bookdown.org/dietrichson/metodos-cuantitativos/coeficientes-de-correlacion.html#coeficiente-spearman)
+
+- [Correlación](https://rpubs.com/revite19/719420)
+
+# Anexos
+<a name="9"></a>
+
+<a name="anexo1"></a>Anexo 1
+```{r eval=FALSE}
+ggplot(esc, aes(x = Individuos, y = Dispersión))+
+      geom_point(col='blue')+
+      scale_y_continuous("Dispersión de semillas (%)")+
+      scale_x_continuous("Longitud escarabajos (mm)")+
+      theme(axis.title.y = element_text(size = 16),
+            axis.title.x = element_text(size = 16),
+            axis.text.y = element_text(size = 13),
+            axis.text.x = element_text(size = 13))+
+      theme(panel.background = element_blank(), 
+            panel.border = element_blank(),
+            panel.grid.major = element_blank(),
+            panel.grid.minor = element_blank(),
+            axis.line = element_line(colour = "black", size = 1))
+```
+
+# Más información
+<a name="10"></a>
+
+Estos análisis se han realizado utilizando el software R (v.4.1.0) y Rstudio (v. 1.4.1717)
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>

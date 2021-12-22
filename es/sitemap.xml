@@ -2,11 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://rbiologos.com/tags/an%C3%A1lisis/</loc>
-    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://rbiologos.com/blog/</loc>
-    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -24,7 +21,7 @@
                 />
   </url><url>
     <loc>https://rbiologos.com/categories/</loc>
-    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -42,22 +39,19 @@
                 />
   </url><url>
     <loc>https://rbiologos.com/tags/estad%C3%ADstica/</loc>
-    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rbiologos.com/tags/homocedasticidad/</loc>
-    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rbiologos.com/tags/normalidad/</loc>
-    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.com/tags/p-valor/</loc>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rbiologos.com/tags/param%C3%A9tricas/</loc>
-    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rbiologos.com/blog/a015/</loc>
-    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rbiologos.com/categories/r/</loc>
-    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -75,7 +69,7 @@
                 />
   </url><url>
     <loc>https://rbiologos.com/</loc>
-    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -92,14 +86,14 @@
                 href="https://rbiologos.com/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/categories/rstudio/</loc>
-    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
+    <loc>https://rbiologos.com/blog/a016/</loc>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://rbiologos.com/tags/t-test/</loc>
-    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
+    <loc>https://rbiologos.com/categories/rstudio/</loc>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rbiologos.com/tags/</loc>
-    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -116,6 +110,21 @@
                 href="https://rbiologos.com/tags/"
                 />
   </url><url>
+    <loc>https://rbiologos.com/tags/visualizaci%C3%B3n/</loc>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.com/tags/an%C3%A1lisis/</loc>
+    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.com/tags/homocedasticidad/</loc>
+    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.com/blog/a015/</loc>
+    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.com/tags/t-test/</loc>
+    <lastmod>2021-11-26T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://rbiologos.com/tags/test/</loc>
     <lastmod>2021-11-26T00:00:00+00:00</lastmod>
   </url><url>
@@ -129,9 +138,6 @@
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rbiologos.com/tags/normal/</loc>
-    <lastmod>2021-11-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rbiologos.com/tags/p-valor/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rbiologos.com/tags/par%C3%A1metros/</loc>
@@ -165,9 +171,6 @@
     <lastmod>2021-07-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rbiologos.com/tags/gr%C3%A1ficos/</loc>
-    <lastmod>2021-07-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rbiologos.com/tags/visualizaci%C3%B3n/</loc>
     <lastmod>2021-07-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rbiologos.com/blog/a010/</loc>
