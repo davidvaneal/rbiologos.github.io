@@ -173,7 +173,7 @@ Para este ejemplo usaremos la base de datos <res>Datos escarabajos</res>, la cua
 </center>
 <center>Descarga aquí</center><br>
 
-Usaremos las variables Individuos y Dispersión, con el fin de encontrar su posible correlación. Primero realizamos el test de Normalidad, con el fin de saber que tipo de prueba de correlación vamos a realizar.
+Usaremos las variables Individuos y Dispersión, con el fin de encontrar su posible correlación. Primero realizamos el test de _Normalidad_, con el fin de saber que tipo de prueba de correlación vamos a realizar.
 
 ```{r}
 url <- "https://raw.githubusercontent.com/davidvaneal/Documentos-RBiologos/main/Datos%20escarabajos.csv"
@@ -254,7 +254,7 @@ lapply(esc, shapiro.test)
 
 Como podemos ver la única variable que no cumple con el supuesto de normalidad es *_Biomasa_*. Por lo que vamos a realizar nuestro análisis de correlación sin dicha variable.
 
-```{r}
+```{r out.width="100%"}
 ## Eliminamos la variable "Biomasa"
 esc2 <- esc[,-3]
 
