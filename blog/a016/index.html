@@ -432,9 +432,9 @@ coeffdet</code></pre>
 esc2 &lt;- esc[,-3]
 
 ## Cargamos el paquete para generar nuestro gráfico
-library(corrplot)</code></pre>
-<pre><code>## corrplot 0.90 loaded</code></pre>
-<pre class="r"><code>## Seguimos con el análisis
+library(corrplot)
+
+## Seguimos con el análisis
 esc.cor &lt;-round(cor(esc2), 4)
 esc.cor</code></pre>
 <pre><code>##            Individuos Especies Longitud   Heces   Suelo Dispersión
@@ -444,16 +444,15 @@ esc.cor</code></pre>
 ## Heces          0.8803   0.8578  -0.1028  1.0000  0.8150     0.9335
 ## Suelo          0.8847   0.8572  -0.1040  0.8150  1.0000     0.9322
 ## Dispersión     0.9576   0.9247   0.0066  0.9335  0.9322     1.0000</code></pre>
-<pre class="r"><code>## También podemos modificar nuestro gráfico 
-
-## Definimos colores
+<p>Y finalmente podemos hacer uso de las herramientas gráficas para poder visualizar de una manera más visual nuestros resultados</p>
+<pre class="r"><code>## Definimos colores
 col &lt;- colorRampPalette(c(&quot;#BB4444&quot;, &quot;#EE9988&quot;, &quot;#FFFFFF&quot;,
                           &quot;#77AADD&quot;, &quot;#4477AA&quot;))
 ## Y graficamos
 corrplot(esc.cor, method = &quot;shade&quot;, sade.col = NA, tl.col = &quot;black&quot;, 
          tl.srt = 45, col = col(200), addCoef.col = &quot;black&quot;, 
          addcolorlabel = &quot;no&quot;, order = &quot;AOE&quot;, type = &quot;upper&quot;, diag = F)</code></pre>
-<p><img src="https://rbiologos.com/blog/a016/index.es_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="https://rbiologos.com/blog/a016/index.es_files/figure-html/unnamed-chunk-13-1.png" width="100%" /></p>
 <p>En este tipo de gráficos en la diagonal están las variables, por encima están los cuadros de colores, entre más intensidad del color, ya sea azul (positiva) o rojo (negativa), mayor es la correlación, donde los colores ténues significan correlación baja. Dentro de cada cuadro se observan los valores exactos de correlación.</p>
 <center>
 <img src="https://i.ibb.co/xzkRq9X/parkour.gif" width="350" />

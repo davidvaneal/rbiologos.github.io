@@ -254,7 +254,7 @@ lapply(esc, shapiro.test)
 
 Como podemos ver la única variable que no cumple con el supuesto de normalidad es *_Biomasa_*. Por lo que vamos a realizar nuestro análisis de correlación sin dicha variable.
 
-```{r out.width="100%"}
+```{r message=FALSE, warning=FALSE}
 ## Eliminamos la variable "Biomasa"
 esc2 <- esc[,-3]
 
@@ -265,9 +265,10 @@ library(corrplot)
 esc.cor <-round(cor(esc2), 4)
 esc.cor
 ```
-```{r warning=FALSE}
-## También podemos modificar nuestro gráfico 
 
+Y finalmente podemos hacer uso de las herramientas gráficas para poder visualizar de una manera más visual nuestros resultados
+
+```{r warning=FALSE, out.width="100%"}
 ## Definimos colores
 col <- colorRampPalette(c("#BB4444", "#EE9988", "#FFFFFF",
                           "#77AADD", "#4477AA"))
