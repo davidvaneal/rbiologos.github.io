@@ -182,7 +182,7 @@
 					<a href="https://rbiologos.com/">
 					</a>
 					<br>
-					<p1>Copyright © 2020 Diseñado por <a href="https://github.com/davidvaneal">David Vanegas</a> bajo la plantilla <a href="https://themefisher.com">Themefisher</a> de <a href="https://gethugothemes.com">HUGO</a></p1>
+					<p1>Copyright © 2020 Diseñado por <a href="https://davidvaneal.github.io/">David Vanegas</a> bajo la plantilla <a href="https://themefisher.com">Themefisher</a> de <a href="https://gethugothemes.com">HUGO</a></p1>
 				</div>
 				
 			</div>
@@ -216,6 +216,26 @@
 <script src="https://rbiologos.com/js/script.min.b98b8dcfa3dc53b74ecf3cf8724a1f75b4d217da25463ff3d6a28fc4a09e965bf9818dfce85452f5fb478bce779ee8cc.js" integrity="sha384-uYuNz6PcU7dOzzz4ckofdbTSF9olRj/z1qKPxKCellv5gY386FRS9ftHi853nujM"></script>
 
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-transparent">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
 </body>
 
 </html>

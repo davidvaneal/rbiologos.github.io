@@ -197,7 +197,7 @@
       <article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp mb-4" data-wow-duration="500ms">
   <div class="post-block">
     <div class="media-wrapper">
-      <img class="img-fluid lozad" data-src="https://rbiologos.com/images/team/davidvaneal.webp" onerror="this.onerror=null;this.src='https:\/\/rbiologos.com\/images\/team\/davidvaneal.png'">
+      <img class="img-fluid lozad" data-src="https://rbiologos.com/" onerror="this.onerror=null;this.src='https:\/\/i.ibb.co\/QbQxg2D\/My-project.png'">
     </div>
 
     <div class="content">
@@ -281,7 +281,7 @@
 					<a href="https://rbiologos.com/pt/">
 					</a>
 					<br>
-					<p1>Copyright © 2020 Desenhado por <a href="https://github.com/davidvaneal">David Vanegas</a> sob o modelo <a href="https://themefisher.com">Themefisher</a> por <a href="https://gethugothemes.com">HUGO</a></p1>
+					<p1>Copyright © 2020 Desenhado por <a href="https://davidvaneal.github.io/">David Vanegas</a> sob o modelo <a href="https://themefisher.com">Themefisher</a> por <a href="https://gethugothemes.com">HUGO</a></p1>
 				</div>
 				
 			</div>
@@ -315,6 +315,26 @@
 <script src="https://rbiologos.com/js/script.min.b98b8dcfa3dc53b74ecf3cf8724a1f75b4d217da25463ff3d6a28fc4a09e965bf9818dfce85452f5fb478bce779ee8cc.js" integrity="sha384-uYuNz6PcU7dOzzz4ckofdbTSF9olRj/z1qKPxKCellv5gY386FRS9ftHi853nujM"></script>
 
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-transparent">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
 </body>
 
 </html>
