@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+	<meta charset="utf-8">
+	<title>Trabajando con datos de GBIF</title>
+
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="El espacio perfecto para Biólogos y R">
+	
+	<meta name="author" content="&lt;/R Biólogos&gt;">
+	<meta name="generator" content="Hugo 0.111.3">
+
+	<!-- plugins -->
+	
+	<link rel="stylesheet" href="https://rbiologos.com/plugins/bootstrap/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.com/plugins/themify-icons/themify-icons.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.com/plugins/magnific-popup/magnific-popup.css">
+	
+	<link rel="stylesheet" href="https://rbiologos.com/plugins/slick/slick.css">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim%7cQuattrocento&#43;Sans:400,700&amp;display=swap">
+	
+
+	<!-- Main Stylesheet -->
+	
+	<link rel="stylesheet" href="https://rbiologos.com/css/style.min.css" media="screen">
+
+	<!-- Custom stylesheet - for your changes -->
+	
+  <link rel="stylesheet" href="https://rbiologos.com/css/custom.min.css" media="screen">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="https://i.ibb.co/XL1r8wK/2.png" type="image/x-icon">
+	<link rel="icon" href="https://i.ibb.co/XL1r8wK/2.png" type="image/x-icon">
+
+	
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-N49JEEK9KF"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-N49JEEK9KF');
+	</script>
+	
+
+</head>
+
+
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="55">
+  <div id="content">
+    
+<!-- preloader start -->
+<div class="preloader">
+  
+  <img src="https://i.ibb.co/BjJWHb3/preloader.gif" alt="preloader" width="300">
+  
+</div>
+<!-- preloader end -->
+
+
+
+<section class="sticky-top navigation">
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<a class="navbar-brand p-0" href="/">
+				
+				<img class="lozad" data-src="https://i.ibb.co/XL1r8wK/2.png" alt="R Biólogos" height="42">
+				
+			</a>
+
+			<button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navigation">
+				<ul class="navbar-nav ml-auto">
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#https://rbiologos.com/">Inicio</a>
+					</li>
+					
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#blog">Blog</a>
+					</li>
+					
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#team">Equipo</a>
+					</li>
+					
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#about">¿Qué somos?</a>
+					</li>
+					
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#feature">¿Qué hacemos?</a>
+					</li>
+					
+					
+					<li class="nav-item">
+            <a class="nav-link" href="/#contact">Contacto</a>
+					</li>
+					
+					
+				</ul></div>
+				
+				
+				<select id="select-language" onchange="location = this.value;">
+					
+					
+					
+					
+					
+					
+					
+					
+					<option id="es" value="https://rbiologos.com/blog/a017/" selected>ES
+					</option>
+					
+					
+					
+					
+					
+					
+					
+					
+				</select>
+				
+			
+			<script>
+  (function() {
+    var id = '06c75f9c-882f-11eb-a152-0242ac130002';
+    var ci_search = document.createElement('script');
+    ci_search.type = 'text/javascript';
+    ci_search.async = true;
+    ci_search.src = 'https://cse.expertrec.com/api/js/ci_common.js?id=' + id;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ci_search, s);
+  })();
+</script><ci-search></ci-search>
+		</nav>
+	</div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1>Trabajando con datos de GBIF</h1>
+        <ul class="list-inline mb-50">
+          <li class="list-inline-item"><a href="/author/david-vanegas/">David Vanegas</a></li>
+          <li class="list-inline-item">jueves, mar. 3, 2022</li>
+        </ul>
+        <img class="img-fluid mb-50 lozad" data-src="https://i.ibb.co/3FyhYdY/ES.png" alt="blog-image">
+      </div>
+      <div class="col-lg-8 offset-lg-2">
+        <div class="post-single-content">
+          
+<script src="https://rbiologos.com/blog/a017/index.es_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Algunas investigaciones que realizamos en nuestra vida profesional se basan en conocer y comprender que taxones o especies se encuentran en una determinada región de nuestro interes. Una excelente herramienta que nos ayuda a conocer estos registros es la plataforma GBIF.</p>
+<center>
+<img src="https://i.ibb.co/0hgKN2R/Map.png" style="width:100.0%" />
+</center>
+<p></br></p>
+<div id="contenido-del-post" class="section level1">
+<h1>Contenido del post</h1>
+<ul>
+<li><a href="#1">Introducción</a></li>
+<li><a href="#2">Descarga de datos</a></li>
+<li><a href="#3">Descarga de datos con rgbif</a></li>
+<li><a href="#4">Código en R</a>
+<ul>
+<li><a href="#5">Descargar datos de una categoría taxonómica en un país</a>
+<ul>
+<li><a href="#6">Descarga de datos</a></li>
+<li><a href="#7">Limpieza de datos</a></li>
+<li><a href="#8">Mapeo de ocurrencias</a></li>
+<li><a href="#9">Citaciones</a></li>
+</ul></li>
+<li><a href="#10">Descargar datos de varias categorías taxonómicas en una rango de coordenadas</a>
+<ul>
+<li><a href="#11">Descarga de datos</a></li>
+<li><a href="#12">Limpieza de datos</a></li>
+<li><a href="#13">Mapeo de ocurrencias</a></li>
+<li><a href="#14">Citaciones</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#15">Resumen</a></li>
+<li><a href="#16">Literatura</a></li>
+<li><a href="#17">Más información</a></li>
+</ul>
+<center>
+<img src="https://i.ibb.co/4WrdV1v/wakeup.gif" width="350" />
+</center>
+<p></br></p>
+</div>
+<div id="introducción" class="section level1">
+<h1>Introducción</h1>
+<p><a name="1"></a></p>
+<p>The Global Biodiversity Information Facility (<a href="https://www.gbif.org/">GBIF</a>), es una plataforma que cuenta con cientos de miles de registros de presencias tanto de flora como de fauna, registros que en su mayoría cuentan con coordenadas geográficas que son esencialmente importante para realizar el tipo de investigaciones que mencionamos anteriormente.</p>
+<p>Así, GBIF tiene datos que dan evidencia de la presencia de una especie (u otro taxón) en un lugar determinado y en una fecha concreta. Estos datos se ofrecen en un formato estandarizado, permitiendo que queden accesibles para su libre consulta y uso de acuerdo con las licencias de uso establecidas.</p>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/HvS6sRVZbHo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe
+
+# Descarga de datos
+<a name="2">
+<p></a></p>
+<p>Para hacer la descarga de tales registros se puede hacer de varias maneras, una de ellas es haciendo el respectivo registro en la página web (requiere usuario y contraseña), luego tenemos que ingresar el nombre científico de las especies de interes y el programa nos arroja el resultado de todos los registros, sin embargo, en muchas ocasiones el hacer la descarga se demora desde pocos minutos hasta varias horas (dependiendo del número de registros).</p>
+<p>Este proceso lo podemos aprender en el siguiente video</p>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/ACHZ6wdqb_8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+<div id="descarga-de-datos-con-rgbif" class="section level1">
+<h1>Descarga de datos con rgbif</h1>
+<p><a name="3"></a></p>
+<p>Otro camino para descargar la información es hacer uso del paquete <res>rgbif</res> de los desarrolladores Chamberlain S, Barve V, Mcglinn D, Oldoni D, Desmet P, Geffert L y Ram K (2022). Con el uso de este paquete el proceso de descarga de la información es mucho más rápido que por la misma página, además, nuestros datos ya estarían cargados para poder realizar las filtraciones de datos, análisis, mapas, entre otros análisis. Para poder conocer más acerca de este paquete, puedes consultar <a href="https://cran.r-project.org/web/packages/rgbif/rgbif.pdf">AQUÍ</a>.</p>
+<center>
+<img src="https://i.ibb.co/5KBGfVp/smile.gif" width="350" />
+</center>
+<p></br></p>
+<p>Igualmente utilizaremos otros paquetes necesarios para nuestra limpieza y visualización, los cuales mencionaremos a continuación</p>
+<p>Paquete <res>scrubr</res> del desarrollador Chamberlain Scott (2022), el cual es un paquete especializado en la limpieza de los datos descargados como duplicados, coordenadas y/o fechas faltantes, entre otros. Para poder conocer más acerca de este paquete, puedes consultar <a href="https://github.com/ropensci/scrubr/">AQUÍ</a>.</p>
+<p>Paquete <res>maps</res>, desarrollado por Richard A. Becker and Allan R. Wilks. R (2021), proporciona muchos contornos de mapas diferentes y puntos para ciudades, etc. Para poder conocer más acerca de este paquete, puedes consultar <a href="https://cran.r-project.org/web/packages/maps/maps.pdf">AQUÍ</a>.</p>
+<p>Paquete <res>Tidyverse</res> desarrollado por Wickham et al. (2019), es un conjunto de paquetes que funcionan en armonía porque comparten representaciones de datos comunes y diseño de API. El paquete Tidyverse está diseñado para facilitar la instalación y cargue los paquetes de núcleo de Tidyverse en un solo comando. Para poder conocer más acerca de este paquete, puedes consultar <a href="https://github.com/tidyverse/tidyverse/">AQUÍ</a>. Dentro del Tidyverse podemos encontrar el paquete <res>ggplot2</res> para poder visualizar y modificar nuestro mapa.</p>
+</div>
+<div id="código-en-r" class="section level1">
+<h1>Código en R</h1>
+<p><a name="4"></a></p>
+<p>Primero cargamos los paquetes necesarios para poder descargar, limpiar y visualizar nuestros datos</p>
+<pre class="r"><code>library(rgbif)
+library(scrubr)
+library(maps)
+library(tidyverse)</code></pre>
+<p>Ahora bien, para poder descagar datos hay dos vías o formas, una se basa en la descarga de datos para una sola categoría taxonómica y la otra para varias categorías taxonómicas.</p>
+<center>
+<img src="https://i.ibb.co/JnyR3tp/both.gif" width="350" />
+</center>
+<p></br></p>
+<p>Definida la especie con que vamos a trabajar, procedemos a utilizar la función <res>occ_data</res> del paquete <res>rgbif</res>, la cual realiza una búsqueda de ocurrencias del taxón o la especie en cuestión el el GBIF. Los argumentos de dicha función los podemos encontrar en la siguiente <a href="https://www.rdocumentation.org/packages/rgbif/versions/3.7.0/topics/occ_data">LINK</a>. A continuación veremos algunos:</p>
+<ul>
+<li><p>scientificName: Un nombre científico de la columna vertebral de GBIF. Todos los taxones incluidos y sinónimos se incluyen en la búsqueda.</p></li>
+<li><p>country: El código de país de 2 letras (según ISO-3166-1) del país en el que se registró la ocurrencia. Mira <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">Aquí</a></p></li>
+<li><p>hasCoordinate: Retorna solo registros de ocurrencia con datos de latitud/longitud (TRUE) o todos los registros (FALSE)</p></li>
+<li><p>recordedBy: La persona que registró la ocurrencia</p></li>
+<li><p>identifiedByID: Nombre de la persona que proporcionó la identificación taxonómica de la ocurrencia.</p></li>
+<li><p>elevation: Elevación en metros sobre el nivel del mar</p></li>
+<li><p>stateProvince: El nombre de la siguiente región administrativa más pequeña que país (estado, provincia, cantón, departamento, región, etc.) en el que se produce la ubicación.</p></li>
+<li><p>limit: Número de registros a retornar</p></li>
+</ul>
+<div id="descargar-datos-de-una-categoría-taxonómica-en-un-país" class="section level2">
+<h2>Descargar datos de una categoría taxonómica en un país</h2>
+<p><a name="5"></a></p>
+<p>En este ejercicio quiero saber la ocurrencia de la especie <em>Onthophagus acuminatus</em> en Colombia. <em>O. acuminatus</em> es una especie de escarabajo de la subfamilia Scarabaeinae, comunmente llamados escarabajos coprófagos o peloteros. Dicho escarabajo está ampliamente distribuido en la región andina y es uno de los escarabajos más abundantes en áreas protegidas y ambientes urbanos y semiurbanos, sin embargo, queremos revisar en que sitios se encuentra registrado y para cuales departamentos.</p>
+<center>
+<img src="https://i.ibb.co/7pPYWbq/scream.gif" width="350" />
+</center>
+<p></br></p>
+<p>Guardamos el nombre de nuestra especie en una variable</p>
+<pre class="r"><code>myspecies &lt;- c(&quot;Onthophagus acuminatus&quot;)</code></pre>
+<div id="descarga-de-datos" class="section level3">
+<h3>Descarga de datos</h3>
+<p><a name="6"></a></p>
+<p>Ahora utilizamos la función <res>occ_data</res> para filtar las ocurrencias de <em>O. acuminatus</em> en Colombia, con un límite de 20000 ocurrencias y lo guardamos en la variable <strong>gbif_data</strong>. Recuerda que puedes filtrar también por departamentos.</p>
+<pre class="r"><code>gbif_data &lt;- occ_data(scientificName = myspecies, 
+                      country = &#39;CO&#39;, 
+                      hasCoordinate = TRUE, 
+                      limit = 20000)</code></pre>
+<p>Ahora corroboramos los datos descargados, nota que es una lista de <res>gbif_data</res> con dos elementos anidados <res>meta</res>, en el cual encontraremos datos de cantidades y <res>data</res>, en el cual encontraremos una tabla con todos los datos de las ocurrencias.</p>
+<center>
+<img src="https://i.ibb.co/W0tqL8T/funny.gif" width="350" />
+</center>
+<p></br></p>
+<pre class="r"><code>gbif_data$meta</code></pre>
+<pre><code>## $offset
+## [1] 1200
+## 
+## $limit
+## [1] 286
+## 
+## $endOfRecords
+## [1] TRUE
+## 
+## $count
+## [1] 1486</code></pre>
+<pre class="r"><code>names(gbif_data$data)</code></pre>
+<pre><code>##   [1] &quot;key&quot;                            &quot;scientificName&quot;                
+##   [3] &quot;decimalLatitude&quot;                &quot;decimalLongitude&quot;              
+##   [5] &quot;issues&quot;                         &quot;datasetKey&quot;                    
+##   [7] &quot;publishingOrgKey&quot;               &quot;installationKey&quot;               
+##   [9] &quot;publishingCountry&quot;              &quot;protocol&quot;                      
+##  [11] &quot;lastCrawled&quot;                    &quot;lastParsed&quot;                    
+##  [13] &quot;crawlId&quot;                        &quot;hostingOrganizationKey&quot;        
+##  [15] &quot;basisOfRecord&quot;                  &quot;occurrenceStatus&quot;              
+##  [17] &quot;lifeStage&quot;                      &quot;taxonKey&quot;                      
+##  [19] &quot;kingdomKey&quot;                     &quot;phylumKey&quot;                     
+##  [21] &quot;classKey&quot;                       &quot;orderKey&quot;                      
+##  [23] &quot;familyKey&quot;                      &quot;genusKey&quot;                      
+##  [25] &quot;speciesKey&quot;                     &quot;acceptedTaxonKey&quot;              
+##  [27] &quot;acceptedScientificName&quot;         &quot;kingdom&quot;                       
+##  [29] &quot;phylum&quot;                         &quot;order&quot;                         
+##  [31] &quot;family&quot;                         &quot;genus&quot;                         
+##  [33] &quot;species&quot;                        &quot;genericName&quot;                   
+##  [35] &quot;specificEpithet&quot;                &quot;taxonRank&quot;                     
+##  [37] &quot;taxonomicStatus&quot;                &quot;iucnRedListCategory&quot;           
+##  [39] &quot;dateIdentified&quot;                 &quot;coordinateUncertaintyInMeters&quot; 
+##  [41] &quot;elevation&quot;                      &quot;elevationAccuracy&quot;             
+##  [43] &quot;continent&quot;                      &quot;stateProvince&quot;                 
+##  [45] &quot;year&quot;                           &quot;month&quot;                         
+##  [47] &quot;day&quot;                            &quot;eventDate&quot;                     
+##  [49] &quot;lastInterpreted&quot;                &quot;license&quot;                       
+##  [51] &quot;organismQuantity&quot;               &quot;organismQuantityType&quot;          
+##  [53] &quot;sampleSizeUnit&quot;                 &quot;sampleSizeValue&quot;               
+##  [55] &quot;isInCluster&quot;                    &quot;inCluster&quot;                     
+##  [57] &quot;geodeticDatum&quot;                  &quot;class&quot;                         
+##  [59] &quot;countryCode&quot;                    &quot;country&quot;                       
+##  [61] &quot;eventID&quot;                        &quot;recordNumber&quot;                  
+##  [63] &quot;identifier&quot;                     &quot;habitat&quot;                       
+##  [65] &quot;dynamicProperties&quot;              &quot;samplingEffort&quot;                
+##  [67] &quot;verbatimSRS&quot;                    &quot;locality&quot;                      
+##  [69] &quot;county&quot;                         &quot;verbatimCoordinateSystem&quot;      
+##  [71] &quot;eventRemarks&quot;                   &quot;gbifID&quot;                        
+##  [73] &quot;collectionCode&quot;                 &quot;occurrenceID&quot;                  
+##  [75] &quot;preparations&quot;                   &quot;recordedBy&quot;                    
+##  [77] &quot;catalogNumber&quot;                  &quot;locationRemarks&quot;               
+##  [79] &quot;institutionCode&quot;                &quot;eventTime&quot;                     
+##  [81] &quot;samplingProtocol&quot;               &quot;parentEventID&quot;                 
+##  [83] &quot;identifiedBy&quot;                   &quot;higherClassification&quot;          
+##  [85] &quot;projectId&quot;                      &quot;sex&quot;                           
+##  [87] &quot;identificationReferences&quot;       &quot;institutionID&quot;                 
+##  [89] &quot;municipality&quot;                   &quot;datasetName&quot;                   
+##  [91] &quot;language&quot;                       &quot;type&quot;                          
+##  [93] &quot;vernacularName&quot;                 &quot;organismID&quot;                    
+##  [95] &quot;datasetID&quot;                      &quot;georeferenceProtocol&quot;          
+##  [97] &quot;individualCount&quot;                &quot;rightsHolder&quot;                  
+##  [99] &quot;verbatimElevation&quot;              &quot;georeferencedBy&quot;               
+## [101] &quot;previousIdentifications&quot;        &quot;ownerInstitutionCode&quot;          
+## [103] &quot;occurrenceRemarks&quot;              &quot;accessRights&quot;                  
+## [105] &quot;name&quot;                           &quot;coordinatePrecision&quot;           
+## [107] &quot;nomenclaturalCode&quot;              &quot;fieldNumber&quot;                   
+## [109] &quot;disposition&quot;                    &quot;otherCatalogNumbers&quot;           
+## [111] &quot;collectionID&quot;                   &quot;georeferencedDate&quot;             
+## [113] &quot;higherGeography&quot;                &quot;verbatimEventDate&quot;             
+## [115] &quot;georeferenceVerificationStatus&quot; &quot;georeferenceRemarks&quot;           
+## [117] &quot;georeferenceSources&quot;            &quot;modified&quot;                      
+## [119] &quot;verbatimLocality&quot;               &quot;materialSampleID&quot;              
+## [121] &quot;reproductiveCondition&quot;          &quot;identificationRemarks&quot;</code></pre>
+</div>
+<div id="limpieza-de-datos" class="section level3">
+<h3>Limpieza de datos</h3>
+<p><a name="7"></a></p>
+<p>Luego de descargados los datos de la plataforma, ya podemos empezar a seleccionarlos, filtrarlos y dejarlos más organizados. En este ejercicio, vamos a seleccionar las columnas de nombre científico, coordenadas, elevación y departamento de las ocurrencias descargadas.</p>
+<pre class="r"><code>myspecies_coords &lt;- gbif_data$data[ , c(&quot;scientificName&quot;,
+                                        &quot;decimalLongitude&quot;, 
+                                        &quot;decimalLatitude&quot;, 
+                                        &quot;elevation&quot;,
+                                        &quot;stateProvince&quot;)]
+head(myspecies_coords)</code></pre>
+<pre><code>## # A tibble: 6 x 5
+##   scientificName        decimalLongitude decimalLatitude elevation stateProvince
+##   &lt;chr&gt;                            &lt;dbl&gt;           &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;        
+## 1 Onthophagus acuminat~            -73.7            7.30       107 Santander    
+## 2 Onthophagus acuminat~            -73.7            7.30       109 Santander    
+## 3 Onthophagus acuminat~            -75.2            2.94       562 Huila        
+## 4 Onthophagus acuminat~            -75.2            2.94       562 Huila        
+## 5 Onthophagus acuminat~            -75.2            2.94       562 Huila        
+## 6 Onthophagus acuminat~            -75.2            2.94       562 Huila</code></pre>
+<p>También podemos observar un resumen de los datos, como cantidad, departamentos de las ocurrencias, entre otros</p>
+<pre class="r"><code># Conoceremos la cantidad de registros
+dim(myspecies_coords)[1]</code></pre>
+<pre><code>## [1] 1486</code></pre>
+<pre class="r"><code># Cantidad de datos por departamento
+myspecies_coords  %&gt;%
+    count(stateProvince, sort = TRUE)</code></pre>
+<pre><code>## # A tibble: 16 x 2
+##    stateProvince       n
+##    &lt;chr&gt;           &lt;int&gt;
+##  1 Sucre             766
+##  2 Santander         188
+##  3 La Guajira        141
+##  4 Huila              90
+##  5 Chocó              57
+##  6 Valle del Cauca    43
+##  7 Bolívar            40
+##  8 Tolima             39
+##  9 Antioquia          37
+## 10 Magdalena          33
+## 11 Quindío            27
+## 12 Cundinamarca        9
+## 13 Nariño              7
+## 14 Cesar               6
+## 15 Risaralda           2
+## 16 Córdoba             1</code></pre>
+<p>Ahora guardaremos nuestros datos en un archivo tipo <em><em>csv</em></em> para poder tener la información en nuestra computadora.</p>
+<pre class="r"><code>write.csv(myspecies_coords, &#39;species.csv&#39;, row.names = TRUE)</code></pre>
+</div>
+<div id="mapeo-de-ocurrencias" class="section level3">
+<h3>Mapeo de ocurrencias</h3>
+<p><a name="8"></a></p>
+<p>Ahora realizaremos nuestro mapa de ocurrencias de la especie en cuestión, para ello utilizaremos la función <res>getData</res> para cargar la capa de división por departamentos para Colombia (Level = 1).</p>
+<center>
+<img src="https://i.ibb.co/dfLTk2G/donkey.gif" width="350" />
+</center>
+<p></br></p>
+<pre class="r"><code>shp &lt;- raster::getData(&#39;GADM&#39;, country = &#39;COL&#39;, level = 1)</code></pre>
+<p>Al igual, utilizaremos el paquete <res>ggplot2</res> con el fin de visualizar nuestros datos.</p>
+<pre class="r"><code>mapa &lt;- ggplot() +
+  geom_point(data = myspecies_coords, 
+             aes(x = decimalLongitude, y = decimalLatitude), 
+             color = &#39;black&#39;) +
+  geom_polygon(data = shp, aes(x = long, y = lat, group = group), 
+               color = &#39;grey&#39;, fill = NA) +
+  coord_fixed(ylim = c(-5, 12.5), xlim = c(-80, -67)) +
+  xlab(&#39;Longitud&#39;) +
+  ylab(&#39;Latitud&#39;) +
+  theme(axis.title.y = element_text(size = 17),
+        axis.title.x = element_text(size = 17),
+        axis.text.y = element_text(size = 13),
+        axis.text.x = element_text(size = 13))+
+  theme_bw()
+
+mapa</code></pre>
+<p><img src="https://rbiologos.com/blog/a017/index.es_files/figure-html/unnamed-chunk-9-1.png" width="100%" />
+Mapa 1. Mapa de ocurrencias de <em>O. acuminatus</em> en Colombia.</p>
+<p>Guardamos nuestro mapa de ocurrencias</p>
+<pre class="r"><code>png(&quot;mapa.png&quot;, width = 1800, height = 1800, res = 140)
+print(mapa)
+dev.off()</code></pre>
+</div>
+<div id="citaciones" class="section level3">
+<h3>Citaciones</h3>
+<p><a name="9"></a></p>
+<p>Finalmente obtenemos la citación de las ocurrencias</p>
+<pre class="r"><code>gbif_citation(gbif_data)</code></pre>
+<pre><code>## [[1]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: González F A, Corral Gómez J N, Cobos Hernandez R M, Vanegas
+##         Alarcón D A, Silva Tavera D F (2022). Línea base general de escarabajos
+##         para el valle medio del Magdalena - VMM. Version 1.1. Instituto de
+##         Investigación de Recursos Biológicos Alexander von Humboldt. Sampling
+##         event dataset https://doi.org/10.15472/lgpfm7 accessed via GBIF.org on
+##         2022-03-06.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[2]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Martínez Silva P, Gutiérrez Bautista H H (2020). Coleópteros
+##         presentes en un proceso de restauración pasiva en bosque seco tropical.
+##         Version 2.2. Corporación Universitaria del Huila. Occurrence dataset
+##         https://doi.org/10.15472/2qq6hc accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[3]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Neita J C, Borja-Acosta K (2021). Insectos del municipio
+##         Cimitarra, Santander - Proyecto Santander BIO. Version 1.2. Instituto
+##         de Investigación de Recursos Biológicos Alexander von Humboldt.
+##         Occurrence dataset https://doi.org/10.15472/po6pzh accessed via
+##         GBIF.org on 2022-03-06.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[4]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Lopera A, Lizcano D J (2021). Registros biológicos asociados al
+##         monitoreo de la diversidad de escarabajos en paisajes ganaderos de
+##         bosque 2013 - 2017. Asociación GAICA. Occurrence dataset
+##         https://doi.org/10.15472/6ttvzs accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[5]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Mendivil Nieto J A, Giraldo Echeverri C, Quevedo Vega C J (2020).
+##         Escarabajos estercoleros asociados a sistemas de ganadería sostenible
+##         en diferentes regiones de Colombia. Version 2.3. Fundación Centro para
+##         la Investigación en Sistemas Sostenibles de Producción Agropecuaria -
+##         Cipav. Occurrence dataset https://doi.org/10.15472/yje84v accessed via
+##         GBIF.org on 2022-03-06.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Rights: http://creativecommons.org/publicdomain/zero/1.0/legalcode
+## 
+## [[6]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Murillo Barahona D A, Rengifo Murillo L (2021). Colección
+##         Entomológica de la Universidad Tecnológica del Chocó. Version 6.4.
+##         Universidad Tecnológica del Chocó. Occurrence dataset
+##         https://doi.org/10.15472/rmbpsh accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/publicdomain/zero/1.0/legalcode
+## 
+## [[7]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Lopera A, Quintana Vargas A (2021). Coleópteros de los bosques
+##         montanos del Oriente Antioqueño, Cañón del río Melcocho, en el
+##         municipio de El Carmen de Viboral, Antioquia - Proyecto Colombia BIO.
+##         Version 1.3. Instituto de Investigación de Recursos Biológicos
+##         Alexander von Humboldt. Occurrence dataset
+##         https://doi.org/10.15472/npzc22 accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[8]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Gómez-Posada C, Borja-Acosta K (2022). Colección de Entomología
+##         del Instituto de Investigación de Recursos Biológicos Alexander von
+##         Humboldt (IAvH-E). Version 2.6. Instituto de Investigación de Recursos
+##         Biológicos Alexander von Humboldt. Occurrence dataset
+##         https://doi.org/10.15472/vmpedy accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[9]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Borja-Acosta K (2022). Colección de Tejidos del Instituto de
+##         Investigación de Recursos Biológicos Alexander von Humboldt (IAvH-CT).
+##         Version 20.4. Instituto de Investigación de Recursos Biológicos
+##         Alexander von Humboldt. Occurrence dataset
+##         https://doi.org/10.15472/9uddlh accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[10]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Bonell Rojas W Y (2018). Caracterización biológica en la Serranía
+##         de San Lucas 2015. Version 2.0. Parques Nacionales Naturales de
+##         Colombia. Occurrence dataset https://doi.org/10.15472/uarl1x accessed
+##         via GBIF.org on 2022-03-06.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[11]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Quintana Vargas A (2021). Biodiversidad de un bosque seco tropical
+##         del Valle Medio del río Magdalena: evaluación integrada a través de
+##         multitaxones. Version 1.2. Instituto de Investigación de Recursos
+##         Biológicos Alexander von Humboldt. Occurrence dataset
+##         https://doi.org/10.15472/ptmv1d accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[12]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Ramirez Hernandez L M (2019). Estudio de Biodiversidad Mina
+##         Calenturitas, Temporada de Lluvias. INERCO Consultoría Colombia.
+##         Occurrence dataset https://doi.org/10.15472/uecnoz accessed via
+##         GBIF.org on 2022-03-06.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Rights: http://creativecommons.org/licenses/by/4.0/legalcode
+## 
+## [[13]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Guañarita Bañol A M (2021). Caracterizaciones rápidas de
+##         biodiversidad en grupos biológicos de la planicie del valle del río
+##         Cauca. Version 4.2. Universidad Icesi. Occurrence dataset
+##         https://doi.org/10.15472/dbjjay accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[14]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Hurtado Guerra A M (2020). Caracterización biológica de la ventana
+##         Beltrán, corregimiento Paquiló, Municipio de Beltrán, Cundinamarca.
+##         Version 2.4. Instituto de Investigación de Recursos Biológicos
+##         Alexander von Humboldt. Occurrence dataset
+##         https://doi.org/10.15472/hr8ml2 accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[15]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: González A (2021). Escarabajos coprófagos (Coleoptera:
+##         Scarabaeidae: Scarabaeinae) de bosques secos Colombianos de la
+##         Colección Entomológica del Instituto Alexander von Humboldt. Version
+##         4.5. Instituto de Investigación de Recursos Biológicos Alexander von
+##         Humboldt. Occurrence dataset https://doi.org/10.15472/hjh6ys accessed
+##         via GBIF.org on 2022-03-06.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[16]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: León González J (2021). Escarabajos coprófagos (Scarabaeidae:
+##         Scarabaeinae) del eje cafetero Colombiano. Version 7.3. Instituto de
+##         Investigación de Recursos Biológicos Alexander von Humboldt. Occurrence
+##         dataset https://doi.org/10.15472/dm9u19 accessed via GBIF.org on
+##         2022-03-06.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[17]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Jaramillo N, Marín J D, Wolff Echeverri M, Duque Veléz P, Veléz
+##         Bravo A, Jaramillo J G (2022). Colección Entomológica de Piedras
+##         Blancas. Version 2.5. Museo Entomológico de Comfenalco - Antioquia.
+##         Occurrence dataset https://doi.org/10.15472/xblw2v accessed via
+##         GBIF.org on 2022-03-06.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Rights: http://creativecommons.org/licenses/by/4.0/legalcode</code></pre>
+</div>
+</div>
+<div id="descargar-datos-de-varias-categorías-taxonómicas-en-una-rango-de-coordenadas" class="section level2">
+<h2>Descargar datos de varias categorías taxonómicas en una rango de coordenadas</h2>
+<p><a name="10"></a></p>
+<p>En este ejercicio quiero saber la ocurrencia de las especies de escarabajos coprófagos en Colombia. Dicho escarabajos están ampliamente distribuidos en Colombia, sin embargo, queremos revisar en que sitios se encuentran registrados en un rango de coordenadas específico.</p>
+<center>
+<img src="https://i.ibb.co/DVvstrf/cats.gif" width="350" />
+</center>
+<p></br></p>
+<p>Guardamos el nombre de nuestra especie en una variable</p>
+<pre class="r"><code>myspecies2 &lt;- c(&quot;Sulcophanaeus noctis&quot;, &quot;Phanaeus meleagris&quot;, 
+               &quot;Onthophagus bidentatus&quot;, &quot;Ontherus kirschii&quot;, 
+               &quot;Copris susanae&quot;)</code></pre>
+<div id="descarga-de-datos-1" class="section level3">
+<h3>Descarga de datos</h3>
+<p><a name="11"></a></p>
+<p>Ahora utilizamos la función <res>occ_data</res> para filtar las ocurrencias de algunas especies de escarabajos coprófagos en Colombia, con un límite de 20000 ocurrencias y lo guardamos en la variable <strong>gbif_data</strong>. Recuerda que puedes filtrar también por departamentos.</p>
+<pre class="r"><code>gbif_data2 &lt;- occ_data(scientificName = myspecies2, 
+                      hasCoordinate = TRUE, 
+                      limit = 20000, 
+                      decimalLongitude = &quot;-76, -74&quot;, 
+                      decimalLatitude = &quot;3, 8&quot;)</code></pre>
+<p>Ahora corroboramos los datos descargados, nota que es una lista de <res>gbif_data</res> con dos elementos anidados <res>meta</res>, en el cual encontraremos datos de cantidades y <res>data</res>, en el cual encontraremos una tabla con todos los datos de las ocurrencias, asimismo, podrás notar que hay más elementos, esto es debido a que tenemos un conjunto de datos para cada especie seleccionada.</p>
+<center>
+<img src="https://i.ibb.co/tXdzjnS/Donk.gif" width="350" />
+</center>
+<p></br></p>
+<pre class="r"><code>names(gbif_data2)</code></pre>
+<pre><code>## [1] &quot;Sulcophanaeus noctis&quot;   &quot;Phanaeus meleagris&quot;     &quot;Onthophagus bidentatus&quot;
+## [4] &quot;Ontherus kirschii&quot;      &quot;Copris susanae&quot;</code></pre>
+<pre class="r"><code>names(gbif_data2[[myspecies2[1]]])</code></pre>
+<pre><code>## [1] &quot;meta&quot; &quot;data&quot;</code></pre>
+<pre class="r"><code>names(gbif_data2[[myspecies2[1]]]$meta)</code></pre>
+<pre><code>## [1] &quot;offset&quot;       &quot;limit&quot;        &quot;endOfRecords&quot; &quot;count&quot;</code></pre>
+<pre class="r"><code>names(gbif_data2[[myspecies2[1]]]$data)</code></pre>
+<pre><code>##  [1] &quot;key&quot;                      &quot;scientificName&quot;          
+##  [3] &quot;decimalLatitude&quot;          &quot;decimalLongitude&quot;        
+##  [5] &quot;issues&quot;                   &quot;datasetKey&quot;              
+##  [7] &quot;publishingOrgKey&quot;         &quot;installationKey&quot;         
+##  [9] &quot;publishingCountry&quot;        &quot;protocol&quot;                
+## [11] &quot;lastCrawled&quot;              &quot;lastParsed&quot;              
+## [13] &quot;crawlId&quot;                  &quot;projectId&quot;               
+## [15] &quot;hostingOrganizationKey&quot;   &quot;basisOfRecord&quot;           
+## [17] &quot;occurrenceStatus&quot;         &quot;lifeStage&quot;               
+## [19] &quot;taxonKey&quot;                 &quot;kingdomKey&quot;              
+## [21] &quot;phylumKey&quot;                &quot;classKey&quot;                
+## [23] &quot;orderKey&quot;                 &quot;familyKey&quot;               
+## [25] &quot;genusKey&quot;                 &quot;speciesKey&quot;              
+## [27] &quot;acceptedTaxonKey&quot;         &quot;acceptedScientificName&quot;  
+## [29] &quot;kingdom&quot;                  &quot;phylum&quot;                  
+## [31] &quot;order&quot;                    &quot;family&quot;                  
+## [33] &quot;genus&quot;                    &quot;species&quot;                 
+## [35] &quot;genericName&quot;              &quot;specificEpithet&quot;         
+## [37] &quot;taxonRank&quot;                &quot;taxonomicStatus&quot;         
+## [39] &quot;iucnRedListCategory&quot;      &quot;dateIdentified&quot;          
+## [41] &quot;elevation&quot;                &quot;elevationAccuracy&quot;       
+## [43] &quot;continent&quot;                &quot;stateProvince&quot;           
+## [45] &quot;year&quot;                     &quot;month&quot;                   
+## [47] &quot;day&quot;                      &quot;eventDate&quot;               
+## [49] &quot;lastInterpreted&quot;          &quot;license&quot;                 
+## [51] &quot;organismQuantity&quot;         &quot;organismQuantityType&quot;    
+## [53] &quot;isInCluster&quot;              &quot;inCluster&quot;               
+## [55] &quot;geodeticDatum&quot;            &quot;class&quot;                   
+## [57] &quot;countryCode&quot;              &quot;country&quot;                 
+## [59] &quot;recordNumber&quot;             &quot;identifier&quot;              
+## [61] &quot;habitat&quot;                  &quot;dynamicProperties&quot;       
+## [63] &quot;georeferenceProtocol&quot;     &quot;verbatimSRS&quot;             
+## [65] &quot;locality&quot;                 &quot;county&quot;                  
+## [67] &quot;verbatimCoordinateSystem&quot; &quot;gbifID&quot;                  
+## [69] &quot;collectionCode&quot;           &quot;occurrenceID&quot;            
+## [71] &quot;preparations&quot;             &quot;recordedBy&quot;              
+## [73] &quot;catalogNumber&quot;            &quot;institutionCode&quot;         
+## [75] &quot;samplingProtocol&quot;         &quot;identifiedBy&quot;            
+## [77] &quot;individualCount&quot;          &quot;samplingEffort&quot;          
+## [79] &quot;vernacularName&quot;           &quot;eventTime&quot;               
+## [81] &quot;modified&quot;                 &quot;eventRemarks&quot;            
+## [83] &quot;type&quot;                     &quot;institutionID&quot;           
+## [85] &quot;georeferencedBy&quot;          &quot;municipality&quot;            
+## [87] &quot;datasetName&quot;              &quot;verbatimLocality&quot;        
+## [89] &quot;language&quot;                 &quot;locationRemarks&quot;         
+## [91] &quot;datasetID&quot;                &quot;occurrenceRemarks&quot;       
+## [93] &quot;verbatimElevation&quot;        &quot;georeferenceRemarks&quot;     
+## [95] &quot;name&quot;</code></pre>
+</div>
+<div id="limpieza-de-datos-1" class="section level3">
+<h3>Limpieza de datos</h3>
+<p><a name="12"></a></p>
+<p>Luego de descargados los datos de la plataforma, ya podemos empezar a seleccionarlos, filtrarlos y dejarlos más organizados. En este ejercicio, vamos a seleccionar las columnas de nombre científico, coordenadas, elevación y departamento de las ocurrencias descargadas.</p>
+<pre class="r"><code>df_final = data.frame()
+for (s in 1:length(myspecies2)) {
+  if(is.null(gbif_data2[[s]]$data)==FALSE){
+    coords &lt;- gbif_data2[[s]]$data[ , c(&quot;scientificName&quot;, &quot;decimalLongitude&quot;, 
+                                       &quot;decimalLatitude&quot;, &quot;stateProvince&quot;)]
+    df_final &lt;- rbind(df_final, coords)
+  }
+}
+head(df_final)</code></pre>
+<pre><code>## # A tibble: 6 x 4
+##   scientificName                  decimalLongitude decimalLatitude stateProvince
+##   &lt;chr&gt;                                      &lt;dbl&gt;           &lt;dbl&gt; &lt;chr&gt;        
+## 1 Sulcophanaeus noctis (Bates, 1~            -74.2            6.10 Santander    
+## 2 Sulcophanaeus noctis (Bates, 1~            -75.2            5.89 Antioquia    
+## 3 Sulcophanaeus noctis (Bates, 1~            -75.2            5.89 Antioquia    
+## 4 Sulcophanaeus noctis (Bates, 1~            -75.2            5.89 Antioquia    
+## 5 Sulcophanaeus noctis (Bates, 1~            -75.2            5.89 Antioquia    
+## 6 Sulcophanaeus noctis (Bates, 1~            -75.2            5.89 Antioquia</code></pre>
+<p>También podemos observar un resumen de los datos, como cantidad, departamentos de las ocurrencias, entre otros</p>
+<pre class="r"><code># Conoceremos la cantidad de registros
+dim(df_final)[1]</code></pre>
+<pre><code>## [1] 35</code></pre>
+<pre class="r"><code># Cantidad de datos por departamento
+df_final  %&gt;%
+  group_by(scientificName) %&gt;%
+    count(stateProvince, sort = TRUE)</code></pre>
+<pre><code>## # A tibble: 7 x 3
+## # Groups:   scientificName [3]
+##   scientificName                       stateProvince     n
+##   &lt;chr&gt;                                &lt;chr&gt;         &lt;int&gt;
+## 1 Sulcophanaeus noctis (Bates, 1887)   Antioquia        19
+## 2 Onthophagus bidentatus Drapiez, 1819 Santander         5
+## 3 Phanaeus meleagris Blanchard, 1846   Antioquia         5
+## 4 Sulcophanaeus noctis (Bates, 1887)   Bolívar           2
+## 5 Sulcophanaeus noctis (Bates, 1887)   Tolima            2
+## 6 Sulcophanaeus noctis (Bates, 1887)   Caldas            1
+## 7 Sulcophanaeus noctis (Bates, 1887)   Santander         1</code></pre>
+<p>Ahora guardaremos nuestros datos en un archivo <strong>csv</strong> para poder tener la información en nuestra computadora.</p>
+<center>
+<img src="https://i.ibb.co/FDJSPdj/cat.gif" width="350" />
+</center>
+<p></br></p>
+<pre class="r"><code>write.csv(df_final, &#39;species.csv&#39;, row.names = TRUE)</code></pre>
+</div>
+<div id="mapeo-de-ocurrencias-1" class="section level3">
+<h3>Mapeo de ocurrencias</h3>
+<p><a name="13"></a></p>
+<p>Ahora realizaremos nuestro mapa de ocurrencias de la especie en cuestión, para ello utilizaremos la función <res>getData</res> para cargar la capa de división por departamentos para Colombia (Level = 1).</p>
+<pre class="r"><code>shp &lt;- raster::getData(&#39;GADM&#39;, country = &#39;COL&#39;, level = 1)</code></pre>
+<p>Al igual, utilizaremos el paquete <res>ggplot2</res> con el fin de visualizar nuestros datos.</p>
+<pre class="r"><code>mapa2 &lt;- ggplot() +
+  geom_point(data = df_final, 
+             aes(x = decimalLongitude, y = decimalLatitude, 
+                 shape = scientificName), 
+             color = &#39;black&#39;) +
+  geom_polygon(data = shp, aes(x = long, y = lat, group = group), 
+               color = &#39;grey&#39;, fill = NA) +
+  coord_fixed(ylim = c(2.5, 8.5), xlim = c(-76.5, -73.5)) +
+  xlab(&#39;Longitud&#39;) +
+  ylab(&#39;Latitud&#39;) +
+  theme(axis.title.y = element_text(size = 17),
+        axis.title.x = element_text(size = 17),
+        axis.text.y = element_text(size = 13),
+        axis.text.x = element_text(size = 13))+
+  labs(shape = &quot;Especies&quot;)+
+  theme_bw()+
+  theme(legend.text = element_text(face = &quot;italic&quot;))
+
+mapa2</code></pre>
+<p><img src="https://rbiologos.com/blog/a017/index.es_files/figure-html/unnamed-chunk-19-1.png" width="100%" />
+Mapa 2. Mapa de ocurrencias de cinco (5) especies de escarabajos coprófagos en una región de Colombia.</p>
+<center>
+<img src="https://i.ibb.co/42MJ8r3/pretty.gif" width="350" />
+</center>
+<p></br></p>
+<p>Guardamos nuestro mapa de ocurrencias</p>
+<pre class="r"><code>png(&quot;mapa2.png&quot;, width = 1800, height = 1800, res = 140)
+print(mapa2)
+dev.off()</code></pre>
+</div>
+<div id="citaciones-1" class="section level3">
+<h3>Citaciones</h3>
+<p><a name="14"></a></p>
+<p>Finalmente obtenemos la citación de las ocurrencias</p>
+<pre class="r"><code>gbif_citation(gbif_data)</code></pre>
+<pre><code>## [[1]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: González F A, Corral Gómez J N, Cobos Hernandez R M, Vanegas
+##         Alarcón D A, Silva Tavera D F (2022). Línea base general de escarabajos
+##         para el valle medio del Magdalena - VMM. Version 1.1. Instituto de
+##         Investigación de Recursos Biológicos Alexander von Humboldt. Sampling
+##         event dataset https://doi.org/10.15472/lgpfm7 accessed via GBIF.org on
+##         2022-03-06.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[2]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Martínez Silva P, Gutiérrez Bautista H H (2020). Coleópteros
+##         presentes en un proceso de restauración pasiva en bosque seco tropical.
+##         Version 2.2. Corporación Universitaria del Huila. Occurrence dataset
+##         https://doi.org/10.15472/2qq6hc accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[3]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Neita J C, Borja-Acosta K (2021). Insectos del municipio
+##         Cimitarra, Santander - Proyecto Santander BIO. Version 1.2. Instituto
+##         de Investigación de Recursos Biológicos Alexander von Humboldt.
+##         Occurrence dataset https://doi.org/10.15472/po6pzh accessed via
+##         GBIF.org on 2022-03-06.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[4]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Lopera A, Lizcano D J (2021). Registros biológicos asociados al
+##         monitoreo de la diversidad de escarabajos en paisajes ganaderos de
+##         bosque 2013 - 2017. Asociación GAICA. Occurrence dataset
+##         https://doi.org/10.15472/6ttvzs accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[5]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Mendivil Nieto J A, Giraldo Echeverri C, Quevedo Vega C J (2020).
+##         Escarabajos estercoleros asociados a sistemas de ganadería sostenible
+##         en diferentes regiones de Colombia. Version 2.3. Fundación Centro para
+##         la Investigación en Sistemas Sostenibles de Producción Agropecuaria -
+##         Cipav. Occurrence dataset https://doi.org/10.15472/yje84v accessed via
+##         GBIF.org on 2022-03-06.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Rights: http://creativecommons.org/publicdomain/zero/1.0/legalcode
+## 
+## [[6]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Murillo Barahona D A, Rengifo Murillo L (2021). Colección
+##         Entomológica de la Universidad Tecnológica del Chocó. Version 6.4.
+##         Universidad Tecnológica del Chocó. Occurrence dataset
+##         https://doi.org/10.15472/rmbpsh accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/publicdomain/zero/1.0/legalcode
+## 
+## [[7]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Lopera A, Quintana Vargas A (2021). Coleópteros de los bosques
+##         montanos del Oriente Antioqueño, Cañón del río Melcocho, en el
+##         municipio de El Carmen de Viboral, Antioquia - Proyecto Colombia BIO.
+##         Version 1.3. Instituto de Investigación de Recursos Biológicos
+##         Alexander von Humboldt. Occurrence dataset
+##         https://doi.org/10.15472/npzc22 accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[8]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Gómez-Posada C, Borja-Acosta K (2022). Colección de Entomología
+##         del Instituto de Investigación de Recursos Biológicos Alexander von
+##         Humboldt (IAvH-E). Version 2.6. Instituto de Investigación de Recursos
+##         Biológicos Alexander von Humboldt. Occurrence dataset
+##         https://doi.org/10.15472/vmpedy accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[9]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Borja-Acosta K (2022). Colección de Tejidos del Instituto de
+##         Investigación de Recursos Biológicos Alexander von Humboldt (IAvH-CT).
+##         Version 20.4. Instituto de Investigación de Recursos Biológicos
+##         Alexander von Humboldt. Occurrence dataset
+##         https://doi.org/10.15472/9uddlh accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[10]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Bonell Rojas W Y (2018). Caracterización biológica en la Serranía
+##         de San Lucas 2015. Version 2.0. Parques Nacionales Naturales de
+##         Colombia. Occurrence dataset https://doi.org/10.15472/uarl1x accessed
+##         via GBIF.org on 2022-03-06.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[11]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Quintana Vargas A (2021). Biodiversidad de un bosque seco tropical
+##         del Valle Medio del río Magdalena: evaluación integrada a través de
+##         multitaxones. Version 1.2. Instituto de Investigación de Recursos
+##         Biológicos Alexander von Humboldt. Occurrence dataset
+##         https://doi.org/10.15472/ptmv1d accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[12]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Ramirez Hernandez L M (2019). Estudio de Biodiversidad Mina
+##         Calenturitas, Temporada de Lluvias. INERCO Consultoría Colombia.
+##         Occurrence dataset https://doi.org/10.15472/uecnoz accessed via
+##         GBIF.org on 2022-03-06.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Rights: http://creativecommons.org/licenses/by/4.0/legalcode
+## 
+## [[13]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Guañarita Bañol A M (2021). Caracterizaciones rápidas de
+##         biodiversidad en grupos biológicos de la planicie del valle del río
+##         Cauca. Version 4.2. Universidad Icesi. Occurrence dataset
+##         https://doi.org/10.15472/dbjjay accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[14]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Hurtado Guerra A M (2020). Caracterización biológica de la ventana
+##         Beltrán, corregimiento Paquiló, Municipio de Beltrán, Cundinamarca.
+##         Version 2.4. Instituto de Investigación de Recursos Biológicos
+##         Alexander von Humboldt. Occurrence dataset
+##         https://doi.org/10.15472/hr8ml2 accessed via GBIF.org on 2022-03-06..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[15]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: González A (2021). Escarabajos coprófagos (Coleoptera:
+##         Scarabaeidae: Scarabaeinae) de bosques secos Colombianos de la
+##         Colección Entomológica del Instituto Alexander von Humboldt. Version
+##         4.5. Instituto de Investigación de Recursos Biológicos Alexander von
+##         Humboldt. Occurrence dataset https://doi.org/10.15472/hjh6ys accessed
+##         via GBIF.org on 2022-03-06.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[16]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: León González J (2021). Escarabajos coprófagos (Scarabaeidae:
+##         Scarabaeinae) del eje cafetero Colombiano. Version 7.3. Instituto de
+##         Investigación de Recursos Biológicos Alexander von Humboldt. Occurrence
+##         dataset https://doi.org/10.15472/dm9u19 accessed via GBIF.org on
+##         2022-03-06.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[17]]
+## &lt;&lt;rgbif citation&gt;&gt;
+##    Citation: Jaramillo N, Marín J D, Wolff Echeverri M, Duque Veléz P, Veléz
+##         Bravo A, Jaramillo J G (2022). Colección Entomológica de Piedras
+##         Blancas. Version 2.5. Museo Entomológico de Comfenalco - Antioquia.
+##         Occurrence dataset https://doi.org/10.15472/xblw2v accessed via
+##         GBIF.org on 2022-03-06.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2022-03-05
+##    Rights: http://creativecommons.org/licenses/by/4.0/legalcode</code></pre>
+</div>
+</div>
+</div>
+<div id="resumen" class="section level1">
+<h1>Resumen</h1>
+<p><a name="15"></a></p>
+<p>En este post pudimos aprender como descargar, limpiar y visualizar las ocurrencias sobre los taxones de nuestro interes. Recuerda que puedes explorar más estas herramientas con el fin de responder tus propias preguntas de investigación.</p>
+<p>Aprendimos igual que podemos realizar el análisis en una región, departamento, país, continente o a nivel global, es solo modificar algunas líneas en nuestro código y ¡voilá!</p>
+<p>No siendo más, nos despedimos no sin antes deseando poder encontrarnos de nuevo en algún momento, mientras ¡sean felices!</p>
+<center>
+<img src="https://i.ibb.co/ssmd5Mt/bye.gif" width="350" />
+</center>
+<p></br></p>
+</div>
+<div id="literatura" class="section level1">
+<h1>Literatura</h1>
+<p><a name="16"></a></p>
+<ul>
+<li><p><a href="https://www.r-bloggers.com/2021/03/downloading-and-cleaning-gbif-data-with-r/">Downloading and cleaning GBIF data with R</a></p></li>
+<li><p><a href="https://geofabio.com/2019/02/02/como-descargar-informacion-de-gbif-usando-r/">¿Cómo descargar información de GBIF usando R?</a></p></li>
+</ul>
+</div>
+<div id="más-información" class="section level1">
+<h1>Más información</h1>
+<p><a name="17"></a></p>
+<p>Estos análisis se han realizado utilizando el software R (v.4.1.0) y Rstudio (v. 1.4.1717)</p>
+<p>Recuerda que todos nuestros códigos están almacenados en <a href="https://github.com/RBiologos/Posts">GitHub</a></p>
+<center>
+<img src="https://i.ibb.co/DpKmR1k/github.png" width="350" />
+</center>
+</div>
+
+        </div>
+        
+        
+
+<div class="social-share pt-4">
+	<h4>Comparte:</h4>
+	
+	<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2frbiologos.com%2fblog%2fa017%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Trabajando%20con%20datos%20de%20GBIF&amp;url=https%3a%2f%2frbiologos.com%2fblog%2fa017%2f"
+		target="_blank" rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="https://plus.google.com/share?url=https%3a%2f%2frbiologos.com%2fblog%2fa017%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--google resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M11.37 12.93c-.73-.52-1.4-1.27-1.4-1.5 0-.43.03-.63.98-1.37 1.23-.97 1.9-2.23 1.9-3.57 0-1.22-.36-2.3-1-3.05h.5c.1 0 .2-.04.28-.1l1.36-.98c.16-.12.23-.34.17-.54-.07-.2-.25-.33-.46-.33H7.6c-.66 0-1.34.12-2 .35-2.23.76-3.78 2.66-3.78 4.6 0 2.76 2.13 4.85 5 4.9-.07.23-.1.45-.1.66 0 .43.1.83.33 1.22h-.08c-2.72 0-5.17 1.34-6.1 3.32-.25.52-.37 1.04-.37 1.56 0 .5.13.98.38 1.44.6 1.04 1.84 1.86 3.55 2.28.87.23 1.82.34 2.8.34.88 0 1.7-.1 2.5-.34 2.4-.7 3.97-2.48 3.97-4.54 0-1.97-.63-3.15-2.33-4.35zm-7.7 4.5c0-1.42 1.8-2.68 3.9-2.68h.05c.45 0 .9.07 1.3.2l.42.28c.96.66 1.6 1.1 1.77 1.8.05.16.07.33.07.5 0 1.8-1.33 2.7-3.96 2.7-1.98 0-3.54-1.23-3.54-2.8zM5.54 3.9c.33-.38.75-.58 1.23-.58h.05c1.35.05 2.64 1.55 2.88 3.35.14 1.02-.08 1.97-.6 2.55-.32.37-.74.56-1.23.56h-.03c-1.32-.04-2.63-1.6-2.87-3.4-.13-1 .08-1.92.58-2.5zM23.5 9.5h-3v-3h-2v3h-3v2h3v3h2v-3h3" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="mailto:?subject=Trabajando%20con%20datos%20de%20GBIF&amp;body=https%3a%2f%2frbiologos.com%2fblog%2fa017%2f" target="_self"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link"
+		href="https://reddit.com/submit/?url=https%3a%2f%2frbiologos.com%2fblog%2fa017%2f&amp;resubmit=true&amp;title=Trabajando%20con%20datos%20de%20GBIF" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+	
+	<a class="resp-sharing-button__link" href="whatsapp://send?text=Trabajando%20con%20datos%20de%20GBIF%20https%3a%2f%2frbiologos.com%2fblog%2fa017%2f" target="_blank"
+		rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1 0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+	
+	<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Trabajando%20con%20datos%20de%20GBIF&amp;url=https%3a%2f%2frbiologos.com%2fblog%2fa017%2f"
+		target="_blank" rel="noopener" aria-label="">
+		<div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small">
+			<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M.707 8.475C.275 8.64 0 9.508 0 9.508s.284.867.718 1.03l5.09 1.897 1.986 6.38a1.102 1.102 0 0 0 1.75.527l2.96-2.41a.405.405 0 0 1 .494-.013l5.34 3.87a1.1 1.1 0 0 0 1.046.135 1.1 1.1 0 0 0 .682-.803l3.91-18.795A1.102 1.102 0 0 0 22.5.075L.706 8.475z" />
+				</svg>
+			</div>
+		</div>
+	</a>
+
+</div>
+        
+        
+        <div class="mt-5">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </div><!-- end Contact Area -->
+<footer id="footer" class="section-bg">
+	<div class="container">
+		<div class="row wow fadeInUp" data-wow-duration="500ms">
+			<div class="col-lg-12">
+
+			
+
+                        <!-- Footer Social Links -->
+				<div class="social-icon"><h1><center                                                    >Social</center></h1>
+					<ul class="list-inline">
+						
+						<li class="list-inline-item"><a href="https://www.instagram.com/rbiologos/" target="blank"><i class="ti-instagram" target="blank"></i></a></li>
+						
+						<li class="list-inline-item"><a href="https://www.facebook.com/rbiologos" target="blank"><i class="ti-facebook" target="blank"></i></a></li>
+						
+						<li class="list-inline-item"><a href="https://github.com/RBiologos/Posts" target="blank"><i class="ti-github" target="blank"></i></a></li>
+						
+					</ul>
+				</div>
+				
+				<center><img src="https://i.ibb.co/SwJkbqh/2.png" alt="R Biólogos" height="200" /></center>
+	
+				<!-- copyright -->
+				<div class="copyright text-center">
+				        
+					<a href="https://rbiologos.com/">
+					</a>
+					<br>
+					<p1>Copyright © 2020 Modificado por <a href="https://davidvanegal.github.io/">David Vanegas</a> bajo la plantilla <a href="https://themefisher.com">Themefisher</a> de <a href="https://gethugothemes.com">HUGO</a></p1>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- /footer -->
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="https://rbiologos.com/plugins/jquery/jquery.min.js"></script>
+
+<script src="https://rbiologos.com/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://rbiologos.com/plugins/slick/slick.min.js"></script>
+
+<script src="https://rbiologos.com/plugins/shuffle/shuffle.min.js"></script>
+
+<script src="https://rbiologos.com/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<script src="https://rbiologos.com/plugins/lazy-load/lozad.min.js"></script>
+
+<script src="https://rbiologos.com/plugins/google-map/map.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://rbiologos.com/js/script.min.ab3836b70bc45170e8ff6dd572ee5e8e761ac8376daf9ceb40f760dfb6f2cce49672517da770a0049959f5fc93337e13.js" integrity="sha384-qzg2twvEUXDo/23Vcu5ejnYayDdtr5zrQPdg37byzOSWclF9p3CgBJlZ9fyTM34T"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-transparent">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+</body>
+
+</html>

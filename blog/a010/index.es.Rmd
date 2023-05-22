@@ -48,7 +48,7 @@ ggplot(data = 'nombre del fichero de datos') +
 Normalmente estos elementos se van añadiendo de forma consecutiva en distintas **capas** (layers). Para añadir una nueva capa se usa el signo <res>+</res>.
 </blockquote>
 
-Tranqui, si no entendiste, más adelante tendremos ejemplos mucho más prácticos y podrás desenrendar esta maraña
+Tranqui, si no entendiste, más adelante tendremos ejemplos mucho más prácticos y podrás desenrendar esta maraña 
 
 <center>
 ![](https://i.ibb.co/2YF4G4v/LCEq.gif){width=350}

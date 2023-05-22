@@ -15,7 +15,7 @@ tags:
   - visualización
 ---
 
-Cuando se evalúa la relación entres dos variables, es importante determinar cómo se relacionan estas, por tanto, una relación lineal es un término que se utiliza para describir una relación entre dos variables.
+Cuando se evalúa la relación entres dos variables, es importante determinar cómo se relacionan estas, por tanto, una relación lineal es un término que se utiliza para describir una dicha relación.
 
 <center>
 ![](https://i.ibb.co/3c7tH9L/office.gif){width="350"}

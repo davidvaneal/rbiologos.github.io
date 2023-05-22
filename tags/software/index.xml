@@ -6,7 +6,7 @@
     <description>Recent content in software on R Biólogos</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-CO</language>
-    <copyright>Copyright &amp;copy; 2020 Modificado por [David Vanegas](https://davidvaneal.github.io/) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright>
+    <copyright>Copyright &amp;copy; 2020 Modificado por [David Vanegas](https://davidvanegal.github.io/) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright>
     <lastBuildDate>Thu, 18 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.com/tags/software/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>¿Cómo funciona R?</title>
@@ -23,7 +23,7 @@
       <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://rbiologos.com/blog/a003/</guid>
-      <description>Para comenzar en esta aventura, lo primero que necesitas es instalar R y Rstudio, sin ellos creo que sería muy difícil comenzar nuestra aventura.</description>
+      <description>Para comenzar en esta aventura, lo primero que necesitas es instalar los programas R y Rstudio en tu computadora, sin ellos, creo que sería muy difícil comenzar nuestra aventura en R.</description>
     </item>
     
   </channel>

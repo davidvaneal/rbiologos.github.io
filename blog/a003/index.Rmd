@@ -12,14 +12,20 @@ tags:
   - software
 ---
 
-> Para comenzar en esta aventura, lo primero que necesitas es instalar  <res>R</res> y <res>Rstudio</res>, sin ellos creo que sería muy difícil comenzar nuestra aventura. 
+> Para comenzar en esta aventura, lo primero que necesitas es instalar los programas <res>R</res> y <res>Rstudio</res>  en tu computadora, sin ellos, creo que sería muy difícil comenzar nuestra aventura en R. 
 
-Recuerda que los necesitamos a ambos, a R porque es un lenguaje de programación y también software; y a Rstudio por su valioso entorno de desarrollo. 
+Recuerda que la empresa RStudio ahora se conoce como ***Posit***, pero seguirá trabajando con su programa estrella RStudio. Este cambio será dirigido hacía la parte empresarial y de pagína. Con estos nuevos cambios se espera que la ciencia de datos sea más abierta, intuitiva, accesible y colaborativa a partir de herramientas que facilitan que las personas, los equipos y las empresas aprovechen los potentes análisis y obtengan los conocimientos que necesitan para tener un impacto duradero. Puedes visitar la página de Posit en el siguiente enlace [POSIT](https://posit.co/).
 
 <center>
-<a href="https://www.icesi.edu.co/CRAN/" target="blank"><img border="0" src="https://i.ibb.co/cb4ZM78/descarga.png"/><br>R</a><br> 
+![](https://i.ibb.co/r55hnvz/Posit.png){width="300"} 
+</center><br>
+
+Ahora si, a lo que vinimos, recuerda que para trabajar con RStudio necesitamos ambos programas, a R porque es un lenguaje de programación y también software; y a RStudio por su valioso entorno de desarrollo. 
+
+<center>
+<a href="https://cran.rstudio.com/bin/windows/base/R-4.2.2-win.exe" target="blank"><img border="0" src="https://i.ibb.co/cb4ZM78/descarga.png"/><br>R</a><br> 
 <br>
-<a href="https://download1.rstudio.org/desktop/windows/RStudio-1.4.1106.exe" target="blank"><img border="0" src="https://i.ibb.co/cb4ZM78/descarga.png" /><br>RStudio</a>
+<a href="https://download1.rstudio.org/desktop/windows/RStudio-2022.07.2-576.exe" target="blank"><img border="0" src="https://i.ibb.co/cb4ZM78/descarga.png" /><br>RStudio</a>
 </center><br>
 
 ¿Qué más necesitamos? Ganas de aprender, dedicación y paciencia, ¡sí, paciencia!

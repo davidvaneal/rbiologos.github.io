@@ -6,7 +6,7 @@
     <description>Recent content in R on R Biólogos</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-CO</language>
-    <copyright>Copyright &amp;copy; 2020 Modificado por [David Vanegas](https://davidvaneal.github.io/) sob o modelo [Themefisher](https://themefisher.com) por [HUGO](https://gethugothemes.com)</copyright>
+    <copyright>Copyright &amp;copy; 2020 Modificado por [David Vanegas](https://davidvanegal.github.io/) sob o modelo [Themefisher](https://themefisher.com) por [HUGO](https://gethugothemes.com)</copyright>
     <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.com/pt/tags/r/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Então ... Como faço o upload dos meus dados?</title>
@@ -41,7 +41,8 @@
       <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://rbiologos.com/pt/blog/a002/</guid>
-      <description>Começaremos dizendo que  R  é uma das linguagens de programação mais amplamente utilizadas na pesquisa científica</description>
+      <description>Começaremos dizendo que R é uma das linguagens de programação mais amplamente utilizadas na pesquisa científica
+É também um programa muito popular nas áreas de aprendizado de máquina, mineração de dados, pesquisa biomédica, bioinformática e matemática financeira.</description>
     </item>
     
   </channel>

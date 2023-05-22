@@ -6,8 +6,44 @@
     <description>Recent content in Tags on R Biólogos</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-CO</language>
-    <copyright>Copyright &amp;copy; 2020 Modificado por [David Vanegas](https://davidvaneal.github.io/) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright>
-    <lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright &amp;copy; 2020 Modificado por [David Vanegas](https://davidvanegal.github.io/) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright>
+    <lastBuildDate>Thu, 03 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Datos</title>
+      <link>https://rbiologos.com/tags/datos/</link>
+      <pubDate>Thu, 03 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.com/tags/datos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GBIF</title>
+      <link>https://rbiologos.com/tags/gbif/</link>
+      <pubDate>Thu, 03 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.com/tags/gbif/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mapa</title>
+      <link>https://rbiologos.com/tags/mapa/</link>
+      <pubDate>Thu, 03 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.com/tags/mapa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>visualización</title>
+      <link>https://rbiologos.com/tags/visualizaci%C3%B3n/</link>
+      <pubDate>Thu, 03 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.com/tags/visualizaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Estadística</title>
       <link>https://rbiologos.com/tags/estad%C3%ADstica/</link>
@@ -41,15 +77,6 @@
       <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://rbiologos.com/tags/param%C3%A9tricas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>visualización</title>
-      <link>https://rbiologos.com/tags/visualizaci%C3%B3n/</link>
-      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://rbiologos.com/tags/visualizaci%C3%B3n/</guid>
       <description></description>
     </item>
     
@@ -95,15 +122,6 @@
       <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://rbiologos.com/tags/z-test/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Datos</title>
-      <link>https://rbiologos.com/tags/datos/</link>
-      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://rbiologos.com/tags/datos/</guid>
       <description></description>
     </item>
     

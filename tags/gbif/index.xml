@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GBIF on R Biólogos</title>
+    <link>https://rbiologos.com/tags/gbif/</link>
+    <description>Recent content in GBIF on R Biólogos</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-CO</language>
+    <copyright>Copyright &amp;copy; 2020 Modificado por [David Vanegas](https://davidvanegal.github.io/) bajo la plantilla [Themefisher](https://themefisher.com) de [HUGO](https://gethugothemes.com)</copyright>
+    <lastBuildDate>Thu, 03 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://rbiologos.com/tags/gbif/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trabajando con datos de GBIF</title>
+      <link>https://rbiologos.com/blog/a017/</link>
+      <pubDate>Thu, 03 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rbiologos.com/blog/a017/</guid>
+      <description>Algunas investigaciones que realizamos en nuestra vida profesional se basan en conocer y comprender que taxones o especies se encuentran en una determinada región de nuestro interes.</description>
+    </item>
+    
+  </channel>
+</rss>

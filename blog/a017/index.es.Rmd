@@ -1,0 +1,405 @@
+---
+title: Trabajando con datos de GBIF
+author: David Vanegas
+date: '2022-03-03'
+image: https://i.ibb.co/3FyhYdY/ES.png
+slug: []
+categories:
+  - R
+  - RStudio
+tags:
+  - Datos
+  - GBIF
+  - Mapa
+  - visualización
+---
+
+Algunas investigaciones que realizamos en nuestra vida profesional se basan en conocer y comprender que taxones o especies se encuentran en una determinada región de nuestro interes. Una excelente herramienta que nos ayuda a conocer estos registros es la plataforma GBIF.
+
+<center>
+![](https://i.ibb.co/0hgKN2R/Map.png){width=100%}
+</center></br>
+
+# Contenido del post
+
+- [Introducción](#1)
+- [Descarga de datos](#2)
+- [Descarga de datos con rgbif](#3)
+- [Código en R](#4)
+    - [Descargar datos de una categoría taxonómica en un país](#5)
+        - [Descarga de datos](#6)
+        - [Limpieza de datos](#7)
+        - [Mapeo de ocurrencias](#8)
+        - [Citaciones](#9)
+    - [Descargar datos de varias categorías taxonómicas en una rango de coordenadas](#10)
+        - [Descarga de datos](#11)
+        - [Limpieza de datos](#12)
+        - [Mapeo de ocurrencias](#13)
+        - [Citaciones](#14)
+- [Resumen](#15)
+- [Literatura](#16)
+- [Más información](#17)
+
+<center>
+![](https://i.ibb.co/4WrdV1v/wakeup.gif){width=350}
+</center></br>
+
+# Introducción
+<a name="1"></a>
+
+The Global Biodiversity Information Facility ([GBIF](https://www.gbif.org/)), es una plataforma que cuenta con cientos de miles de registros de presencias tanto de flora como de fauna, registros que en su mayoría cuentan con coordenadas geográficas que son esencialmente importante para realizar el tipo de investigaciones que mencionamos anteriormente.
+
+Así, GBIF tiene datos que dan evidencia de la presencia de una especie (u otro taxón) en un lugar determinado y en una fecha concreta. Estos datos se ofrecen en un formato estandarizado, permitiendo que queden accesibles para su libre consulta y uso de acuerdo con las licencias de uso establecidas.
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/HvS6sRVZbHo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe
+
+# Descarga de datos
+<a name="2"></a>
+
+Para hacer la descarga de tales registros se puede hacer de varias maneras, una de ellas es haciendo el respectivo registro en la página web (requiere usuario y contraseña), luego tenemos que ingresar el nombre científico de las especies de interes y el programa nos arroja el resultado de todos los registros, sin embargo, en muchas ocasiones el hacer la descarga se demora desde pocos minutos hasta varias horas (dependiendo del número de registros). 
+
+Este proceso lo podemos aprender en el siguiente video
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/ACHZ6wdqb_8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+# Descarga de datos con rgbif
+<a name="3"></a>
+
+Otro camino para descargar la información es hacer uso del paquete <res>rgbif</res> de los desarrolladores Chamberlain S, Barve V, Mcglinn D, Oldoni D, Desmet P, Geffert L y Ram K (2022). Con el uso de este paquete el proceso de descarga de la información es mucho más rápido que por la misma página, además, nuestros datos ya estarían cargados para poder realizar las filtraciones de datos, análisis, mapas, entre otros análisis. Para poder conocer más acerca de este paquete, puedes consultar [AQUÍ](https://cran.r-project.org/web/packages/rgbif/rgbif.pdf).
+
+<center>
+![](https://i.ibb.co/5KBGfVp/smile.gif){width=350}
+</center></br>
+
+Igualmente utilizaremos otros paquetes necesarios para nuestra limpieza y visualización, los cuales mencionaremos a continuación
+
+Paquete <res>scrubr</res> del desarrollador Chamberlain Scott (2022), el cual es un paquete especializado en la limpieza de los datos descargados como duplicados, coordenadas y/o fechas faltantes, entre otros. Para poder conocer más acerca de este paquete, puedes consultar [AQUÍ](https://github.com/ropensci/scrubr/).
+
+Paquete <res>maps</res>, desarrollado por Richard A. Becker and Allan R. Wilks. R (2021), proporciona muchos contornos de mapas diferentes y puntos para ciudades, etc. Para poder conocer más acerca de este paquete, puedes consultar [AQUÍ](https://cran.r-project.org/web/packages/maps/maps.pdf).
+
+Paquete <res>Tidyverse</res> desarrollado por Wickham et al. (2019), es un conjunto de paquetes que funcionan en armonía porque comparten representaciones de datos comunes y diseño de API. El paquete Tidyverse está diseñado para facilitar la instalación y cargue los paquetes de núcleo de Tidyverse en un solo comando. Para poder conocer más acerca de este paquete, puedes consultar [AQUÍ](https://github.com/tidyverse/tidyverse/). Dentro del Tidyverse podemos encontrar el paquete <res>ggplot2</res> para poder visualizar y modificar nuestro mapa.
+
+# Código en R
+<a name="4"></a>
+
+Primero cargamos los paquetes necesarios para poder descargar, limpiar y visualizar nuestros datos
+
+```{r message=FALSE}
+library(rgbif)
+library(scrubr)
+library(maps)
+library(tidyverse)
+```
+
+Ahora bien, para poder descagar datos hay dos vías o formas, una se basa en la descarga de datos para una sola categoría taxonómica y la otra para varias categorías taxonómicas.
+
+<center>
+![](https://i.ibb.co/JnyR3tp/both.gif){width=350}
+</center></br>
+
+Definida la especie con que vamos a trabajar, procedemos a utilizar la función <res>occ_data</res> del paquete <res>rgbif</res>, la cual realiza una búsqueda de ocurrencias del taxón o la especie en cuestión el el GBIF. Los argumentos de dicha función los podemos encontrar en la siguiente [LINK](https://www.rdocumentation.org/packages/rgbif/versions/3.7.0/topics/occ_data). A continuación veremos algunos:
+
+- scientificName: Un nombre científico de la columna vertebral de GBIF. Todos los taxones incluidos y sinónimos se incluyen en la búsqueda.
+
+- country: El código de país de 2 letras (según ISO-3166-1) del país en el que se registró la ocurrencia. Mira [Aquí](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+
+- hasCoordinate: Retorna solo registros de ocurrencia con datos de latitud/longitud (TRUE) o todos los registros (FALSE)
+
+- recordedBy: La persona que registró la ocurrencia
+
+- identifiedByID: Nombre de la persona que proporcionó la identificación taxonómica de la ocurrencia.
+
+- elevation: Elevación en metros sobre el nivel del mar
+
+- stateProvince: El nombre de la siguiente región administrativa más pequeña que país (estado, provincia, cantón, departamento, región, etc.) en el que se produce la ubicación.
+
+- limit: Número de registros a retornar
+
+## Descargar datos de una categoría taxonómica en un país
+<a name="5"></a>
+
+En este ejercicio quiero saber la ocurrencia de la especie _Onthophagus acuminatus_ en Colombia. _O. acuminatus_ es una especie de escarabajo de la subfamilia Scarabaeinae, comunmente llamados escarabajos coprófagos o peloteros. Dicho escarabajo está ampliamente distribuido en la región andina y es uno de los escarabajos más abundantes en áreas protegidas y ambientes urbanos y semiurbanos, sin embargo, queremos revisar en que sitios se encuentra registrado y para cuales departamentos.
+
+<center>
+![](https://i.ibb.co/7pPYWbq/scream.gif){width=350}
+</center></br>
+
+Guardamos el nombre de nuestra especie en una variable
+
+```{r}
+myspecies <- c("Onthophagus acuminatus")
+```
+
+### Descarga de datos
+<a name="6"></a>
+
+Ahora utilizamos la función <res>occ_data</res> para filtar las ocurrencias de _O. acuminatus_ en Colombia, con un límite de 20000 ocurrencias y lo guardamos en la variable **gbif_data**. Recuerda que puedes filtrar también por departamentos.
+
+```{r}
+gbif_data <- occ_data(scientificName = myspecies, 
+                      country = 'CO', 
+                      hasCoordinate = TRUE, 
+                      limit = 20000)
+```
+
+Ahora corroboramos los datos descargados, nota que es una lista de <res>gbif_data</res> con dos elementos anidados <res>meta</res>, en el cual encontraremos datos de cantidades y <res>data</res>, en el cual encontraremos una tabla con todos los datos de las ocurrencias.
+
+<center>
+![](https://i.ibb.co/W0tqL8T/funny.gif){width=350}
+</center></br>
+
+```{r}
+gbif_data$meta
+names(gbif_data$data)
+```
+
+### Limpieza de datos
+<a name="7"></a>
+
+Luego de descargados los datos de la plataforma, ya podemos empezar a seleccionarlos, filtrarlos y dejarlos más organizados. En este ejercicio, vamos a seleccionar las columnas de nombre científico, coordenadas, elevación y departamento de las ocurrencias descargadas.
+
+```{r}
+myspecies_coords <- gbif_data$data[ , c("scientificName",
+                                        "decimalLongitude", 
+                                        "decimalLatitude", 
+                                        "elevation",
+                                        "stateProvince")]
+head(myspecies_coords)
+```
+
+También podemos observar un resumen de los datos, como cantidad, departamentos de las ocurrencias, entre otros
+
+```{r}
+# Conoceremos la cantidad de registros
+dim(myspecies_coords)[1]
+
+# Cantidad de datos por departamento
+myspecies_coords  %>%
+    count(stateProvince, sort = TRUE)
+```
+
+Ahora guardaremos nuestros datos en un archivo tipo *_csv_* para poder tener la información en nuestra computadora.
+
+```{r eval=FALSE}
+write.csv(myspecies_coords, 'species.csv', row.names = TRUE)
+```
+
+### Mapeo de ocurrencias
+<a name="8"></a>
+
+Ahora realizaremos nuestro mapa de ocurrencias de la especie en cuestión, para ello utilizaremos la función <res>getData</res> para cargar la capa de división por departamentos para Colombia (Level = 1).
+
+<center>
+![](https://i.ibb.co/dfLTk2G/donkey.gif){width=350}
+</center></br>
+
+```{r message=FALSE, warning=FALSE}
+shp <- raster::getData('GADM', country = 'COL', level = 1)
+```
+
+Al igual, utilizaremos el paquete <res>ggplot2</res> con el fin de visualizar nuestros datos.
+
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+mapa <- ggplot() +
+  geom_point(data = myspecies_coords, 
+             aes(x = decimalLongitude, y = decimalLatitude), 
+             color = 'black') +
+  geom_polygon(data = shp, aes(x = long, y = lat, group = group), 
+               color = 'grey', fill = NA) +
+  coord_fixed(ylim = c(-5, 12.5), xlim = c(-80, -67)) +
+  xlab('Longitud') +
+  ylab('Latitud') +
+  theme(axis.title.y = element_text(size = 17),
+        axis.title.x = element_text(size = 17),
+        axis.text.y = element_text(size = 13),
+        axis.text.x = element_text(size = 13))+
+  theme_bw()
+
+mapa
+```
+Mapa 1. Mapa de ocurrencias de _O. acuminatus_ en Colombia.
+
+Guardamos nuestro mapa de ocurrencias 
+
+```{r eval=FALSE}
+png("mapa.png", width = 1800, height = 1800, res = 140)
+print(mapa)
+dev.off()
+```
+
+### Citaciones
+<a name="9"></a>
+
+Finalmente obtenemos la citación de las ocurrencias
+
+```{r}
+gbif_citation(gbif_data)
+```
+
+## Descargar datos de varias categorías taxonómicas en una rango de coordenadas
+<a name="10"></a>
+
+En este ejercicio quiero saber la ocurrencia de las especies de escarabajos coprófagos en Colombia. Dicho escarabajos están ampliamente distribuidos en Colombia, sin embargo, queremos revisar en que sitios se encuentran registrados en un rango de coordenadas específico.
+
+<center>
+![](https://i.ibb.co/DVvstrf/cats.gif){width=350}
+</center></br>
+
+Guardamos el nombre de nuestra especie en una variable
+
+```{r}
+myspecies2 <- c("Sulcophanaeus noctis", "Phanaeus meleagris", 
+               "Onthophagus bidentatus", "Ontherus kirschii", 
+               "Copris susanae")
+```
+
+### Descarga de datos
+<a name="11"></a>
+
+Ahora utilizamos la función <res>occ_data</res> para filtar las ocurrencias de algunas especies de escarabajos coprófagos en Colombia, con un límite de 20000 ocurrencias y lo guardamos en la variable **gbif_data**. Recuerda que puedes filtrar también por departamentos.
+
+```{r}
+gbif_data2 <- occ_data(scientificName = myspecies2, 
+                      hasCoordinate = TRUE, 
+                      limit = 20000, 
+                      decimalLongitude = "-76, -74", 
+                      decimalLatitude = "3, 8")
+```
+
+Ahora corroboramos los datos descargados, nota que es una lista de <res>gbif_data</res> con dos elementos anidados <res>meta</res>, en el cual encontraremos datos de cantidades y <res>data</res>, en el cual encontraremos una tabla con todos los datos de las ocurrencias, asimismo, podrás notar que hay más elementos, esto es debido a que tenemos un conjunto de datos para cada especie seleccionada.
+
+<center>
+![](https://i.ibb.co/tXdzjnS/Donk.gif){width=350}
+</center></br>
+
+```{r}
+names(gbif_data2)
+names(gbif_data2[[myspecies2[1]]])
+names(gbif_data2[[myspecies2[1]]]$meta)
+names(gbif_data2[[myspecies2[1]]]$data)
+```
+
+### Limpieza de datos
+<a name="12"></a>
+
+Luego de descargados los datos de la plataforma, ya podemos empezar a seleccionarlos, filtrarlos y dejarlos más organizados. En este ejercicio, vamos a seleccionar las columnas de nombre científico, coordenadas, elevación y departamento de las ocurrencias descargadas.
+
+```{r}
+df_final = data.frame()
+for (s in 1:length(myspecies2)) {
+  if(is.null(gbif_data2[[s]]$data)==FALSE){
+    coords <- gbif_data2[[s]]$data[ , c("scientificName", "decimalLongitude", 
+                                       "decimalLatitude", "stateProvince")]
+    df_final <- rbind(df_final, coords)
+  }
+}
+head(df_final)
+```
+
+También podemos observar un resumen de los datos, como cantidad, departamentos de las ocurrencias, entre otros
+
+```{r}
+# Conoceremos la cantidad de registros
+dim(df_final)[1]
+
+# Cantidad de datos por departamento
+df_final  %>%
+  group_by(scientificName) %>%
+    count(stateProvince, sort = TRUE)
+```
+
+Ahora guardaremos nuestros datos en un archivo **csv** para poder tener la información en nuestra computadora.
+
+<center>
+![](https://i.ibb.co/FDJSPdj/cat.gif){width=350}
+</center></br>
+
+```{r eval=FALSE}
+write.csv(df_final, 'species.csv', row.names = TRUE)
+```
+
+### Mapeo de ocurrencias
+<a name="13"></a>
+
+Ahora realizaremos nuestro mapa de ocurrencias de la especie en cuestión, para ello utilizaremos la función <res>getData</res> para cargar la capa de división por departamentos para Colombia (Level = 1).
+
+```{r message=FALSE, warning=FALSE}
+shp <- raster::getData('GADM', country = 'COL', level = 1)
+```
+
+Al igual, utilizaremos el paquete <res>ggplot2</res> con el fin de visualizar nuestros datos.
+
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+mapa2 <- ggplot() +
+  geom_point(data = df_final, 
+             aes(x = decimalLongitude, y = decimalLatitude, 
+                 shape = scientificName), 
+             color = 'black') +
+  geom_polygon(data = shp, aes(x = long, y = lat, group = group), 
+               color = 'grey', fill = NA) +
+  coord_fixed(ylim = c(2.5, 8.5), xlim = c(-76.5, -73.5)) +
+  xlab('Longitud') +
+  ylab('Latitud') +
+  theme(axis.title.y = element_text(size = 17),
+        axis.title.x = element_text(size = 17),
+        axis.text.y = element_text(size = 13),
+        axis.text.x = element_text(size = 13))+
+  labs(shape = "Especies")+
+  theme_bw()+
+  theme(legend.text = element_text(face = "italic"))
+
+mapa2
+```
+Mapa 2. Mapa de ocurrencias de cinco (5) especies de escarabajos coprófagos en una región de Colombia.
+
+<center>
+![](https://i.ibb.co/42MJ8r3/pretty.gif){width=350}
+</center></br>
+
+Guardamos nuestro mapa de ocurrencias 
+
+```{r eval=FALSE}
+png("mapa2.png", width = 1800, height = 1800, res = 140)
+print(mapa2)
+dev.off()
+```
+
+### Citaciones
+<a name="14"></a>
+
+Finalmente obtenemos la citación de las ocurrencias
+
+```{r}
+gbif_citation(gbif_data)
+```
+
+# Resumen
+<a name="15"></a>
+
+En este post pudimos aprender como descargar, limpiar y visualizar las ocurrencias sobre los taxones de nuestro interes. Recuerda que puedes explorar más estas herramientas con el fin de responder tus propias preguntas de investigación.
+
+Aprendimos igual que podemos realizar el análisis en una región, departamento, país, continente o a nivel global, es solo modificar algunas líneas en nuestro código y ¡voilá!
+
+No siendo más, nos despedimos no sin antes deseando poder encontrarnos de nuevo en algún momento, mientras ¡sean felices!
+
+<center>
+![](https://i.ibb.co/ssmd5Mt/bye.gif){width=350}
+</center></br>
+
+# Literatura
+<a name="16"></a>
+
+- [Downloading and cleaning GBIF data with R](https://www.r-bloggers.com/2021/03/downloading-and-cleaning-gbif-data-with-r/)
+
+- [¿Cómo descargar información de GBIF usando R?](https://geofabio.com/2019/02/02/como-descargar-informacion-de-gbif-usando-r/)
+
+# Más información
+<a name="17"></a>
+
+Estos análisis se han realizado utilizando el software R (v.4.1.0) y Rstudio (v. 1.4.1717)
+
+Recuerda que todos nuestros códigos están almacenados en [GitHub](https://github.com/RBiologos/Posts) 
+
+<center>
+![](https://i.ibb.co/DpKmR1k/github.png){width="350"}
+</center>

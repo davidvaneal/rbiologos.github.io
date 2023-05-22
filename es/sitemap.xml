@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://rbiologos.com/blog/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -21,7 +21,7 @@
                 />
   </url><url>
     <loc>https://rbiologos.com/categories/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -38,20 +38,17 @@
                 href="https://rbiologos.com/categories/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/tags/estad%C3%ADstica/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+    <loc>https://rbiologos.com/tags/datos/</loc>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://rbiologos.com/tags/normalidad/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+    <loc>https://rbiologos.com/tags/gbif/</loc>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://rbiologos.com/tags/p-valor/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rbiologos.com/tags/param%C3%A9tricas/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+    <loc>https://rbiologos.com/tags/mapa/</loc>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rbiologos.com/categories/r/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -69,7 +66,7 @@
                 />
   </url><url>
     <loc>https://rbiologos.com/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -86,14 +83,11 @@
                 href="https://rbiologos.com/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/blog/a016/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://rbiologos.com/categories/rstudio/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rbiologos.com/tags/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -110,7 +104,25 @@
                 href="https://rbiologos.com/tags/"
                 />
   </url><url>
+    <loc>https://rbiologos.com/blog/a017/</loc>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://rbiologos.com/tags/visualizaci%C3%B3n/</loc>
+    <lastmod>2022-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.com/tags/estad%C3%ADstica/</loc>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.com/tags/normalidad/</loc>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.com/tags/p-valor/</loc>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.com/tags/param%C3%A9tricas/</loc>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://rbiologos.com/blog/a016/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rbiologos.com/tags/an%C3%A1lisis/</loc>
@@ -130,9 +142,6 @@
   </url><url>
     <loc>https://rbiologos.com/tags/z-test/</loc>
     <lastmod>2021-11-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rbiologos.com/tags/datos/</loc>
-    <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://rbiologos.com/tags/distribuci%C3%B3n/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
@@ -266,24 +275,6 @@
                 href="https://rbiologos.com/blog/a005/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/tags/software/</loc>
-    <lastmod>2021-03-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rbiologos.com/en/tags/software/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://rbiologos.com/pt/tags/software/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://rbiologos.com/tags/software/"
-                />
-  </url><url>
     <loc>https://rbiologos.com/blog/a004/</loc>
     <lastmod>2021-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -318,6 +309,42 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://rbiologos.com/blog/a003/"
+                />
+  </url><url>
+    <loc>https://rbiologos.com/tags/software/</loc>
+    <lastmod>2021-03-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rbiologos.com/en/tags/software/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://rbiologos.com/pt/tags/software/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://rbiologos.com/tags/software/"
+                />
+  </url><url>
+    <loc>https://rbiologos.com/blog/a001/</loc>
+    <lastmod>2021-03-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rbiologos.com/en/blog/a001/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://rbiologos.com/pt/blog/a001/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://rbiologos.com/blog/a001/"
                 />
   </url><url>
     <loc>https://rbiologos.com/blog/a002/</loc>
@@ -356,24 +383,6 @@
                 href="https://rbiologos.com/tags/history/"
                 />
   </url><url>
-    <loc>https://rbiologos.com/blog/a001/</loc>
-    <lastmod>2021-03-16T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://rbiologos.com/en/blog/a001/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://rbiologos.com/pt/blog/a001/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://rbiologos.com/blog/a001/"
-                />
-  </url><url>
     <loc>https://rbiologos.com/shop/2g/</loc>
   </url><url>
     <loc>https://rbiologos.com/author/</loc>
@@ -408,6 +417,23 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://rbiologos.com/author/david-vanegas/"
+                />
+  </url><url>
+    <loc>https://rbiologos.com/author/david-vanegas-alarcon/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://rbiologos.com/en/author/david-vanegas-alarcon/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://rbiologos.com/pt/author/david-vanegas-alarcon/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://rbiologos.com/author/david-vanegas-alarcon/"
                 />
   </url><url>
     <loc>https://rbiologos.com/author/eduardo-grajales/</loc>
